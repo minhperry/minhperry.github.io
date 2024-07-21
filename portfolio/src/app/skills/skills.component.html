@@ -1,0 +1,8 @@
+<div class="skills">
+  <div *ngFor="let entry of skillEntries" class="skill-bar-container">
+    <div class="skill-bar" [style.width.%]="entry.currentRating">
+      <img [src]="entry.iconUrl" class="skill-icon" />
+      {{ entry.rating }}
+    </div>
+  </div>
+</div>
