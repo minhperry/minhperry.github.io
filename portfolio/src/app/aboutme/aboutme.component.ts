@@ -7,10 +7,11 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
   styleUrl: './aboutme.component.css'
 })
 export class AboutmeComponent {
-  name: string = 'Deez Natz';
+  // name: string = 'Phan Tuấn Minh 🇻🇳';
+  name = "null"
   bio: string = '22 / Student @ ';
   tuSvg: string = 'icons/tudo.svg';
-  profilePictureUrl: string = 'path/to/your/profile-picture.jpg';
+  profilePictureUrl: string = 'selfs.png';
   socialLinks = [
     { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/ptm2002', iconUrl: 'icons/linkedin.svg' },
     { platform: 'GitHub', url: 'https://github.com/minhperry', iconUrl: 'icons/github.svg' },
