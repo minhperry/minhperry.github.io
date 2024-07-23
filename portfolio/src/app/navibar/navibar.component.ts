@@ -34,7 +34,10 @@ export class NavibarComponent {
 
   playGangnamStyle() {
     this.audio.volume = 0.3;
-    this.audio.play();
+    this.audio.play().catch( () => { 
+      this.text = 'Please allow audio for the best experience';
+      return;
+    });
     this.text = 'OOPA GANGNAM STYLE';
     this.hovered = true;
   }
