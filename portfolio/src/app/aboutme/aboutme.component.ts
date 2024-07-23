@@ -7,13 +7,12 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
   styleUrl: './aboutme.component.css'
 })
 export class AboutmeComponent {
-  // name: string = 'Phan Tuấn Minh 🇻🇳';
-  name = "null"
+  name = "minhperry 🇻🇳/🇩🇪"
   bio: string = '22 / Student @ ';
   tuSvg: string = 'icons/tudo.svg';
-  profilePictureUrl: string = 'selfs.png';
+  profilePictureUrl: string = '192.png';
   socialLinks = [
-    { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/ptm2002', iconUrl: 'icons/linkedin.svg' },
+    // { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/ptm2002', iconUrl: 'icons/linkedin.svg' },
     { platform: 'GitHub', url: 'https://github.com/minhperry', iconUrl: 'icons/github.svg' },
     { platform: 'GitLab', url: 'https://gitlab.com/minhperry', iconUrl: 'icons/gitlab.svg' }
   ];
