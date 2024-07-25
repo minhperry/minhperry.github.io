@@ -10,7 +10,7 @@ export class SkillsComponent implements OnInit {
     'Angular': 39,
     'TypeScript': 38,
     'HTML': 75,
-    'CSS': 42,
+    'CSS': 25,
     'Java': 90,
     'C++': 85,
     'Python': 87,

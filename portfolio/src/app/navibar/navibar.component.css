@@ -7,41 +7,65 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: var(--bgColor);
+  background-color: var(--primBackgroundColor);
   color: white;
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 10px 20px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   box-sizing: border-box;
   overflow: hidden;
+  border-bottom: solid var(--color-foam);
 }
 
-.navibar .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2); /* Darker color overlay */
-  z-index: -1; /* Ensure it stays behind the content */
-  transition: width 0.5s ease; /* Smooth transition */
+.navibar .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-.navibar .logo a {
+.navibar .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  width: 100%;
+}
+
+.navibar .time-display {
+  align-self: flex-start;
+  display: flex;
+}
+
+.navibar .time-display span {
+  padding: 10px 20px;
+  color: var(--color-gold);
+  font-size: 24px;
+}
+
+.navibar .title {
+  display: flex;
+  justify-content: space-between;
+  align-self: top;
+}
+
+.navibar .title a {
   color: white;
   text-decoration: none;
   font-size: 1.5em;
   cursor: pointer;
-  display: inline-block;
   padding: 10px 20px;
   transition: background-image 0.3s, color 0.3s;
 }
 
 .navibar .menu {
-  display: flex;
-  flex-wrap: nowrap;
+  display: inline-flex;
+  justify-content: left;
+  flex-basis: 100%;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .navibar .menu .play:hover {
@@ -63,4 +87,14 @@
   background-color: var(--hoverColor);
   color: black;
   transform: scale(1.1);
+}
+
+.navibar .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(146, 146, 146, 0.2);
+  z-index: -1;
+  transition: width 0.5s ease;
 }

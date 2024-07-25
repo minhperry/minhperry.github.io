@@ -1,0 +1,59 @@
+:host {
+    --fontSize: 36px;
+    --fontHover: 48px;
+    --logoSize: 36px;
+}
+
+.social-component {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.social-group {
+    margin-bottom: 20px;
+}
+
+.social-group h2 {
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+    font-size: 48px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+li {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px;
+}
+
+a, .icon {
+    text-decoration: none;
+    color: #ff6f00;
+    display: flex;
+    align-items: center;
+    font-size: var(--fontSize);
+    width: var(--logoSize);
+    height: var(--logoSize);
+    transition: all 0.5s;
+}
+
+a:hover, .icon:hover {
+    width: var(--fontHover);
+    height: var(--fontHover);
+    font-size: var(--fontHover);
+}
+
+.fa-icon {
+    font-size: var(--fontSize);
+    margin-right: 10px;
+}

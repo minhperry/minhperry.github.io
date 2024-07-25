@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClockService } from '../../services/clock/clock.service';
+import { Observable } from 'rxjs';
 
 interface NavLink {
   path: string;
@@ -10,7 +12,7 @@ interface NavLink {
   templateUrl: './navibar.component.html',
   styleUrl: './navibar.component.css',
 })
-export class NavibarComponent {
+export class NavibarComponent implements OnInit {
   naviLinks: NavLink[] = [
     { path: '/', label: 'Home' },
     { path: '/socials', label: 'Socials' },
@@ -21,8 +23,9 @@ export class NavibarComponent {
   original: string = 'Me Myself and I';
   text: string = this.original;
   hovered: boolean = false;
+  time: string = '';
 
-  constructor() {
+  constructor(private clockService: ClockService) {
     this.audio = new Audio();
     this.audio.src = 'audios/gangnamstyle2.mp3';
     this.audio.load();
@@ -30,6 +33,9 @@ export class NavibarComponent {
 
   ngOnInit() {
     this.audio.addEventListener('timeupdate', () => this.updateOverlayWidth());
+    this.clockService.getTime().subscribe(time => {
+      this.time = time;
+    });
   }
 
   playGangnamStyle() {

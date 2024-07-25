@@ -5,8 +5,7 @@ import { SocialComponent } from './social/social.component';
 
 const routes: Routes = [
   { path: '', component: AboutmeComponent },
-  { path: 'social', component: SocialComponent },
-  { path: '**', redirectTo: '/', pathMatch: 'full' },
+  { path: 'socials', component: SocialComponent }
 ];
 
 @NgModule({
