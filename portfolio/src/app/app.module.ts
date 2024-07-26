@@ -11,6 +11,7 @@ import { NavibarComponent } from './navibar/navibar.component';
 import { SocialComponent } from './social/social.component';
 import { provideHttpClient } from '@angular/common/http';
 import { IconPipe } from '../pipes/icon/icon.pipe';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { IconPipe } from '../pipes/icon/icon.pipe';
     SkillsComponent,
     NavibarComponent,
     SocialComponent,
-    IconPipe
+    IconPipe,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

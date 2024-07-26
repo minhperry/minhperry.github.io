@@ -1,6 +1,6 @@
 <div class="social-component">
     <div *ngFor="let group of socials | keyvalue: asIs">
-        <div class="scoial-group">
+        <ng-container class="scoial-group" *ngIf="(group.value| filterIcon).length > 0">
             <h2>{{ group.key | titlecase}}</h2>
             <ul>
                 <li *ngFor="let link of group.value | filterIcon">
@@ -11,6 +11,6 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </ng-container>
     </div>
 </div>

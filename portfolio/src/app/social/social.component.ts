@@ -42,6 +42,5 @@ export class SocialComponent implements OnInit {
     );
   }
 
-
   asIs() {return 0}
 }

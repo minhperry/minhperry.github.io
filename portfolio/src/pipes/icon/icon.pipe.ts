@@ -6,7 +6,7 @@ import { Links } from '../../app/social/social.component';
 })
 export class IconPipe implements PipeTransform {
 
-  transform(items: any[]): any[] {
+  transform(items: Links[]): Links[] {
     return items ? items.filter(item => !item.hidden) : [];
   }
 
