@@ -1,16 +1,13 @@
 <div class="social-component">
     <div *ngFor="let group of socials | keyvalue: asIs">
         <div class="scoial-group">
-            <h2>{{ group.key| titlecase}}</h2>
+            <h2>{{ group.key | titlecase}}</h2>
             <ul>
-                <li *ngFor="let link of group.value">
+                <li *ngFor="let link of group.value | filterIcon">
                     <a [href]="link.url" target="_blank">
-                        <ng-container *ngIf="link.clazz; else logoTemplate">
-                            <fa-icon [icon]="link.clazz"></fa-icon>
+                        <ng-container>
+                            <img [src]="link.logo" [alt]="link.name.slice(0,2)" class="icon">
                         </ng-container>
-                        <ng-template #logoTemplate>
-                            <img *ngIf="link.logo" [src]="link.logo" alt="<logo>" class="icon">
-                        </ng-template>
                     </a>
                 </li>
             </ul>

@@ -9,7 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SkillsComponent } from './skills/skills.component';
 import { NavibarComponent } from './navibar/navibar.component';
 import { SocialComponent } from './social/social.component';
-
+import { provideHttpClient } from '@angular/common/http';
+import { IconPipe } from '../pipes/icon/icon.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SocialComponent } from './social/social.component';
     AboutmeComponent,
     SkillsComponent,
     NavibarComponent,
-    SocialComponent
+    SocialComponent,
+    IconPipe
   ],
   imports: [
     BrowserModule,
@@ -25,8 +27,10 @@ import { SocialComponent } from './social/social.component';
     FontAwesomeModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
