@@ -12,6 +12,8 @@ import { SocialComponent } from './social/social.component';
 import { provideHttpClient } from '@angular/common/http';
 import { IconPipe } from '../pipes/icon/icon.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SkyblockComponent } from './skyblock/skyblock.component';
+import { FunComponent } from './fun/fun.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NavibarComponent,
     SocialComponent,
     IconPipe,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SkyblockComponent,
+    FunComponent
   ],
   imports: [
     BrowserModule,

@@ -3,11 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { SocialComponent } from './social/social.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { animation } from '@angular/animations';
+import { SkyblockComponent } from './skyblock/skyblock.component';
+import { FunComponent } from './fun/fun.component';
 
 const routes: Routes = [
   { path: '', component: AboutmeComponent, title: "Welcome to my page", data: {animation: 'HomePage'} },
   { path: 'socials', component: SocialComponent, title: "My social medias" },
+  { path: 'skyblock', component: SkyblockComponent, title: "Skyblock Simulation" },
+  { path: 'fun', component: FunComponent, title: "Fun stuffs" },
   { path: '**', component: PageNotFoundComponent, title: "Ooopsie woospie you made a fucky wucky" }
 ];
 
