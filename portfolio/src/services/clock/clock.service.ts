@@ -4,7 +4,7 @@ import { BehaviorSubject, interval, Observable } from 'rxjs';
 import { map, startWith, switchMap, tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClockService {
   private timeSubject = new BehaviorSubject<string>('');
@@ -23,6 +23,41 @@ export class ClockService {
     return this.timeSubject.asObservable();
   }
 
+  private timeEmoji(hour: number) {
+    if (hour < 0 || hour >= 24) {
+      return '🕒';
+    }
+
+    const emojis = [
+      '🌙',
+      '🌙',
+      '🌙',
+      '🌙',
+      '🌙',
+      '🌙',
+      '🌅',
+      '🌅',
+      '☀️',
+      '☀️',
+      '☀️',
+      '☀️',
+      '☀️',
+      '🌞',
+      '🌞',
+      '🌞',
+      '🌞',
+      '🌞',
+      '🌆',
+      '🌆',
+      '🌃',
+      '🌃',
+      '🌃',
+      '🌃',
+    ];
+
+    return emojis[hour];
+  }
+
   private updateTime() {
     const now = new Date();
 
@@ -37,7 +72,7 @@ export class ClockService {
     // Toggle the visibility of the colon every second
     this.colonVisible = !this.colonVisible;
 
-    const timeString = `${day}.${month}.${year} ${hours}${this.colonVisible ? ':' : ' '}${minutes}${!this.colonVisible ? ':' : ' '}${seconds}`;
+    const timeString = `${day}.${month}.${year} ${this.timeEmoji(now.getHours())}${hours}${this.colonVisible ? ':' : ' '}${minutes}${!this.colonVisible ? ':' : ' '}${seconds}`;
     this.timeSubject.next(timeString);
   }
 }

@@ -8,17 +8,24 @@
     font-family: Arial, sans-serif;
     padding: 20px;
     border-radius: 8px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 .social-group {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .social-group h2 {
-    border-bottom: 2px solid #007BFF;
-    padding-bottom: 10px;
+
     font-size: 48px;
     color: #333;
+    display: inline-block;
+    text-align: center;
 }
 
 ul {
@@ -26,6 +33,7 @@ ul {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
 }
 
