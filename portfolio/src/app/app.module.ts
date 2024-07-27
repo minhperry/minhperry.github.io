@@ -14,6 +14,7 @@ import { IconPipe } from '../pipes/icon/icon.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SkyblockComponent } from './skyblock/skyblock.component';
 import { FunComponent } from './fun/fun.component';
+import { TerminalComponent } from './skyblock/terminal/terminal.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FunComponent } from './fun/fun.component';
     IconPipe,
     PageNotFoundComponent,
     SkyblockComponent,
-    FunComponent
+    FunComponent,
+    TerminalComponent
   ],
   imports: [
     BrowserModule,

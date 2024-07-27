@@ -1,3 +1,14 @@
-<div class="container">
-
+<div class="game-container">
+    <div class="side-panel">
+        <div class="game-description">
+            <!-- Placeholder for dynamic game description -->
+        </div>
+        <div class="game-controls">
+            <app-timer></app-timer>
+            <button (click)="restartGame()">Restart</button>
+        </div>
+    </div>
+    <div class="main-panel">
+        <terminal [config]="currentGameConfig"></terminal>
+    </div>
 </div>
