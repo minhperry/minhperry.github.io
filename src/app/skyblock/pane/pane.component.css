@@ -1,0 +1,27 @@
+.grid {
+    display: grid;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid .green {
+    background-image: url('../../../../public/icons/green-pane.png');
+}
+
+.grid .red {
+    background-image: url('../../../../public/icons/red-pane.png');
+}
+
+.pane {
+    width: 48px;
+    height: 48px;
+    margin: 3px;
+}
+
+.pane:hover {
+    cursor: pointer;
+    filter: brightness(1.4);
+}

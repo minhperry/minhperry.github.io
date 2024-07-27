@@ -14,7 +14,7 @@ import { IconPipe } from '../pipes/icon/icon.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SkyblockComponent } from './skyblock/skyblock.component';
 import { FunComponent } from './fun/fun.component';
-import { TerminalComponent } from './skyblock/terminal/terminal.component';
+import { PaneComponent } from './skyblock/pane/pane.component';
 import { TimerComponent } from './skyblock/timer/timer.component';
 
 @NgModule({
@@ -28,7 +28,7 @@ import { TimerComponent } from './skyblock/timer/timer.component';
     PageNotFoundComponent,
     SkyblockComponent,
     FunComponent,
-    TerminalComponent,
+    PaneComponent,
     TimerComponent
   ],
   imports: [

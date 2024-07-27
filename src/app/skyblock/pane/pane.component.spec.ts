@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TerminalComponent } from './terminal.component';
+import { TerminalComponent } from './pane.component';
 
 describe('TerminalComponent', () => {
   let component: TerminalComponent;

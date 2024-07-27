@@ -8,8 +8,8 @@ import { FunComponent } from './fun/fun.component';
 
 const routes: Routes = [
   { path: '', component: AboutmeComponent, title: "Welcome to my page", data: {animation: 'HomePage'} },
-  { path: 'socials', component: SocialComponent, title: "My social medias" },
   { path: 'skyblock', component: SkyblockComponent, title: "Skyblock Simulation" },
+  { path: 'socials', component: SocialComponent, title: "My social medias" },
   { path: 'fun', component: FunComponent, title: "Fun stuffs" },
   { path: '**', component: PageNotFoundComponent, title: "Ooopsie woospie you made a fucky wucky" }
 ];
