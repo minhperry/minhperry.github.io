@@ -15,7 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SkyblockComponent } from './skyblock/skyblock.component';
 import { FunComponent } from './fun/fun.component';
 import { PaneComponent } from './skyblock/pane/pane.component';
-import { TimerComponent } from './skyblock/timer/timer.component';
+import { DescComponent } from './skyblock/desc/desc.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { TimerComponent } from './skyblock/timer/timer.component';
     SkyblockComponent,
     FunComponent,
     PaneComponent,
-    TimerComponent
+    DescComponent
   ],
   imports: [
     BrowserModule,

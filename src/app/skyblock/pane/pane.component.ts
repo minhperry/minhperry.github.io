@@ -32,7 +32,6 @@ export class PaneComponent {
     this.started = true;
     this.grid[row][col] = this.grid[row][col] === CellState.ON ? CellState.OFF : CellState.ON;
     this.checkAllOn();
-    console.debug("Clicked on cell", row, col);
   } 
 
   checkAllOn() {
