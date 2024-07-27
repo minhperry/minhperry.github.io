@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GameService } from '../../services/game/game.service';
 
 @Component({
   selector: 'app-skyblock',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './skyblock.component.css'
 })
 export class SkyblockComponent {
-
+  currentGameConfig: any;
+  constructor(gameService: GameService) {}
 }

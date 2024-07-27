@@ -1,1 +1,7 @@
-<p>terminal works!</p>
+<div class="grid">
+    <div *ngFor="let row of grid; let i = index" class="grid-row">
+        <div *ngFor="let cell of row; let j = index" class="grid-cell" [ngClass]="cell.class"
+            (click)="onCellClick(i, j)">
+        </div>
+    </div>
+</div>
