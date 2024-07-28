@@ -15,7 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SkyblockComponent } from './skyblock/skyblock.component';
 import { FunComponent } from './fun/fun.component';
 import { PaneComponent } from './skyblock/pane/pane.component';
-import { DescComponent } from './skyblock/desc/desc.component';
+import { PaneGameComponent } from './skyblock/panegame/panegame.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { DescComponent } from './skyblock/desc/desc.component';
     SkyblockComponent,
     FunComponent,
     PaneComponent,
-    DescComponent
+    PaneGameComponent
   ],
   imports: [
     BrowserModule,

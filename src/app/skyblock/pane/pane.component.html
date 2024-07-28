@@ -1,6 +1,6 @@
 <div class="grid">
     <div *ngFor="let row of grid; let i = index" class="row">
-        <div *ngFor="let cell of row; let j = index" class="pane" [class]="cell" (click)="onCellClick(i, j)">
+        <div *ngFor="let cell of row; let j = index" class="pane" [class]="cell" (click)="handleCellClick(i, j)">
         </div>
     </div>
 </div>
