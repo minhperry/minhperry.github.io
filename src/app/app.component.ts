@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, transition, animate, style, query } from '@angular/animations';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 
 @Component({
   selector: 'root',
@@ -16,8 +16,19 @@ import { RouterOutlet } from '@angular/router';
   ]
 })
 export class AppComponent {
+  constructor(private _router: Router) {
+  }
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
+
+  hasRoute(routes: string[]) { 
+    for (let route of routes) {
+      if (this._router.url.includes(route)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

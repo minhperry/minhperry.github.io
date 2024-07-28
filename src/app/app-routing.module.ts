@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'skyblock', component: SkyblockComponent, title: "Skyblock Simulation" },
   { path: 'socials', component: SocialComponent, title: "My social medias" },
   { path: 'fun', component: FunComponent, title: "Fun stuffs" },
+  { path: 'changelog', component: FunComponent, title: "Changelog" },
   { path: '**', component: PageNotFoundComponent, title: "Ooopsie woospie you made a fucky wucky" }
 ];
 

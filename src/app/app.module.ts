@@ -16,6 +16,7 @@ import { SkyblockComponent } from './skyblock/skyblock.component';
 import { FunComponent } from './fun/fun.component';
 import { PaneComponent } from './skyblock/pane/pane.component';
 import { PaneGameComponent } from './skyblock/panegame/panegame.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PaneGameComponent } from './skyblock/panegame/panegame.component';
     SkyblockComponent,
     FunComponent,
     PaneComponent,
-    PaneGameComponent
+    PaneGameComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

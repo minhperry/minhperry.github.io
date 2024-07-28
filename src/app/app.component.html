@@ -1,4 +1,7 @@
-<navibar />
-<div [@routeAnimations]="prepareRoute(outlet)">
-    <router-outlet #outlet="outlet"></router-outlet>
+<div class="wraper">
+    <navibar *ngIf="!hasRoute(['skyblock', 'changelog'])" />
+    <div class="content" [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+    <app-footer />
 </div>

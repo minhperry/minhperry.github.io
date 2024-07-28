@@ -27,6 +27,7 @@ html, body {
     height: 100%;
     background-color: var(--primBackgroundColor);
     color: var(--primTextColor);
+    margin: 0;
 }
 
 body {
