@@ -43,3 +43,6 @@ Thumbs.db
 
 # Node shits
 node_modules/*
+
+# Cloudflare Workers
+backend/node_modules
