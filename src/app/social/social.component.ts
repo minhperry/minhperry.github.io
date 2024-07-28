@@ -34,7 +34,6 @@ export class SocialComponent implements OnInit {
       this.jsonService.get(this.socialPath).subscribe(
         (data: Groups) => {
             this.socials = data;
-            console.log(this.socials);
         },
         (error) => {
             console.error(error);
