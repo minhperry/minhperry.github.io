@@ -8,7 +8,7 @@ import { Groups } from '../../interfaces/links';
   providedIn: 'root'
 })
 export class SocialService {
-  private api = environment.endpoint + 'socials'
+  private api = environment.apiUrl + 'socials'
 
   headers = {
     'Access-Control-Allow-Origin': '*',
