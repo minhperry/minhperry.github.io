@@ -23,6 +23,7 @@ export class SocialComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error:', error);
+          this.socials = {codes: [], network: [], media: [], games: [], contacts: []};
         }
     });
   }
