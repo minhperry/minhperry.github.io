@@ -12,7 +12,7 @@
   align-items: flex-start;
   padding: 10px 20px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  z-index: 100;
+  z-index: 1000;
   box-sizing: border-box;
   border-bottom: solid var(--color-foam);
   margin-top: 1px;
@@ -96,7 +96,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background-color: rgba(146, 146, 146, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   z-index: -1;
   transition: width 0.5s ease;
 }
