@@ -10,9 +10,13 @@ import { Groups } from '../../interfaces/links';
 export class SocialService {
   private api = environment.endpoint + 'socials'
 
+  headers = {
+    'Allow-Control-Allow-Origin': '*.pages.dev',
+  }
+
   constructor(private http: HttpClient) { }
 
   get(): Observable<Groups> { 
-    return this.http.get<Groups>(this.api);
+    return this.http.get<Groups>(this.api, { headers: this.headers });
   }
 }
