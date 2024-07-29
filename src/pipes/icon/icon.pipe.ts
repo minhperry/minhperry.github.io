@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Links } from '../../app/social/social.component';
+import { Links } from '../../interfaces/links';
 
 @Pipe({
   name: 'filterIcon'

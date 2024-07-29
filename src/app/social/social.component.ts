@@ -1,21 +1,8 @@
 import { KeyValue } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { JsonService } from '../../services/json/json.service';
-
-export interface Links {
-  name: string;
-  url: string;
-  logo: string;
-  hidden: boolean;
-}
-
-interface Groups {
-  codes: Links[];
-  network: Links[];
-  media: Links[];
-  games: Links[];
-  contacts: Links[];
-}
+import { Groups } from '../../interfaces/links';
+import { SocialService } from '../../services/social/social.service';
 
 @Component({
   selector: 'social',
@@ -23,22 +10,21 @@ interface Groups {
   styleUrl: './social.component.css'
 })
 export class SocialComponent implements OnInit {
-  socialPath = 'data/socials.json';
   socials: Groups | undefined;
 
-  constructor(private jsonService: JsonService<Groups>) {
+  constructor(private socialService: SocialService) {
     
   }
 
   ngOnInit(): void {
-      this.jsonService.get(this.socialPath).subscribe(
-        (data: Groups) => {
-            this.socials = data;
+      this.socialService.get().subscribe({
+        next: (data) => {
+          this.socials = data;
         },
-        (error) => {
-            console.error(error);
+        error: (error) => {
+          console.error('Error:', error);
         }
-    );
+    });
   }
 
   asIs() {return 0}
