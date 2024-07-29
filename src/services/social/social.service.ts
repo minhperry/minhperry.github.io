@@ -8,7 +8,7 @@ import { Groups } from '../../interfaces/links';
   providedIn: 'root'
 })
 export class SocialService {
-  private api = environment.endpoint + '/socials'
+  private api = environment.endpoint + 'socials'
 
   constructor(private http: HttpClient) { }
 
