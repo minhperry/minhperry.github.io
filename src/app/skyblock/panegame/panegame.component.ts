@@ -1,8 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
-export enum CellState {
-  ON = 'green', OFF = 'red'
-}
+import { Cell, CellState } from '../../../interfaces/cell';
 
 @Component({
   selector: 'panegame',
@@ -10,7 +7,7 @@ export enum CellState {
   styleUrl: './panegame.component.css'
 })
 export class PaneGameComponent implements OnInit, OnDestroy {
-  grid: CellState[][] = [];
+  grid: Cell[][] = [];
   timer: number = 0;
   intervalId: any;
   started: boolean = false;
@@ -27,7 +24,7 @@ export class PaneGameComponent implements OnInit, OnDestroy {
       this.stopTimer()
   }
 
-  private genRandomOn(grid: CellState[][]): CellState[][] {
+  private genRandomOn(grid: Cell[][]): Cell[][] {
     const totalCells = this.width * this.height;
     const totalOnCells = Math.floor(this.chance * totalCells);
     let onCellsRemaining = totalOnCells;
@@ -36,8 +33,8 @@ export class PaneGameComponent implements OnInit, OnDestroy {
       const row = Math.floor(Math.random() * this.height);
       const col = Math.floor(Math.random() * this.width);
 
-      if (this.grid[row][col] === CellState.OFF) {
-        this.grid[row][col] = CellState.ON;
+      if (this.grid[row][col].state === CellState.OFF) {
+        this.grid[row][col].state = CellState.ON;
         onCellsRemaining--;
       }
     }
@@ -46,7 +43,7 @@ export class PaneGameComponent implements OnInit, OnDestroy {
 
   initializeGrid() {
     this.grid = Array.from({ length: this.height }, () => 
-      Array.from({ length: this.width }, () => CellState.OFF)
+      Array.from({ length: this.width }, () => ({ state: CellState.OFF }))
     );
     this.grid = this.genRandomOn(this.grid);
   }
@@ -80,7 +77,7 @@ export class PaneGameComponent implements OnInit, OnDestroy {
     }
 
     const { row, col } = cell;
-    this.grid[row][col] = this.grid[row][col] === CellState.ON ? CellState.OFF : CellState.ON;
+    this.grid[row][col].state = this.grid[row][col].state === CellState.ON ? CellState.OFF : CellState.ON;
 
     if (this.checkAllOn()) {
       this.stopTimer();
@@ -88,6 +85,6 @@ export class PaneGameComponent implements OnInit, OnDestroy {
   }
 
   private checkAllOn(): boolean { 
-    return this.grid.every(row => row.every(cell => cell === CellState.ON));
+    return this.grid.every(row => row.every(cell => cell.state === CellState.ON));
   }
 }

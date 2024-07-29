@@ -34,3 +34,11 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('../public/fonts/minecraftfont.woff'), url('../public/fonts/MinecraftTen.woff');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
