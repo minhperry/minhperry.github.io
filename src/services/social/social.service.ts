@@ -11,7 +11,7 @@ export class SocialService {
   private api = environment.endpoint + 'socials'
 
   headers = {
-    'Access-Control-Allow-Origin': '*.pages.dev',
+    'Access-Control-Allow-Origin': '*',
   }
 
   constructor(private http: HttpClient) { }
