@@ -10,3 +10,7 @@
     max-width: 800px;
     margin: 16px auto;
 }
+
+button {
+    margin: 5px;
+}

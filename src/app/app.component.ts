@@ -40,6 +40,6 @@ export class AppComponent implements OnInit {
   }
 
   shouldShow() {
-    return !this.hasRoute(['skyblock', 'changelog']) && this.publicMode
+    return !this.hasRoute(['skyblock', 'changelog', '404']); 
   }
 }

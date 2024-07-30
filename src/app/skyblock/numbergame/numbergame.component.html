@@ -9,6 +9,7 @@
             {{ timer.toFixed(1) }}s
         </div>
         <button (click)="onRestartButtonClick()">Restart</button>
+        <button>Toggle</button>
     </div>
     <div class="right-panel">
         <pane [grid]="grid" (cellClicked)="onCellClicked($event)"></pane>
