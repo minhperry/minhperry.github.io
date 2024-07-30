@@ -8,7 +8,7 @@ import { PublicModeHandlerService } from '../../services/http/public-mode-handle
   styleUrl: './page-not-found.component.css'
 })
 export class PageNotFoundComponent implements OnInit {
-  isPublic: boolean = false;
+  isPublic: boolean | null = null;
 
   constructor(private phs: PublicModeHandlerService) {}
 
