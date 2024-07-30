@@ -17,7 +17,7 @@ import { PublicModeHandlerService } from '../services/http/public-mode-handler.s
   ]
 })
 export class AppComponent implements OnInit {
-  publicMode: boolean = false;
+  publicMode: boolean | null = null;
 
   constructor(private _router: Router, private phs: PublicModeHandlerService) {
   }
