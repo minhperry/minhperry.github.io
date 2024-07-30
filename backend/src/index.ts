@@ -13,7 +13,7 @@ const router = AutoRouter<IRequest, CFArgs>({
   finally: [corsify]
 })
 
-let isPublic = false
+let isPublic = true
 
 router
   .get('/socials', getSocialData)

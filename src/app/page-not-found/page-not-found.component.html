@@ -2,7 +2,7 @@
     <div class="title">
         Oopsie woopsie, you are not supposed to be here!
     </div>
-    <div class="back">
+    <div class="back" *ngIf="isPublic">
         <a routerLink="/">Go back to safety</a>
     </div>
 </div>

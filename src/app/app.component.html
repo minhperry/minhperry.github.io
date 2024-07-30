@@ -1,7 +1,7 @@
 <div class="wraper">
-    <navibar *ngIf="!hasRoute(['skyblock', 'changelog'])" />
+    <navibar *ngIf="shouldShow()" />
     <div class="content" [@routeAnimations]="prepareRoute(outlet)">
         <router-outlet #outlet="outlet"></router-outlet>
     </div>
-    <app-footer *ngIf="!hasRoute(['skyblock', 'changelog'])" />
+    <app-footer *ngIf="shouldShow()" />
 </div>

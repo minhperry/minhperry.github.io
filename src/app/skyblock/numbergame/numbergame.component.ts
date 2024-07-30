@@ -73,6 +73,7 @@ export class NumbergameComponent implements OnInit, OnDestroy {
     this.timer = 0;
     this.started = false;
     this.initializeGrid();
+    this.next = 1;
   }
 
   onCellClicked(cell: { row: number, col: number }) {
