@@ -7,7 +7,7 @@ import { FunComponent } from './fun/fun.component';
 
 const routes: Routes = [
   { 
-    path: 'home', 
+    path: '', 
     component: AboutmeComponent, 
     title: "Welcome to my page",
     data: {animation: 'HomePage'},

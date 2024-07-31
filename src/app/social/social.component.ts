@@ -11,6 +11,7 @@ import { SocialService } from '../../services/social/social.service';
 })
 export class SocialComponent implements OnInit {
   socials: Groups | undefined;
+  failed: boolean | null = null;
 
   constructor(private socialService: SocialService) {
     
@@ -20,10 +21,11 @@ export class SocialComponent implements OnInit {
       this.socialService.get().subscribe({
         next: (data) => {
           this.socials = data;
+          this.failed = false;
         },
         error: (error) => {
-          console.error('Error:', error);
           this.socials = {codes: [], network: [], media: [], games: [], contacts: []};
+          this.failed = true;
         }
     });
   }
