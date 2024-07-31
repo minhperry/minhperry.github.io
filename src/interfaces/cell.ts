@@ -5,5 +5,6 @@ export interface Cell {
 
 export enum CellState {
     ON = 'green',
-    OFF = 'red'
+    OFF = 'red',
+    NEXT = 'overlay',
 }

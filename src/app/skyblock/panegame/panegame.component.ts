@@ -77,7 +77,7 @@ export class PaneGameComponent implements OnInit, OnDestroy {
     }
 
     const { row, col } = cell;
-    this.grid[row][col].state = this.grid[row][col].state === CellState.ON ? CellState.OFF : CellState.ON;
+    this.grid[row][col].state = this.grid[row][col].state === CellState.OFF ? CellState.ON : CellState.ON;
 
     if (this.checkAllOn()) {
       this.stopTimer();

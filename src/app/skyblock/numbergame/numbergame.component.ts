@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Cell, CellState } from '../../../interfaces/cell';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'numbergame',
@@ -11,13 +12,16 @@ export class NumbergameComponent implements OnInit, OnDestroy {
   timer: number = 0;
   intervalId: any;
   started: boolean = false;
-
+  stupid: boolean = false;
   next: number = 1;
 
   width = 7;
   height = 2;
   size = this.width * this.height;
-  numberMap: Map<{ row: number, col: number }, number> = new Map();
+  grid2NumMap: Map<{ row: number, col: number }, number> = new Map();
+  num2GridMap: Map<number, { row: number, col: number }> = new Map();
+
+  constructor(private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
       this.initializeGrid()
@@ -43,14 +47,18 @@ export class NumbergameComponent implements OnInit, OnDestroy {
         grid$.push([]);
       }
       grid$[row].push({ number: numbers[i], state: CellState.OFF });
-      this.numberMap.set({ row, col }, numbers[i]);
+      this.grid2NumMap.set({ row, col }, numbers[i]);
+      this.num2GridMap.set(numbers[i], { row, col });
     }
-    console.log(this.numberMap);
     return grid$;
   }
 
   initializeGrid() {
     this.grid = this.genGrid();
+    if (this.stupid) {
+      const {row, col} = this.num2GridMap.get(1)!;
+      this.grid[row][col].state = CellState.NEXT;
+    }
   }
 
   startTimer() {
@@ -68,14 +76,6 @@ export class NumbergameComponent implements OnInit, OnDestroy {
     }
   }
 
-  onRestartButtonClick() {
-    this.stopTimer();
-    this.timer = 0;
-    this.started = false;
-    this.initializeGrid();
-    this.next = 1;
-  }
-
   onCellClicked(cell: { row: number, col: number }) {
     if (!this.started) {
       this.started = true;
@@ -85,15 +85,39 @@ export class NumbergameComponent implements OnInit, OnDestroy {
     const { row, col } = cell;
     const clickedNumber = this.grid[row][col].number;
 
-    // Check if the clicked cell number matches the next number to be clicked
     if (clickedNumber === this.next) {
-      this.grid[row][col].state = CellState.ON;  // Mark the cell as 'ON'
-      this.next += 1;  // Increment to the next number
+      this.grid[row][col].state = CellState.ON;
+      this.next++;
 
-      // Check if the game is completed
+      if (this.stupid && this.next <= this.size) {
+        const nxt = this.num2GridMap.get(this.next);
+        if (nxt) {
+          this.grid[nxt.row][nxt.col].state = CellState.NEXT;
+        }
+      }
+
       if (this.next > this.size) {
         this.stopTimer();
       }
     }
+  }
+
+  toggleStupidity() {
+    this.stupid = !this.stupid;
+    this.reRender();
+  }
+
+  onRestartButtonClick() {
+    this.stopTimer();
+    this.timer = 0;
+    this.started = false;
+    this.initializeGrid();
+    this.next = 1;
+    this.reRender();
+  }
+
+  reRender() {
+    this.grid = [...this.grid];
+    this.cd.detectChanges();
   }
 }

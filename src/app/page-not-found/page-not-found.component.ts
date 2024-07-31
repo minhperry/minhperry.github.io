@@ -19,6 +19,7 @@ export class PageNotFoundComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error:', error);
+          this.isPublic = false;
         }
       })
   }

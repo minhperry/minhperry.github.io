@@ -15,6 +15,10 @@
     background-image: url('../../../../public/icons/red-pane.png');
 }
 
+.grid .overlay {
+    background-image: url('../../../../public/icons/yellow-pane.png');
+}
+
 .pane {
     position: relative;
     width: 48px;
