@@ -16,7 +16,6 @@ export class NavibarComponent implements OnInit {
   naviLinks: NavLink[] = [
     { path: '/', label: 'Home' },
     { path: '/socials', label: 'Socials' },
-    // { path: '/skyblock', label: 'Skyblock Simulation' },
     { path: '/fun', label: 'Fun Stuffs' }
   ];
 

@@ -12,12 +12,8 @@ import { SocialComponent } from './social/social.component';
 import { provideHttpClient } from '@angular/common/http';
 import { IconPipe } from '../pipes/icon/icon.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SkyblockComponent } from './skyblock/skyblock.component';
 import { FunComponent } from './fun/fun.component';
-import { PaneComponent } from './skyblock/pane/pane.component';
-import { PaneGameComponent } from './skyblock/panegame/panegame.component';
 import { FooterComponent } from './footer/footer.component';
-import { NumbergameComponent } from './skyblock/numbergame/numbergame.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +24,8 @@ import { NumbergameComponent } from './skyblock/numbergame/numbergame.component'
     SocialComponent,
     IconPipe,
     PageNotFoundComponent,
-    SkyblockComponent,
     FunComponent,
-    PaneComponent,
-    PaneGameComponent,
     FooterComponent,
-    NumbergameComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger, transition, animate, style, query } from '@angular/animations';
+import { Component } from '@angular/core';
+import { trigger, transition, animate, style } from '@angular/animations';
 import { RouterOutlet, Router } from '@angular/router';
-import { PublicModeHandlerService } from '../services/http/public-mode-handler.service';
 
 @Component({
   selector: 'root',
@@ -16,30 +15,13 @@ import { PublicModeHandlerService } from '../services/http/public-mode-handler.s
     ])
   ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   publicMode: boolean | null = null;
 
-  constructor(private _router: Router, private phs: PublicModeHandlerService) {
-  }
-
-  ngOnInit(): void {
-      this.phs.get().subscribe(mode => this.publicMode = mode)
+  constructor(private _router: Router) {
   }
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
-  }
-
-  hasRoute(routes: string[]) { 
-    for (let route of routes) {
-      if (this._router.url.includes(route)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  shouldShow() {
-    return !this.hasRoute(['skyblock', 'changelog', '404']); 
   }
 }
