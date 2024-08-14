@@ -5,12 +5,18 @@ import { SocialComponent } from './social/social.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FunComponent } from './fun/fun.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
   { 
     path: '', 
-    component: AboutmeComponent, 
+    component: LandingComponent, 
     title: "Welcome to my page"
+  },
+  {
+    path: 'me',
+    component: AboutmeComponent,
+    title: "About me"
   },
   { 
     path: 'socials', 

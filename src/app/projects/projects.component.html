@@ -1,1 +1,11 @@
-<p>projects works!</p>
+<div class="container">
+    <h2 class="title">My Projects</h2>
+    <div class="list">
+        <div class="item" *ngFor="let project of projects">
+            <h3 class="each-title">{{ project.title }}</h3>
+            <p class="each-since" *ngIf="project.since">{{ project.since }}</p>
+            <p class="each-desc">{{ project.description }}</p>
+            <a [href]="project.link" class="each-link" target="_blank">View Project</a>
+        </div>
+    </div>
+</div>

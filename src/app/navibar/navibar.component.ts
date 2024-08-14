@@ -14,6 +14,7 @@ interface NavLink {
 export class NavibarComponent implements OnInit {
   naviLinks: NavLink[] = [
     { path: '/', label: 'Home' },
+    { path: '/me', label: 'About Me' },
     { path: '/projects', label: 'Projects' },
     { path: '/socials', label: 'Socials' },
     { path: '/fun', label: 'Fun Stuffs' }

@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FunComponent } from './fun/fun.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProjectsComponent } from './projects/projects.component';
     FunComponent,
     FooterComponent,
     ProjectsComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
