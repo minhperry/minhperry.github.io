@@ -47,6 +47,7 @@
   display: flex;
   justify-content: space-between;
   align-self: top;
+  font-weight: bold;
 }
 
 .navibar .title a {
@@ -63,7 +64,7 @@
   justify-content: left;
   flex-basis: 100%;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 3px;
 }
 
 .navibar .menu .play {
@@ -81,14 +82,14 @@
   text-decoration: none;
   margin: 0 15px;
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 3px;
   transition: color 0.5s, background-color 0.5s, transform 0.5s;
 }
 
 .navibar .menu .menuitem:hover {
-  background-color: var(--hoverColor);
-  color: var(--color-surface);
-  transform: scale(1.1);
+  background-color: rgba(172, 255, 204, 0.737);
+  color: black;
+  transform: scale(1.15);
 }
 
 .navibar .overlay {

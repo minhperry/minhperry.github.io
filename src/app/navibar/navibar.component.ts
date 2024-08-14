@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ClockService } from '../../services/clock/clock.service';
-import { Observable } from 'rxjs';
 
 interface NavLink {
   path: string;
@@ -15,13 +14,14 @@ interface NavLink {
 export class NavibarComponent implements OnInit {
   naviLinks: NavLink[] = [
     { path: '/', label: 'Home' },
+    { path: '/projects', label: 'Projects' },
     { path: '/socials', label: 'Socials' },
     { path: '/fun', label: 'Fun Stuffs' }
   ];
 
   private audio: HTMLAudioElement;
   overlayWidth: number = 0;
-  original: string = 'Me Myself and I';
+  original: string = 'Tuan Minh\'s  Website';
   text: string = this.original;
   hovered: boolean = false;
   time: string = '';

@@ -3,7 +3,7 @@
 
   <div class="header">
     <div class="title">
-      <a routerLink="/home">{{ text }}</a>
+      <a routerLink="/">{{ text }}</a>
     </div>
     <div class="time-display">
       <span>
@@ -14,6 +14,6 @@
 
   <div class="menu">
     <a class="menuitem" *ngFor="let link of naviLinks" [routerLink]="link.path">{{link.label}}</a>
-    <a class="play" (mouseover)="playGangnamStyle()" (mouseout)="pauseGangnamStyle()">Play</a>
+    <!--a class="play" (mouseover)="playGangnamStyle()" (mouseout)="pauseGangnamStyle()">Play</a-->
   </div>
 </div>

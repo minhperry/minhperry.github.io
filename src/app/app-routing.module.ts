@@ -4,13 +4,13 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
 import { SocialComponent } from './social/social.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FunComponent } from './fun/fun.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 const routes: Routes = [
   { 
     path: '', 
     component: AboutmeComponent, 
-    title: "Welcome to my page",
-    data: {animation: 'HomePage'},
+    title: "Welcome to my page"
   },
   { 
     path: 'socials', 
@@ -31,6 +31,11 @@ const routes: Routes = [
     path: '404',
     component: PageNotFoundComponent,
     title: "404 Not Found",
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent,
+    title: "My projects",
   },
   { 
     path: '**', 

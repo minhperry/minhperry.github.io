@@ -14,6 +14,7 @@ import { IconPipe } from '../pipes/icon/icon.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FunComponent } from './fun/fun.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
     PageNotFoundComponent,
     FunComponent,
     FooterComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
