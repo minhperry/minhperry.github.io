@@ -1,4 +1,9 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+interface PixivBackground {
+  loc: string,
+  id: string
+}
 
 @Component({
   selector: 'app-landing',
@@ -6,12 +11,19 @@ import { Component, ElementRef, OnInit } from '@angular/core';
   styleUrl: './landing.component.scss'
 })
 export class LandingComponent implements OnInit{
-  private backgrounds: string[] = [
-    'https://www.bucuti.com/storage/app/media/screensavers/dining-desktop.jpg',
-    'https://www.bucuti.com/storage/app/media/screensavers/sunset1-desktop.jpg',
-    'https://i.pinimg.com/originals/b7/f3/78/b7f378175ffba39680f53419dfb8d40f.jpg',
-    'https://pics.freeartbackgrounds.com/Night_Beach_Restauran_Background-1007.jpg'
+  pixivBase = 'https://www.pixiv.net/en/artworks/'
+  private backgrounds: PixivBackground[] = [
+    { loc: 'backgrounds/1.jpg', id: '121465871'},
+    { loc: 'backgrounds/2.jpg', id: '121402278'},
+    { loc: 'backgrounds/3.jpg', id: '120856704'},
+    { loc: 'backgrounds/4.jpg', id: '114034665'},
+    { loc: 'backgrounds/5.jpg', id: '101967216'},
+    { loc: 'backgrounds/6.jpg', id: '119088266'},
+    { loc: 'backgrounds/7.jpg', id: '115829752'}
   ];
+  private secret = { loc: 'backgrounds/secret.jpg', id: '113608935' };
+
+  currentPivixID: string = '';
 
   ngOnInit(): void {
       this.setrRandomBG()
@@ -19,7 +31,8 @@ export class LandingComponent implements OnInit{
 
   setrRandomBG() {
     const randomIndex = Math.floor(Math.random() * this.backgrounds.length);
-    const selectedBackground = this.backgrounds[randomIndex];
+    const selectedBackground = this.backgrounds[randomIndex].loc;
+    this.currentPivixID = this.backgrounds[randomIndex].id;
     document.querySelector('.landing-container')!.setAttribute('style', `background-image: url(${selectedBackground});`);
   }
 }
