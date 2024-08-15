@@ -30,6 +30,12 @@ export class LandingComponent implements OnInit{
   }
 
   setrRandomBG() {
+    if (Math.random() < 0.01) {
+      document.querySelector('.landing-container')!.setAttribute('style', `background-image: url(${this.secret.loc});`);
+      this.currentPivixID = this.secret.id;
+      return;
+    }
+
     const randomIndex = Math.floor(Math.random() * this.backgrounds.length);
     const selectedBackground = this.backgrounds[randomIndex].loc;
     this.currentPivixID = this.backgrounds[randomIndex].id;
