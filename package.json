@@ -26,6 +26,7 @@
     "eslint": "^9.7.0",
     "itty-router": "^5.0.17",
     "ng-angular-popup": "^0.6.2",
+    "ng2-pdf-viewer": "^10.2.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FunComponent } from './fun/fun.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { LandingComponent } from './landing/landing.component';
+import { NgnhatanhComponent } from './ngnhatanh/ngnhatanh.component';
 
 const routes: Routes = [
   { 
@@ -42,6 +43,11 @@ const routes: Routes = [
     path: 'projects',
     component: ProjectsComponent,
     title: "My projects",
+  },
+  {
+    path: 'nna/:sach',
+    component: NgnhatanhComponent,
+    title: "Sach Nguyen Nhat Anh",
   },
   { 
     path: '**', 

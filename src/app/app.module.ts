@@ -16,6 +16,10 @@ import { FunComponent } from './fun/fun.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { LandingComponent } from './landing/landing.component';
+import { NgnhatanhComponent } from './ngnhatanh/ngnhatanh.component';
+
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -30,11 +34,13 @@ import { LandingComponent } from './landing/landing.component';
     FooterComponent,
     ProjectsComponent,
     LandingComponent,
+    NgnhatanhComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    PdfViewerModule
   ],
   providers: [
     provideAnimationsAsync(),
@@ -44,3 +50,5 @@ import { LandingComponent } from './landing/landing.component';
 })
 export class AppModule {
 }
+
+platformBrowserDynamic().bootstrapModule(AppModule)
