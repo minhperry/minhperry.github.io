@@ -13,7 +13,7 @@
   <div class="menu">
     <a class="menuitem" *ngFor="let link of naviLinks" [routerLink]="link.path">{{link.label}}</a>
 
-    <a class="login" (click)="openDialog()">Recruiter? Login</a>
+    <a [class]="loginButtonClass" (click)="processClick()">{{ loginButtonText }}</a>
     <!--a class="play" (mouseover)="playGangnamStyle()" (mouseout)="pauseGangnamStyle()">Play</a-->
   </div>
 </div>

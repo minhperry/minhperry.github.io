@@ -27,24 +27,47 @@ export class NavibarComponent implements OnInit {
   text: string = this.original;
   hovered: boolean = false;
   time: string = ''
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean;
+  loginButtonText: string = '';
 
-  constructor(private clockService: ClockService, private dialog: MatDialog, private authService: AuthService) {}
+  constructor(private clockService: ClockService, private dialog: MatDialog, private authService: AuthService) {
+    this.isLoggedIn = this.authService.isLoggedIn();
+    console.log('isLoggedIn', this.isLoggedIn);
+  }
 
   ngOnInit() {
-    this.isLoggedIn = this.authService.isLoggedIn();
+    this.updateText();
     this.clockService.getTime().subscribe(time => {
       this.time = time;
     });
   }
 
-  openDialog(): void {
+  private openDialog(): void {
     const dialogRef = this.dialog.open(LoginComponent, {
       width: '400px',
     });
 
     dialogRef.afterClosed().subscribe(() => {
       this.isLoggedIn = this.authService.isLoggedIn();
+      this.updateText();
     });
   }
+
+  processClick() {
+    if (this.isLoggedIn) {
+      this.authService.logout();
+      this.isLoggedIn = false;
+    } else {
+      this.openDialog();
+    }
+    this.updateText();
+  }
+
+  private updateText() {
+    this.loginButtonText = this.isLoggedIn ? 'Log Out' : 'Recruiter? Log In!';
+  }
+
+  get loginButtonClass() {
+    return this.isLoggedIn ? 'logout' : 'login';
+  }  
 }
