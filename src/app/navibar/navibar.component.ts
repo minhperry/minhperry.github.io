@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ClockService } from '../../services/clock/clock.service';
+import { AuthService } from '../../services/auth/auth.service';
+import { LoginComponent } from '../login/login.component';
+import { MatDialog } from '@angular/material/dialog';
 
 interface NavLink {
   path: string;
@@ -20,44 +23,28 @@ export class NavibarComponent implements OnInit {
     // { path: '/fun', label: 'Fun Stuffs' }
   ];
 
-  private audio: HTMLAudioElement;
-  overlayWidth: number = 0;
   original: string = 'Tuan Minh\'s  Website';
   text: string = this.original;
   hovered: boolean = false;
-  time: string = '';
+  time: string = ''
+  isLoggedIn: boolean = false;
 
-  constructor(private clockService: ClockService) {
-    this.audio = new Audio();
-    this.audio.src = 'audios/gangnamstyle2.mp3';
-    this.audio.load();
-  }
+  constructor(private clockService: ClockService, private dialog: MatDialog, private authService: AuthService) {}
 
   ngOnInit() {
-    this.audio.addEventListener('timeupdate', () => this.updateOverlayWidth());
+    this.isLoggedIn = this.authService.isLoggedIn();
     this.clockService.getTime().subscribe(time => {
       this.time = time;
     });
   }
 
-  playGangnamStyle() {
-    this.audio.volume = 0.3;
-    this.audio.play().catch( () => { 
-      this.text = 'Please allow audio for the best experience';
-      return;
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LoginComponent, {
+      width: '250px'
     });
-    this.text = 'OOPA GANGNAM STYLE';
-    this.hovered = true;
-  }
 
-  pauseGangnamStyle() {
-    this.audio.pause();
-    this.text = this.original;
-    this.hovered = false;
-  }
-
-  updateOverlayWidth() {
-    const percentage = (this.audio.currentTime / this.audio.duration) * 100;
-    this.overlayWidth = percentage;
+    dialogRef.afterClosed().subscribe(() => {
+      this.isLoggedIn = this.authService.isLoggedIn();
+    });
   }
 }

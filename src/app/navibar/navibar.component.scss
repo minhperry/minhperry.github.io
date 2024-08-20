@@ -1,11 +1,11 @@
-:host {
-  --bgColor: #4a90e2;
-  --hoverColor: var(--color-iris);
-}
+@import '../../styles.scss';
+
+$bgColor: $color-base;
+$hoverColor: $color-iris;
 
 .navibar {
   width: 100%;
-  background-color: var(--primBackgroundColor);
+  background-color: $bgColor;
   color: white;
   display: inline-block;
   justify-content: space-between;
@@ -15,88 +15,97 @@
   z-index: 1000;
   box-sizing: border-box;
   border-bottom: 3px solid rgba(225, 225, 225, 0.222);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    width: 100%;
+  }
+
+  .time-display {
+    align-self: flex-start;
+    display: flex;
+
+    span {
+      padding: 10px 20px;
+      color: $color-gold;
+      font-size: 24px;
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-self: top;
+    font-weight: bold;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      padding: 10px 20px;
+      transition: background-image 0.3s, color 0.3s;
+    }
+  }
+
+  .menu {
+    display: inline-flex;
+    justify-content: left;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 3px;
+
+    a {
+      color: $color-foam;
+      text-decoration: none;
+      margin: 0 15px;
+      padding: 10px 15px;
+      border-radius: 3px;
+      transition: color 0.5s, background-color 0.5s, transform 0.5s;
+    }
+
+    .menuitem {
+      &:hover {
+        background-color: rgba(172, 255, 204, 0.737);
+        color: black;
+        transform: scale(1.15);
+      }
+    }
+
+    .login:last-child {
+      margin-left: auto;
+      padding-bottom: 1px;
+
+      &:hover {
+        background-color: rgba(225, 225, 225, 0.222);
+        cursor: pointer;
+      }
+    }
+  }
 }
 
-.navibar .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.mat-dialog-container {
+  background-color: #ff0000;
+  /* Example background color */
+  color: #000000;
+  /* Example text color */
 }
 
-.navibar .header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: top;
-  width: 100%;
+.mat-dialog-title {
+  color: #3f51b5;
+  /* Example title color */
 }
 
-.navibar .time-display {
-  align-self: flex-start;
-  display: flex;
-}
-
-.navibar .time-display span {
-  padding: 10px 20px;
-  color: var(--color-gold);
-  font-size: 24px;
-}
-
-.navibar .title {
-  display: flex;
-  justify-content: space-between;
-  align-self: top;
-  font-weight: bold;
-}
-
-.navibar .title a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5em;
-  cursor: pointer;
-  padding: 10px 20px;
-  transition: background-image 0.3s, color 0.3s;
-}
-
-.navibar .menu {
-  display: inline-flex;
-  justify-content: left;
-  flex-basis: 100%;
-  width: 100%;
-  margin-top: 3px;
-}
-
-.navibar .menu .play {
-  transition: color 0.5s, background-color 0.5s, transform 0.5s;
-}
-
-.navibar .menu .play:hover {
-  background-color: #da5dd2;
-  color: black;
-  transform: scale(1.1);
-}
-
-.navibar .menu a {
-  color: var(--color-foam);
-  text-decoration: none;
-  margin: 0 15px;
-  padding: 10px 15px;
-  border-radius: 3px;
-  transition: color 0.5s, background-color 0.5s, transform 0.5s;
-}
-
-.navibar .menu .menuitem:hover {
-  background-color: rgba(172, 255, 204, 0.737);
-  color: black;
-  transform: scale(1.15);
-}
-
-.navibar .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: -1;
-  transition: width 0.5s ease;
+.mat-dialog-actions {
+  background-color: #ff5555;
+  /* Example actions background color */
 }

@@ -9,13 +9,23 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class LoginComponent {
   password: string = '';
+  showPassword: boolean = false;
+  error: string = '';
 
   constructor(
     private auth: AuthService,
     public dialogRef: MatDialogRef<LoginComponent>
   ) { }
 
-  onNoClick(): void {}
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
-  login(): void {}
+  login(): void {
+    alert('login with password')
+  }
+
+  toggleShow() {
+    this.showPassword = !this.showPassword
+  }
 }

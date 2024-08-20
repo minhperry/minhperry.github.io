@@ -29,7 +29,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { AuthService } from '../services/auth/auth.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -56,13 +56,13 @@ import { AuthService } from '../services/auth/auth.service';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [
     provideAnimationsAsync(),
     provideHttpClient(),
-    CookieService,
-    AuthService
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
