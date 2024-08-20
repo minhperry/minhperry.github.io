@@ -7,9 +7,9 @@
     <div class="bio">
       <h2>{{ name }}</h2>
       <p>{{ bio }} <img [src]="tuSvg" class="tu-do" /></p>
-      <ng-container *ngFor="let item in [born, address, phone]">
-        <p *ngIf="item">{{ item }}</p>
-      </ng-container>
+      <p *ngIf="born">DOB: {{ born }}</p>
+      <p *ngIf="address">Address: {{ address }}</p>
+      <p *ngIf="phone">Tel: {{ phone }}</p>
 
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
 
 type UndefableString = string | undefined; 
@@ -8,7 +8,7 @@ type UndefableString = string | undefined;
   templateUrl: './aboutme.component.html',
   styleUrl: './aboutme.component.scss'
 })
-export class AboutmeComponent {
+export class AboutmeComponent implements OnInit {
   name = "Phan, Tuan Minh 🇻🇳/🇩🇪"
   bio: string = '22 / Student @ ';
   tuSvg: string = 'icons/tudo.svg';
@@ -21,8 +21,10 @@ export class AboutmeComponent {
 
   constructor(private auth: AuthService) {
     this.isLoggedIn = this.auth.isLoggedIn();
+  }
 
-    if (true) {
+  ngOnInit(): void {
+    if (this.isLoggedIn) {
       this.born = '6th July 2002, Ha Noi, Viet Nam';
       this.address = 'Schulte-Heuthaus-Straße 47, 44379 Dortmund';
       this.phone = '+49 1577 897 0645';
