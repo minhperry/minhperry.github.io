@@ -9,7 +9,7 @@ interface NavLink {
 @Component({
   selector: 'navibar',
   templateUrl: './navibar.component.html',
-  styleUrl: './navibar.component.css',
+  styleUrl: './navibar.component.scss',
 })
 export class NavibarComponent implements OnInit {
   naviLinks: NavLink[] = [
@@ -17,7 +17,7 @@ export class NavibarComponent implements OnInit {
     { path: '/me', label: 'About Me' },
     { path: '/projects', label: 'Projects' },
     { path: '/socials', label: 'Socials' },
-    { path: '/fun', label: 'Fun Stuffs' }
+    // { path: '/fun', label: 'Fun Stuffs' }
   ];
 
   private audio: HTMLAudioElement;

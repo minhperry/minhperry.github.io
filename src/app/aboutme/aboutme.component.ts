@@ -10,5 +10,5 @@ export class AboutmeComponent {
   name = "Phan, Tuan Minh 🇻🇳/🇩🇪"
   bio: string = '22 / Student @ ';
   tuSvg: string = 'icons/tudo.svg';
-  profilePictureUrl: string = '192.png';
+  profilePictureUrl: string = 'self.png';
 }

@@ -21,6 +21,16 @@ import { NgnhatanhComponent } from './ngnhatanh/ngnhatanh.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
+import { CookieService } from 'ngx-cookie-service';
+import { LoginComponent } from './login/login.component';
+
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { AuthService } from '../services/auth/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,16 +45,24 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     ProjectsComponent,
     LandingComponent,
     NgnhatanhComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    PdfViewerModule
+    PdfViewerModule,
+    FormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [
     provideAnimationsAsync(),
-    provideHttpClient()
+    provideHttpClient(),
+    CookieService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
