@@ -8,7 +8,7 @@ import { Md5 } from 'ts-md5';
   providedIn: 'root'
 })
 export class AuthService {
-  private api = environment.apiUrl + '/validate/';
+  private api = environment.apiUrl + 'validate/';
   private cookieName = 'authMd5'
 
   constructor(private http: HttpClient, private cookieServ: CookieService) { }
@@ -30,7 +30,11 @@ export class AuthService {
     return this.cookieName;
   }
 
-  private md5(str: string): string {
+  getCookieService(): CookieService {
+    return this.cookieServ;
+  }
+
+  md5(str: string): string {
     return Md5.hashStr(str);
   }
 }

@@ -1,13 +1,10 @@
 <h1 mat-dialog-title>Login</h1>
 <div mat-dialog-content>
-    <mat-form-field>
+    <mat-form-field appearance="fill">
         <mat-label>Enter password</mat-label>
-        <input [type]="showPassword ? 'text' : 'password'" matInput [(ngModel)]="password" />
-        <button mat-icon-button (click)="toggleShow()">
-            <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
-        </button>
-        <mat-error *ngIf="error">{{ error }}</mat-error>
+        <input type="password" matInput [(ngModel)]="password" />
     </mat-form-field>
+    <div class="error" *ngIf="error">{{ error }}</div>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Cancel</button>

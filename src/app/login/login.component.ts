@@ -5,12 +5,13 @@ import { AuthService } from '../../services/auth/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.scss'
 })
 export class LoginComponent {
   password: string = '';
   showPassword: boolean = false;
   error: string = '';
+  baseFadeDuration: number = 1500;
 
   constructor(
     private auth: AuthService,
@@ -22,7 +23,31 @@ export class LoginComponent {
   }
 
   login(): void {
-    alert('login with password')
+    this.auth.login(this.password).subscribe( resp => {
+      console.log(resp);
+      if (resp.valid) {
+        this.auth.getCookieService().set(
+          this.auth.getCookieName(), 
+          this.auth.md5(this.password),
+          1
+        );
+        this.dialogRef.close();
+      } else {
+        this.error = 'Invalid password';
+        
+        setTimeout(() => {
+          const errorElement = document.querySelector('.error');
+          if (errorElement) {
+              errorElement.classList.add('hidden');
+          }
+        }, this.baseFadeDuration); 
+
+        setTimeout(() => {
+          this.error = '';
+        }, this.baseFadeDuration + 500); 
+        
+      }
+    });
   }
 
   toggleShow() {

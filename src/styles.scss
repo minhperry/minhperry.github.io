@@ -28,21 +28,3 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-.mat-dialog-container {
-    background-color: $color-base;
-    color: $color-text;
-}
-
-.mat-dialog-title {
-    color: $color-text;
-}
-
-.mat-dialog-actions {
-    background-color: lighten($color-text, 40%); // Action area background color
-}
-
-// Button styling within the dialog
-.mat-dialog-actions .mat-button {
-    color: $color-muted;
-}

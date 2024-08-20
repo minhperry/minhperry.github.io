@@ -40,7 +40,7 @@ export class NavibarComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(LoginComponent, {
-      width: '250px'
+      width: '400px',
     });
 
     dialogRef.afterClosed().subscribe(() => {
