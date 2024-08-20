@@ -1,8 +1,7 @@
-:host {
-    --fontSize: 36px;
-    --fontHover: 48px;
-    --logoSize: 36px;
-}
+$fontSize: 36px;
+$fontHover: 48px;
+$logoSize: 36px;
+
 
 .social-component {
     font-family: Arial, sans-serif;
@@ -44,24 +43,26 @@ li {
     height: 70px;
 }
 
-a, .icon {
+a,
+.icon {
     text-decoration: none;
     color: #ff6f00;
     display: flex;
     align-items: center;
-    font-size: var(--fontSize);
-    width: var(--logoSize);
-    height: var(--logoSize);
+    font-size: $fontSize;
+    width: $logoSize;
+    height: $logoSize;
     transition: all 0.5s;
 }
 
-a:hover, .icon:hover {
-    width: var(--fontHover);
-    height: var(--fontHover);
-    font-size: var(--fontHover);
+a:hover,
+.icon:hover {
+    width: $fontHover;
+    height: $fontHover;
+    font-size: $fontHover;
 }
 
 .fa-icon {
-    font-size: var(--fontSize);
+    font-size: $fontSize;
     margin-right: 10px;
 }

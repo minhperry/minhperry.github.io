@@ -7,7 +7,7 @@ import { SocialService } from '../../services/social/social.service';
 @Component({
   selector: 'social',
   templateUrl: './social.component.html',
-  styleUrl: './social.component.css'
+  styleUrl: './social.component.scss'
 })
 export class SocialComponent implements OnInit {
   socials: Groups | undefined;

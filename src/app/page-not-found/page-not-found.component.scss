@@ -1,21 +1,22 @@
 $red-of-error: #e74c3c;
+$color-error: #ffcccc;
 
 .pnf {
     text-align: center;
     padding: 50px;
-    border: 1px solid var(--red-of-error);
+    border: 1px solid $red-of-error;
     border-radius: 10px;
     max-width: 85%;
     margin: 100px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
-    color: var(--color-error)
+    color: $color-error;
 }
 
 .title {
     font-size: 42px;
     font-weight: bold;
-    color: var(--red-of-error);
+    color: $red-of-error;
     margin-bottom: 20px;
 }
 
