@@ -7,6 +7,10 @@
     <div class="bio">
       <h2>{{ name }}</h2>
       <p>{{ bio }} <img [src]="tuSvg" class="tu-do" /></p>
+      <ng-container *ngFor="let item in [born, address, phone]">
+        <p *ngIf="item">{{ item }}</p>
+      </ng-container>
+
     </div>
   </div>
 

@@ -13,7 +13,7 @@ interface PixivBackground {
 export class LandingComponent implements OnInit{
   pixivBase = 'https://www.pixiv.net/en/artworks/'
   private backgrounds: PixivBackground[] = [
-    { loc: 'backgrounds/1.jpg', id: '121465871'},
+    // { loc: 'backgrounds/1.jpg', id: '121465871'},
     { loc: 'backgrounds/2.jpg', id: '121402278'},
     { loc: 'backgrounds/3.jpg', id: '120856704'},
     { loc: 'backgrounds/4.jpg', id: '114034665'},
