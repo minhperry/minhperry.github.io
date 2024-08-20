@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    // max-width: 1200px;
     margin: 0 auto;
     padding: 15px 20px;
 }
@@ -27,30 +27,4 @@
 
 .changelog {
     margin-left: auto;
-}
-
-.marquee {
-
-    white-space: nowrap;
-    overflow: hidden;
-    box-sizing: border-box;
-    display: inline-block;
-    animation: marquee 5s linear infinite;
-
-    p {
-        width: 30%;
-        margin-right: 2em;
-        font-size: 1.2em;
-        display: inline-block;
-    }
-}
-
-@keyframes marquee {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(-100%, 0);
-    }
 }

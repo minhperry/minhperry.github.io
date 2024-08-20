@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'aboutme',
@@ -11,4 +11,8 @@ export class AboutmeComponent {
   bio: string = '22 / Student @ ';
   tuSvg: string = 'icons/tudo.svg';
   profilePictureUrl: string = 'self.png';
+
+  constructor(private auth: AuthService) {
+
+  }
 }
