@@ -1,20 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 
+interface SkillEntry {
+  skill: string;
+  rating: number;
+  wordRating: Rating;
+  iconUrl: string;
+}
+
+enum Rating {
+  BEGINNER = 'Beginner',
+  FAMILIAR = 'Familiar',
+  COMPETENT = 'Competent',
+  PROFICIENT = 'Proficient',
+  ADVANCED = 'Advanced',
+  EXPERT = 'Expert'
+}
+
 @Component({
   selector: 'skills',
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css'
+  styleUrl: './skills.component.scss'
 })
 export class SkillsComponent implements OnInit {
   skills: { [skill: string]: number } = {
-    'Angular': 39,
-    'TypeScript': 38,
+    'Angular': 42,
+    'TypeScript': 41,
     'HTML': 75,
-    'CSS': 25,
+    'CSS': 32,
     'Java': 90,
     'C++': 85,
     'Python': 87,
-    'Kotlin': 51
+    'Kotlin': 51,
+    'Cloudflare Workers': 10,
   };
 
   skillsSvgMap: { [skill: string]: string } = {
@@ -25,26 +42,34 @@ export class SkillsComponent implements OnInit {
     'Java': 'icons/languages/java.svg',
     'C++': 'icons/languages/cpp.svg',
     'Python': 'icons/languages/python.svg',
-    'Kotlin': 'icons/languages/kotlin.svg'
+    'Kotlin': 'icons/languages/kotlin.svg',
+    'Cloudflare Workers': 'icons/languages/cf-workers.svg'
   };
 
-  skillEntries: { skill: string, rating: number, currentRating: number, iconUrl: string }[] = [];
+  skillEntries: SkillEntry[] = [];
 
   ngOnInit(): void {
     this.skillEntries = Object.keys(this.skills).map(skill => ({
       skill,
       rating: this.skills[skill],
-      currentRating: 0,
+      wordRating: this.getWordRating(this.skills[skill]),
       iconUrl: this.skillsSvgMap[skill]
     }));
-    this.animateSkills();
   }
 
-  animateSkills(): void {
-    setTimeout(() => {
-      this.skillEntries.forEach(entry => {
-        entry.currentRating = entry.rating;
-      });
-    }, 0);
+  getWordRating(rating: number): Rating {
+    if (rating <= 20) {
+      return Rating.BEGINNER;
+    } else if (rating <= 40) {
+      return Rating.FAMILIAR;
+    } else if (rating <= 60) {
+      return Rating.COMPETENT;
+    } else if (rating <= 80) {
+      return Rating.PROFICIENT;
+    } else if (rating <= 90) {
+      return Rating.ADVANCED;
+    } else {
+      return Rating.EXPERT;
+    }
   }
 }

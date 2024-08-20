@@ -1,8 +1,19 @@
 <div class="skills">
-  <div *ngFor="let entry of skillEntries" class="skill-bar-container">
-    <div class="skill-bar" [style.width.%]="entry.currentRating">
-      <img [src]="entry.iconUrl" class="skill-icon" />
-      {{ entry.rating }}
-    </div>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Rating / 100</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of skillEntries" class="entry">
+        <td><img [src]="entry.iconUrl" class="skill-icon"></td>
+        <td>{{ entry.skill }}</td>
+        <td>{{ entry.wordRating }}</td>
+        <td>{{ entry.rating }}</td>
+    </tbody>
+  </table>
 </div>
