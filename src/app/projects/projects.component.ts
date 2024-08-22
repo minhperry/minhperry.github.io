@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 interface Project {
   title: string;
@@ -12,7 +12,7 @@ interface Project {
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   projects: Project[] = [
     { 
       title: 'Module \'Web-Technologie-2\'', 
@@ -28,7 +28,7 @@ export class ProjectsComponent {
     },
     {
       title: 'Portfolio',
-      description: 'This portfolio website.',
+      description: 'This portfolio website. Uses Angular and Cloudflare Pages.',
       link: './',
       since: 'From July 2024 until now'
     },
@@ -45,4 +45,12 @@ export class ProjectsComponent {
       since: 'From August 2024 until now'
     }
   ]
+
+  ngOnInit(): void {
+    this.projects = this.returnShuffled();
+  }
+
+  private returnShuffled(): Project[] {
+    return this.projects.sort(() => Math.random() - 0.5);
+  }
 }
