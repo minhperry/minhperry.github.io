@@ -8,6 +8,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { LandingComponent } from './landing/landing.component';
 import { NgnhatanhComponent } from './ngnhatanh/ngnhatanh.component';
 import { ShortComponent } from './short/short.component';
+import { shortGuard } from '../guards/short.guard';
 
 const routes: Routes = [
   { 
@@ -53,7 +54,8 @@ const routes: Routes = [
   {
     path: 'short',
     component: ShortComponent,
-    title: "Shorten URL"
+    title: "Shorten URL",
+    canActivate: [shortGuard],
   },
   { 
     path: '**', 

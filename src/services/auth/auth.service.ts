@@ -27,7 +27,7 @@ export class AuthService {
     return this.cookieServ.check(this.cookieName);
   }
 
-  get CookieService(): CookieService {
+  get cookieService(): CookieService {
     return this.cookieServ;
   }
 

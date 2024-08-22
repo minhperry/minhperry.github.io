@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent {
 
   constructor(
     private auth: AuthService,
-    public dialogRef: MatDialogRef<LoginComponent>
+    public dialogRef: MatDialogRef<LoginComponent>,
+    private router: Router
   ) { }
 
   onNoClick(): void {
@@ -27,7 +29,7 @@ export class LoginComponent {
       console.log(resp);
       switch (resp.is) {
         case 'recruiter':
-          this.auth.getCookieService().set(
+          this.auth.cookieService.set(
             'authMd5',
             this.auth.md5(this.password),
             1
@@ -35,12 +37,13 @@ export class LoginComponent {
           this.dialogRef.close();
           break;
         case 'admin':
-          this.auth.getCookieService().set(
+          this.auth.cookieService.set(
             'authMd5',
             'admin_' + this.auth.md5(this.password),
             1
           ); 
           this.dialogRef.close();
+          this.router.navigate(['short']);
           break;
         default:
           this.error = 'Invalid password';
