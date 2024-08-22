@@ -37,6 +37,12 @@ export class ProjectsComponent {
       description: 'A simulation of various game mechanics in Hypixel Skyblock.',
       link: 'https://skysim.pages.dev/',
       since: 'From July 2024 until now'
+    },
+    {
+      title: 'Link Shortener',
+      description: 'My own personal link shortener with custom short-keys, based on Cloudflare KV.',
+      link: 's.7278008.xyz/source',
+      since: 'From August 2024 until now'
     }
   ]
 }
