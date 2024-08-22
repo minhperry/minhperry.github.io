@@ -5,11 +5,11 @@
     <p class="display">
         <a href="{{ httpString() + url }}" target="_blank">s.7278008.xyz/{{key}}</a>
         &nbsp;➜&nbsp;
-        {{ httpString() + url }}
+        {{ (httpString() + url) ? (httpString() + url) : 'https://some.example/site' }}
     </p>
 
 
-    <mat-form-field class="key field">
+    <mat-form-field class="key field" floatLabel="always">
         <mat-label>Link key</mat-label>
         <input matInput type="text" [(ngModel)]="key"
             maxlength="20"
@@ -24,20 +24,22 @@
     </mat-form-field>
 
     <mat-form-field class="url field" floatLabel="always">
-        <span matTextPrefix>{{ httpString() }}</span>
+        <span *ngIf="usePrefix" matTextPrefix>{{ httpString() }}</span>
         <mat-label>URL</mat-label>
         <input matInput type="text" [(ngModel)]="url"
             maxlength="1000"
             [formControl]="urlFormControl"
             [errorStateMatcher]="matcher"
-            placeholder="some.site/of/your?choice=love">
+            placeholder="{{ (!usePrefix ? 'https://' : '' ) + 'some.example/site'}}">
         <mat-hint align="end"> {{ url.length }} / 1000</mat-hint>
         <mat-error *ngIf="urlFormControl.hasError('required')">URL is required</mat-error>
         <mat-error *ngIf="urlFormControl.hasError('pattern')">
             URL is not valid! Must start with http:// or https://
         </mat-error>
 
-        <mat-icon matSuffix (click)="isHttps=!isHttps">{{isHttps ? 'lock' : 'lock_open'}}</mat-icon>
+        <mat-icon matSuffix (click)="usePrefix=!usePrefix">
+            {{usePrefix ? 'check' : 'close'}}
+        </mat-icon>
     </mat-form-field>
 
     <button [disabled]="!keyFormControl.valid || !urlFormControl.valid" mat-raised-button color="primary" type="submit"

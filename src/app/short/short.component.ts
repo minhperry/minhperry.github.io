@@ -16,7 +16,7 @@ import { LandingComponent } from '../landing/landing.component';
 export class ShortComponent {
   key: string = '';
   url: string = '';
-  isHttps: boolean = true;
+  usePrefix: boolean = false;
 
   matcher = new InstantErrorMatcher();
 
@@ -46,7 +46,7 @@ export class ShortComponent {
       next: (data) => {
         let response = data as CreatedResponse;
         const [k, v] = Object.entries(response.created)[0];
-        this.snackbar.open('Created s.7278008.xyz/' + k + ' to ' + v , 'Close', this.position)
+        this.snackbar.open('Created s.7278008.xyz/' + k + ' ➜ ' + v , 'Close', this.position)
       },
       error: (error) => {
         if (error.status === 409) {
@@ -62,7 +62,7 @@ export class ShortComponent {
   }
 
   httpString() {
-    return this.isHttps ? 'https://' : 'http://';
+    return this.usePrefix ? 'https://' : '';
   }
 
   keyFormControl = new FormControl(this.key, [
