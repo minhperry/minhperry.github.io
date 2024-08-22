@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Md5 } from 'ts-md5';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthService {
   private key = environment.adminPwd
   private cookieName = 'authMd5'
 
-  constructor(private http: HttpClient, private cookieServ: CookieService) { }
+  constructor(private http: HttpClient, private cookieServ: CookieService, private router: Router) { }
 
   login(password: string) {
     const md5 = this.md5(password);
@@ -21,6 +22,7 @@ export class AuthService {
 
   logout() {
     this.cookieServ.delete(this.cookieName);
+    this.router.navigate(['']);
   }
 
   isLoggedIn(): boolean {
