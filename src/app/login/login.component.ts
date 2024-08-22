@@ -23,29 +23,39 @@ export class LoginComponent {
   }
 
   login(): void {
-    this.auth.login(this.password).subscribe( resp => {
+    this.auth.login(this.password).subscribe( resp  => {
       console.log(resp);
-      if (resp.valid) {
-        this.auth.getCookieService().set(
-          this.auth.getCookieName(), 
-          this.auth.md5(this.password),
-          1
-        );
-        this.dialogRef.close();
-      } else {
-        this.error = 'Invalid password';
+      switch (resp.is) {
+        case 'recruiter':
+          this.auth.getCookieService().set(
+            'authMd5',
+            this.auth.md5(this.password),
+            1
+          );
+          this.dialogRef.close();
+          break;
+        case 'admin':
+          this.auth.getCookieService().set(
+            'authMd5',
+            'admin_' + this.auth.md5(this.password),
+            1
+          ); 
+          this.dialogRef.close();
+          break;
+        default:
+          this.error = 'Invalid password';
         
-        setTimeout(() => {
-          const errorElement = document.querySelector('.error');
-          if (errorElement) {
-              errorElement.classList.add('hidden');
-          }
-        }, this.baseFadeDuration); 
+          setTimeout(() => {
+            const errorElement = document.querySelector('.error');
+            if (errorElement) {
+                errorElement.classList.add('hidden');
+            }
+          }, this.baseFadeDuration); 
 
-        setTimeout(() => {
-          this.error = '';
-        }, this.baseFadeDuration + 500); 
-        
+          setTimeout(() => {
+            this.error = '';
+          }, this.baseFadeDuration + 500); 
+          break;
       }
     });
   }

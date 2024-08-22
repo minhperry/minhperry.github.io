@@ -15,7 +15,7 @@ export class AuthService {
 
   login(password: string) {
     const md5 = this.md5(password);
-    return this.http.get<{valid: boolean}>(this.api + md5);
+    return this.http.get<{is: string}>(this.api + md5);
   }
 
   logout() {
@@ -24,10 +24,6 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     return this.cookieServ.check(this.cookieName);
-  }
-
-  getCookieName(): string {
-    return this.cookieName;
   }
 
   getCookieService(): CookieService {
