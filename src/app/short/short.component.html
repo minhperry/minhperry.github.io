@@ -3,10 +3,11 @@
 <div class="wrapper">
 
     <p class="display">
-        <a href="{{ shortUrl }}" target="_blank">s.7278008.xyz/{{key}}</a>
+        <a href="{{ httpString() + url }}" target="_blank">s.7278008.xyz/{{key}}</a>
         &nbsp;➜&nbsp;
-        {{ shortUrl }}
+        {{ httpString() + url }}
     </p>
+
 
     <mat-form-field class="key field">
         <mat-label>Link key</mat-label>
@@ -22,15 +23,15 @@
         </mat-error>
     </mat-form-field>
 
-    <p>{{isHttps ? 'https://' : 'http://'}}</p>
-    <mat-form-field class="url field">
+    <mat-form-field class="url field" floatLabel="always">
+        <span matTextPrefix>{{ httpString() }}</span>
         <mat-label>URL</mat-label>
-        <input matInput type="text" [(ngModel)]="shortUrl"
+        <input matInput type="text" [(ngModel)]="url"
             maxlength="1000"
             [formControl]="urlFormControl"
             [errorStateMatcher]="matcher"
-            placeholder="Enter URL">
-        <mat-hint align="end"> {{ shortUrl.length }} / 1000</mat-hint>
+            placeholder="some.site/of/your?choice=love">
+        <mat-hint align="end"> {{ url.length }} / 1000</mat-hint>
         <mat-error *ngIf="urlFormControl.hasError('required')">URL is required</mat-error>
         <mat-error *ngIf="urlFormControl.hasError('pattern')">
             URL is not valid! Must start with http:// or https://
@@ -39,5 +40,8 @@
         <mat-icon matSuffix (click)="isHttps=!isHttps">{{isHttps ? 'lock' : 'lock_open'}}</mat-icon>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" (click)="send()">Shorten</button>
+    <button [disabled]="!keyFormControl.valid || !urlFormControl.valid" mat-raised-button color="primary" type="submit"
+        (click)="send()">
+        Shorten
+    </button>
 </div>
