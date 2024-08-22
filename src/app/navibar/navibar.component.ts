@@ -32,7 +32,6 @@ export class NavibarComponent implements OnInit {
 
   constructor(private clockService: ClockService, private dialog: MatDialog, private authService: AuthService) {
     this.isLoggedIn = this.authService.isLoggedIn();
-    console.log('isLoggedIn', this.isLoggedIn);
   }
 
   ngOnInit() {
