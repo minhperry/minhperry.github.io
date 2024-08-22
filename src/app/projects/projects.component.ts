@@ -41,7 +41,7 @@ export class ProjectsComponent {
     {
       title: 'Link Shortener',
       description: 'My own personal link shortener with custom short-keys, based on Cloudflare KV.',
-      link: 's.7278008.xyz/source',
+      link: 'https://s.7278008.xyz/source',
       since: 'From August 2024 until now'
     }
   ]
