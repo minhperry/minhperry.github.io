@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   isAdmin(): boolean {
-    return this.cookieServ.get(this.cookieName) === 'admin_' + this.md5(this.key);
+    return this.cookieServ.get(this.cookieName).startsWith('admin_')
   }
 
   md5(str: string): string {
