@@ -14,20 +14,20 @@ export class SocialComponent implements OnInit {
   failed: boolean | null = null;
 
   constructor(private socialService: SocialService) {
-    
+    this.socialService.get().subscribe({
+      next: (data) => {
+        this.socials = data;
+        this.failed = false;
+      },
+      error: (error) => {
+        this.socials = {codes: [], network: [], media: [], games: [], contacts: []};
+        this.failed = true;
+      }
+  });
   }
 
   ngOnInit(): void {
-      this.socialService.get().subscribe({
-        next: (data) => {
-          this.socials = data;
-          this.failed = false;
-        },
-        error: (error) => {
-          this.socials = {codes: [], network: [], media: [], games: [], contacts: []};
-          this.failed = true;
-        }
-    });
+      
   }
 
   asIs() {return 0}
