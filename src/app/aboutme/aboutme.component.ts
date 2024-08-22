@@ -28,7 +28,6 @@ export class AboutmeComponent implements OnInit {
       this.born = '6th July 2002, Ha Noi, Viet Nam';
       this.address = 'Schulte-Heuthaus-Straße 47, 44379 Dortmund';
       this.phone = '+49 1577 897 0645';
-      console.log(this.born, this.address, this.phone);
     }
   }
 }
