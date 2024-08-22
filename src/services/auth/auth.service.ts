@@ -9,6 +9,7 @@ import { Md5 } from 'ts-md5';
 })
 export class AuthService {
   private api = environment.apiUrl + 'validate/';
+  private key = environment.adminPwd
   private cookieName = 'authMd5'
 
   constructor(private http: HttpClient, private cookieServ: CookieService) { }
@@ -26,8 +27,12 @@ export class AuthService {
     return this.cookieServ.check(this.cookieName);
   }
 
-  getCookieService(): CookieService {
+  get CookieService(): CookieService {
     return this.cookieServ;
+  }
+
+  isAdmin(): boolean {
+    return this.cookieServ.get(this.cookieName) === 'admin_' + this.md5(this.key);
   }
 
   md5(str: string): string {

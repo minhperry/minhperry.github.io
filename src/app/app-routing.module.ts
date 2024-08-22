@@ -7,6 +7,7 @@ import { FunComponent } from './fun/fun.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { LandingComponent } from './landing/landing.component';
 import { NgnhatanhComponent } from './ngnhatanh/ngnhatanh.component';
+import { ShortComponent } from './short/short.component';
 
 const routes: Routes = [
   { 
@@ -48,6 +49,11 @@ const routes: Routes = [
     path: 'nna/:sach',
     component: NgnhatanhComponent,
     title: "Sach Nguyen Nhat Anh",
+  },
+  {
+    path: 'short',
+    component: ShortComponent,
+    title: "Shorten URL"
   },
   { 
     path: '**', 
