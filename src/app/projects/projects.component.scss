@@ -21,11 +21,12 @@
     border: 2px solid #90cdff;
     flex: 1 1 calc(33% - 40px);
     box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease;
 
     &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 8px rgba(255, 255, 255, 22);
+        // transform: translateY(-3px);
+        //box-shadow: 0 4px 8px rgba(255, 255, 255, 22);
+        background-color: rgba(112, 112, 112, 0.178);
     }
 }
 
