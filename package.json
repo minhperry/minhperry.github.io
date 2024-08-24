@@ -23,6 +23,7 @@
     "@fortawesome/angular-fontawesome": "^0.15.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@types/node": "^22.0.0",
+    "bootstrap": "^5.3.3",
     "eslint": "^9.7.0",
     "itty-router": "^5.0.17",
     "ng-angular-popup": "^0.6.2",

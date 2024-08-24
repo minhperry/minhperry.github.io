@@ -7,26 +7,14 @@ $hoverColor: $color-iris;
   width: 100%;
   background-color: $bgColor;
   color: white;
-  display: inline-block;
-  justify-content: space-between;
   align-items: flex-start;
-  padding: 10px 0px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   box-sizing: border-box;
-  border-bottom: 3px solid rgba(225, 225, 225, 0.222);
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-  }
-
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: top;
     width: 100%;
   }
 
@@ -52,53 +40,80 @@ $hoverColor: $color-iris;
       text-decoration: none;
       font-size: 1.5em;
       cursor: pointer;
-      padding: 10px 20px;
-      transition: background-image 0.3s, color 0.3s;
+      padding: 10px 15px;
     }
   }
+}
 
-  .menu {
-    display: inline-flex;
-    justify-content: left;
-    flex-basis: 100%;
-    width: 100%;
-    margin-top: 3px;
+.navbar {
+  background-color: $bgColor;
+  padding: 0;
+  border-bottom: 3px solid rgba(225, 225, 225, 0.222);
 
-    a {
-      color: $color-foam;
-      text-decoration: none;
-      margin: 0 15px;
-      padding: 10px 15px;
-      border-radius: 3px;
-      transition: color 0.5s, background-color 0.5s, transform 0.5s;
+  .container-fluid {
+    .material-symbols-outlined {
+      color: gray;
     }
 
-    .menuitem {
-      &:hover {
-        background-color: rgba(172, 255, 204, 0.737);
-        color: black;
-        transform: scale(1.15);
+    .navbar-toggler {
+      margin-bottom: 10px;
+    }
+
+    .navbar-brand {
+      color: white;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    .navbar-collapse {
+      .nav-link {
+        margin-bottom: 10px;
+        padding: 0;
       }
-    }
 
-    .login:last-child {
-      margin-left: auto;
-      padding-bottom: 1px;
+      .menu-item {
+        color: $color-foam;
+        text-decoration: none;
+        margin: 0 5px;
+        padding: 2px 5px;
+        border-radius: 3px;
+        transition: color 0.5s, background-color 0.5s, transform 0.5s;
 
-      &:hover {
-        background-color: rgba(225, 225, 225, 0.222);
-        cursor: pointer;
+        &:hover {
+          background-color: rgba(172, 255, 204, 0.737);
+          color: black;
+        }
       }
-    }
 
-    .logout:last-child {
-      margin-left: auto;
-      padding-bottom: 1px;
-      color: rgba(203, 1, 1, 0.726);
-      background-color: rgba(255, 115, 115, 0.222);
+      a {
+        color: $color-foam;
+        text-decoration: none;
+        border-radius: 3px;
+        padding: 10px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        transition: color 0.5s, background-color 0.5s, transform 0.5s;
+      }
 
-      &:hover {
-        cursor: pointer;
+      .btn-wrap {
+        margin-left: auto;
+
+        .login {
+          &:hover {
+            background-color: rgba(225, 225, 225, 0.222);
+            cursor: pointer;
+          }
+        }
+
+        .logout {
+          text-decoration: none;
+          color: rgba(203, 1, 1, 0.726);
+          background-color: rgba(255, 115, 115, 0.222);
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
   }
