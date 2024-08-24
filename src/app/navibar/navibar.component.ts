@@ -49,6 +49,7 @@ export class NavibarComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this.isLoggedIn = this.authService.isLoggedIn();
       this.updateText();
+      this.naviLinks.push({ path: '/short', label: 'Shortener' });
     });
   }
 
@@ -56,6 +57,7 @@ export class NavibarComponent implements OnInit {
     if (this.isLoggedIn) {
       this.authService.logout();
       this.isLoggedIn = false;
+      this.naviLinks = this.naviLinks.filter(link => link.path !== '/short');
     } else {
       this.openDialog();
     }

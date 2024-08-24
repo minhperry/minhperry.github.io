@@ -26,7 +26,6 @@ export class LoginComponent {
 
   login(): void {
     this.auth.login(this.password).subscribe( resp  => {
-      console.log(resp);
       switch (resp.is) {
         case 'recruiter':
           this.auth.cookieService.set(
