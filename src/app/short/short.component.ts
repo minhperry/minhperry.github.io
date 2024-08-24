@@ -118,6 +118,7 @@ export class ShortComponent {
   urlFormControl = new FormControl(this.url, [
     Validators.required,
     Validators.maxLength(1000),
+    // Validators.pattern('(https?|ftp)://[^\\s/$.?#].[^\\s]*'),
   ])
 
   

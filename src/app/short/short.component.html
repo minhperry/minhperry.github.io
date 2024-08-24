@@ -3,9 +3,11 @@
 <div class="wrapper">
 
     <p class="display">
-        <a href="{{ httpString() + url }}" target="_blank">s.7278008.xyz/{{key}}</a>
+        <a class="link" href="{{ httpString() + url }}" target="_blank">s.7278008.xyz/{{key}}</a>
         &nbsp;➜&nbsp;
-        {{ (httpString() + url) ? (httpString() + url) : 'https://some.example/site' }}
+        <span class="url">
+            {{ (httpString() + url) ? (httpString() + url) : 'https://some.example/site' }}
+        </span>
     </p>
 
 
@@ -37,8 +39,8 @@
             URL is not valid! Must start with http:// or https://
         </mat-error>
 
-        <mat-icon matSuffix (click)="usePrefix=!usePrefix">
-            {{usePrefix ? 'check' : 'close'}}
+        <mat-icon matSuffix (click)="usePrefix=!usePrefix" class="material-symbols-outlined">
+            {{usePrefix ? 'check_box_outline' : 'check_box_outline_blank'}}
         </mat-icon>
     </mat-form-field>
 
@@ -58,7 +60,10 @@
                 <div class="content">
                     <mat-icon class="icon" matListIcon (click)="copy('k', item.key)">link</mat-icon>
                     <a class="link" [href]="httpString() + item.url" target="_blank">{{ item.key }}</a>
-                    <span class="arrow"> ➜</span>
+
+                    <mat-icon class="material-symbols-outlined arrow">
+                        arrow_right_alt
+                    </mat-icon>
 
                     <mat-icon class="icon" matListIcon (click)="copy('u', item.url)">content_copy</mat-icon>
                     <span class="url">
