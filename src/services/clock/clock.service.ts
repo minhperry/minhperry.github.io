@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject, interval, Observable } from 'rxjs';
-import { map, startWith, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, interval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -58,6 +57,14 @@ export class ClockService {
     return emojis[hour];
   }
 
+  colon() {
+    return this.colonVisible ? ':' : ' ';
+  }
+
+  notColon() {
+    return this.colonVisible ? ' ' : ':';
+  }
+
   private updateTime() {
     const now = new Date();
 
@@ -72,7 +79,11 @@ export class ClockService {
     // Toggle the visibility of the colon every second
     this.colonVisible = !this.colonVisible;
 
-    const timeString = `${day}.${month}.${year} ${this.timeEmoji(now.getHours())}${hours}${this.colonVisible ? ':' : ' '}${minutes}${!this.colonVisible ? ':' : ' '}${seconds}`;
-    this.timeSubject.next(timeString);
+    const timeStr = `
+    <span class="day">${day}.${month}.${year}</span>
+    <span class="emoji">${this.timeEmoji(now.getHours())}</span>
+    <span class="time">${hours}${this.colon()}${minutes}${this.notColon()}${seconds}</span>
+    `
+    this.timeSubject.next(timeStr);
   }
 }
