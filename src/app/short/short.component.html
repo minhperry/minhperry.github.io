@@ -42,8 +42,27 @@
         </mat-icon>
     </mat-form-field>
 
-    <button [disabled]="!keyFormControl.valid || !urlFormControl.valid" mat-raised-button color="primary" type="submit"
-        (click)="send()">
-        Shorten
-    </button>
+    <div class="button-wrapper">
+        <button [disabled]="!keyFormControl.valid || !urlFormControl.valid" mat-stroked-button type="submit"
+            (click)="send()">
+            Shorten
+        </button>
+
+        <button mat-stroked-button type="submit" (click)="list()">List</button>
+    </div>
+
+
+    <div class="list" *ngIf="isCorrectType(listResult)">
+        <mat-list>
+            <mat-list-item class="item" *ngFor="let item of listResult.result">
+                <div class="content">
+                    <a class="link" [href]="httpString() + item.url" target="_blank">{{ item.key }}</a>
+                    <span class="arrow"> ➜</span>
+                    <span class="url">
+                        {{ httpString() + item.url ? httpString() + item.url : '\<empty\>' }}
+                    </span>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </div>
 </div>

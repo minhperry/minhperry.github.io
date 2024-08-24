@@ -4,9 +4,8 @@ import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/fo
 import { ErrorStateMatcher } from '@angular/material/core';
 import { environment } from '../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
-import { CreatedResponse, ErrorResponse, ShortenerResponse } from '../../interfaces/shortener';
-import { MatSnackBar, MatSnackBarConfig, MatSnackBarRef } from '@angular/material/snack-bar';
-import { LandingComponent } from '../landing/landing.component';
+import { CreatedResponse, ListEntry, ListResponse, ListResult, ShortenerResponse } from '../../interfaces/shortener';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-short',
@@ -17,6 +16,7 @@ export class ShortComponent {
   key: string = '';
   url: string = '';
   usePrefix: boolean = false;
+  listResult: ListResponse | undefined = undefined;
 
   matcher = new InstantErrorMatcher();
 
@@ -58,6 +58,38 @@ export class ShortComponent {
         }
       },
       // complete: () => {console.log('complete')}
+    });
+  }
+
+  isCorrectType(lr: ListResponse | undefined): lr is ListResult {
+    return lr !== undefined && 'result' in lr;
+  }
+
+  getKeys(entry: ListEntry): string[] {
+    return Object.keys(entry);
+  }
+
+  list() {
+    this.http.get<ListResponse>(this.apiUrl, {
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Longass-Api-Header-Name': this.cookie.get('authMd5')
+      }
+    }).subscribe({
+      next: (data) => {
+        if (this.isCorrectType(data)) {
+          this.listResult = data;
+        } else {
+          this.snackbar.open('Server error!', 'Close', this.position)
+        }
+      },
+      error: (error) => {
+        if (error.status === 500) {
+          this.snackbar.open('Server error!', 'Close', this.position)
+        } else {
+          this.snackbar.open('Unknown error!', 'Close', this.position)
+        }
+      }
     });
   }
 
