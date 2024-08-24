@@ -92,6 +92,18 @@ export class ShortComponent {
       }
     });
   }
+  copy(s: string, data: string) {
+    switch (s) {
+      case 'k':
+        navigator.clipboard.writeText('s.7278008.xyz/' + data);
+        this.snackbar.open('Copied s.7278008.xyz/' + data, 'Close', this.position)
+        break;
+      case 'u':
+        navigator.clipboard.writeText(data);
+        this.snackbar.open('Copied ' + data, 'Close', this.position)
+        break;
+    }
+  }
 
   httpString() {
     return this.usePrefix ? 'https://' : '';

@@ -28,7 +28,7 @@
 
 .list {
     max-width: 950px;
-    width: 60vw;
+    width: 80vw;
 
     .item {
         display: flex;
@@ -63,6 +63,11 @@
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+    }
+
+    .icon {
+        margin: 0 10px;
+        cursor: pointer;
     }
 }
 

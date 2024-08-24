@@ -56,8 +56,11 @@
         <mat-list>
             <mat-list-item class="item" *ngFor="let item of listResult.result">
                 <div class="content">
+                    <mat-icon class="icon" matListIcon (click)="copy('k', item.key)">link</mat-icon>
                     <a class="link" [href]="httpString() + item.url" target="_blank">{{ item.key }}</a>
                     <span class="arrow"> ➜</span>
+
+                    <mat-icon class="icon" matListIcon (click)="copy('u', item.url)">content_copy</mat-icon>
                     <span class="url">
                         {{ httpString() + item.url ? httpString() + item.url : '\<empty\>' }}
                     </span>
