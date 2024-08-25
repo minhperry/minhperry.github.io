@@ -36,6 +36,7 @@ import { MatListModule } from '@angular/material/list';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastComponent } from './toast/toast/toast.component';
 import { ToasterComponent } from './toast/toaster/toaster.component';
+import { CommitComponent } from './commit/commit.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ToasterComponent } from './toast/toaster/toaster.component';
     ShortComponent,
     ToastComponent,
     ToasterComponent,
+    CommitComponent,
   ],
   imports: [
     BrowserModule,
