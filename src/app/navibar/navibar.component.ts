@@ -32,9 +32,7 @@ export class NavibarComponent implements OnInit {
 
   constructor(private clockService: ClockService, private dialog: MatDialog, private authService: AuthService) {
     this.isLoggedIn = this.authService.isLoggedIn();
-    if (this.authService.isAdmin()) {
-      this.naviLinks.push({ path: '/short', label: 'Short' });
-    }
+    this.addShortIfAdmin();
   }
 
   ngOnInit() {
@@ -52,7 +50,7 @@ export class NavibarComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this.isLoggedIn = this.authService.isLoggedIn();
       this.updateText();
-      this.naviLinks.push({ path: '/short', label: 'Shortener' });
+      this.addShortIfAdmin();
     });
   }
 
@@ -69,6 +67,12 @@ export class NavibarComponent implements OnInit {
 
   private updateText() {
     this.loginButtonText = this.isLoggedIn ? 'Log Out' : 'Recruiter? Log In!';
+  }
+
+  private addShortIfAdmin() {
+    if (this.authService.isAdmin()) {
+      this.naviLinks.push({ path: '/short', label: 'Short' });
+    }
   }
 
   get loginButtonClass() {
