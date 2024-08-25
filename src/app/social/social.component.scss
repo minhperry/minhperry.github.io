@@ -1,5 +1,5 @@
 $fontSize: 36px;
-$fontHover: 48px;
+$fontHover: 52px;
 $logoSize: 36px;
 
 
@@ -19,7 +19,6 @@ $logoSize: 36px;
 }
 
 .social-group h2 {
-
     font-size: 48px;
     color: #334;
     display: inline-block;
@@ -42,7 +41,6 @@ li {
     height: 70px;
 }
 
-a,
 .icon {
     text-decoration: none;
     color: #ff6f00;
@@ -52,13 +50,14 @@ a,
     width: $logoSize;
     height: $logoSize;
     transition: all 0.5s;
+    filter: grayscale(100%);
 }
 
-a:hover,
 .icon:hover {
     width: $fontHover;
     height: $fontHover;
     font-size: $fontHover;
+    filter: none;
 }
 
 .fa-icon {
