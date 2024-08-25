@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
 export enum ToastType {
-  SUCCESS = 'success',
-  ERROR = 'error',
-  INFO = 'info',
-  WARNING = 'warning',
+  SUCCESS = 'toast-success',
+  ERROR = 'toast-error',
+  INFO = 'toast-info',
+  WARNING = 'toast-warning',
 }
 
 export interface ToastEvent {

@@ -23,15 +23,10 @@ export class ShortComponent {
 
   apiUrl = environment.apiUrl + 'short';
 
-  position: MatSnackBarConfig = {
-    horizontalPosition: 'center',
-    verticalPosition: 'bottom',
-  }
-
   constructor(
     private http: HttpClient, 
     private cookie: CookieService, 
-    private toast: ToastService
+    private snack: MatSnackBar
   ) {}
 
   send() {
@@ -50,18 +45,17 @@ export class ShortComponent {
       next: (data) => {
         let response = data as CreatedResponse;
         const [k, v] = Object.entries(response.created)[0];
-        this.toast.success('Created!', 'Created s.7278008.xyz/' + k + ' ➜ ' + v)
+        this.success('Created s.7278008.xyz/' + k + ' ➜ ' + v);
       },
       error: (error) => {
         if (error.status === 409) {
-          this.toast.warning('Conflict!', 'Key already exists!')
+          this.warning('Key already exists!');  
         } else if (error.status === 500) {
-          this.toast.error('Server error!', 'Something went wrong on the server!')
+          this.error('Server error!');
         } else {
-          this.toast.error('Unknown error!', 'Something went wrong!')
+          this.error('Failed to create short link!');
         }
       },
-      // complete: () => {console.log('complete')}
     });
   }
 
@@ -87,9 +81,9 @@ export class ShortComponent {
       },
       error: (error) => {
         if (error.status === 500) {
-          this.toast.error('Server error!', 'Something went wrong on the server!')
+          this.error('Server error!');
         } else {
-          this.toast.error('List failed!', 'Cannot list keys!')
+          this.error('Failed to get items!');
         }
       }
     });
@@ -99,11 +93,11 @@ export class ShortComponent {
     switch (s) {
       case 'k':
         navigator.clipboard.writeText('s.7278008.xyz/' + data);
-        this.toast.info('Copied', 'Copied s.7278008.xyz/' + data + ' to clipboard!')
+        this.info('Copied s.7278008.xyz/' + data + ' to clipboard!')
         break;
       case 'u':
         navigator.clipboard.writeText(data);
-        this.toast.info('Copied', 'Copied ' + data + ' to clipboard!')
+        this.info('Copied ' + data + ' to clipboard!')
         break;
     }
   }
@@ -122,9 +116,35 @@ export class ShortComponent {
     Validators.required,
     Validators.maxLength(1000),
     // Validators.pattern('(https?|ftp)://[^\\s/$.?#].[^\\s]*'),
-  ])
+  ]) 
 
-  
+  private success(message: string) {
+    this.snack.open(message, 'Close', {
+      duration: 2000,
+      panelClass: ['sb-success']
+    });
+  }
+
+  private error(message: string) {
+    this.snack.open(message, 'Close', {
+      duration: 2000,
+      panelClass: ['sb-error']
+    });
+  }
+
+  private warning(message: string) {
+    this.snack.open(message, 'Close', {
+      duration: 2000,
+      panelClass: ['sb-warning']
+    });
+  }
+
+  private info(message: string) {
+    this.snack.open(message, 'Close', {
+      duration: 2000,
+      panelClass: ['sb-info']
+    });
+  }
 }
 
 export class InstantErrorMatcher implements ErrorStateMatcher {
