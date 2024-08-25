@@ -5,8 +5,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { environment } from '../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 import { CreatedResponse, ListEntry, ListResponse, ListResult, ShortenerResponse } from '../../interfaces/shortener';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-import { ToastService } from '../../services/toast/toast.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-short',
