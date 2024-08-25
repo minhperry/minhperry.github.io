@@ -34,9 +34,6 @@ export class AuthService {
   }
 
   isAdmin(): boolean {
-    console.log(this.cookieServ.get(this.cookieName));
-    console.log('admin_' + this.md5(this.key));
-    console.log(this.cookieServ.get(this.cookieName) === 'admin_' + this.md5(this.key));
     return this.cookieServ.get(this.cookieName) === 'admin_' + this.md5(this.key);
   }
 
