@@ -1,8 +1,9 @@
+@import '../../styles.scss';
+
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // max-width: 1200px;
     margin: 0 auto;
     padding: 15px 20px;
 }
@@ -12,19 +13,8 @@
     box-shadow: 0 -10px 5px rgba(0, 0, 0, 0.1);
 }
 
-.footer a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-.footer-content span {
-    flex-grow: 1;
-}
-
-.changelog {
+.clock {
+    font-size: 25px;
     margin-left: auto;
+    color: $color-gold;
 }

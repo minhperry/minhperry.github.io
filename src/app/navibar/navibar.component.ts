@@ -26,20 +26,16 @@ export class NavibarComponent implements OnInit {
   original: string = 'Portfolio';
   text: string = this.original;
   hovered: boolean = false;
-  time: string = ''
   isLoggedIn: boolean;
   loginButtonText: string = '';
 
-  constructor(private clockService: ClockService, private dialog: MatDialog, private authService: AuthService) {
+  constructor(private dialog: MatDialog, private authService: AuthService) {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.addShortIfAdmin();
   }
 
   ngOnInit() {
     this.updateText();
-    this.clockService.getTime().subscribe(time => {
-      this.time = time;
-    });
   }
 
   private openDialog(): void {
