@@ -23,7 +23,8 @@
           "skipTests": true
         },
         "@schematics/angular:guard": {
-          "path": "src/guards"
+          "path": "src/guards",
+          "skipTests": true
         },
         "@schematics/angular:interface": {
           "path": "src/interfaces"

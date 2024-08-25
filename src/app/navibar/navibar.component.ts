@@ -17,7 +17,6 @@ interface NavLink {
 export class NavibarComponent implements OnInit {
   naviLinks: NavLink[] = [
     { path: '/', label: 'Home' },
-    { path: '/me', label: 'About Me' },
     { path: '/projects', label: 'Projects' },
     { path: '/socials', label: 'Socials' },
     // { path: '/fun', label: 'Fun Stuffs' }
@@ -31,7 +30,7 @@ export class NavibarComponent implements OnInit {
 
   constructor(private dialog: MatDialog, private authService: AuthService) {
     this.isLoggedIn = this.authService.isLoggedIn();
-    this.addShortIfAdmin();
+    this.addStuffs();
   }
 
   ngOnInit() {
@@ -46,7 +45,7 @@ export class NavibarComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this.isLoggedIn = this.authService.isLoggedIn();
       this.updateText();
-      this.addShortIfAdmin();
+      this.addStuffs();
     });
   }
 
@@ -69,6 +68,17 @@ export class NavibarComponent implements OnInit {
     if (this.authService.isAdmin()) {
       this.naviLinks.push({ path: '/short', label: 'Short' });
     }
+  }
+
+  private addAboutMeIfRecr() {
+    if (this.authService.isRecruiter()) {
+      this.naviLinks.splice(2, 0, { path: '/me', label: 'About Me' });
+    }
+  }
+
+  private addStuffs() {
+    this.addShortIfAdmin();
+    this.addAboutMeIfRecr();
   }
 
   get loginButtonClass() {
