@@ -33,7 +33,7 @@ export class NavibarComponent implements OnInit {
   constructor(private clockService: ClockService, private dialog: MatDialog, private authService: AuthService) {
     this.isLoggedIn = this.authService.isLoggedIn();
     if (this.authService.isAdmin()) {
-      this.naviLinks.push({ path: '/admin', label: 'Admin' });
+      this.naviLinks.push({ path: '/short', label: 'Short' });
     }
   }
 
