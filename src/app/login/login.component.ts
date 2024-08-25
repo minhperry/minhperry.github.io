@@ -30,7 +30,7 @@ export class LoginComponent {
         case 'recruiter':
           this.auth.cookieService.set(
             'authMd5',
-            this.auth.md5(this.password),
+            'recr_' + this.auth.md5(this.password),
             1
           );
           this.dialogRef.close();

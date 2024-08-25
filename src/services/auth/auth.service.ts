@@ -37,6 +37,10 @@ export class AuthService {
     return this.cookieServ.get(this.cookieName) === 'admin_' + this.md5(this.key);
   }
 
+  isRecruiter(): boolean {
+    return this.cookieServ.get(this.cookieName) === 'recr_' + this.md5(this.key);
+  }
+
   md5(str: string): string {
     return Md5.hashStr(str);
   }
