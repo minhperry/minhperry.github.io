@@ -2,6 +2,7 @@
 
 $bgColor: $color-base;
 $hoverColor: $color-iris;
+$text: rgba(58, 114, 255, 0.532);
 
 .navbar {
   background-color: $bgColor;
@@ -37,7 +38,7 @@ $hoverColor: $color-iris;
       }
 
       .menu-item {
-        color: $color-foam;
+        color: $text;
         text-decoration: none;
         margin: 0 5px;
         padding: 2px 5px;
@@ -51,7 +52,7 @@ $hoverColor: $color-iris;
       }
 
       a {
-        color: $color-foam;
+        color: $text;
         text-decoration: none;
         border-radius: 3px;
         padding: 6px;
