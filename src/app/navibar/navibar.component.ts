@@ -23,7 +23,7 @@ export class NavibarComponent implements OnInit {
     // { path: '/fun', label: 'Fun Stuffs' }
   ];
 
-  original: string = 'Tuan Minh\'s  Website';
+  original: string = 'Portfolio';
   text: string = this.original;
   hovered: boolean = false;
   time: string = ''

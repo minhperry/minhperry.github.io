@@ -1,17 +1,10 @@
-<div class="navibar">
-  <div class="header">
-    <div class="title">
-      <a routerLink="/">{{ text }}</a>
-    </div>
-    <div class="time-display">
-      <span [innerHTML]="time"></span>
-    </div>
-  </div>
-</div>
-
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar sticky-top navbar-expand-lg">
   <div class="container-fluid">
-    <div class="navbar-brand" href="#"></div>
+    <div class="navbar-brand">
+      <a href="/">
+        {{ text }}
+      </a>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,11 +13,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav">
-        <div *ngFor="let link of naviLinks" class="nav-link">
+        <div *ngFor="let link of naviLinks" class="nav-link d-flex justify-content-center">
           <a class="menu-item" [routerLink]="link.path">{{link.label}}</a>
         </div>
       </div>
-      <div class="btn-wrap nav-link">
+      <div class="btn-wrap nav-link d-flex justify-content-center">
         <a [class]="loginButtonClass" (click)="processClick()">{{ loginButtonText }}</a>
       </div>
     </div>
