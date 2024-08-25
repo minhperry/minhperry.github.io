@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   private api = environment.apiUrl + 'validate/';
   private key = environment.adminPwd
+  private recrKey = environment.recrPwd
   private cookieName = 'authMd5'
 
   constructor(private http: HttpClient, private cookieServ: CookieService, private router: Router) { }
@@ -38,7 +39,7 @@ export class AuthService {
   }
 
   isRecruiter(): boolean {
-    return this.cookieServ.get(this.cookieName) === 'recr_' + this.md5(this.key);
+    return this.cookieServ.get(this.cookieName) === 'recr_' + this.md5(this.recrKey);
   }
 
   md5(str: string): string {

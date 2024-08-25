@@ -31,6 +31,7 @@ export class NavibarComponent implements OnInit {
   constructor(private dialog: MatDialog, private authService: AuthService) {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.addStuffs();
+    // console.log('admin? ', this.authService.isAdmin(), 'recr? ', this.authService.isRecruiter());
   }
 
   ngOnInit() {
@@ -72,7 +73,7 @@ export class NavibarComponent implements OnInit {
 
   private addAboutMeIfRecr() {
     if (this.authService.isRecruiter()) {
-      this.naviLinks.splice(2, 0, { path: '/me', label: 'About Me' });
+      this.naviLinks.splice(1, 0, { path: '/me', label: 'About Me' });
     }
   }
 
