@@ -19,7 +19,7 @@ export class NavibarComponent implements OnInit {
     { path: '/', label: 'Home' },
     { path: '/projects', label: 'Projects' },
     { path: '/socials', label: 'Socials' },
-    // { path: '/fun', label: 'Fun Stuffs' }
+    { path: '/commits', label: 'Commit' },
   ];
 
   original: string = 'Portfolio';

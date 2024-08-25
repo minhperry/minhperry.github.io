@@ -59,6 +59,11 @@ const routes: Routes = [
     title: "Shorten URL",
     canActivate: [shortGuard],
   },
+  {
+    path: 'commits',
+    component: FunComponent,
+    title: "Commits for this site",
+  },
   { 
     path: '**', 
     redirectTo: '/404',
