@@ -54,7 +54,8 @@ export class NavibarComponent implements OnInit {
     if (this.isLoggedIn) {
       this.authService.logout();
       this.isLoggedIn = false;
-      this.naviLinks = this.naviLinks.filter(link => link.path !== '/short');
+      this.naviLinks = this.naviLinks.filter(link => link.path !== '/short' && link.path !== '/me');
+
     } else {
       this.openDialog();
     }
