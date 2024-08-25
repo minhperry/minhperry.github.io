@@ -6,6 +6,7 @@ import { environment } from '../../environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 import { CreatedResponse, ListEntry, ListResponse, ListResult, ShortenerResponse } from '../../interfaces/shortener';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { ToastService } from '../../services/toast/toast.service';
 
 @Component({
   selector: 'app-short',
@@ -27,8 +28,11 @@ export class ShortComponent {
     verticalPosition: 'bottom',
   }
 
-  constructor(private http: HttpClient, private cookie: CookieService, private snackbar: MatSnackBar) {
-  }
+  constructor(
+    private http: HttpClient, 
+    private cookie: CookieService, 
+    private toast: ToastService
+  ) {}
 
   send() {
     let finalData = {
@@ -46,15 +50,15 @@ export class ShortComponent {
       next: (data) => {
         let response = data as CreatedResponse;
         const [k, v] = Object.entries(response.created)[0];
-        this.snackbar.open('Created s.7278008.xyz/' + k + ' ➜ ' + v , 'Close', this.position)
+        this.toast.success('Created!', 'Created s.7278008.xyz/' + k + ' ➜ ' + v)
       },
       error: (error) => {
         if (error.status === 409) {
-          this.snackbar.open('Key already exists!', 'Close', this.position)
+          this.toast.warning('Conflict!', 'Key already exists!')
         } else if (error.status === 500) {
-          this.snackbar.open('Server error!', 'Close', this.position)
+          this.toast.error('Server error!', 'Something went wrong on the server!')
         } else {
-          this.snackbar.open('Unknown error!', 'Close', this.position)
+          this.toast.error('Unknown error!', 'Something went wrong!')
         }
       },
       // complete: () => {console.log('complete')}
@@ -79,28 +83,27 @@ export class ShortComponent {
       next: (data) => {
         if (this.isCorrectType(data)) {
           this.listResult = data;
-        } else {
-          this.snackbar.open('Server error!', 'Close', this.position)
         }
       },
       error: (error) => {
         if (error.status === 500) {
-          this.snackbar.open('Server error!', 'Close', this.position)
+          this.toast.error('Server error!', 'Something went wrong on the server!')
         } else {
-          this.snackbar.open('Unknown error!', 'Close', this.position)
+          this.toast.error('List failed!', 'Cannot list keys!')
         }
       }
     });
   }
+
   copy(s: string, data: string) {
     switch (s) {
       case 'k':
         navigator.clipboard.writeText('s.7278008.xyz/' + data);
-        this.snackbar.open('Copied s.7278008.xyz/' + data, 'Close', this.position)
+        this.toast.info('Copied', 'Copied s.7278008.xyz/' + data + ' to clipboard!')
         break;
       case 'u':
         navigator.clipboard.writeText(data);
-        this.snackbar.open('Copied ' + data, 'Close', this.position)
+        this.toast.info('Copied', 'Copied ' + data + ' to clipboard!')
         break;
     }
   }

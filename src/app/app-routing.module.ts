@@ -9,6 +9,8 @@ import { LandingComponent } from './landing/landing.component';
 import { NgnhatanhComponent } from './ngnhatanh/ngnhatanh.component';
 import { ShortComponent } from './short/short.component';
 import { shortGuard } from '../guards/short.guard';
+import { ToasterComponent } from './toast/toaster/toaster.component';
+import { ToastComponent } from './toast/toast/toast.component';
 
 const routes: Routes = [
   { 

@@ -34,6 +34,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material/snack-bar';
+import { ToastComponent } from './toast/toast/toast.component';
+import { ToasterComponent } from './toast/toaster/toaster.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/mater
     NgnhatanhComponent,
     LoginComponent,
     ShortComponent,
+    ToastComponent,
+    ToasterComponent,
   ],
   imports: [
     BrowserModule,

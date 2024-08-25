@@ -7,16 +7,26 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "standalone": false
+          "standalone": false,
+          "style": "scss",
+          "skipTests": true
         },
         "@schematics/angular:directive": {
           "standalone": false
         },
         "@schematics/angular:pipe": {
-          "standalone": false
+          "standalone": false,
+          "path": "src/pipes"
         },
         "@schematics/angular:service": {
-          "path": "src/services"
+          "path": "src/services",
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "path": "src/guards"
+        },
+        "@schematics/angular:interface": {
+          "path": "src/interfaces"
         }
       },
       "root": "",
