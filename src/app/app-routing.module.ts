@@ -10,6 +10,7 @@ import { NgnhatanhComponent } from './ngnhatanh/ngnhatanh.component';
 import { ShortComponent } from './short/short.component';
 import { shortGuard } from '../guards/short.guard';
 import { aboutmeGuard } from '../guards/aboutme.guard';
+import { CommitComponent } from './commit/commit.component';
 
 const routes: Routes = [
   { 
@@ -61,7 +62,7 @@ const routes: Routes = [
   },
   {
     path: 'commits',
-    component: FunComponent,
+    component: CommitComponent,
     title: "Commits for this site",
   },
   { 
