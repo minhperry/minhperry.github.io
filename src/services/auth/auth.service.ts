@@ -2,47 +2,56 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { Md5 } from 'ts-md5';
 import { Router } from '@angular/router';
+import { catchError, map, tap, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private api = environment.apiUrl + 'validate/';
-  private key = environment.adminPwd
-  private recrKey = environment.recrPwd
-  private cookieName = 'authMd5'
+  private readonly API = environment.apiUrl + 'auth/login';
+  private readonly TOKEN_NAME = 'authJWT'
+  private readonly ROLE = 'userRole'
 
-  constructor(private http: HttpClient, private cookieServ: CookieService, private router: Router) { }
+  constructor(private http: HttpClient, private cookie: CookieService, private router: Router) { }
 
   login(password: string) {
-    const md5 = this.md5(password);
-    return this.http.get<{is: string}>(this.api + md5);
+    return this.http.post<{token: string, role: string}>(this.API, { password })
+      .pipe(
+        tap(resp => {
+          if (resp.token) {
+            this.cookie.set(this.TOKEN_NAME, resp.token);
+            this.cookie.set(this.ROLE, resp.role);
+          }
+        }),
+        map(response => !!response.token),
+        catchError(() => of(false))
+      )
   }
 
   logout() {
-    this.cookieServ.delete(this.cookieName);
+    this.cookie.delete(this.TOKEN_NAME);
+    this.cookie.delete(this.ROLE);
     this.router.navigate(['']);
   }
 
   isLoggedIn(): boolean {
-    return this.cookieServ.check(this.cookieName);
-  }
-
-  get cookieService(): CookieService {
-    return this.cookieServ;
+    return !!this.cookie.get(this.TOKEN_NAME);
   }
 
   isAdmin(): boolean {
-    return this.cookieServ.get(this.cookieName) === 'admin_' + this.md5(this.key);
+    return this.getRole() === 'admin';
   }
 
   isRecruiter(): boolean {
-    return this.cookieServ.get(this.cookieName) === 'recr_' + this.md5(this.recrKey);
+    return this.getRole() === 'recruiter';
   }
 
-  md5(str: string): string {
-    return Md5.hashStr(str);
+  hasRights(): boolean {
+    return this.isAdmin() || this.isRecruiter();
+  }
+
+  private getRole(): string | undefined { 
+    return this.cookie.get(this.ROLE) || undefined;
   }
 }

@@ -38,7 +38,7 @@ export class ShortComponent {
       finalData,
       { headers: {
         'Content-Type': 'application/json',
-        'X-Longass-Api-Header-Name': this.cookie.get('authMd5')
+        'Authorization': 'Bearer ' + this.cookie.get('authJWT')
       }}
     ).subscribe({
       next: (data) => {
@@ -70,7 +70,7 @@ export class ShortComponent {
     this.http.get<ListResponse>(this.apiUrl, {
       headers: {
         'Content-Type': 'application/json',
-        'X-Longass-Api-Header-Name': this.cookie.get('authMd5')
+        'Authorization': 'Bearer ' + this.cookie.get('authJWT')
       }
     }).subscribe({
       next: (data) => {

@@ -25,39 +25,28 @@ export class LoginComponent {
   }
 
   login(): void {
-    this.auth.login(this.password).subscribe( resp  => {
-      switch (resp.is) {
-        case 'recruiter':
-          this.auth.cookieService.set(
-            'authMd5',
-            'recr_' + this.auth.md5(this.password),
-            1
-          );
+    this.auth.login(this.password).subscribe(succ  => {
+      if (succ) {
+        if (this.auth.isRecruiter()) {
+          // ???
           this.dialogRef.close();
-          break;
-        case 'admin':
-          this.auth.cookieService.set(
-            'authMd5',
-            'admin_' + this.auth.md5(this.password),
-            1
-          ); 
+        } else if (this.auth.isAdmin()) {
+          // ???
           this.dialogRef.close();
           this.router.navigate(['short']);
-          break;
-        default:
-          this.error = 'Invalid password';
-        
-          setTimeout(() => {
-            const errorElement = document.querySelector('.error');
-            if (errorElement) {
-                errorElement.classList.add('hidden');
-            }
-          }, this.baseFadeDuration); 
+        } 
+      } else {
+        this.error = 'Invalid password';
+        setTimeout(() => {
+          const errorElement = document.querySelector('.error');
+          if (errorElement) {
+              errorElement.classList.add('hidden');
+          }
+        }, this.baseFadeDuration); 
 
-          setTimeout(() => {
-            this.error = '';
-          }, this.baseFadeDuration + 500); 
-          break;
+        setTimeout(() => {
+          this.error = '';
+        }, this.baseFadeDuration + 500); 
       }
     });
   }
