@@ -6,9 +6,10 @@ export const shortGuard: CanActivateFn = (route, state) => {
   const auth = inject(AuthService);
   const router = inject(Router);
 
-  if (!auth.isAdmin()) {
-    router.navigate(['/404']);
+  if (auth.isAdmin()) {
+    return true;
+  } else {
+    router.navigate(['404']);
     return false;
   }
-  return true;
 };

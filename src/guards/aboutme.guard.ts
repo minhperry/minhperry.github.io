@@ -6,9 +6,10 @@ export const hasRoleGuard: CanActivateFn = (route, state) => {
   const auth = inject(AuthService);
   const router = inject(Router);
 
-  if (!auth.hasRights()) {
-    router.navigate(['/404']);
+  if (auth.hasRights()) {
+    return true;
+  } else {
+    router.navigate(['404']);
     return false;
   }
-  return true;
 };
