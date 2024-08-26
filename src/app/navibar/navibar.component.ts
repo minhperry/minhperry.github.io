@@ -31,7 +31,6 @@ export class NavibarComponent implements OnInit {
   constructor(private dialog: MatDialog, private authService: AuthService) {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.addStuffs();
-    // console.log('admin? ', this.authService.isAdmin(), 'recr? ', this.authService.isRecruiter());
   }
 
   ngOnInit() {
@@ -66,21 +65,21 @@ export class NavibarComponent implements OnInit {
     this.loginButtonText = this.isLoggedIn ? 'Log Out' : 'Recruiter? Log In!';
   }
 
-  private addShortIfAdmin() {
+  private addShort() {
     if (this.authService.isAdmin()) {
       this.naviLinks.push({ path: '/short', label: 'Short' });
     }
   }
 
-  private addAboutMeIfRecr() {
-    if (this.authService.isRecruiter()) {
+  private addAboutMe() {
+    if (this.authService.hasRights()) {
       this.naviLinks.splice(1, 0, { path: '/me', label: 'About Me' });
     }
   }
 
   private addStuffs() {
-    this.addShortIfAdmin();
-    this.addAboutMeIfRecr();
+    this.addShort();
+    this.addAboutMe();
   }
 
   get loginButtonClass() {
