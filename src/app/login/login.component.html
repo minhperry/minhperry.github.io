@@ -2,11 +2,11 @@
 <div mat-dialog-content>
     <mat-form-field appearance="fill">
         <mat-label>Enter password</mat-label>
-        <input type="password" matInput [(ngModel)]="password" />
+        <input type="password" matInput [(ngModel)]="password" (keyup.enter)="login()" />
     </mat-form-field>
     <div class="error" *ngIf="error">{{ error }}</div>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Cancel</button>
-    <button mat-button (click)="login()">Login</button>
+    <button type="submit" mat-button (click)="login()">Login</button>
 </div>

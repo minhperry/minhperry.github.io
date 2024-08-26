@@ -27,14 +27,10 @@ export class LoginComponent {
   login(): void {
     this.auth.login(this.password).subscribe(succ  => {
       if (succ) {
-        if (this.auth.isRecruiter()) {
-          // ???
-          this.dialogRef.close();
-        } else if (this.auth.isAdmin()) {
-          // ???
-          this.dialogRef.close();
+        if (this.auth.isAdmin()) {
           this.router.navigate(['short']);
         } 
+        this.dialogRef.close();
       } else {
         this.error = 'Invalid password';
         setTimeout(() => {
