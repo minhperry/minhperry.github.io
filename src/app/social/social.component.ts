@@ -1,6 +1,4 @@
-import { KeyValue } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { JsonService } from '../../services/json/json.service';
 import { Groups } from '../../interfaces/links';
 import { SocialService } from '../../services/social/social.service';
 
@@ -19,7 +17,7 @@ export class SocialComponent implements OnInit {
         this.socials = data;
         this.failed = false;
       },
-      error: (error) => {
+      error: () => {
         this.socials = {codes: [], network: [], media: [], games: [], contacts: []};
         this.failed = true;
       }
@@ -27,7 +25,7 @@ export class SocialComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      
+
   }
 
   asIs() {return 0}

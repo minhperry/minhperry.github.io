@@ -4,14 +4,22 @@ import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { catchError, map, tap, of } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
+
+interface TokenPayload {
+  role: string,
+  iat: number,
+  iss: string
+  aud: string,
+  exp: number
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private readonly API = environment.apiUrl + 'auth/login';
-  private readonly TOKEN_NAME = 'authJWT'
-  private readonly ROLE = 'userRole'
+  readonly TOKEN_NAME = 'authJWT'
 
   constructor(private http: HttpClient, private cookie: CookieService, private router: Router) { }
 
@@ -21,7 +29,6 @@ export class AuthService {
         tap(resp => {
           if (resp.token) {
             this.cookie.set(this.TOKEN_NAME, resp.token);
-            this.cookie.set(this.ROLE, resp.role);
           }
         }),
         map(response => !!response.token),
@@ -31,7 +38,6 @@ export class AuthService {
 
   logout() {
     this.cookie.delete(this.TOKEN_NAME);
-    this.cookie.delete(this.ROLE);
     this.router.navigate(['']);
   }
 
@@ -51,7 +57,8 @@ export class AuthService {
     return this.isAdmin() || this.isRecruiter();
   }
 
-  private getRole(): string | undefined { 
-    return this.cookie.get(this.ROLE) || undefined;
+  private getRole(): string | undefined {
+    let token = this.cookie.get(this.TOKEN_NAME);
+    return jwtDecode<TokenPayload>(token).role
   }
 }
