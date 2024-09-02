@@ -1,12 +1,13 @@
-<div class="landing-container">
-    <div class="landing-content">
+<div class="landing-container container-fluid d-flex justify-content-center align-items-center"
+    [ngStyle]="{'background-image': 'url(' + currentBgUrl + ')'}">
+    <div class="landing-content bg-dark bg-opacity-75 text-center p-4 rounded shadow l-content">
         <h1 class="landing-title">Welcome to my website</h1>
         <p class="landing-subtitle">I'm Minh, a student and an aspiring developer.</p>
         <p class="landing-description">
             Explore my projects, skills, and more by clicking the links in the navigation bar.
         </p>
         <small>Background source:
-            <a [href]="pixivBase + currentPivixID" target="_blank">pixiv/{{currentPivixID}}</a>
+            <a [href]="pixivBase + currentPixivID" target="_blank" class="landing-link">pixiv/{{currentPixivID}}</a>
         </small>
     </div>
 </div>

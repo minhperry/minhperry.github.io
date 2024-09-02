@@ -5,7 +5,7 @@ import { RouterOutlet, Router } from '@angular/router';
 @Component({
   selector: 'root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrl: './app.component.scss',
   animations: [
     trigger('routeAnimations', [
       transition('* <=> *', [

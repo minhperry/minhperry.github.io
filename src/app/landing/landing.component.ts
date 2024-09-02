@@ -23,7 +23,8 @@ export class LandingComponent implements OnInit{
   ];
   private secret = { loc: 'backgrounds/secret.jpg', id: '113608935' };
 
-  currentPivixID: string = '';
+  currentPixivID: string = '';
+  currentBgUrl: string = '';
 
   ngOnInit(): void {
       this.setrRandomBG()
@@ -31,14 +32,13 @@ export class LandingComponent implements OnInit{
 
   setrRandomBG() {
     if (Math.random() < 0.01) {
-      document.querySelector('.landing-container')!.setAttribute('style', `background-image: url(${this.secret.loc});`);
-      this.currentPivixID = this.secret.id;
+      this.currentBgUrl = this.secret.loc;
+      this.currentPixivID = this.secret.id;
       return;
     }
 
     const randomIndex = Math.floor(Math.random() * this.backgrounds.length);
-    const selectedBackground = this.backgrounds[randomIndex].loc;
-    this.currentPivixID = this.backgrounds[randomIndex].id;
-    document.querySelector('.landing-container')!.setAttribute('style', `background-image: url(${selectedBackground});`);
+    this.currentBgUrl = this.backgrounds[randomIndex].loc;
+    this.currentPixivID = this.backgrounds[randomIndex].id;
   }
 }

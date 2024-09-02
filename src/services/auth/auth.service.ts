@@ -59,6 +59,8 @@ export class AuthService {
 
   private getRole(): string | undefined {
     let token = this.cookie.get(this.TOKEN_NAME);
+    if (token === '') return undefined
+      console.log(token)
     return jwtDecode<TokenPayload>(token).role
   }
 }
