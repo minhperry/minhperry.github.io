@@ -1,7 +1,6 @@
 $fontSize: 36px;
-$fontHover: 52px;
-$logoSize: 36px;
-
+$fontHover: 48px;
+$logoSize: 32px;
 
 .social-component {
     padding: 20px;
@@ -18,13 +17,6 @@ $logoSize: 36px;
     text-align: center;
 }
 
-.social-group h2 {
-    font-size: 48px;
-    color: #334;
-    display: inline-block;
-    text-align: center;
-}
-
 ul {
     list-style-type: none;
     padding: 0;
@@ -32,6 +24,7 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    margin-bottom: 5px;
 }
 
 li {
@@ -46,21 +39,15 @@ li {
     color: #ff6f00;
     display: flex;
     align-items: center;
-    font-size: $fontSize;
     width: $logoSize;
     height: $logoSize;
     transition: all 0.5s;
     filter: grayscale(100%);
-}
 
-.icon:hover {
-    width: $fontHover;
-    height: $fontHover;
-    font-size: $fontHover;
-    filter: none;
-}
-
-.fa-icon {
-    font-size: $fontSize;
-    margin-right: 10px;
+    &:hover {
+        width: $fontHover;
+        height: $fontHover;
+        font-size: $fontHover;
+        filter: none;
+    }
 }

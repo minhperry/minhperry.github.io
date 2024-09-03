@@ -2,7 +2,7 @@
     <ng-container *ngIf="!failed">
         <div *ngFor="let group of socials | keyvalue: asIs">
             <ng-container class="scoial-group" *ngIf="(group.value| filterIcon).length > 0">
-                <h2>{{ group.key | titlecase}}</h2>
+                <h4>{{ group.key | titlecase}}</h4>
                 <ul>
                     <li *ngFor="let link of group.value | filterIcon">
                         <a [href]="link.url" target="_blank">
