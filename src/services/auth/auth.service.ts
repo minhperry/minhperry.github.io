@@ -19,13 +19,14 @@ interface TokenPayload {
 })
 export class AuthService {
     readonly TOKEN_NAME = 'authJWT'
-    private readonly API = environment.apiUrl + 'auth/login';
+    private readonly API_BASE = environment.apiUrl
+    private readonly API = this.API_BASE + 'auth/login';
 
     constructor(private http: HttpClient, private cookie: CookieService, private router: Router) {
     }
 
     login(password: string) {
-        return this.http.post<{ token: string, role: string }>(this.API, {password})
+        return this.postWithAuth<{ token: string, role: string }>('auth/login', {password})
             .pipe(
                 tap(resp => {
                     if (resp.token) {
@@ -58,16 +59,38 @@ export class AuthService {
         return this.isAdmin() || this.isRecruiter();
     }
 
-    private getRole(): string | undefined {
-        let token = this.cookie.get(this.TOKEN_NAME);
-        if (token === '') return undefined
-        return jwtDecode<TokenPayload>(token).role
-    }
-
     getRoleCapitalized(): string {
         let role = this.getRole()
         if (role === undefined) return ''
         return role.charAt(0).toUpperCase() + role.slice(1)
+    }
+
+    getWithAuth<T>(route: string) {
+        return this.http.get<T>(this.API_BASE + route, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.cookie.get(this.TOKEN_NAME)
+            }
+        })
+    }
+
+    get<T>(route: string) {
+        return this.http.get<T>(this.API_BASE + route)
+    }
+
+    postWithAuth<T>(route: string, body: any) {
+        return this.http.post<T>(this.API_BASE + route, body, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.cookie.get(this.TOKEN_NAME)
+            }
+        })
+    }
+
+    private getRole(): string | undefined {
+        let token = this.cookie.get(this.TOKEN_NAME);
+        if (token === '') return undefined
+        return jwtDecode<TokenPayload>(token).role
     }
 
 }

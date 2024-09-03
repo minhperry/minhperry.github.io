@@ -1,7 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
+import {HttpClient} from "@angular/common/http";
 
-type UndefableString = string | undefined; 
+type MaybeString = string | undefined;
+interface MeReply {
+    dob: string;
+    address: {
+        street: string;
+        city: string;
+    },
+    phone: string;
+}
 
 @Component({
   selector: 'aboutme',
@@ -15,9 +24,9 @@ export class AboutmeComponent implements OnInit {
   profilePictureUrl: string = 'self.png';
   isLoggedIn: boolean;
 
-  born: UndefableString
-  address: UndefableString
-  phone: UndefableString
+  born: MaybeString
+  address: MaybeString
+  phone: MaybeString
 
   constructor(private auth: AuthService) {
     this.isLoggedIn = this.auth.isLoggedIn();
@@ -25,9 +34,11 @@ export class AboutmeComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.isLoggedIn) {
-      this.born = '6th July 2002, Ha Noi, Viet Nam';
-      this.address = 'Schulte-Heuthaus-Straße 47, 44379 Dortmund';
-      this.phone = '+49 1577 897 0645';
+      this.auth.getWithAuth<MeReply>('me').subscribe(
+
+      )
     }
   }
+
+
 }

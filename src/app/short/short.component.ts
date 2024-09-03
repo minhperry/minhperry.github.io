@@ -1,154 +1,140 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { environment } from '../../environments/environment';
-import { CookieService } from 'ngx-cookie-service';
-import { CreatedResponse, ListEntry, ListResponse, ListResult, ShortenerResponse } from '../../interfaces/shortener';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {Component} from '@angular/core';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+import {environment} from '../../environments/environment';
+import {CreatedResponse, ListEntry, ListResponse, ListResult, ShortenerResponse} from '../../interfaces/shortener';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {AuthService} from "../../services/auth/auth.service";
 
 @Component({
-  selector: 'app-short',
-  templateUrl: './short.component.html',
-  styleUrl: './short.component.scss'
+    selector: 'app-short',
+    templateUrl: './short.component.html',
+    styleUrl: './short.component.scss'
 })
 export class ShortComponent {
-  key: string = '';
-  url: string = '';
-  usePrefix: boolean = false;
-  listResult: ListResponse | undefined = undefined;
+    key: string = '';
+    url: string = '';
+    usePrefix: boolean = false;
+    listResult: ListResponse | undefined = undefined;
 
-  matcher = new InstantErrorMatcher();
+    matcher = new InstantErrorMatcher();
 
-  apiUrl = environment.apiUrl + 'short';
+    keyFormControl = new FormControl(this.key, [
+        Validators.required,
+        Validators.maxLength(20),
+        Validators.pattern('[a-zA-Z0-9._@-]*'),
+    ])
+    urlFormControl = new FormControl(this.url, [
+        Validators.required,
+        Validators.maxLength(1000),
+        // Validators.pattern('(https?|ftp)://[^\\s/$.?#].[^\\s]*'),
+    ])
 
-  constructor(
-    private http: HttpClient, 
-    private cookie: CookieService, 
-    private snack: MatSnackBar
-  ) {}
-
-  send() {
-    let finalData = {
-      key: this.key,
-      value: this.httpString() + this.url,
+    constructor(
+        private auth: AuthService,
+        private snack: MatSnackBar
+    ) {
     }
 
-    this.http.post<ShortenerResponse>(this.apiUrl, 
-      finalData,
-      { headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.cookie.get('authJWT')
-      }}
-    ).subscribe({
-      next: (data) => {
-        let response = data as CreatedResponse;
-        const [k, v] = Object.entries(response.created)[0];
-        this.success('Created s.7278008.xyz/' + k + ' ➜ ' + v);
-      },
-      error: (error) => {
-        if (error.status === 409) {
-          this.warning('Key already exists!');  
-        } else if (error.status === 500) {
-          this.error('Server error!');
-        } else {
-          this.error('Failed to create short link!');
+    send() {
+        let finalData = {
+            key: this.key,
+            value: this.httpString() + this.url,
         }
-      },
-    });
-  }
 
-  isCorrectType(lr: ListResponse | undefined): lr is ListResult {
-    return lr !== undefined && 'result' in lr;
-  }
 
-  getKeys(entry: ListEntry): string[] {
-    return Object.keys(entry);
-  }
-
-  list() {
-    this.http.get<ListResponse>(this.apiUrl, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.cookie.get('authJWT')
-      }
-    }).subscribe({
-      next: (data) => {
-        if (this.isCorrectType(data)) {
-          this.listResult = data;
-        }
-      },
-      error: (error) => {
-        if (error.status === 500) {
-          this.error('Server error!');
-        } else {
-          this.error('Failed to get items!');
-        }
-      }
-    });
-  }
-
-  copy(s: string, data: string) {
-    switch (s) {
-      case 'k':
-        navigator.clipboard.writeText('s.7278008.xyz/' + data);
-        this.info('Copied s.7278008.xyz/' + data + ' to clipboard!')
-        break;
-      case 'u':
-        navigator.clipboard.writeText(data);
-        this.info('Copied ' + data + ' to clipboard!')
-        break;
+        this.auth.postWithAuth<ShortenerResponse>('short', finalData)
+            .subscribe({
+                next: (data) => {
+                    let response = data as CreatedResponse;
+                    const [k, v] = Object.entries(response.created)[0];
+                    this.success('Created s.7278008.xyz/' + k + ' ➜ ' + v);
+                },
+                error: (error) => {
+                    if (error.status === 409) {
+                        this.warning('Key already exists!');
+                    } else if (error.status === 500) {
+                        this.error('Server error!');
+                    } else {
+                        this.error('Failed to create short link!');
+                    }
+                },
+            });
     }
-  }
 
-  httpString() {
-    return this.usePrefix ? 'https://' : '';
-  }
+    isCorrectType(lr: ListResponse | undefined): lr is ListResult {
+        return lr !== undefined && 'result' in lr;
+    }
 
-  keyFormControl = new FormControl(this.key, [
-    Validators.required,
-    Validators.maxLength(20),
-    Validators.pattern('[a-zA-Z0-9._@-]*'),
-  ])
+    list() {
+        this.auth.getWithAuth<ListResponse>('short')
+            .subscribe({
+            next: (data) => {
+                if (this.isCorrectType(data)) {
+                    this.listResult = data;
+                }
+            },
+            error: (error) => {
+                if (error.status === 500) {
+                    this.error('Server error!');
+                } else {
+                    this.error('Failed to get items!');
+                }
+            }
+        });
+    }
 
-  urlFormControl = new FormControl(this.url, [
-    Validators.required,
-    Validators.maxLength(1000),
-    // Validators.pattern('(https?|ftp)://[^\\s/$.?#].[^\\s]*'),
-  ]) 
+    copy(s: string, data: string) {
+        switch (s) {
+            case 'k':
+                navigator.clipboard.writeText('s.7278008.xyz/' + data).then(() =>
+                    this.info('Copied s.7278008.xyz/' + data + ' to clipboard!')
+                );
+                break;
+            case 'u':
+                navigator.clipboard.writeText(data).then(() =>
+                    this.info('Copied ' + data + ' to clipboard!')
+                )
+                break;
+        }
+    }
 
-  private success(message: string) {
-    this.snack.open(message, 'Close', {
-      duration: 2000,
-      panelClass: ['sb-success']
-    });
-  }
+    httpString() {
+        return this.usePrefix ? 'https://' : '';
+    }
 
-  private error(message: string) {
-    this.snack.open(message, 'Close', {
-      duration: 2000,
-      panelClass: ['sb-error']
-    });
-  }
+    private success(message: string) {
+        this.snack.open(message, 'Close', {
+            duration: 2000,
+            panelClass: ['sb-success']
+        });
+    }
 
-  private warning(message: string) {
-    this.snack.open(message, 'Close', {
-      duration: 2000,
-      panelClass: ['sb-warning']
-    });
-  }
+    private error(message: string) {
+        this.snack.open(message, 'Close', {
+            duration: 2000,
+            panelClass: ['sb-error']
+        });
+    }
 
-  private info(message: string) {
-    this.snack.open(message, 'Close', {
-      duration: 2000,
-      panelClass: ['sb-info']
-    });
-  }
+    private warning(message: string) {
+        this.snack.open(message, 'Close', {
+            duration: 2000,
+            panelClass: ['sb-warning']
+        });
+    }
+
+    private info(message: string) {
+        this.snack.open(message, 'Close', {
+            duration: 2000,
+            panelClass: ['sb-info']
+        });
+    }
 }
 
 export class InstantErrorMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
+    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+        const isSubmitted = form && form.submitted;
+        return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    }
 }
