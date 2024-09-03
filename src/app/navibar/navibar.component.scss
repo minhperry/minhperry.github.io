@@ -5,80 +5,92 @@ $hoverColor: $color-iris;
 $text: rgba(58, 114, 255, 0.532);
 
 .navbar {
-  background-color: rgba($bgColor, 1);
-  padding: 0;
-  box-shadow: 0 0 10px 0 rgba(164, 164, 164, 0.233);
+    background-color: rgba($bgColor, 1);
+    padding: 0;
+    box-shadow: 0 0 10px 0 rgba(164, 164, 164, 0.233);
 
-  .container-fluid {
-    .material-symbols-outlined {
-      color: gray;
-    }
-
-    .navbar-toggler {
-      margin-bottom: 10px;
-      margin-top: 10px;
-    }
-
-    .navbar-brand {
-      font-weight: bold;
-      font-size: 1.5em;
-
-      a {
-        color: $color-text;
-        text-decoration: none;
-        cursor: pointer;
-      }
-    }
-
-    .navbar-collapse {
-      .nav-link {
-        margin-bottom: 10px;
-        margin-top: 10px;
-        padding: 0;
-      }
-
-      .menu-item {
-        color: $text;
-        text-decoration: none;
-        margin: 0 5px;
-        padding: 2px 5px;
-        border-radius: 3px;
-        transition: color 0.5s, background-color 0.5s, transform 0.5s;
-
-        &:hover {
-          background-color: rgba(172, 255, 204, 0.737);
-          color: black;
-        }
-      }
-
-      a {
-        color: $text;
-        text-decoration: none;
-        border-radius: 3px;
-        padding: 6px;
-        transition: color 0.5s, background-color 0.5s, transform 0.5s;
-      }
-
-      .btn-wrap {
-        margin-left: auto;
-
-        .login {
-          &:hover {
-            background-color: rgba(225, 225, 225, 0.222);
-            cursor: pointer;
-          }
+    .container-fluid {
+        .material-symbols-outlined {
+            color: gray;
         }
 
-        .logout {
-          text-decoration: none;
-          color: rgba(203, 1, 1, 0.726);
-          background-color: rgba(255, 115, 115, 0.222);
-
-          &:hover {
-            cursor: pointer;
-          }
+        .navbar-toggler {
+            margin-bottom: 10px;
+            margin-top: 10px;
         }
-      }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5em;
+
+            a {
+                color: $color-text;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+
+        .navbar-collapse {
+            .nav-link {
+                margin-bottom: 10px;
+                margin-top: 10px;
+                padding: 0;
+            }
+
+            .menu-item {
+                color: $text;
+                text-decoration: none;
+                margin: 0 5px;
+                padding: 2px 5px;
+                border-radius: 3px;
+                transition: color 0.5s, background-color 0.5s, transform 0.5s;
+
+                &:hover {
+                    background-color: rgba(172, 255, 204, 0.737);
+                    color: black;
+                }
+            }
+
+            a {
+                color: $text;
+                text-decoration: none;
+                border-radius: 3px;
+                padding: 6px;
+                transition: color 0.5s, background-color 0.5s, transform 0.5s;
+            }
+
+            .d-flex.login-form {
+                margin-left: auto;
+
+                .form-control {
+                    margin-right: 0;
+
+                    padding: 3px 8px;
+                }
+
+            }
+
+            .btn {
+                padding: 2px 5px;
+                color: $text;
+
+                &.login {
+                    &:hover {
+                        background-color: rgba(225, 225, 225, 0.222);
+                        cursor: pointer;
+                    }
+                }
+
+                &.logout {
+                    text-decoration: none;
+                    color: rgba(203, 1, 1, 0.726);
+                    background-color: rgba(255, 115, 115, 0.222);
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
-  }
 }

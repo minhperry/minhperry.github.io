@@ -73,7 +73,7 @@ import { CommitComponent } from './commit/commit.component';
     provideAnimationsAsync(),
     provideHttpClient(),
     CookieService,
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 20000}}
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}}
   ],
   bootstrap: [AppComponent]
 })

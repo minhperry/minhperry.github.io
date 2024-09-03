@@ -3,6 +3,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 
+/*
+* @Deprecated Do not use this.
+* */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,7 +32,7 @@ export class LoginComponent {
       if (succ) {
         if (this.auth.isAdmin()) {
           this.router.navigate(['short']);
-        } 
+        }
         this.dialogRef.close();
       } else {
         this.error = 'Invalid password';
@@ -38,11 +41,11 @@ export class LoginComponent {
           if (errorElement) {
               errorElement.classList.add('hidden');
           }
-        }, this.baseFadeDuration); 
+        }, this.baseFadeDuration);
 
         setTimeout(() => {
           this.error = '';
-        }, this.baseFadeDuration + 500); 
+        }, this.baseFadeDuration + 500);
       }
     });
   }

@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg">
+<nav class="navbar sticky-top navbar-expand-lg" data-bs-theme="dark">
   <div class="container-fluid">
     <div class="navbar-brand">
       <a href="/">
@@ -17,9 +17,18 @@
           <a class="menu-item" [routerLink]="link.path">{{link.label}}</a>
         </div>
       </div>
-      <div class="btn-wrap nav-link d-flex justify-content-center">
-        <a [class]="loginButtonClass" (click)="processClick()">{{ loginButtonText }}</a>
-      </div>
+        <div class="d-flex login-form">
+            <input *ngIf="!isLoggedIn" class="form-control me-2" [(ngModel)]="password"
+                   (keyup.enter)="login()"
+                   type="password" placeholder="Recruiter? Log in!" aria-label="Login">
+            <button class="btn text-nowrap" type="submit"
+                [class]="loginButtonClass"
+                (click)="processClick()">
+                {{ loginButtonText }}
+            </button>
+        </div>
+
+
     </div>
 
   </div>
