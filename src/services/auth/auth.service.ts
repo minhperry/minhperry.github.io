@@ -26,7 +26,7 @@ export class AuthService {
     }
 
     login(password: string) {
-        return this.postWithAuth<{ token: string, role: string }>('auth/login', {password})
+        return this.postWithAuth<{ token: string, role: string }>(this.API, {password})
             .pipe(
                 tap(resp => {
                     if (resp.token) {

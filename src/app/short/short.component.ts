@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
-import {environment} from '../../environments/environment';
-import {CreatedResponse, ListEntry, ListResponse, ListResult, ShortenerResponse} from '../../interfaces/shortener';
+import {CreatedResponse, ListResponse, ListResult, ShortenerResponse} from '../../interfaces/shortener';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {AuthService} from "../../services/auth/auth.service";
 
