@@ -7,7 +7,7 @@ import { SocialService } from '../../services/social/social.service';
   templateUrl: './social.component.html',
   styleUrl: './social.component.scss'
 })
-export class SocialComponent implements OnInit {
+export class SocialComponent {
   socials: Groups | undefined;
   failed: boolean | null = null;
 
@@ -22,10 +22,6 @@ export class SocialComponent implements OnInit {
         this.failed = true;
       }
   });
-  }
-
-  ngOnInit(): void {
-
   }
 
   asIs() {return 0}

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth/auth.service';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../services/auth/auth.service';
 
 type MaybeString = string | undefined;
+
 interface MeReply {
     dob: string;
     address: {
@@ -12,32 +13,40 @@ interface MeReply {
 }
 
 @Component({
-  selector: 'aboutme',
-  templateUrl: './aboutme.component.html',
-  styleUrl: './aboutme.component.scss'
+    selector: 'aboutme',
+    templateUrl: './aboutme.component.html',
+    styleUrl: './aboutme.component.scss'
 })
 export class AboutmeComponent implements OnInit {
-  name = "Phan, Tuan Minh 🇻🇳/🇩🇪"
-  bio: string = '22 / Student @ ';
-  tuSvg: string = 'icons/tudo.svg';
-  profilePictureUrl: string = 'self.png';
-  isLoggedIn: boolean;
+    name = "Phan, Tuan Minh 🇻🇳/🇩🇪"
+    bio: string = '22 / Student @ ';
+    tuSvg: string = 'icons/tudo.svg';
+    profilePictureUrl: string = 'self.png';
+    isLoggedIn: boolean;
 
-  born: MaybeString
-  address: MaybeString
-  phone: MaybeString
+    born: MaybeString
+    address: MaybeString
+    phone: MaybeString
 
-  constructor(private auth: AuthService) {
-    this.isLoggedIn = this.auth.isLoggedIn();
-  }
+    success!: boolean
 
-  ngOnInit(): void {
-    if (this.isLoggedIn) {
-      this.auth.getWithAuth<MeReply>('me').subscribe(
-
-      )
+    constructor(private auth: AuthService) {
+        this.isLoggedIn = this.auth.isLoggedIn();
     }
-  }
 
-
+    ngOnInit(): void {
+        if (this.isLoggedIn) {
+            this.auth.getWithAuth<MeReply>('me').subscribe({
+                next: reply => {
+                    this.success = true
+                    this.born = reply.dob
+                    this.address = reply.address.street + ', ' + reply.address.city
+                    this.phone = reply.phone
+                },
+                error: () => {
+                    this.success = false
+                }
+            })
+        }
+    }
 }
