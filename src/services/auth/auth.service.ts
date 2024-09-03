@@ -20,13 +20,12 @@ interface TokenPayload {
 export class AuthService {
     readonly TOKEN_NAME = 'authJWT'
     private readonly API_BASE = environment.apiUrl
-    private readonly API = this.API_BASE + 'auth/login';
 
     constructor(private http: HttpClient, private cookie: CookieService, private router: Router) {
     }
 
     login(password: string) {
-        return this.postWithAuth<{ token: string, role: string }>(this.API, {password})
+        return this.postWithAuth<{ token: string, role: string }>('auth/login', {password})
             .pipe(
                 tap(resp => {
                     if (resp.token) {
