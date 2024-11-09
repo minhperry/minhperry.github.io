@@ -16,6 +16,9 @@
         <div *ngFor="let link of naviLinks" class="nav-link d-flex justify-content-center">
           <a class="menu-item" [routerLink]="link.path">{{link.label}}</a>
         </div>
+          <div class="nav-link d-flex justify-content-center">
+              <a class="menu-item" href="https://blog.minhperry.de/">Blog</a>
+          </div>
       </div>
         <div class="d-flex nav-link login-form justify-content-center">
             <input *ngIf="!isLoggedIn" class="form-control me-2" [(ngModel)]="password"
