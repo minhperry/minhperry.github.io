@@ -16,7 +16,6 @@ import { FunComponent } from './fun/fun.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { LandingComponent } from './landing/landing.component';
-import { NgnhatanhComponent } from './ngnhatanh/ngnhatanh.component';
 import { ShortComponent } from './short/short.component';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
@@ -49,7 +48,6 @@ import { CommitComponent } from './commit/commit.component';
     FooterComponent,
     ProjectsComponent,
     LandingComponent,
-    NgnhatanhComponent,
     LoginComponent,
     ShortComponent,
     CommitComponent,
