@@ -31,19 +31,19 @@ export class SkillsComponent implements OnInit {
     'C++': 85,
     'Python': 87,
     'Kotlin': 51,
-    'Cloudflare Workers': 10,
+    'VPS Hosting': 22,
   };
 
   skillsSvgMap: { [skill: string]: string } = {
     'Angular': 'icons/languages/angular.svg',
     'TypeScript': 'icons/languages/typescript.svg',
     'HTML': 'icons/languages/html-5.svg',
-    'CSS': 'icons/languages/css-3.svg', 
+    'CSS': 'icons/languages/css-3.svg',
     'Java': 'icons/languages/java.svg',
     'C++': 'icons/languages/cpp.svg',
     'Python': 'icons/languages/python.svg',
     'Kotlin': 'icons/languages/kotlin.svg',
-    'Cloudflare Workers': 'icons/languages/cf-workers.svg'
+    'VPS Hosting': 'icons/languages/vps.png'
   };
 
   skillEntries: SkillEntry[] = [];
