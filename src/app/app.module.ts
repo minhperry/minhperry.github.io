@@ -18,7 +18,6 @@ import { ProjectsComponent } from './projects/projects.component';
 import { LandingComponent } from './landing/landing.component';
 import { ShortComponent } from './short/short.component';
 
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { CookieService } from 'ngx-cookie-service';
@@ -56,7 +55,6 @@ import { CommitComponent } from './commit/commit.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    PdfViewerModule,
     FormsModule,
     MatDialogModule,
     MatFormFieldModule,
