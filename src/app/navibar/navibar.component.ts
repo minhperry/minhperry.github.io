@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 interface NavLink {
     path: string;
     label: string;
+    isExternal?: boolean;
 }
 
 @Component({
@@ -20,6 +21,7 @@ export class NavibarComponent implements OnInit {
         {path: '/', label: 'Home'},
         {path: '/projects', label: 'Projects'},
         {path: '/socials', label: 'Socials'},
+        {path: 'https://blog.minhperry.de/', label: 'Blog', isExternal: true},
         // {path: '/commits', label: 'Commit'},
     ];
 
@@ -50,7 +52,9 @@ export class NavibarComponent implements OnInit {
         if (this.isLoggedIn) {
             this.auth.logout();
             this.isLoggedIn = false;
-            this.naviLinks = this.naviLinks.filter(link => link.path !== '/short' && link.path !== '/me');
+            this.naviLinks = this.naviLinks.filter(link =>
+                link.path !== '/short' && link.path !== '/me' && link.path.includes('.pdf')
+            );
         } else {
             this.login();
         }
@@ -96,7 +100,7 @@ export class NavibarComponent implements OnInit {
     private addHasRightsStuffs() {
         if (this.auth.hasRights()) {
             this.naviLinks.splice(1, 0, {path: '/me', label: 'About Me'});
-            this.naviLinks.splice(2, 0, {path: '/securedpdf', label: 'CV PDF'})
+            this.naviLinks.splice(2, 0, {path: '/securedpdf/lebenslauf.pdf', label: 'CV PDF', isExternal: true})
         }
     }
 
