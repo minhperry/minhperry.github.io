@@ -5,7 +5,11 @@
             <h3 class="each-title">{{ project.title }}</h3>
             <p class="each-since" *ngIf="project.since">{{ project.since }}</p>
             <p class="each-desc">{{ project.description }}</p>
-            <a [href]="project.link" class="each-link" target="_blank">View Project</a>
+            <a [href]="project.source" class="each-link" target="_blank">Source</a>
+            <span *ngIf="hasLink(project)">
+                /
+                <a [href]="project.link" class="each-link" target="_blank">View</a>
+            </span>
         </div>
     </div>
 </div>
