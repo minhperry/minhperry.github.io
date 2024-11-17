@@ -47,6 +47,3 @@ node_modules/*
 # Cloudflare Workers
 backend/node_modules
 backend/.wrangler
-
-#
-public/securedpdf
