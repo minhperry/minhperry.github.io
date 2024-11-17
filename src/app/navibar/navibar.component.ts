@@ -51,7 +51,7 @@ export class NavibarComponent implements OnInit {
             this.auth.logout();
             this.isLoggedIn = false;
             this.naviLinks = this.naviLinks.filter(link =>
-                link.path !== '/short' && link.path !== '/me' && link.path.includes('.pdf')
+                link.path !== '/short' && link.path !== '/me' && !link.path.includes('.pdf')
             );
         } else {
             this.login();
