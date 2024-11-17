@@ -93,14 +93,15 @@ export class NavibarComponent implements OnInit {
         }
     }
 
-    private addAboutMe() {
+    private addHasRightsStuffs() {
         if (this.auth.hasRights()) {
             this.naviLinks.splice(1, 0, {path: '/me', label: 'About Me'});
+            this.naviLinks.splice(2, 0, {path: '/securedpdf', label: 'CV PDF'})
         }
     }
 
     private addStuffs() {
         this.addShort();
-        this.addAboutMe();
+        this.addHasRightsStuffs();
     }
 }

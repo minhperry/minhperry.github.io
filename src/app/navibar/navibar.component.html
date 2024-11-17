@@ -1,38 +1,38 @@
 <nav class="navbar sticky-top navbar-expand-lg" data-bs-theme="dark">
-  <div class="container-fluid">
-    <div class="navbar-brand">
-      <a href="/">
-        {{ text }}
-      </a>
-    </div>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <mat-icon class="material-symbols-outlined">menu</mat-icon>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="navbar-nav">
-        <div *ngFor="let link of naviLinks" class="nav-link d-flex justify-content-center">
-          <a class="menu-item" [routerLink]="link.path">{{link.label}}</a>
-        </div>
-          <div class="nav-link d-flex justify-content-center">
-              <a class="menu-item" href="https://blog.minhperry.de/">Blog</a>
-          </div>
-      </div>
-        <div class="d-flex nav-link login-form justify-content-center">
-            <input *ngIf="!isLoggedIn" class="form-control me-2" [(ngModel)]="password"
-                   (keyup.enter)="login()"
-                   type="password" placeholder="Recruiter? Log in!" aria-label="Login">
-            <button class="btn text-nowrap" type="submit"
-                [class]="loginButtonClass"
-                (click)="processClick()">
-                {{ loginButtonText }}
-            </button>
+    <div class="container-fluid">
+        <div class="navbar-brand">
+            <a href="/">
+                {{ text }}
+            </a>
         </div>
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <mat-icon class="material-symbols-outlined">menu</mat-icon>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav">
+                <div *ngFor="let link of naviLinks" class="nav-link d-flex justify-content-center">
+                    <a class="menu-item" [routerLink]="link.path">{{ link.label }}</a>
+                </div>
+                <div class="nav-link d-flex justify-content-center">
+                    <a class="menu-item" href="https://blog.minhperry.de/" target="_blank">Blog</a>
+                </div>
+            </div>
+            <div class="d-flex nav-link login-form justify-content-center">
+                <input *ngIf="!isLoggedIn" class="form-control me-2" [(ngModel)]="password"
+                       (keyup.enter)="login()"
+                       type="password" placeholder="Recruiter? Log in!" aria-label="Login">
+                <button class="btn text-nowrap" type="submit"
+                        [class]="loginButtonClass"
+                        (click)="processClick()">
+                    {{ loginButtonText }}
+                </button>
+            </div>
+
+
+        </div>
 
     </div>
-
-  </div>
 </nav>
