@@ -8,7 +8,8 @@ import {AuthService} from "../../services/auth/auth.service";
 @Component({
     selector: 'app-short',
     templateUrl: './short.component.html',
-    styleUrl: './short.component.scss'
+    styleUrl: './short.component.scss',
+    standalone: false
 })
 export class ShortComponent {
     key: string = '';

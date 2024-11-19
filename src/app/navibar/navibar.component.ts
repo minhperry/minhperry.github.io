@@ -13,6 +13,7 @@ interface NavLink {
     selector: 'navibar',
     templateUrl: './navibar.component.html',
     styleUrl: './navibar.component.scss',
+    standalone: false
 })
 export class NavibarComponent implements OnInit {
     naviLinks: NavLink[] = [

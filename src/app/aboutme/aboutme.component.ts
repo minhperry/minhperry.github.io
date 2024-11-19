@@ -15,7 +15,8 @@ interface MeReply {
 @Component({
     selector: 'aboutme',
     templateUrl: './aboutme.component.html',
-    styleUrl: './aboutme.component.scss'
+    styleUrl: './aboutme.component.scss',
+    standalone: false
 })
 export class AboutmeComponent implements OnInit {
     name = "Phan, Tuan Minh 🇻🇳/🇩🇪"

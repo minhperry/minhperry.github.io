@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
 * @Deprecated Do not use this.
 * */
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.scss',
+    standalone: false
 })
 export class LoginComponent {
   password: string = '';
