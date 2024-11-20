@@ -1,4 +1,4 @@
-@import '../../styles.scss';
+@use '../../styles.scss';
 
 .footer-content {
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
     margin: 0 auto;
     padding: 5px 20px;
-    background-color: rgba($color-base, 0.9);
+    background-color: rgba(styles.$color-base, 0.9);
 }
 
 .footer {
@@ -17,5 +17,5 @@
 .clock {
     font-size: 25px;
     margin-left: auto;
-    color: $color-gold;
+    color: styles.$color-gold;
 }

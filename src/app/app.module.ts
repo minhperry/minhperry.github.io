@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AboutmeComponent } from './aboutme/aboutme.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SkillsComponent } from './skills/skills.component';
 import { NavibarComponent } from './navibar/navibar.component';
 import { SocialComponent } from './social/social.component';
@@ -20,7 +19,7 @@ import { ShortComponent } from './short/short.component';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { CookieService } from 'ngx-cookie-service';
+import { SsrCookieService } from 'ngx-cookie-service-ssr';
 import { LoginComponent } from './login/login.component';
 
 import { FormsModule } from '@angular/forms';
@@ -54,7 +53,6 @@ import { CommitComponent } from './commit/commit.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule,
     FormsModule,
     MatDialogModule,
     MatFormFieldModule,
@@ -68,7 +66,7 @@ import { CommitComponent } from './commit/commit.component';
   providers: [
     provideAnimationsAsync(),
     provideHttpClient(),
-    CookieService,
+    SsrCookieService,
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}},
     provideClientHydration(withEventReplay())
   ],

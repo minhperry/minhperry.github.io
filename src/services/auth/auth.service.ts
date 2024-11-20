@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
-import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
 import {catchError, map, of, tap} from 'rxjs';
 import {jwtDecode} from 'jwt-decode';
+import {SsrCookieService} from "ngx-cookie-service-ssr";
 
 interface TokenPayload {
     role: string,
@@ -13,7 +13,7 @@ interface TokenPayload {
     aud: string,
     exp: number
 }
-
+ 
 @Injectable({
     providedIn: 'root'
 })
@@ -21,7 +21,7 @@ export class AuthService {
     readonly TOKEN_NAME = 'authJWT'
     private readonly API_BASE = environment.apiUrl
 
-    constructor(private http: HttpClient, private cookie: CookieService, private router: Router) {
+    constructor(private http: HttpClient, private cookie: SsrCookieService, private router: Router) {
     }
 
     login(password: string) {
