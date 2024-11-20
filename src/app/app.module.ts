@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -69,7 +69,8 @@ import { CommitComponent } from './commit/commit.component';
     provideAnimationsAsync(),
     provideHttpClient(),
     CookieService,
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}}
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}},
+    provideClientHydration(withEventReplay())
   ],
   bootstrap: [AppComponent]
 })
