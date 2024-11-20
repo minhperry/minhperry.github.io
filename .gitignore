@@ -47,3 +47,6 @@ node_modules/*
 # Cloudflare Workers
 backend/node_modules
 backend/.wrangler
+
+# Why is deploy folder in git again?
+deploy/
