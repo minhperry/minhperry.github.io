@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
+import { SkillsComponent } from '../skills/skills.component';
 
 type MaybeString = string | undefined;
 
@@ -16,7 +17,7 @@ interface MeReply {
     selector: 'aboutme',
     templateUrl: './aboutme.component.html',
     styleUrl: './aboutme.component.scss',
-    standalone: false
+    imports: [SkillsComponent]
 })
 export class AboutmeComponent implements OnInit {
     name = "Phan, Tuan Minh 🇻🇳/🇩🇪"

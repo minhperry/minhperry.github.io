@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { Groups } from '../../interfaces/links';
 import { SocialService } from '../../services/social/social.service';
+import { TitleCasePipe, KeyValuePipe } from '@angular/common';
+import { IconPipe } from '../../pipes/icon/icon.pipe';
 
 @Component({
     selector: 'social',
     templateUrl: './social.component.html',
     styleUrl: './social.component.scss',
-    standalone: false
+    imports: [TitleCasePipe, KeyValuePipe, IconPipe]
 })
 export class SocialComponent {
   socials: Groups | undefined;

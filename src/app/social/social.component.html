@@ -1,21 +1,27 @@
 <div class="social-component">
-    <ng-container *ngIf="!failed">
-        <div *ngFor="let group of socials | keyvalue: asIs">
-            <ng-container class="scoial-group" *ngIf="(group.value| filterIcon).length > 0">
-                <h4>{{ group.key | titlecase}}</h4>
-                <ul>
-                    <li *ngFor="let link of group.value | filterIcon">
-                        <a [href]="link.url" target="_blank">
-                            <ng-container>
-                                <img [src]="link.logo" [alt]="link.name.slice(0,2)" class="icon">
-                            </ng-container>
-                        </a>
-                    </li>
-                </ul>
-            </ng-container>
-        </div>
-    </ng-container>
-    <ng-container *ngIf="failed">
-        <h2>Failed to load social links!</h2>
-    </ng-container>
+  @if (!failed) {
+    @for (group of socials | keyvalue: asIs; track group) {
+      <div>
+        @if ((group.value| filterIcon).length > 0) {
+          <ng-container class="scoial-group">
+            <h4>{{ group.key | titlecase}}</h4>
+            <ul>
+              @for (link of group.value | filterIcon; track link) {
+                <li>
+                  <a [href]="link.url" target="_blank">
+                    <ng-container>
+                      <img [src]="link.logo" [alt]="link.name.slice(0,2)" class="icon">
+                    </ng-container>
+                  </a>
+                </li>
+              }
+            </ul>
+          </ng-container>
+        }
+      </div>
+    }
+  }
+  @if (failed) {
+    <h2>Failed to load social links!</h2>
+  }
 </div>

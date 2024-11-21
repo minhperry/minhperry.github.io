@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {Router} from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
+import { MatIcon } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 interface NavLink {
     path: string;
@@ -13,7 +15,7 @@ interface NavLink {
     selector: 'navibar',
     templateUrl: './navibar.component.html',
     styleUrl: './navibar.component.scss',
-    standalone: false
+    imports: [MatIcon, RouterLink, FormsModule]
 })
 export class NavibarComponent implements OnInit {
     naviLinks: NavLink[] = [

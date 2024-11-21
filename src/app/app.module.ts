@@ -8,7 +8,7 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
 import { SkillsComponent } from './skills/skills.component';
 import { NavibarComponent } from './navibar/navibar.component';
 import { SocialComponent } from './social/social.component';
-import { provideHttpClient } from '@angular/common/http';
+import {provideHttpClient, withFetch} from '@angular/common/http';
 import { IconPipe } from '../pipes/icon/icon.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FunComponent } from './fun/fun.component';
@@ -34,45 +34,43 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/mater
 import { CommitComponent } from './commit/commit.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AboutmeComponent,
-    SkillsComponent,
-    NavibarComponent,
-    SocialComponent,
-    IconPipe,
-    PageNotFoundComponent,
-    FunComponent,
-    FooterComponent,
-    ProjectsComponent,
-    LandingComponent,
-    LoginComponent,
-    ShortComponent,
-    CommitComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatListModule
-  ],
-  providers: [
-    provideAnimationsAsync(),
-    provideHttpClient(),
-    SsrCookieService,
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}},
-    provideClientHydration(withEventReplay())
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        MatSnackBarModule,
+        MatListModule,
+        AboutmeComponent,
+        SkillsComponent,
+        NavibarComponent,
+        SocialComponent,
+        IconPipe,
+        PageNotFoundComponent,
+        FunComponent,
+        FooterComponent,
+        ProjectsComponent,
+        LandingComponent,
+        LoginComponent,
+        ShortComponent,
+        CommitComponent
+    ],
+    providers: [
+        provideAnimationsAsync(),
+        provideHttpClient(withFetch()),
+        SsrCookieService,
+        { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 3000 } },
+        provideClientHydration(withEventReplay())
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+// platformBrowserDynamic().bootstrapModule(AppModule)

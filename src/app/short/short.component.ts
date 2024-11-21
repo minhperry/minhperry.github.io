@@ -1,15 +1,20 @@
 import {Component} from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {CreatedResponse, ListResponse, ListResult, ShortenerResponse} from '../../interfaces/shortener';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {AuthService} from "../../services/auth/auth.service";
+import { MatFormField, MatLabel, MatHint, MatError, MatPrefix, MatSuffix } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatIcon } from '@angular/material/icon';
+import { MatButton } from '@angular/material/button';
+import { MatList, MatListItem } from '@angular/material/list';
 
 @Component({
     selector: 'app-short',
     templateUrl: './short.component.html',
     styleUrl: './short.component.scss',
-    standalone: false
+    imports: [MatFormField, MatLabel, MatInput, FormsModule, ReactiveFormsModule, MatHint, MatError, MatPrefix, MatIcon, MatSuffix, MatButton, MatList, MatListItem]
 })
 export class ShortComponent {
     key: string = '';

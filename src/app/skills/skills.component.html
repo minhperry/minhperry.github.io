@@ -9,11 +9,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let entry of skillEntries" class="entry">
-        <td><img [src]="entry.iconUrl" class="skill-icon"></td>
-        <td>{{ entry.skill }}</td>
-        <td>{{ entry.wordRating }}</td>
-        <td>{{ entry.rating }}</td>
-    </tbody>
-  </table>
-</div>
+      @for (entry of skillEntries; track entry) {
+        <tr class="entry">
+          <td><img [src]="entry.iconUrl" class="skill-icon"></td>
+          <td>{{ entry.skill }}</td>
+          <td>{{ entry.wordRating }}</td>
+          <td>{{ entry.rating }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>

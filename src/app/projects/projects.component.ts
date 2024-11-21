@@ -11,8 +11,7 @@ interface Project {
 @Component({
     selector: 'app-projects',
     templateUrl: './projects.component.html',
-    styleUrl: './projects.component.scss',
-    standalone: false
+    styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent implements OnInit {
     projects: Project[] = [

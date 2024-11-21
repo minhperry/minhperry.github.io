@@ -19,8 +19,7 @@ enum Rating {
 @Component({
     selector: 'skills',
     templateUrl: './skills.component.html',
-    styleUrl: './skills.component.scss',
-    standalone: false
+    styleUrl: './skills.component.scss'
 })
 export class SkillsComponent implements OnInit {
   skills: { [skill: string]: number } = {

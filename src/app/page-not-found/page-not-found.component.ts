@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'pnf',
     templateUrl: './page-not-found.component.html',
     styleUrl: './page-not-found.component.scss',
-    standalone: false
+    imports: [RouterLink]
 })
 export class PageNotFoundComponent {
   constructor() {}

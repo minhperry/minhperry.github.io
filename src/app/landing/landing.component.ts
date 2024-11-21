@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgStyle } from '@angular/common';
 
 interface PixivBackground {
   loc: string,
@@ -9,7 +10,7 @@ interface PixivBackground {
     selector: 'app-landing',
     templateUrl: './landing.component.html',
     styleUrl: './landing.component.scss',
-    standalone: false
+    imports: [NgStyle]
 })
 export class LandingComponent implements OnInit{
   pixivBase = 'https://www.pixiv.net/en/artworks/'

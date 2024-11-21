@@ -4,8 +4,7 @@ import { ClockService } from '../../services/clock/clock.service';
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',
-    styleUrl: './footer.component.scss',
-    standalone: false
+    styleUrl: './footer.component.scss'
 })
 export class FooterComponent implements OnInit {
   time = '';
