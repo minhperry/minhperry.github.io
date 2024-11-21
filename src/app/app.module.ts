@@ -17,8 +17,6 @@ import { ProjectsComponent } from './projects/projects.component';
 import { LandingComponent } from './landing/landing.component';
 import { ShortComponent } from './short/short.component';
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
 import { LoginComponent } from './login/login.component';
 
