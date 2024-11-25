@@ -34,11 +34,6 @@ export const routes: Routes = [
         title: "My projects",
     },
     {
-        path: 'securedpdf/lebenslauf.pdf',
-        canActivate: [hasRoleGuard],
-        children: []
-    },
-    {
         path: '**',
         redirectTo: '/404',
         title: "Ooopsie woospie you made a fucky wucky"
