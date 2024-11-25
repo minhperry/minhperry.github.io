@@ -5,8 +5,6 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {FunComponent} from './fun/fun.component';
 import {ProjectsComponent} from './projects/projects.component';
 import {LandingComponent} from './landing/landing.component';
-import {ShortComponent} from './short/short.component';
-import {shortGuard} from '../guards/short.guard';
 import {hasRoleGuard} from '../guards/aboutme.guard';
 import {CommitComponent} from './commit/commit.component';
 
