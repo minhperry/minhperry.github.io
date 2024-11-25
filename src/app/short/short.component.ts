@@ -10,6 +10,9 @@ import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
 import { MatList, MatListItem } from '@angular/material/list';
 
+/**
+ * @deprecated This has no practical uses.
+ */
 @Component({
     selector: 'app-short',
     templateUrl: './short.component.html',

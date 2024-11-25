@@ -48,12 +48,6 @@ export const routes: Routes = [
         title: "My projects",
     },
     {
-        path: 'short',
-        component: ShortComponent,
-        title: "Shorten URL",
-        canActivate: [shortGuard],
-    },
-    {
         path: 'commits',
         component: CommitComponent,
         title: "Commits for this site",
