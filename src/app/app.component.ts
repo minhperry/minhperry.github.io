@@ -7,14 +7,6 @@ import {NavibarComponent} from "./navibar/navibar.component";
     selector: 'root',
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    animations: [
-        trigger('routeAnimations', [
-            transition('* <=> *', [
-                style({ opacity: 0 }),
-                animate('1000ms ease-in-out', style({ opacity: 1 })),
-            ]),
-        ])
-    ],
     imports: [NavibarComponent, RouterOutlet]
 })
 export class AppComponent {
