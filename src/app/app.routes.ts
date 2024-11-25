@@ -1,5 +1,4 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {Routes} from '@angular/router';
 import {AboutmeComponent} from './aboutme/aboutme.component';
 import {SocialComponent} from './social/social.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
@@ -11,7 +10,7 @@ import {shortGuard} from '../guards/short.guard';
 import {hasRoleGuard} from '../guards/aboutme.guard';
 import {CommitComponent} from './commit/commit.component';
 
-const routes: Routes = [
+export const routes: Routes = [
     {
         path: '',
         component: LandingComponent,
@@ -69,11 +68,4 @@ const routes: Routes = [
         redirectTo: '/404',
         title: "Ooopsie woospie you made a fucky wucky"
     }
-];
-
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
-})
-export class AppRoutingModule {
-}
+]
