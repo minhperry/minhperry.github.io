@@ -8,10 +8,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4201/`. The appli
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the desired directory listed in [`angular.json`](/angular.json).
+Run `ng build --configuration=production` to build the project. The build artifacts will be stored in the desired directory listed in [`angular.json`](/angular.json).
 
 # Technology used
 
-* [Angular 18](https://angular.dev/) as the main skeleton.
+* [Angular 19](https://angular.dev/) as the main skeleton.
 * [Bootstrap 5.3](https://getbootstrap.com/) for styling and pre-styled components.
-* [Cloudflare Pages](https://pages.cloudflare.com/) for deploying, however this will soon be moved to my personal VPS on [Hetzner Cloud](https://www.hetzner.com/cloud/) for SSR and improvements.
+* ~~[Cloudflare Pages](https://pages.cloudflare.com/) for deploying, however this will soon be moved to my personal VPS on [Hetzner Cloud](https://www.hetzner.com/cloud/) for SSR and improvements.~~
+* [Hetzner Cloud](https://www.hetzner.com/cloud/) for hosting and SSR.
