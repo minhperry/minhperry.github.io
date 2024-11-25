@@ -91,13 +91,6 @@ export class NavibarComponent implements OnInit {
     private updateText() {
         this.loginButtonText = this.isLoggedIn ? 'Log Out' : 'Log in';
     }
-
-    private addShort() {
-        if (this.auth.isAdmin()) {
-            this.naviLinks.push({path: '/short', label: 'Short'});
-        }
-    }
-
     private addHasRightsStuffs() {
         if (this.auth.hasRights()) {
             this.naviLinks.splice(1, 0, {path: '/me', label: 'About Me'});
@@ -106,7 +99,6 @@ export class NavibarComponent implements OnInit {
     }
 
     private addStuffs() {
-        this.addShort();
         this.addHasRightsStuffs();
     }
 }
