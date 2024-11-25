@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ClockService } from '../../services/clock/clock.service';
 
+/**
+ * @deprecated Deprecated (for now) due to not having a good place to put the footer.
+ */
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',
