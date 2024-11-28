@@ -5,7 +5,7 @@
       <div class="profile-picture">
         <img src="{{ profilePictureUrl }}" alt="null" />
       </div>
-      @if (success) {
+      @if (false) {
         <div class="bio">
           <h2>{{ name }}</h2>
           <p>{{ bio }} <img [src]="tuSvg" class="tu-do" alt="" /></p>
@@ -20,7 +20,7 @@
           }
         </div>
       }
-      @if (!success) {
+      @if (false) {
         <div class="bio">
           <h3>Failed to get info!</h3>
         </div>

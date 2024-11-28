@@ -23,7 +23,7 @@ export class AboutmeComponent implements OnInit {
     name = "Phan, Tuan Minh 🇻🇳/🇩🇪"
     bio: string = '22 / Student @ ';
     tuSvg: string = 'icons/tudo.svg';
-    profilePictureUrl: string = 'self.png';
+    profilePictureUrl: string = 'self.jpg';
     isLoggedIn: boolean;
 
     born: MaybeString
