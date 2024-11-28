@@ -68,7 +68,7 @@ export class NavibarComponent implements OnInit {
             if (succ) {
                 this.isLoggedIn = true;
                 if (this.auth.isAdmin()) {
-                    // this.redirect('short')
+                    this.redirect('/')
                     this.snack.open('Successfully logged in as ' + this.auth.getRoleCapitalized())
                 }
                 if (this.auth.isRecruiter()) {
