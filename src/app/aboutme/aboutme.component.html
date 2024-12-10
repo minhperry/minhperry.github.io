@@ -1,33 +1,12 @@
 <div class="about-me container-sm">
   <div class="row">
-    <div class="wrapper col-md-6 col-12">
+    <div class="wrapper col-md-4 col-12">
       <h1>About Me</h1>
       <div class="profile-picture">
         <img src="{{ profilePictureUrl }}" alt="null" />
       </div>
-      @if (false) {
-        <div class="bio">
-          <h2>{{ name }}</h2>
-          <p>{{ bio }} <img [src]="tuSvg" class="tu-do" alt="" /></p>
-          @if (born) {
-            <p>DOB: {{ born }}</p>
-          }
-          @if (address) {
-            <p>Address: {{ address }}</p>
-          }
-          @if (phone) {
-            <p>Tel: {{ phone }}</p>
-          }
-        </div>
-      }
-      @if (false) {
-        <div class="bio">
-          <h3>Failed to get info!</h3>
-        </div>
-      }
     </div>
-
-    <div class="skills col-md-6 col-12">
+    <div class="skills col-md-8 col-12">
       <h2>Skills</h2>
       <skills />
     </div>

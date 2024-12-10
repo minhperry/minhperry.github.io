@@ -30,25 +30,11 @@ export class AboutmeComponent implements OnInit {
     address: MaybeString
     phone: MaybeString
 
-    success!: boolean
-
     constructor(private auth: AuthService) {
         this.isLoggedIn = this.auth.isLoggedIn();
     }
 
     ngOnInit(): void {
-        if (this.isLoggedIn) {
-            this.auth.getWithAuth<MeReply>('me').subscribe({
-                next: reply => {
-                    this.success = true
-                    this.born = reply.dob
-                    this.address = reply.address.street + ', ' + reply.address.city
-                    this.phone = reply.phone
-                },
-                error: () => {
-                    this.success = false
-                }
-            })
-        }
+
     }
 }
