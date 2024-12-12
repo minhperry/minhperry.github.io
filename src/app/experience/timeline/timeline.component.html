@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">{{ title }}</h6>
+          <div id="content">
+            <ul class="timeline">
+              @for (event of timeline; track event.id) {
+                <li class="event" data-date="{{ appendDate(event) }}">
+                  <h3>{{ event.title }}</h3>
+                  @if (!Array.isArray(event.description)) {
+                    <p>{{ event.description }}</p>
+                  } @else {
+                    <ul>
+                      @for (point of event.description; track $index) {
+                        <li>{{ point }}</li>
+                      }
+                    </ul>
+                  }
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
