@@ -4,15 +4,6 @@ import { ExperiencesComponent } from '../experience/experiences.component';
 
 type MaybeString = string | undefined;
 
-interface MeReply {
-    dob: string;
-    address: {
-        street: string;
-        city: string;
-    },
-    phone: string;
-}
-
 @Component({
     selector: 'aboutme',
     templateUrl: './aboutme.component.html',
