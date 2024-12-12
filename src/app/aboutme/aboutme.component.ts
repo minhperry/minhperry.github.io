@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service';
-import { ExperiencesComponent } from '../skills/experiences.component';
+import { ExperiencesComponent } from '../experience/experiences.component';
 
 type MaybeString = string | undefined;
 
