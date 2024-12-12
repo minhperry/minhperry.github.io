@@ -7,15 +7,10 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "standalone": false,
           "style": "scss",
           "skipTests": true
         },
-        "@schematics/angular:directive": {
-          "standalone": false
-        },
         "@schematics/angular:pipe": {
-          "standalone": false,
           "path": "src/pipes"
         },
         "@schematics/angular:service": {
