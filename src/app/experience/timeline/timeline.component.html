@@ -1,29 +1,30 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-body">
-          <h6 class="card-title">{{ title }}</h6>
-          <div id="content">
-            <ul class="timeline">
-              @for (event of timeline; track event.id) {
-                <li class="event" data-date="{{ appendDate(event) }}">
-                  <h3>{{ event.title }}</h3>
-                  @if (!Array.isArray(event.description)) {
-                    <p>{{ event.description }}</p>
-                  } @else {
-                    <ul>
-                      @for (point of event.description; track $index) {
-                        <li>{{ point }}</li>
-                      }
-                    </ul>
-                  }
-                </li>
-              }
-            </ul>
+<div class="container d-flex justify-content-center align-items-center" data-bs-theme="dark">
+  <div class="timeline tw-px-[30px] tw-py-[20px] tw-w-[600px]">
+    <h3>{{ title }}</h3>
+    <ul class="events list-unstyled">
+      @for (event of timeline; track $index) {
+        <li class="event position-relative d-flex flex-column align-items-start tw-cursor-pointer tw-p-[20px]">
+          <span class="date d-inline-block text-center rounded-4">{{ appendDate(event) }}</span>
+          <div class="content d-flex flex-column align-items-start">
+            <h3 class="tw-pt-[12px] tw-pb-[8px]">{{ event.title }}</h3>
+            @if (Array.isArray(event.description)) {
+                <ul>
+                    @for (desc of event.description; track $index) {
+                      <li class="sub-li">
+                        @if (desc.includes('<a href=')) {
+                          <p [innerHTML]="desc"></p>
+                        } @else {
+                          <p>{{ desc }}</p>
+                        }
+                      </li>
+                    }
+                </ul>
+                } @else {
+                  <p>{{ event.description }}</p>
+                }
           </div>
-        </div>
-      </div>
-    </div>
+        </li>
+      }
+    </ul>
   </div>
 </div>

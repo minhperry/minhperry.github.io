@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
 import {TimelineEvent} from "../../interfaces/date-entry";
+import {TimelineComponent} from "./timeline/timeline.component";
 
 @Component({
   selector: 'experiences',
   templateUrl: './experiences.component.html',
+  imports: [
+    TimelineComponent
+  ],
   styleUrl: './experiences.component.scss'
 })
 export class ExperiencesComponent {
 
-  jobExperience: TimelineEvent[] = [
+  protected jobExperience: TimelineEvent[] = [
     {
-      id: 0,
       title: 'Studentische Hilfskraft an der TU Dortmund',
       start: '04.2024',
       end: '09.2024',
@@ -22,28 +25,36 @@ export class ExperiencesComponent {
     }
   ]
 
-  projects: TimelineEvent[] = [
+  protected projects: TimelineEvent[] = [
     {
-      id: 0,
       title: 'Eigenprojekt „Skyblock Simulator“',
       start: '08.2024',
-      end: 'heute',
-      description: "Simulationsspiele von Mechanismen und Tools für das Spiel „Hypixel Skyblock“. Geschrieben " +
-        "in Angular 19 mit Server Side Rendering. Gestyled mit SCSS und Bootstrap 5.3."
+      description: [
+        "Simulationsspiele von Mechanismen und Tools für das Spiel „Hypixel Skyblock“.",
+        "Front in Angular 19 mit Server Side Rendering.",
+        "Kleines Backend in Node 22 mit Express.",
+      ]
     }, {
-      id: 1,
       title: 'Beitragender zu Minecraft-Mod-Projekt',
       start: '06.2024',
-      end: 'heute',
       description: [
         "Contributor an das QoL-Mod „SkyHanni“ von hannibal02.",
         "Implementierung von Features und Bugfixes.",
-        "Projekt-GitHub: <a href='https://github.com/hannibal002/SkyHanni'>https://github.com/hannibal002/SkyHanni</a>"
       ]
     }, {
-      id: 2,
-
+      title: 'Spark: Ein Twitter-ähnliches Social Media Platform',
+      start: '04.2023',
+      end: '07.2023',
+      description: [
+        "Frontend mit Angular 16, Backend mit Spring Boot 3.",
+        "Einfache CRUD-Operationen für Posts, Kommentare und Likes.",
+        "Authentifizierung und Autorisierung mit JWT."
+      ]
+    }, {
+      title: 'Software-Praktikum',
+      start: 'vsl. 01.2025',
+      end: 'vsl 03.2025',
+      description: "Ein Modul zum Entwickeln von einem Spiel in Gruppenarbeit."
     }
-
   ]
 }
