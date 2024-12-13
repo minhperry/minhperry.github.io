@@ -5,7 +5,11 @@ module.exports = {
   ],
   prefix: 'tw-',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ["Source Sance 3", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }
