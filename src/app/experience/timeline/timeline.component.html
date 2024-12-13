@@ -8,20 +8,25 @@
           <div class="content d-flex flex-column align-items-start">
             <h3 class="tw-pt-[12px] tw-pb-[8px]">{{ event.title }}</h3>
             @if (Array.isArray(event.description)) {
-                <ul>
-                    @for (desc of event.description; track $index) {
-                      <li class="sub-li">
-                        @if (desc.includes('<a href=')) {
-                          <p [innerHTML]="desc"></p>
-                        } @else {
-                          <p>{{ desc }}</p>
-                        }
-                      </li>
-                    }
-                </ul>
-                } @else {
-                  <p>{{ event.description }}</p>
-                }
+              <ul>
+                  @for (desc of event.description; track $index) {
+                    <li class="sub-li">
+                      @if (desc.includes('<a href=')) {
+                        <p [innerHTML]="desc"></p>
+                      } @else {
+                        <p>{{ desc }}</p>
+                      }
+                    </li>
+                  }
+              </ul>
+            } @else {
+              <p>{{ event.description }}</p>
+            }
+            @if (event.link) {
+              <span>
+                GitHub: <a [href]="event.link" class="github-link">{{ event.link }}</a>
+              </span>
+            }
           </div>
         </li>
       }

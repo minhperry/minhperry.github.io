@@ -40,7 +40,8 @@ export class ExperiencesComponent {
       description: [
         "Contributor an das QoL-Mod „SkyHanni“ von hannibal02.",
         "Implementierung von Features und Bugfixes.",
-      ]
+      ],
+      link: 'https://github.com/hannibal002/SkyHanni'
     }, {
       title: 'Spark: Ein Twitter-ähnliches Social Media Platform',
       start: '04.2023',
@@ -49,7 +50,8 @@ export class ExperiencesComponent {
         "Frontend mit Angular 16, Backend mit Spring Boot 3.",
         "Einfache CRUD-Operationen für Posts, Kommentare und Likes.",
         "Authentifizierung und Autorisierung mit JWT."
-      ]
+      ],
+      link: 'https://github.com/minhperry/wt2-ss23-tudo'
     }, {
       title: 'Software-Praktikum',
       start: 'vsl. 01.2025',

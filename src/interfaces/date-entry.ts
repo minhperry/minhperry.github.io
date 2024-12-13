@@ -3,4 +3,5 @@ export interface TimelineEvent {
   end?: string
   title: string
   description: string | string[]
+  link?: string
 }
