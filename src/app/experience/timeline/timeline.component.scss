@@ -2,6 +2,10 @@
 
 $tu-dortmund: #639a00;
 
+.title {
+  font-size: 1.5rem;
+}
+
 .timeline {
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 
@@ -14,12 +18,13 @@ $tu-dortmund: #639a00;
 
       .date {
         padding: 2px 5px;
-        background-color: $tu-dortmund;
+        background-color: #0e3870;
       }
 
       .content {
         h3 {
-          color: #2f82ff;
+          color: #188fd2;
+          font-weight: bold;
         }
 
         p {
@@ -28,7 +33,7 @@ $tu-dortmund: #639a00;
 
         .sub-li {
           list-style-type: "~";
-          padding-inline-start: 2ch;
+          padding-inline-start: 1ch;
 
           ::marker {
             font-size: 5rem;
@@ -36,7 +41,11 @@ $tu-dortmund: #639a00;
         }
 
         .github-link {
-          color: main.$color-gold;
+          color: #6355a1;
+          transition: .5s;
+          &:hover {
+            color: #9D7BFF;
+          }
         }
       }
 
@@ -55,8 +64,8 @@ $tu-dortmund: #639a00;
       &:hover {
 
         &::before {
-          background-color: #0F0;
-          box-shadow: 0 0 10px 2px #0F0;
+          background-color: #61daff;
+          box-shadow: 0 0 10px 2px #0bf;
         }
       }
     }
