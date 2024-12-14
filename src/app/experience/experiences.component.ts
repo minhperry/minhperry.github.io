@@ -27,6 +27,11 @@ export class ExperiencesComponent {
 
   protected projects: TimelineEvent[] = [
     {
+      title: 'Software-Praktikum',
+      start: 'vsl. 01.2025',
+      end: 'vsl. 03.2025',
+      description: "Ein Modul zum Entwickeln von einem einfachen Spiel in Gruppenarbeit."
+    }, {
       title: 'Eigenprojekt „Skyblock Simulator“',
       start: '08.2024',
       description: [
@@ -52,11 +57,6 @@ export class ExperiencesComponent {
         "Authentifizierung und Autorisierung mit JWT."
       ],
       link: 'https://github.com/minhperry/wt2-ss23-tudo'
-    }, {
-      title: 'Software-Praktikum',
-      start: 'vsl. 01.2025',
-      end: 'vsl 03.2025',
-      description: "Ein Modul zum Entwickeln von einem Spiel in Gruppenarbeit."
     }
   ]
 }
