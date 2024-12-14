@@ -11,11 +11,7 @@
               <ul>
                   @for (desc of event.description; track $index) {
                     <li class="sub-li">
-                      @if (desc.includes('<a href=')) {
-                        <p [innerHTML]="desc"></p>
-                      } @else {
-                        <p>{{ desc }}</p>
-                      }
+                      <p>{{ desc }}</p>
                     </li>
                   }
               </ul>
