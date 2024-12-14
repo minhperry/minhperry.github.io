@@ -14,47 +14,47 @@ export class ExperiencesComponent {
 
   protected jobExperience: TimelineEvent[] = [
     {
-      title: 'Studentische Hilfskraft an der TU Dortmund',
+      title: 'Student Assistant at TU Dortmund',
       start: '04.2024',
       end: '09.2024',
       description: [
-        "Modul: Datenstruktur und Algorithmus 2.",
-        "Unterstützung für Studenten mit Programmieraufgaben.",
-        "Benotung, Korrektur und Feedback von die Lösungen."
+        "Module: \"Datenstruktur und Algorithmus 2\" (Data Structures and Algorithms 2).",
+        "Support for students with programming tasks.",
+        "Grading, correction and feedback of the solutions."
       ]
     }
   ]
 
   protected projects: TimelineEvent[] = [
     {
-      title: 'Software-Praktikum',
-      start: 'vsl. 01.2025',
-      end: 'vsl. 03.2025',
-      description: "Ein Modul zum Entwickeln von einem einfachen Spiel in Gruppenarbeit."
+      title: 'Module \"Software-Praktikum\"',
+      start: '10.02.2025',
+      end: '21.03.2025',
+      description: "A module of developing a simple multiplayer game in Java in groups."
     }, {
-      title: 'Eigenprojekt „Skyblock Simulator“',
+      title: 'Self-project \"Skyblock Simulator\"',
       start: '08.2024',
       description: [
-        "Simulationsspiele von Mechanismen und Tools für das Spiel „Hypixel Skyblock“.",
-        "Front in Angular 19 mit Server Side Rendering.",
-        "Kleines Backend in Node 22 mit Express.",
+        "Simulation of mechanisms and tools for the gamemode \"Hypixel Skyblock\".",
+        "Frontend in Angular 19 with Server Side Rendering.",
+        "Small backend in Node 22 with Express.",
       ]
     }, {
-      title: 'Beitragender zu Minecraft-Mod-Projekt',
+      title: 'Contribution to a Minecraft Mod',
       start: '06.2024',
       description: [
-        "Contributor an das QoL-Mod „SkyHanni“ von hannibal02.",
-        "Implementierung von Features und Bugfixes.",
+        "Contributor for the quality-of-life mod \"SkyHanni\" of hannibal02.",
+        "Implementation of features and bug fixes.",
       ],
       link: 'https://github.com/hannibal002/SkyHanni'
     }, {
-      title: 'Spark: Ein Twitter-ähnliches Social Media Platform',
+      title: 'Spark: A Twitter-like social media platform',
       start: '04.2023',
       end: '07.2023',
       description: [
-        "Frontend mit Angular 16, Backend mit Spring Boot 3.",
-        "Einfache CRUD-Operationen für Posts, Kommentare und Likes.",
-        "Authentifizierung und Autorisierung mit JWT."
+        "Frontend with Angular 16, Backend with Spring Boot 3.",
+        "Simple CRUD operations for posts, comments and likes.",
+        "Authentication and authorization with JWT.",
       ],
       link: 'https://github.com/minhperry/wt2-ss23-tudo'
     }
