@@ -1,31 +1,35 @@
 <div class="container d-flex justify-content-center align-items-center" data-bs-theme="dark">
   <div class="timeline tw-px-[30px] tw-py-[20px] tw-w-[600px]">
-    <h3 class="tw-font-bold title">{{ title }}</h3>
-    <ul class="events list-unstyled">
-      @for (event of timeline; track $index) {
-        <li class="event position-relative d-flex flex-column align-items-start tw-cursor-pointer tw-p-[20px]">
-          <span class="date d-inline-block text-center rounded-4">{{ appendDate(event) }}</span>
-          <div class="content d-flex flex-column align-items-start">
-            <h3 class="tw-pt-[12px] tw-pb-[8px]">{{ event.title }}</h3>
-            @if (Array.isArray(event.description)) {
-              <ul>
+    @if (timeline.length === 0) {
+      <h3 class="tw-text-red-400">Failed to initialize '{{ title }}'!</h3>
+    } @else {
+      <h3 class="tw-font-bold title">{{ title }}</h3>
+      <ul class="events list-unstyled">
+        @for (event of timeline; track $index) {
+          <li class="event position-relative d-flex flex-column align-items-start tw-cursor-pointer tw-p-[20px]">
+            <span class="date d-inline-block text-center rounded-4">{{ appendDate(event) }}</span>
+            <div class="content d-flex flex-column align-items-start">
+              <h3 class="tw-pt-[12px] tw-pb-[8px]">{{ event.title }}</h3>
+              @if (Array.isArray(event.description)) {
+                <ul>
                   @for (desc of event.description; track $index) {
                     <li class="sub-li">
                       <p>{{ desc }}</p>
                     </li>
                   }
-              </ul>
-            } @else {
-              <p>{{ event.description }}</p>
-            }
-            @if (event.link) {
-              <span>
+                </ul>
+              } @else {
+                <p>{{ event.description }}</p>
+              }
+              @if (event.link) {
+                <span>
                 GitHub: <a [href]="event.link" class="github-link" target="_blank">{{ event.link }}</a>
               </span>
-            }
-          </div>
-        </li>
-      }
-    </ul>
+              }
+            </div>
+          </li>
+        }
+      </ul>
+    }
   </div>
 </div>
