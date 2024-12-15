@@ -42,6 +42,5 @@ export class LevelComponent {
 
 
 // TODO: Migrate @Input to input signals https://angular.dev/reference/migrations/signal-inputs
-
 // TODO 2: https://resumegenius.com/blog/resume-help/skill-levels-for-resume -> classification ? with tooltip
 // TODO 3: https://icombine.net/knowledge-base/skill-levels -> star-fill for willingness to learn
