@@ -3,7 +3,7 @@
     @if (timeline.length === 0) {
       <h3 class="tw-text-red-400">Failed to initialize '{{ title }}'!</h3>
     } @else {
-      <h3 class="tw-font-bold title">{{ title }}</h3>
+      <h3 class="tw-font-bold title text-center">{{ title }}</h3>
       <ul class="events list-unstyled">
         @for (event of timeline; track $index) {
           <li class="event position-relative d-flex flex-column align-items-start tw-cursor-pointer tw-p-[20px]">
