@@ -17,11 +17,11 @@ export class LevelComponent {
 
   // (Self-)Extended Dreyfus model: https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition
   classifyLevel(l: number): string {
-    if (0 <= l && l <= 16) {
+    if (0 <= l && l <= 10) {
       return 'Novice';
-    } else if (16 < l && l <= 32) {
+    } else if (10 < l && l <= 25) {
       return 'Beginner';
-    } else if (32 < l && l <= 48) {
+    } else if (25 < l && l <= 48) {
       return 'Advanced Beginner';
     } else if (48 < l && l <= 64) {
       return 'Competent';
