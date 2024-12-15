@@ -8,6 +8,11 @@ $tu-dortmund: #639a00;
 
 .timeline {
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  transition: .35s;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(59, 59, 59, 0.8);
+  }
 
   .events {
     border-left: 2px solid main.$color-overlay;

@@ -2,12 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {TimelineEvent} from "../../interfaces/date-entry";
 import {TimelineComponent} from "./timeline/timeline.component";
 import {HttpClient} from "@angular/common/http";
+import {SkillsComponent} from "./skills/skills.component";
 
 @Component({
   selector: 'experiences',
   templateUrl: './experiences.component.html',
   imports: [
-    TimelineComponent
+    TimelineComponent,
+    SkillsComponent
   ],
   styleUrl: './experiences.component.scss'
 })
