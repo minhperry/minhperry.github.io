@@ -17,24 +17,19 @@ export class LevelComponent {
 
   // (Self-)Extended Dreyfus model: https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition
   classifyLevel(l: number): string {
-    switch (true) {
-      case (l <= 10):
-        return 'Novice';
-      case (l <= 20):
-        return 'Beginner';
-      case (l <= 40):
-        return 'Advanced Beginner';
-      case (l <= 60):
-        return 'Competent';
-      case (l <= 80):
-        return 'Proficient';
-      case (l <= 90):
-        return 'Expert';
-      case (l <= 100):
-        return 'Master';
-      default:
-        return 'unknown';
-    }
+    if (0 <= l && l <= 10) {
+      return 'Novice';
+    } else if (10 < l && l <= 20) {
+      return 'Beginner';
+    } else if (20 < l && l <= 40) {
+      return 'Advanced Beginner';
+    } else if (40 < l && l <= 60) {
+      return 'Competent';
+    } else if (60 < l && l <= 90) {
+      return 'Proficient';
+    } else if (90 < l && l <= 100) {
+      return 'Expert';
+    } else return '';
   }
 
   protected readonly Array = Array;
