@@ -23,13 +23,13 @@ export class ExperiencesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get<TimelineEvent[]>('i18n/jobs.json').subscribe(data => {
+    this.http.get<TimelineEvent[]>('data/jobs.json').subscribe(data => {
       this.jobExperience = data;
     });
-    this.http.get<TimelineEvent[]>('i18n/projects.json').subscribe(data => {
+    this.http.get<TimelineEvent[]>('data/projects.json').subscribe(data => {
       this.projects = data;
     });
-    this.http.get<TimelineEvent[]>('i18n/edu.json').subscribe(data => {
+    this.http.get<TimelineEvent[]>('data/edu.json').subscribe(data => {
       this.education = data;
     });
   }
