@@ -25,9 +25,9 @@ export class LevelComponent {
       return 'Advanced Beginner';
     } else if (48 < l && l <= 64) {
       return 'Competent';
-    } else if (64 < l && l <= 90) {
+    } else if (64 < l && l <= 85) {
       return 'Proficient';
-    } else if (90 < l && l <= 100) {
+    } else if (85 < l && l <= 100) {
       return 'Expert';
     } else return '';
   }
