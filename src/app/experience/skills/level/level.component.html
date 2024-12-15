@@ -1,6 +1,20 @@
-<div class="level-container">
-  <p>{{ name }}</p>
-    <div class="level-bar">
-        <div class="level-bar-fill" [style.width.%]="level"></div>
-    </div>
+<div class="level-container d-flex flex-column align-items-start pb-3">
+  <div class="d-flex w-100 justify-content-between align-items-center">
+    <p class="mb-0 string">
+      @if (will) {
+        <span>
+          <i class="bi bi-star-fill"></i>
+        </span>
+      }
+      {{ name }}
+    </p>
+    <span class="level-number string">{{ level }}</span>
+  </div>
+  <div class="level-bar d-flex align-items-center position-relative w-100"
+       matTooltip="{{ classifyLevel(level) }}" matTooltipPosition="after">
+    @for (i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track $index) {
+      <div class="level-bar-segment h-100 tw-rounded-sm" [class.filled]="level >= i * 10"></div>
+    }
+  </div>
+  <ng-content></ng-content>
 </div>
