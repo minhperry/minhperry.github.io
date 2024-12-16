@@ -2,7 +2,6 @@ import {Routes} from '@angular/router';
 import {AboutmeComponent} from './aboutme/aboutme.component';
 import {SocialComponent} from './social/social.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {ProjectsComponent} from './projects/projects.component';
 import {LandingComponent} from './landing/landing.component';
 import {hasRoleGuard} from '../guards/aboutme.guard';
 
@@ -27,11 +26,6 @@ export const routes: Routes = [
         path: '404',
         component: PageNotFoundComponent,
         title: "404 Not Found",
-    },
-    {
-        path: 'projects',
-        component: ProjectsComponent,
-        title: "My projects",
     },
     {
         path: '**',

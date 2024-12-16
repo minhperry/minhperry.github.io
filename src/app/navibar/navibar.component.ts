@@ -20,7 +20,6 @@ interface NavLink {
 export class NavibarComponent implements OnInit {
     naviLinks: NavLink[] = [
         {path: '/', label: 'Home'},
-        {path: '/projects', label: 'Projects'},
         {path: '/socials', label: 'Socials'},
         {path: 'https://blog.minhperry.de/', label: 'Blog', isExternal: true},
         // {path: '/commits', label: 'Commit'},
