@@ -1,0 +1,10 @@
+@use "../../../styles" as *;
+
+.star-container {
+  &:hover {
+    .bi-star-fill {
+      color: $color-gold;
+      font-weight: 700;
+    }
+  }
+}
