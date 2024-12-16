@@ -8,14 +8,28 @@
       }
       {{ name }}
     </p>
-    <span class="level-number string">{{ level }}</span>
+    <span class="level-number string">
+      @if (!isLang) {
+        {{ level }}
+      } @else {
+        {{ languageLevel(level) }}
+      }
+    </span>
   </div>
-  <div class="level-bar d-flex align-items-center position-relative w-100"
-       matTooltip="{{ classifyLevel(level) }}" matTooltipPosition="after">
-    @for (i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track $index) {
-      <div class="level-bar-segment h-100 tw-rounded-sm" [class.filled]="level >= i * 10"></div>
-    }
-  </div>
+  @if (!isLang) {
+    <div class="level-bar d-flex align-items-center position-relative w-100"
+         matTooltip="{{ classifyLevel(level) }}" matTooltipPosition="right">
+      @for (i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track $index) {
+        <div class="level-bar-segment h-100 tw-rounded-sm" [class.filled]="level >= i * 10"></div>
+      }
+    </div>
+  } @else {
+    <div class="level-bar d-flex align-items-center position-relative w-100">
+      @for (i of [1, 2, 3, 4, 5, 6]; track $index) {
+        <div class="level-bar-segment h-100 tw-rounded-sm" [class.filled]="level >= i * 2 - 1"></div>
+      }
+    </div>
+  }
   <ng-content>
     <p style="color: #575757">Placeholder content.</p>
   </ng-content>
