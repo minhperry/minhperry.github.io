@@ -12,7 +12,7 @@ export class TimelineComponent {
   @Input() title: string = '';
 
   appendDate(event: TimelineEvent) {
-    return `${event.start} ➜ ${event.end ?? 'heute'}`;
+    return `${event.start} ➜ ${event.end ?? 'present'}`;
   }
 
   protected readonly Array = Array;
