@@ -1,0 +1,92 @@
+@use '../../../styles' as main;
+
+$tu-dortmund: #639a00;
+
+.title {
+  font-size: 1.5rem;
+}
+
+.timeline {
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  transition: .35s;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(59, 59, 59, 0.8);
+  }
+
+  .events {
+    border-left: 2px solid main.$color-overlay;
+    padding: 10px 5px;
+
+    .event {
+      transition: .5s;
+
+      .date {
+        padding: 2px 5px;
+        background-color: #0e3870;
+      }
+
+      .content {
+        h3 {
+          color: #188fd2;
+          font-weight: bold;
+        }
+
+        p {
+          text-align: left;
+        }
+
+        .sub-li {
+          list-style-type: "~";
+          padding-inline-start: 1ch;
+
+          ::marker {
+            font-size: 5rem;
+          }
+        }
+
+        .github-link {
+          color: #486cc4;
+          transition: .5s;
+          &:hover {
+            color: #4b86ff;
+          }
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: main.$color-muted;
+        border-radius: 50%;
+        left: -11px;
+        top: 28px;
+        transition: .5s;
+      }
+
+      &:hover {
+
+        &::before {
+          background-color: #61daff;
+          box-shadow: 0 0 10px 2px #0bf;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .timeline {
+    width: 100%;
+    padding: 30px 5px 30px 10px;
+
+    .events li {
+      .content h3 {
+        color: #34ace0;
+        font-size: 15px;
+      }
+    }
+  }
+}

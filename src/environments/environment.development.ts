@@ -1,6 +1,4 @@
 export const environment = {
     prod: false,
-    apiUrl: 'http://localhost:8787/',
-    adminPwd: '727',
-    recrPwd: 'pwd',
+    apiUrl: 'http://localhost:8787/'
 };
