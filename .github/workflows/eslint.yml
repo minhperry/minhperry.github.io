@@ -28,9 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
-
       - name: Run ESLint
         run: npx eslint --format github 'src/**' '*.js'
         continue-on-error: true
