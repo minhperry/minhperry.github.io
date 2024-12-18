@@ -3,7 +3,6 @@ import {AboutmeComponent} from './aboutme/aboutme.component';
 import {SocialComponent} from './social/social.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LandingComponent} from './landing/landing.component';
-import {hasRoleGuard} from '../guards/aboutme.guard';
 
 export const routes: Routes = [
     {

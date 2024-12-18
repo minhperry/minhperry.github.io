@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
 
