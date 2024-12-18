@@ -8,9 +8,10 @@ on:
     types: [opened, synchronize, reopened, closed]
 
 jobs:
-  lint:
+  eslint:
     runs-on: ubuntu-latest
-
+    permissions:
+      pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
