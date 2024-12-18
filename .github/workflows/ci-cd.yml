@@ -32,5 +32,13 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      - name: Deploy to VPS
-        run: rsync -av dist/* ${{ secrets.VPS }}:/var/www/portfolio-ssr
+      - uses: actions/checkout@v3
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avzr --delete
+          path: dist/
+          remote_path: /var/www/portfolio-ssr
+          remote_host: ${{ secrets.VPS_IP }}
+          remote_user: ${{ secrets.VPS_USER }}
+          remote_key: ${{ secrets.SSH_KEY }}
