@@ -27,7 +27,7 @@ jobs:
         run: npx eslint src/ --ignore-pattern '**/*.spec.ts' > eslint.result || true
 
       - name: Comment ESLint result
-        uses: actions/github-script@v7
+        uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
