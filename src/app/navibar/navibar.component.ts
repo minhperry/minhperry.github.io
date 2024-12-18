@@ -90,10 +90,10 @@ export class NavibarComponent implements OnInit {
     private updateText() {
         this.loginButtonText = this.isLoggedIn ? 'Log Out' : 'Log in';
     }
+
     private addHasRightsStuffs() {
         if (this.auth.hasRights()) {
-            this.naviLinks.splice(1, 0, {path: '/me', label: 'About Me'});
-            this.naviLinks.splice(2, 0, {path: '/securedpdf/lebenslauf.pdf', label: 'CV PDF', isExternal: true})
+            this.naviLinks.splice(2, 0, {path: '/pdf/lebenslauf.pdf', label: 'CV PDF', isExternal: true})
         }
     }
 
