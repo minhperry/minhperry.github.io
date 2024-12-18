@@ -3,5 +3,6 @@ export interface TimelineEvent {
   end?: string
   title: string
   description: string | string[]
-  link?: string
+  source?: string,
+  view?: string
 }

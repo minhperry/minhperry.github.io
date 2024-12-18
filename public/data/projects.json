@@ -12,7 +12,9 @@
             "Simulation of mechanisms and tools for the gamemode \"Hypixel Skyblock\".",
             "Frontend in Angular 19 with Server Side Rendering.",
             "Small backend in Node 22 with Express."
-        ]
+        ],
+        "source": "https://github.com/minhperry/skyblock-simulator",
+        "view": "https://skyblock.minhperry.de"
     },
     {
         "title": "Contribution to a Minecraft Mod",
@@ -21,7 +23,7 @@
             "Contributor for the quality-of-life mod \"SkyHanni\" of hannibal02.",
             "Implementation of features and bug fixes."
         ],
-        "link": "https://github.com/hannibal002/SkyHanni"
+        "source": "https://github.com/hannibal002/SkyHanni"
     },
     {
         "title": "Spark: A Twitter-like social media platform",
@@ -32,6 +34,6 @@
             "Simple CRUD operations for posts, comments and likes.",
             "Authentication and authorization with JWT."
         ],
-        "link": "https://github.com/minhperry/wt2-ss23-tudo"
+        "source": "https://github.com/minhperry/wt2-ss23-tudo"
     }
 ]

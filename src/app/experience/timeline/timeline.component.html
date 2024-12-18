@@ -21,10 +21,13 @@
               } @else {
                 <p>{{ event.description }}</p>
               }
-              @if (event.link) {
+              @if (event.source) {
                 <span>
-                GitHub: <a [href]="event.link" class="github-link" target="_blank">{{ event.link }}</a>
-              </span>
+                  <a [href]="event.source" class="github-link" target="_blank">Source</a>
+                  @if (event.view) {
+                    / <a [href]="event.view" class="github-link" target="_blank">View</a>
+                  }
+                </span>
               }
             </div>
           </li>
