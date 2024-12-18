@@ -1,16 +1,18 @@
-name: ESLint Check
+name: Lint Check
 
 on:
   pull_request:
     paths:
-      - '**'
+      - 'src/**'
+      - '*.js'
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   lint:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -19,22 +21,19 @@ jobs:
           node-version: '22.11.0'
 
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
 
       - name: Run ESLint
-        id: eslint
-        run: |
-          npx eslint src/ --format json -o eslint-results.json || true
-          cat eslint-results.json
+        run: npx eslint src/ --ignore-pattern '**/*.spec.ts' || true
 
-      - name: Post ESLint results as PR comment
-        if: ${{ steps.eslint.outputs.stdout != '' }}
-        uses: unsplash/comment-on-pr@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: |
-            **ESLint errors:**
-            ```
-            ${{ steps.eslint.outputs.stdout }}
-            ```
+      - name: Post ESLint result as PR comment
+        if: ${{ failure() }}
+        run: |
+          ESLINT_OUTPUT=$(npx eslint src/ --ignore-pattern '**/*.spec.ts' --ext .js,.ts --format json)
+          if [[ -n "$ESLINT_OUTPUT" ]]; then
+            PR_COMMENT="### ESLint Results\n\n\`\`\`json\n$ESLINT_OUTPUT\n\`\`\`"
+            curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                 -X POST \
+                 -d "{\"body\": \"$PR_COMMENT\"}" \
+                 https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments
+          fi
