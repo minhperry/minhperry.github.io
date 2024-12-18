@@ -55,4 +55,4 @@ deploy/
 .act/
 
 # Eslint
-eslint-result.*
+eslint_report.*
