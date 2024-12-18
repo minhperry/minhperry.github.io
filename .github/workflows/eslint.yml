@@ -1,0 +1,40 @@
+name: ESLint Check
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.11.0'
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Run ESLint
+        id: eslint
+        run: |
+          npx eslint src/ --format json -o eslint-results.json || true
+          cat eslint-results.json
+
+      - name: Post ESLint results as PR comment
+        if: ${{ steps.eslint.outputs.stdout != '' }}
+        uses: unsplash/comment-on-pr@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            **ESLint errors:**
+            ```
+            ${{ steps.eslint.outputs.stdout }}
+            ```
