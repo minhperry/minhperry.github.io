@@ -4,6 +4,15 @@ on:
   push:
     branches:
       - main   # Only trigger on push to the main branch
+    paths:
+      # Config files
+      - '*.json'
+      - '*.js'
+      # GitHub Actions
+      - '.github/**'
+      # Source files
+      - 'public/**'
+      - 'src/**'
 
 jobs:
   deps-build-deploy:
