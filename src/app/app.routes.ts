@@ -15,7 +15,7 @@ export const routes: Routes = [
         path: 'me',
         component: AboutmeComponent,
         title: "About me",
-        canActivate: [hasRoleGuard],
+        // canActivate: [hasRoleGuard], // TODO: Change this in CV
     },
     {
         path: 'socials',
