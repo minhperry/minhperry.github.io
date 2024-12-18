@@ -3,6 +3,8 @@ const eslint = require("@eslint/js");
 const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
 
+const prefix = 'p';
+
 module.exports = tseslint.config(
   {
     files: ["**/*.ts"],
@@ -18,7 +20,7 @@ module.exports = tseslint.config(
         "error",
         {
           type: "attribute",
-          prefix: "app",
+          prefix: prefix,
           style: "camelCase",
         },
       ],
@@ -26,7 +28,7 @@ module.exports = tseslint.config(
         "error",
         {
           type: "element",
-          prefix: "app",
+          prefix: prefix,
           style: "kebab-case",
         },
       ],
