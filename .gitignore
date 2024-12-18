@@ -50,3 +50,6 @@ backend/.wrangler
 
 # Why is deploy folder in git again?
 deploy/
+
+# Act deployment local testing
+.act/
