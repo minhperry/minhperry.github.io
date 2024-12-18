@@ -10,7 +10,8 @@
     "kill": "~/.killold.sh 4200",
     "serve:ssr:portfolio": "node dist/server/server.mjs",
     "lint": "ng lint",
-    "lint:json": "npx eslint --format json --output-file eslint_report.json src/"
+    "lint:json": "npx eslint --format json --output-file eslint_report.json src/",
+    "lint:html": "npx eslint --format html --output-file eslint_report.html src/"
   },
   "private": true,
   "dependencies": {
@@ -51,6 +52,7 @@
     "angular-eslint": "19.0.2",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.16.0",
+    "eslint-formatter-github": "^1.1.4",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
