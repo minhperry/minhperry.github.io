@@ -21,8 +21,8 @@ interface NavLink {
 export class NavibarComponent {
     naviLinks: NavLink[] = [
         {path: '/', label: 'Home'},
-        {path: '/socials', label: 'Socials'},
         {path: '/me', label: 'About Me'},
+        {path: '/socials', label: 'Socials'},
         {path: 'https://blog.minhperry.de/', label: 'Blog', isExternal: true},
     ];
 
