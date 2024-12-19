@@ -22,6 +22,10 @@ The app will automatically reload if you change any of the source files.
 
 For SSR-based development, run `npm run`
 
+### Datas
+
+Datas are taken from `public/data` folder.
+
 ## Build
 
 Run `ng build --configuration=production` to build the project. 
