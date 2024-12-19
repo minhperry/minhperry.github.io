@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {SkillsComponent} from "./skills/skills.component";
 
 @Component({
-  selector: 'experiences',
+  selector: 'p-experiences',
   templateUrl: './experiences.component.html',
   imports: [
     TimelineComponent,

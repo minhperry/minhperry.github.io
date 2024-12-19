@@ -5,7 +5,7 @@ import { TitleCasePipe, KeyValuePipe } from '@angular/common';
 import { IconPipe } from '../../pipes/icon/icon.pipe';
 
 @Component({
-    selector: 'social',
+    selector: 'p-social',
     templateUrl: './social.component.html',
     styleUrl: './social.component.scss',
     imports: [TitleCasePipe, KeyValuePipe, IconPipe]

@@ -59,7 +59,7 @@ export class AuthService {
     }
 
     getRoleCapitalized(): string {
-        let role = this.getRole()
+        const role = this.getRole()
         if (role === undefined) return ''
         return role.charAt(0).toUpperCase() + role.slice(1)
     }
@@ -77,7 +77,7 @@ export class AuthService {
         return this.http.get<T>(this.API_BASE + route)
     }
 
-    postWithAuth<T>(route: string, body: any) {
+    postWithAuth<T>(route: string, body: unknown) {
         return this.http.post<T>(this.API_BASE + route, body, {
             headers: {
                 'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export class AuthService {
     }
 
     private getRole(): string | undefined {
-        let token = this.cookie.get(this.TOKEN_NAME);
+        const token = this.cookie.get(this.TOKEN_NAME);
         if (token === '') return undefined
         return jwtDecode<TokenPayload>(token).role
     }

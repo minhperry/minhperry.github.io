@@ -3,7 +3,7 @@ import { RouterOutlet} from '@angular/router';
 import {NavibarComponent} from "./navibar/navibar.component";
 
 @Component({
-    selector: 'root',
+    selector: 'p-root',
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     imports: [NavibarComponent, RouterOutlet]

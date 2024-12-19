@@ -9,7 +9,7 @@ interface NavLink {
 }
 
 @Component({
-    selector: 'navibar',
+    selector: 'p-navibar',
     templateUrl: './navibar.component.html',
     styleUrl: './navibar.component.scss',
     imports: [

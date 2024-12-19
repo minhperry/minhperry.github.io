@@ -2,14 +2,14 @@ import {Component, Input} from '@angular/core';
 import {TimelineEvent} from "../../../interfaces/date-entry";
 
 @Component({
-  selector: 'timeline',
+  selector: 'p-timeline',
   imports: [],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss'
 })
 export class TimelineComponent {
   @Input() timeline!: TimelineEvent[];
-  @Input() title: string = '';
+  @Input() title = '';
 
   appendDate(event: TimelineEvent) {
     return `${event.start} ➜ ${event.end ?? 'present'}`;

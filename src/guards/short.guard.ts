@@ -2,7 +2,7 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
 
-export const shortGuard: CanActivateFn = (route, state) => {
+export const shortGuard: CanActivateFn = () => {
   const auth = inject(AuthService);
   const router = inject(Router);
 
