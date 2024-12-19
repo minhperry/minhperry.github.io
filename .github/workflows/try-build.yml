@@ -3,7 +3,7 @@ name: Try to build Angular app
 on:
   workflow_run:
     workflows:
-      - ESLint Check
+      - "ESLint Check"
     types:
       - completed
 
