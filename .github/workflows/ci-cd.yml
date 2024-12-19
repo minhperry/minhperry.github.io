@@ -5,6 +5,18 @@ on:
     types:
       - completed
     workflows: [Try to build Angular app]
+  push:
+    branches:
+      - main   # Only trigger on push to the main branch
+    paths:
+      # Config files
+      - '*.json'
+      - '*.js'
+      # GitHub Actions
+      - '.github/**'
+      # Source files
+      - 'public/**'
+      - 'src/**'
 
 jobs:
   deps-build-deploy:
