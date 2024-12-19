@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 interface NavLink {
     path: string;
@@ -20,8 +21,10 @@ interface NavLink {
 export class NavibarComponent {
     naviLinks: NavLink[] = [
         {path: '/', label: 'Home'},
-        {path: '/socials', label: 'Socials'},
         {path: '/me', label: 'About Me'},
+        {path: '/socials', label: 'Socials'},
         {path: 'https://blog.minhperry.de/', label: 'Blog', isExternal: true},
     ];
+
+    version = environment.version
 }

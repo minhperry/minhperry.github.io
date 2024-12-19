@@ -1,10 +1,11 @@
 name: Try to build Angular app
 
 on:
-  workflow_run:
-    workflows: [ESLint Check]
-    types:
-      - completed
+  pull_request:
+    paths:
+      - 'src/**'
+      - '*.js'
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   try-build:
