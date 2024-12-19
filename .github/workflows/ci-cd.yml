@@ -2,6 +2,8 @@ name: Deploy Angular App to VPS
 
 on:
   workflow_run:
+    types:
+      - completed
     workflows: [Try to build Angular app]
 
 jobs:
