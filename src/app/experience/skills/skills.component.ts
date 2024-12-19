@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import {LevelComponent} from "./level/level.component";
-import {LanguageDirective} from "../../../directives/lang/language.directive";
 
 @Component({
   selector: 'p-skills',
   imports: [
-    LevelComponent,
-    LanguageDirective
+    LevelComponent
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
