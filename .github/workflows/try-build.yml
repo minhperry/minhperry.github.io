@@ -3,8 +3,6 @@ name: Try to build Angular app
 on:
   workflow_run:
     workflows: [ESLint Check]
-    types:
-      - completed
   push:
     branches:
       - main   # Only trigger on push to the main branch
