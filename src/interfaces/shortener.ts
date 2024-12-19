@@ -1,9 +1,7 @@
 export type ShortenerResponse = CreatedResponse | ErrorResponse;
 
 export interface CreatedResponse {
-  created: {
-    [key: string]: string;
-  }
+  created: Record<string, string>
 }
 
 export interface ErrorResponse {
@@ -12,7 +10,7 @@ export interface ErrorResponse {
 
 export type ListResponse = ListResult | ErrorResponse;
 
-export type ListResult = {result: ListEntry[]}
+export interface ListResult {result: ListEntry[]}
 
 export interface ListEntry {
   key: string,

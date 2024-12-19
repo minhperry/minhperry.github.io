@@ -2,7 +2,7 @@ import {booleanAttribute, Component, Input, numberAttribute} from '@angular/core
 import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
-  selector: 'level',
+  selector: 'p-level',
   imports: [
     MatTooltip
   ],
@@ -12,9 +12,9 @@ import {MatTooltip} from "@angular/material/tooltip";
 export class LevelComponent {
   @Input() name!: string;
   @Input({transform: numberAttribute}) level!: number;
-  @Input({transform: booleanAttribute}) will: boolean = false;
+  @Input({transform: booleanAttribute}) will = false;
 
-  isLang: boolean = false;
+  isLang = false;
 
   // (Self-)Extended Dreyfus model: https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition
   classifyLevel(l: number): string {
@@ -36,10 +36,6 @@ export class LevelComponent {
   // 1 -> A1.1, 12 -> C2.2
   languageLevel(l: number): string {
     return ['0', 'A1.1', 'A1.2', 'A2.1', 'A2.2', 'B1.1', 'B1.2', 'B2.1', 'B2.2', 'C1.1', 'C1.2', 'C2.1', 'C2.2'][l];
-  }
-
-  classifyLanguageLevel(l: number): string {
-    return ['0', 'Beginner', 'Elementary', 'Intermediate', 'Upper Intermediate', 'Advanced', 'Native'][l];
   }
 }
 

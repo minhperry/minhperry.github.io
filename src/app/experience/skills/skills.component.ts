@@ -3,7 +3,7 @@ import {LevelComponent} from "./level/level.component";
 import {LanguageDirective} from "../../../directives/lang/language.directive";
 
 @Component({
-  selector: 'skills',
+  selector: 'p-skills',
   imports: [
     LevelComponent,
     LanguageDirective

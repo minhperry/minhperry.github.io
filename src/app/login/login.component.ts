@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { MatDialogRef, MatDialogTitle, MatDialogContent, MatDialogActions } from '@angular/material/dialog';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
-import { CdkScrollable } from '@angular/cdk/scrolling';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
@@ -12,16 +11,16 @@ import { MatButton } from '@angular/material/button';
 * @Deprecated Do not use this.
 * */
 @Component({
-    selector: 'app-login',
+    selector: 'p-login',
     templateUrl: './login.component.html',
     styleUrl: './login.component.scss',
     imports: [MatDialogTitle, MatDialogContent, MatFormField, MatLabel, MatInput, FormsModule, MatDialogActions, MatButton]
 })
 export class LoginComponent {
-  password: string = '';
-  showPassword: boolean = false;
-  error: string = '';
-  baseFadeDuration: number = 1500;
+  password = '';
+  showPassword = false;
+  error = '';
+  baseFadeDuration = 1500;
 
   constructor(
     private auth: AuthService,

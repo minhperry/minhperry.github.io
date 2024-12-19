@@ -14,15 +14,15 @@ import { MatList, MatListItem } from '@angular/material/list';
  * @deprecated This has no practical uses.
  */
 @Component({
-    selector: 'app-short',
+    selector: 'p-short',
     templateUrl: './short.component.html',
     styleUrl: './short.component.scss',
     imports: [MatFormField, MatLabel, MatInput, FormsModule, ReactiveFormsModule, MatHint, MatError, MatPrefix, MatIcon, MatSuffix, MatButton, MatList, MatListItem]
 })
 export class ShortComponent {
-    key: string = '';
-    url: string = '';
-    usePrefix: boolean = false;
+    key = '';
+    url = '';
+    usePrefix = false;
     listResult: ListResponse | undefined = undefined;
 
     matcher = new InstantErrorMatcher();
@@ -45,7 +45,7 @@ export class ShortComponent {
     }
 
     send() {
-        let finalData = {
+        const finalData = {
             key: this.key,
             value: this.httpString() + this.url,
         }
@@ -54,7 +54,7 @@ export class ShortComponent {
         this.auth.postWithAuth<ShortenerResponse>('short', finalData)
             .subscribe({
                 next: (data) => {
-                    let response = data as CreatedResponse;
+                    const response = data as CreatedResponse;
                     const [k, v] = Object.entries(response.created)[0];
                     this.success('Created s.7278008.xyz/' + k + ' ➜ ' + v);
                 },

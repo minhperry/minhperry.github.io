@@ -7,7 +7,7 @@ interface PixivBackground {
 }
 
 @Component({
-    selector: 'app-landing',
+    selector: 'p-landing',
     templateUrl: './landing.component.html',
     styleUrl: './landing.component.scss',
     imports: [NgStyle]
@@ -25,8 +25,8 @@ export class LandingComponent implements OnInit{
   ];
   private secret = { loc: 'backgrounds/secret.jpg', id: '113608935' };
 
-  currentPixivID: string = '';
-  currentBgUrl: string = '';
+  currentPixivID = '';
+  currentBgUrl = '';
 
   ngOnInit(): void {
       this.setrRandomBG()

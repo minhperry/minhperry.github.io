@@ -3,7 +3,7 @@ import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
 import {isPlatformBrowser} from "@angular/common";
 
-export const hasRoleGuard: CanActivateFn = (_, __) => {
+export const hasRoleGuard: CanActivateFn = () => {
   const auth = inject(AuthService);
   const router = inject(Router);
   const platform = inject(PLATFORM_ID);
