@@ -1,10 +1,6 @@
 name: Deploy Angular App to VPS
 
 on:
-  workflow_run:
-    types:
-      - completed
-    workflows: [Try to build Angular app]
   push:
     branches:
       - main   # Only trigger on push to the main branch
