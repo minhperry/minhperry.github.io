@@ -30,4 +30,3 @@ jobs:
 
       - name: Run ESLint
         run: npx eslint --format github 'src/**' '*.js'
-        continue-on-error: true
