@@ -51,14 +51,6 @@ $text: rgba(58, 114, 255, 0.532);
                 }
             }
 
-            a {
-                color: $text;
-                text-decoration: none;
-                border-radius: 3px;
-                padding: 6px;
-                transition: color 0.5s, background-color 0.5s, transform 0.5s;
-            }
-
             .d-flex.login-form {
                 margin-left: auto;
 
