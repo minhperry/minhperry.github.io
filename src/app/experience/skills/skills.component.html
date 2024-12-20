@@ -1,70 +1,17 @@
-<div id="prog-lang">
-  <h1 class="text-center tw-text-xl tw-font-bold my-2">Programming Languages</h1>
-  <p-level name="TypeScript/JavaScript" level="90" will="true">
-    <p>Mostly from Angular, but also with Node and ExpressJS but using TypeScript.</p>
-  </p-level>
-  <p-level name="Angular" level="87" will="true">
-    <p></p>
-  </p-level>
-  <p-level name="Java" level="78" will="true">
-    <p>From university modules & Minecraft modding.</p>
-  </p-level>
-  <p-level name="HTML" level="75">
-    <p></p>
-  </p-level>
-  <p-level name="CSS" level="70" will="true">
-    <p>Has experiences with Bootstrap 5.3 and its grid layout, as well as beginner experiences with Tailwind 3.</p>
-  </p-level>
-  <p-level name="C/C++" level="62">
-    <p></p>
-  </p-level>
-  <p-level name="Kotlin" level="60" will="true">
-    <p>Solely from SkyHanni mod contribution.</p>
-  </p-level>
-  <p-level name="Python" level="50">
-    <p></p>
-  </p-level>
-  <p-level name="Bash" level="45" will="true">
-    <p>Basic use with WSL and system scripting.</p>
-  </p-level>
-</div>
-<div id="it-tools">
-  <h1 class="text-center tw-text-xl tw-font-bold my-2">Tools</h1>
-  <p-level name="Linux" level="65" will="true">
-    <p>From managing my own Linux-based VPS.</p>
-  </p-level>
-  <p-level name="Git" level="57" will="true">
-    <p>Mostly from SkyHanni contribution: branch flow, PR, etc.</p>
-  </p-level>
-  <p-level name="Microsoft Office" level="30">
-    <p>Familiar with basic document, spreadsheet and presentation for school & general uses.</p>
-  </p-level>
-  <p-level name="LaTeX" level="20">
-    <p></p>
-  </p-level>
-  <p-level name="Docker" level="20" will="true">
-    <p>Basic know-how with creating, using and managing containers.</p>
-  </p-level>
-</div>
-<div id="soft-skills" class="d-none">
-  <h1 class="text-center tw-text-xl tw-font-bold my-2">Soft Skills</h1>
-</div>
-<div id="languages">
-  <h1 class="text-center tw-text-xl tw-font-bold my-2">Languages</h1>
-  <p-level name="Vietnamese" level="12" pLanguage>
-    <p>Native</p>
-  </p-level>
-  <p-level name="English" level="10" will="true" pLanguage>
-    <p>Fluent</p>
-  </p-level>
-  <p-level name="German" level="8" will="true" pLanguage>
-    <p>Fluent</p>
-  </p-level>
-  <p-level name="Spanish" level="1" pLanguage>
-    <p>Absolute beginner</p>
-  </p-level>
-</div>
-
+@for (entry of skills; track entry.id) {
+  @if (entry.display) {
+    <div [id]="entry.id">
+      <h1 class="text-center tw-text-xl tw-font-bold my-0">{{ entry.title }}</h1>
+      @for (skill of entry.entries; track $index) {
+        @if (!skill.isLanguage) {
+          <p-level [name]="skill.name" [level]="skill.level" [will]="skill.will">{{ skill.desc }}</p-level>
+        } @else {
+          <p-level [name]="skill.name" [level]="skill.level" [will]="skill.will" pLanguage>{{ skill.desc }}</p-level>
+        }
+      }
+    </div>
+  }
+}
 <div class="star-container d-flex justify-content-center tw-cursor-pointer user-select-none">
   <i class="bi bi-star-fill"></i>
   <span class="ms-2">I would like to continue developing this skill and become better in the future.</span>
