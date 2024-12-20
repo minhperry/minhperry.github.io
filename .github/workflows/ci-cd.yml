@@ -4,15 +4,11 @@ on:
   push:
     branches:
       - main   # Only trigger on push to the main branch
-    paths:
-      # Config files
-      - '*.json'
-      - '*.js'
-      # GitHub Actions
-      - '.github/**'
-      # Source files
-      - 'public/**'
-      - 'src/**'
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+      - '.editorconfig'
+      - 'public/data/**'
 
 jobs:
   deps-build-deploy:
