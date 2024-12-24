@@ -1,40 +1,6 @@
-$red-of-error: #e74c3c;
 $color-error: #ffcccc;
 
-.pnf {
-    text-align: center;
-    padding: 50px;
-    // border: 1px solid $red-of-error;
-    border-radius: 10px;
-    max-width: 85%;
-    margin: 100px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-    color: $color-error;
-}
-
-.title {
-    font-size: 42px;
-    font-weight: bold;
-    color: $red-of-error;
-    margin-bottom: 20px;
-}
-
-.back {
-    margin-top: 30px;
-    height: 30px;
-    align-self: baseline;
-}
 
 .back a {
-    text-decoration: none;
-    color: #007bff;
-    font-size: 22px;
-    font-weight: 500;
-    transition: font-size 0.5s;
-}
-
-.back a:hover {
-    text-decoration: none;
-    font-size: 24px;
+  transition: all 0.5s;
 }
