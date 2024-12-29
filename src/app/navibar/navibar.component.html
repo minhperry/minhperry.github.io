@@ -1,12 +1,12 @@
-<nav class="navbar sticky-top navbar-expand-lg" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg tw-p-0" data-bs-theme="dark">
   <div class="container-fluid">
-    <div class="navbar-brand">
-      <a href="/">
+    <div class="navbar-brand tw-font-extrabold tw-text-2xl">
+      <a href="/" class="tw-cursor-pointer text-decoration-none">
         Portfolio
       </a>
     </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    <button class="navbar-toggler tw-my-[10px]" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <mat-icon class="material-symbols-outlined">menu</mat-icon>
     </button>
@@ -14,11 +14,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav">
         @for (link of naviLinks; track link) {
-          <div class="nav-link d-flex justify-content-center">
+          <div class="nav-link d-flex justify-content-center tw-my-[8px] p-0">
             @if (!link.isExternal) {
-              <a class="menu-item" [routerLink]="link.path">{{ link.label }}</a>
+              <a class="menu-item tw-mx-[5px] tw-p-[2px_5px] tw-rounded-[3px]" [routerLink]="link.path">{{ link.label }}</a>
             } @else {
-              <a class="menu-item" [href]="link.path" target="_blank">{{ link.label }}</a>
+              <a class="menu-item tw-mx-[5px] tw-p-[2px_5px] tw-rounded-[3px]" [href]="link.path" target="_blank">{{ link.label }}</a>
             }
           </div>
         }
@@ -31,5 +31,5 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
 </nav>
