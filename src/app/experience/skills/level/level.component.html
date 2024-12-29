@@ -20,13 +20,13 @@
     <div class="level-bar d-flex align-items-center position-relative w-100"
          matTooltip="{{ classifyLevel(level) }}" matTooltipPosition="right">
       @for (i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track $index) {
-        <div class="level-bar-segment h-100 tw-rounded-sm" [class.filled]="level >= i * 10"></div>
+        <div class="level-bar-segment h-100 rounded-sm" [class.filled]="level >= i * 10"></div>
       }
     </div>
   } @else {
     <div class="level-bar d-flex align-items-center position-relative w-100">
       @for (i of [1, 2, 3, 4, 5, 6]; track $index) {
-        <div class="level-bar-segment h-100 tw-rounded-sm" [class.filled]="level >= i * 2 - 1"></div>
+        <div class="level-bar-segment h-100 rounded-sm" [class.filled]="level >= i * 2 - 1"></div>
       }
     </div>
   }

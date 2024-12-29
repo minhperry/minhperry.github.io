@@ -1,7 +1,7 @@
 @for (entry of skills; track entry.id) {
   @if (entry.display) {
     <div [id]="entry.id">
-      <h1 class="text-center tw-text-xl tw-font-bold my-0">{{ entry.title }}</h1>
+      <h1 class="text-center text-xl font-bold my-0">{{ entry.title }}</h1>
       @for (skill of entry.entries; track $index) {
         @if (!skill.isLanguage) {
           <p-level [name]="skill.name" [level]="skill.level" [will]="skill.will">{{ skill.desc }}</p-level>
@@ -12,7 +12,7 @@
     </div>
   }
 }
-<div class="star-container d-flex justify-content-center tw-cursor-pointer user-select-none">
+<div class="star-container d-flex justify-content-center cursor-pointer user-select-none">
   <i class="bi bi-star-fill"></i>
   <span class="ms-2">I would like to continue developing this skill and become better in the future.</span>
 </div>
