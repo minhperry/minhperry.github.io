@@ -51,7 +51,7 @@ export class NavibarComponent implements OnInit{
       hour: '2-digit', minute: '2-digit', second: '2-digit'
     })
     date = date.replace(/,/g, '');
-    let date2 = date;
+    let date2;
     if (colon) {
       date2 = date.replace(/:/, ' ');
     } else {
