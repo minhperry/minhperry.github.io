@@ -1,35 +1,24 @@
-<nav class="navbar sticky-top navbar-expand-lg" style="display: none" data-bs-theme="dark">
-  <div class="container-fluid">
-    <div class="navbar-brand font-extrabold text-2xl">
-      <a href="/" class="cursor-pointer text-decoration-none">
-        Portfolio
-      </a>
+<nav>
+  <div>
+    <div class="flex justify-between mx-3 mt-2">
+      <p id="site-name" class="font-extrabold text-2xl">Portfolio</p>
+      <p id="time-display" class="flex items-center">
+        {{ time }}
+      </p>
     </div>
-
-    <button class="navbar-toggler my-[10px]" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <mat-icon class="material-symbols-outlined">menu</mat-icon>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="navbar-nav">
-        @for (link of naviLinks; track link) {
-          <div class="nav-link d-flex justify-content-center my-[8px] p-0">
-            @if (!link.isExternal) {
-              <a class="menu-item mx-[5px] p-[2px_5px] rounded-[3px]" [routerLink]="link.path">{{ link.label }}</a>
-            } @else {
-              <a class="menu-item mx-[5px] p-[2px_5px] rounded-[3px]" [href]="link.path" target="_blank">{{ link.label }}</a>
-            }
-          </div>
+    <div class="flex justify-between mx-3 mb-2">
+      <div id="nav" class="flex justify-start mx-2">
+        @for (link of naviLinks; track $index) {
+          <a class="mx-[0.35rem] underline-offset-[4px] text-sky-500 hover:text-sky-200" [routerLink]="link.path"
+             routerLinkActive="current" [routerLinkActiveOptions]="{ exact: true }">
+            {{ link.label }}
+          </a>
         }
       </div>
-      <div class="navbar-nav ml-auto">
-        <div class="d-flex nav-link justify-content-center align-items-center hover:text-white">
-          <a href="https://github.com/minhperry/minhperry.github.io" target="_blank"
-             matTooltip="Go to source" matTooltipPosition="below">
-          v{{ version }}</a>
-        </div>
-      </div>
+      <a href="https://github.com/minhperry/minhperry.github.io" target="_blank"
+         matTooltip="Go to source" matTooltipPosition="below">
+        v{{ version }}</a>
     </div>
+    <hr/>
   </div>
 </nav>

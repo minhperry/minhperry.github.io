@@ -1,28 +1,23 @@
-@use '../../styles.scss';
+@use '../../styles.scss' as main;
 
-$bgColor: styles.$color-base;
-$hoverColor: styles.$color-iris;
-$text: rgba(58, 114, 255, 0.532);
+#nav {
+  font-family: "Fira Code VF", monospace;
 
-.navbar {
-  background-color: rgba($bgColor, 1);
-  box-shadow: 0 0 5px 0 rgba(164, 164, 164, 0.233);
+  a {
+    text-decoration: dashed underline main.$color-muted;
 
-  .navbar-brand {
-    a {
-      color: styles.$color-text;
+    &:hover {
+      text-decoration-style: solid;
     }
   }
+}
 
-  .navbar-collapse {
-    .menu-item {
-      color: $text;
-      transition: all 0.5s;
+.current {
+  color: #6cffdf !important;
+  text-decoration-style: solid !important;
+}
 
-      &:hover {
-        background-color: rgba(157, 211, 255, 0.8);
-        color: black;
-      }
-    }
-  }
+#time-display {
+  font-family: "Fira Code VF", monospace;
+  color: #5BCEFA;
 }
