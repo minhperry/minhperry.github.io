@@ -9,10 +9,15 @@
     <div class="flex justify-between mx-3 mb-2">
       <div id="nav" class="flex justify-start mx-2">
         @for (link of naviLinks; track $index) {
-          <a class="mx-[0.35rem] underline-offset-[4px] text-sky-500 hover:text-sky-200" [routerLink]="link.path"
-             routerLinkActive="current" [routerLinkActiveOptions]="{ exact: true }">
-            {{ link.label }}
-          </a>
+          @if (link.isExternal) {
+            <a class="mx-[0.35rem] underline-offset-[4px] text-cyan-500 hover:text-cyan-200" [href]="link.path"
+               target="_blank">{{ link.label }}</a>
+          } @else {
+            <a class="mx-[0.35rem] underline-offset-[4px] text-sky-500 hover:text-sky-200" [routerLink]="link.path"
+               routerLinkActive="current" [routerLinkActiveOptions]="{ exact: true }">
+              {{ link.label }}
+            </a>
+          }
         }
       </div>
       <a href="https://github.com/minhperry/minhperry.github.io" target="_blank"

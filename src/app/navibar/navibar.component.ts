@@ -27,6 +27,8 @@ export class NavibarComponent implements OnInit{
     {path: '/experiences', label: 'Exp-n-Edu'},
     {path: '/socials', label: 'Socials'},
     {path: 'https://blog.minhperry.de/', label: 'Blog', isExternal: true},
+    {path: 'https://every-color.minhperry.de', label: 'Every Color', isExternal: true},
+    {path: 'https://status.minhperry.de', label: 'Status', isExternal: true},
   ];
 
   version = environment.version

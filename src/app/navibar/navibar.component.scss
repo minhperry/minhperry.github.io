@@ -13,7 +13,7 @@
 }
 
 .current {
-  color: #6cffdf !important;
+  @apply text-sky-100 !important;
   text-decoration-style: solid !important;
 }
 
