@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {ApplicationRef, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Utils} from "../../services/utils/utils.service";
@@ -24,7 +24,7 @@ interface ExternalLink {
     MatTooltip
   ]
 })
-export class NavibarComponent implements OnInit{
+export class NavibarComponent {
   navLinks: NavLink[] = [
     {path: '/projects', label: 'Projects'},
     {path: '/skills', label: 'Skills'},
@@ -42,21 +42,28 @@ export class NavibarComponent implements OnInit{
   time = '';
   private colon = true;
 
-  isOpen = true;
+  isStable = false;
 
-  constructor(@Inject(PLATFORM_ID) private platform: object) {
-    this.updateDate(!this.colon);
+  constructor(@Inject(PLATFORM_ID) private platform: object, private appRef: ApplicationRef, private cdRef: ChangeDetectorRef) {
+    this.setCurrentTime(!this.colon);
+    this.appRef.isStable.subscribe(stable => {
+      if (stable && !this.isStable) {
+        this.isStable = true;
+        this.startClock();
+      }
+    })
   }
 
-  ngOnInit() {
+  startClock() {
     Utils.doIfBrowser(this.platform, () => {
       setInterval(() => {
-        this.updateDate(!this.colon);
+        this.setCurrentTime(!this.colon);
+        this.cdRef.detectChanges();
       }, 1000);
     })
   }
 
-  private updateDate(colon: boolean) {
+  private setCurrentTime(colon: boolean) {
     let date = new Date().toLocaleString("de-DE", {
       day: '2-digit', month: '2-digit', year: '2-digit',
       hour: '2-digit', minute: '2-digit', second: '2-digit'
