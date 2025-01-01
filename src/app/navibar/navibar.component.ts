@@ -15,7 +15,7 @@ interface ExternalLink {
 }
 
 @Component({
-  selector: 'p-navibar',
+  selector: 'p-navbar',
   templateUrl: './navibar.component.html',
   styleUrl: './navibar.component.scss',
   imports: [
