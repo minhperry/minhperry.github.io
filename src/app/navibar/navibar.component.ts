@@ -3,10 +3,15 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Utils} from "../../services/utils/utils.service";
 import {MatTooltip} from "@angular/material/tooltip";
+
 interface NavLink {
-  path: string;
-  label: string;
-  isExternal?: boolean;
+  path: string,
+  label: string
+}
+
+interface ExternalLink {
+  link: string,
+  label: string
 }
 
 @Component({
@@ -20,20 +25,24 @@ interface NavLink {
   ]
 })
 export class NavibarComponent implements OnInit{
-  naviLinks: NavLink[] = [
-    {path: '/', label: 'Home'},
+  navLinks: NavLink[] = [
     {path: '/projects', label: 'Projects'},
     {path: '/skills', label: 'Skills'},
-    {path: '/experiences', label: 'Exp-n-Edu'},
+    {path: '/experiences', label: 'Exp & Edu'},
     {path: '/socials', label: 'Socials'},
-    {path: 'https://blog.minhperry.de/', label: 'Blog', isExternal: true},
-    {path: 'https://every-color.minhperry.de', label: 'Every Color', isExternal: true},
-    {path: 'https://status.minhperry.de', label: 'Status', isExternal: true},
   ];
+
+  extLinks: ExternalLink[] = [
+    {link: 'https://blog.minhperry.de/', label: 'Blog'},
+    {link: 'https://every-color.minhperry.de', label: 'Every Color'},
+    {link: 'https://status.minhperry.de', label: 'Status'},
+  ]
 
   version = environment.version
   time = '';
   private colon = true;
+
+  isOpen = true;
 
   constructor(@Inject(PLATFORM_ID) private platform: object) {
     this.updateDate(!this.colon);
@@ -49,7 +58,7 @@ export class NavibarComponent implements OnInit{
 
   private updateDate(colon: boolean) {
     let date = new Date().toLocaleString("de-DE", {
-      day: '2-digit', month: '2-digit', year: 'numeric',
+      day: '2-digit', month: '2-digit', year: '2-digit',
       hour: '2-digit', minute: '2-digit', second: '2-digit'
     })
     date = date.replace(/,/g, '');

@@ -1,15 +1,8 @@
 @use '../../styles.scss' as main;
 
-#nav {
-  font-family: "Fira Code VF", monospace;
-
-  a {
-    text-decoration: dashed underline main.$color-muted;
-
-    &:hover {
-      text-decoration-style: solid;
-    }
-  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap');
+* {
+  font-family: 'Roboto Mono', monospace;
 }
 
 .current {
@@ -25,4 +18,10 @@
 hr {
   border: none;
   border-top: 1px solid main.$color-subtle;
+}
+
+.nav-item {
+  @apply mx-[0.35rem] underline-offset-[4px]
+    max-md:flex-col max-md:flex max-md:text-center
+    underline decoration-dashed decoration-[#6e6a86] hover:decoration-solid;
 }

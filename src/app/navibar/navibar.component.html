@@ -1,29 +1,37 @@
-<nav>
-  <div>
-    <div class="flex justify-between mx-3 mt-2">
-      <p id="site-name" class="font-extrabold text-2xl">Portfolio</p>
-      <p id="time-display" class="flex items-center">
-        {{ time }}
-      </p>
+<div class="bg-[#191724d1]">
+  <header class="flex flex-col md:flex-row justify-between mx-3 pt-2">
+    <div id="site-name" class="font-extrabold text-2xl text-center">
+      <a href="/">Portfolio</a>
     </div>
-    <div class="flex justify-between mx-3 mb-2">
-      <div id="nav" class="flex justify-start mx-2">
-        @for (link of naviLinks; track $index) {
-          @if (link.isExternal) {
-            <a class="mx-[0.35rem] underline-offset-[4px] text-cyan-500 hover:text-cyan-200" [href]="link.path"
-               target="_blank">{{ link.label }}</a>
-          } @else {
-            <a class="mx-[0.35rem] underline-offset-[4px] text-sky-500 hover:text-sky-200" [routerLink]="link.path"
-               routerLinkActive="current" [routerLinkActiveOptions]="{ exact: true }">
-              {{ link.label }}
-            </a>
-          }
+    <div id="time-display" class="text-center">
+      {{ time }}
+    </div>
+  </header>
+  <nav class="md:flex justify-between mx-3 mb-2">
+    <div id="nav" class="flex justify-start mx-2 max-md:justify-around">
+      <div id="routes">
+        @for (link of navLinks; track $index) {
+          <a class="nav-item text-sky-500 hover:text-sky-200"
+             [routerLink]="link.path"
+             routerLinkActive="!text-sky-100 !decoration-solid"
+             [routerLinkActiveOptions]="{ exact: true }"
+          >{{ link.label }}</a>
         }
       </div>
+      <span class="max-md:hidden">/</span>
+      <div id="ext">
+        @for (link of extLinks; track $index) {
+          <a class="nav-item text-cyan-500 hover:text-cyan-200" [href]="link.link"
+             target="_blank">{{ link.label }}</a>
+        }
+      </div>
+    </div>
+    <div class="max-md:flex max-md:justify-center">
       <a href="https://github.com/minhperry/minhperry.github.io" target="_blank"
-         matTooltip="Go to source" matTooltipPosition="below">
+         matTooltip="Go to source" matTooltipPosition="below"
+         class="text-sm">
         v{{ version }}</a>
     </div>
-    <hr/>
-  </div>
-</nav>
+  </nav>
+  <hr/>
+</div>
