@@ -11,10 +11,19 @@ export const routes: Routes = [
     title: "Welcome to my page"
   },
   {
-    path: 'me',
+    path: 'projects',
     component: AboutmeComponent,
-    title: "About me",
-    // canActivate: [hasRoleGuard], // TODO: Change this in CV
+    title: "Projects",
+  },
+  {
+    path: 'skills',
+    component: AboutmeComponent,
+    title: "Skills",
+  },
+  {
+    path: 'experiences',
+    component: AboutmeComponent,
+    title: "Experiences and Education",
   },
   {
     path: 'socials',
