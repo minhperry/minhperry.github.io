@@ -9,6 +9,13 @@
   </header>
   <nav class="md:flex justify-between mx-3 mb-2">
     <div id="nav" class="flex justify-start mx-2 max-md:justify-around">
+      <div id="home" class="max-md:hidden">
+        <a class="nav-item text-blue-500 hover:text-blue-200"
+           [routerLink]="'/'"
+           routerLinkActive="!text-teal-100 !decoration-solid"
+           [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      </div>
+      <span class="max-md:hidden">/</span>
       <div id="routes">
         @for (link of navLinks; track $index) {
           <a class="nav-item text-sky-500 hover:text-sky-200"
