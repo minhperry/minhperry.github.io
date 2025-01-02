@@ -1,4 +1,4 @@
-import {ApplicationRef, ChangeDetectorRef, Component, HostListener, Inject, PLATFORM_ID, signal} from '@angular/core';
+import {ApplicationRef, ChangeDetectorRef, Component, HostListener, Inject, PLATFORM_ID} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Utils} from "../../services/utils/utils.service";
