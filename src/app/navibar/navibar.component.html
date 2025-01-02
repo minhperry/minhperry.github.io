@@ -8,17 +8,18 @@
         {{ time }}
       </div>
     </div>
-    <button class="flex justify-center h-full md:hidden max-sm:max-md:col-span-1 items-center hover:outline hover:outline-1 focus:outline"
+    <button class="flex justify-center h-full md:hidden max-sm:max-md:col-span-1 items-center hover:outline hover:outline-1 focus:outline focus:outline-1"
          (click)="openClose()" aria-hidden="true"> <!--Accessibility my ass-->
-      <div class="flex flex-col justify-center h-1/2 w-1/2 rounded-sm">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down h-full w-auto" viewBox="0 0 16 16">
+      <div class="flex justify-center h-1/2 w-1/2 rounded-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"
+             class="bi bi-chevron-down h-full transition-transform duration-250 ease-in-out"
+             [class.rotate-180]="isOpen">
           <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
         </svg>
       </div>
     </button>
   </header>
-  <nav class="md:flex justify-between mx-3 mb-2 rounded-lg overflow-hidden"
-       [@slideToggle]="isOpen">
+  <nav class="md:flex justify-between mx-3 mb-2 rounded-lg overflow-hidden" [@slideToggle]="isOpen">
     <div id="nav" class="flex justify-start mx-2 max-md:justify-around">
       <div id="home" class="max-md:hidden">
         <a class="nav-item text-blue-500 hover:text-blue-200"

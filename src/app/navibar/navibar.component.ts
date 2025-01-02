@@ -28,13 +28,9 @@ interface ExternalLink {
     trigger('slideToggle', [
       state('true', style({
         height: '*',
-        opacity: 1,
-        transform: 'translateY(0)'
       })),
       state('false', style({
         height: '0',
-        opacity: 0,
-        transform: 'translateY(-10px)'
       })),
       transition('true <=> false', animate('250ms cubic-bezier(0.4, 0, 0.2, 1)'))
     ])
