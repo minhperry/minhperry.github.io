@@ -1,13 +1,24 @@
 <div class="bg-[#191724d1]">
-  <header class="flex flex-col md:flex-row justify-between mx-3 pt-2">
-    <div id="site-name" class="font-extrabold text-2xl text-center">
-      <a href="/">Portfolio</a>
+  <header class="mx-3 pt-2 max-md:grid max-md:grid-cols-20 max-sm:grid-cols-12 gap-0">
+    <div class="flex max-md:flex-col md:flex-row justify-between items-center max-sm:col-span-11 max-md:col-span-19">
+      <div id="site-name" class="font-extrabold text-xl text-center">
+        <a href="/">Portfolio</a>
+      </div>
+      <div id="time-display" class="text-center">
+        {{ time }}
+      </div>
     </div>
-    <div id="time-display" class="text-center">
-      {{ time }}
-    </div>
+    <button class="flex justify-center h-full md:hidden max-sm:max-md:col-span-1 items-center hover:outline hover:outline-1 focus:outline"
+         (click)="openClose()" aria-hidden="true"> <!--Accessibility my ass-->
+      <div class="flex flex-col justify-center h-1/2 w-1/2 rounded-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down h-full w-auto" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+        </svg>
+      </div>
+    </button>
   </header>
-  <nav class="md:flex justify-between mx-3 mb-2">
+  <nav class="md:flex justify-between mx-3 mb-2 rounded-lg overflow-hidden"
+       [@slideToggle]="isOpen">
     <div id="nav" class="flex justify-start mx-2 max-md:justify-around">
       <div id="home" class="max-md:hidden">
         <a class="nav-item text-blue-500 hover:text-blue-200"

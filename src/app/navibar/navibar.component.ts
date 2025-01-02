@@ -1,8 +1,9 @@
-import {ApplicationRef, ChangeDetectorRef, Component, Inject, PLATFORM_ID} from '@angular/core';
+import {ApplicationRef, ChangeDetectorRef, Component, HostListener, Inject, PLATFORM_ID, signal} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Utils} from "../../services/utils/utils.service";
 import {MatTooltip} from "@angular/material/tooltip";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 interface NavLink {
   path: string,
@@ -22,6 +23,21 @@ interface ExternalLink {
     RouterLink,
     RouterLinkActive,
     MatTooltip
+  ],
+  animations: [
+    trigger('slideToggle', [
+      state('true', style({
+        height: '*',
+        opacity: 1,
+        transform: 'translateY(0)'
+      })),
+      state('false', style({
+        height: '0',
+        opacity: 0,
+        transform: 'translateY(-10px)'
+      })),
+      transition('true <=> false', animate('250ms cubic-bezier(0.4, 0, 0.2, 1)'))
+    ])
   ]
 })
 export class NavibarComponent {
@@ -41,6 +57,7 @@ export class NavibarComponent {
   version = environment.version
   time = '';
   private colon = true;
+  isOpen = true;
 
   isStable = false;
 
@@ -69,14 +86,23 @@ export class NavibarComponent {
       hour: '2-digit', minute: '2-digit', second: '2-digit'
     })
     date = date.replace(/,/g, '');
-    let date2;
+    let formattedDate;
     if (colon) {
-      date2 = date.replace(/:/, ' ');
+      formattedDate = date.replace(/:/, ' ');
     } else {
       let i = 0;
-      date2 = date.replace(/:/g, match => ++i === 2 ? ' ' : match);
+      formattedDate = date.replace(/:/g, match => ++i === 2 ? ' ' : match);
     }
-    this.time = date2;
+    this.time = formattedDate;
     this.colon = !this.colon;
+  }
+
+  openClose() {
+    this.isOpen = !this.isOpen;
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isOpen = window.innerWidth >= 768;
   }
 }

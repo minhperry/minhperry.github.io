@@ -8,7 +8,14 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ["Source Sance 3", "sans-serif"]
-      }
+      },
+      gridColumn: {
+        'span-18': 'span 18 / span 18',
+        'span-19': 'span 19 / span 19',
+      },
+      gridTemplateColumns: {
+        '20': 'repeat(20, minmax(0, 1fr))',
+      },
     },
     container: {
       screens: {
