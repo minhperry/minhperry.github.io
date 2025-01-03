@@ -1,11 +1,11 @@
 import {
-  booleanAttribute,
+  ApplicationRef,
+  booleanAttribute, ChangeDetectorRef,
   Component,
   Inject,
   Input,
   numberAttribute,
   OnDestroy,
-  OnInit,
   PLATFORM_ID
 } from '@angular/core';
 import {delay, Subscription, tap, timer} from "rxjs";
@@ -16,9 +16,10 @@ import {NgClass} from "@angular/common";
   selector: 'p-text-rotator',
   imports: [NgClass],
   templateUrl: './text-rotator.component.html',
-  styleUrl: './text-rotator.component.scss'
+  styleUrl: './text-rotator.component.scss',
+  host: {ngSkipHydration: 'true'},
 })
-export class TextRotatorComponent implements OnInit, OnDestroy {
+export class TextRotatorComponent implements OnDestroy {
   @Input({required: true}) textArray!: string[]
   @Input({required: true}) mode!: 'sequential' | 'random'
   @Input({transform: numberAttribute}) interval = 2000
@@ -28,29 +29,39 @@ export class TextRotatorComponent implements OnInit, OnDestroy {
   currentIndex = 0;
   isVisible = true;
 
+  isStable = false;
+
   private timeout!: Subscription
 
-  constructor(@Inject(PLATFORM_ID) private plat: object) {
-  }
-
-  ngOnInit(): void {
-    Utils.doIfBrowser(this.plat, () => {
-      this.timeout = timer(0, this.interval).pipe(
-        tap(() => this.isVisible = false),
-        delay(this.duration),
-      ).subscribe(() => {
-        if (this.mode === 'random') {
-          this.currentIndex = this.getRandomIndex();
-        } else {
-          this.currentIndex = (this.currentIndex + 1) % this.textArray.length;
-        }
-        this.isVisible = true;
-      });
+  constructor(@Inject(PLATFORM_ID) private plat: object, private appRef: ApplicationRef, private cd: ChangeDetectorRef) {
+    this.appRef.isStable.subscribe(stable => {
+      if (stable && !this.isStable) {
+        this.isStable = true;
+        this.startRotating();
+      }
     })
   }
 
   ngOnDestroy(): void {
     Utils.doIfBrowser(this.plat, () => this.timeout.unsubscribe());
+  }
+
+  private startRotating() {
+    this.timeout = timer(0, this.interval).pipe(
+      tap(() => {
+        this.isVisible = false;
+        this.cd.detectChanges();
+      }),
+      delay(this.duration),
+    ).subscribe(() => {
+      if (this.mode === 'random') {
+        this.currentIndex = this.getRandomIndex();
+      } else {
+        this.currentIndex = (this.currentIndex + 1) % this.textArray.length;
+      }
+      this.isVisible = true;
+      this.cd.detectChanges();
+    });
   }
 
   private getRandomIndex(): number {
