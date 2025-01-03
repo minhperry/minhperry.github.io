@@ -49,8 +49,7 @@ export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
   navLinks: NavLink[] = [
     {path: '/projects', label: 'Projects'},
     {path: '/skills', label: 'Skills'},
-    {path: '/experiences', label: 'Exp & Edu'},
-    {path: '/socials', label: 'Socials'},
+    {path: '/experiences', label: 'Exp & Edu'}
   ];
 
   extLinks: ExternalLink[] = [

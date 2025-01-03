@@ -1,6 +1,5 @@
 import {Routes} from '@angular/router';
 import {AboutmeComponent} from './aboutme/aboutme.component';
-import {SocialComponent} from './social/social.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LandingComponent} from './landing/landing.component';
 
@@ -24,11 +23,6 @@ export const routes: Routes = [
     path: 'experiences',
     component: AboutmeComponent,
     title: "Experiences and Education",
-  },
-  {
-    path: 'socials',
-    component: SocialComponent,
-    title: "My social medias",
   },
   {
     path: '404',
