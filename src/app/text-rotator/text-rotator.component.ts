@@ -1,4 +1,13 @@
-import {Component, Inject, Input, OnDestroy, OnInit, PLATFORM_ID} from '@angular/core';
+import {
+  booleanAttribute,
+  Component,
+  Inject,
+  Input,
+  numberAttribute,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID
+} from '@angular/core';
 import {delay, Subscription, tap, timer} from "rxjs";
 import {Utils} from "../../services/utils/utils.service";
 import {NgClass} from "@angular/common";
@@ -10,9 +19,11 @@ import {NgClass} from "@angular/common";
   styleUrl: './text-rotator.component.scss'
 })
 export class TextRotatorComponent implements OnInit, OnDestroy {
-  @Input() textArray: string[] = []
-  @Input() mode: 'sequential' | 'random' = 'sequential'
-  @Input() interval = 2000
+  @Input({required: true}) textArray!: string[]
+  @Input({required: true}) mode!: 'sequential' | 'random'
+  @Input({transform: numberAttribute}) interval = 2000
+  @Input({transform: booleanAttribute}) neon = true
+  @Input({transform: numberAttribute}) duration = 200
 
   currentIndex = 0;
   isVisible = true;
@@ -26,7 +37,7 @@ export class TextRotatorComponent implements OnInit, OnDestroy {
     Utils.doIfBrowser(this.plat, () => {
       this.timeout = timer(0, this.interval).pipe(
         tap(() => this.isVisible = false),
-        delay(200),
+        delay(this.duration),
       ).subscribe(() => {
         if (this.mode === 'random') {
           this.currentIndex = this.getRandomIndex();
