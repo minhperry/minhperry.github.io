@@ -1,4 +1,13 @@
-import {ApplicationRef, ChangeDetectorRef, Component, HostListener, Inject, PLATFORM_ID} from '@angular/core';
+import {
+  AfterViewInit,
+  ApplicationRef,
+  ChangeDetectorRef,
+  Component,
+  HostListener,
+  Inject,
+  OnDestroy, OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {Utils} from "../../services/utils/utils.service";
@@ -36,7 +45,7 @@ interface ExternalLink {
     ])
   ]
 })
-export class NavibarComponent {
+export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
   navLinks: NavLink[] = [
     {path: '/projects', label: 'Projects'},
     {path: '/skills', label: 'Skills'},
@@ -53,9 +62,10 @@ export class NavibarComponent {
   version = environment.version
   time = '';
   private colon = true;
-  isOpen = true;
-
   isStable = false;
+
+  isOpen: boolean | null = null;
+  private resizeListener!: () => void;
 
   constructor(@Inject(PLATFORM_ID) private platform: object, private appRef: ApplicationRef, private cdRef: ChangeDetectorRef) {
     this.setCurrentTime(!this.colon);
@@ -65,6 +75,34 @@ export class NavibarComponent {
         this.startClock();
       }
     })
+    Utils.doIfBrowser(this.platform, () => {
+      if (window.innerWidth < 768) {
+        this.isOpen = false;
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    Utils.doIfBrowser(this.platform, () => {
+      this.onResize()
+
+      this.resizeListener = () => this.onResize();
+      window.addEventListener('resize', this.resizeListener);
+    });
+  }
+
+  ngOnDestroy(): void {
+    Utils.doIfBrowser(this.platform, () => {
+      if (this.resizeListener) {
+        window.removeEventListener('resize', this.resizeListener);
+      }
+    });
+  }
+
+  ngAfterViewInit() {
+    if (this.isOpen) {
+      this.onResize();
+    }
   }
 
   startClock() {
