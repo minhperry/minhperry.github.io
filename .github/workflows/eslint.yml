@@ -29,7 +29,7 @@ jobs:
         run: npm ci
 
       - name: Run ESLint
-        run: npx eslint --format json 'src/**' '*.js'
+        run: npm run lint:json
         continue-on-error: true
 
       - uses: ldiego73/eslint-report-action@v1.1
