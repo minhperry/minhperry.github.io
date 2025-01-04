@@ -1,16 +1,6 @@
-import {
-  AfterViewInit,
-  ApplicationRef,
-  ChangeDetectorRef,
-  Component,
-  HostListener,
-  Inject,
-  OnDestroy, OnInit,
-  PLATFORM_ID,
-} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnDestroy, OnInit,} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
-import {Utils} from "../../services/utils/utils.service";
 import {MatTooltip} from "@angular/material/tooltip";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 
@@ -60,42 +50,29 @@ export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
 
   version = environment.version
   time = '';
-  private colon = true;
-  isStable = false;
-
   isOpen: boolean | null = null;
+  private colon = true;
   private resizeListener!: () => void;
 
-  constructor(@Inject(PLATFORM_ID) private platform: object, private appRef: ApplicationRef, private cdRef: ChangeDetectorRef) {
+  constructor() {
     this.setCurrentTime(!this.colon);
-    this.appRef.isStable.subscribe(stable => {
-      if (stable && !this.isStable) {
-        this.isStable = true;
-        this.startClock();
-      }
-    })
-    Utils.doIfBrowser(this.platform, () => {
-      if (window.innerWidth < 768) {
-        this.isOpen = false;
-      }
-    });
+    this.startClock();
+    if (window.innerWidth < 768) {
+      this.isOpen = false;
+    }
   }
 
   ngOnInit(): void {
-    Utils.doIfBrowser(this.platform, () => {
-      this.onResize()
+    this.onResize()
 
-      this.resizeListener = () => this.onResize();
-      window.addEventListener('resize', this.resizeListener);
-    });
+    this.resizeListener = () => this.onResize();
+    window.addEventListener('resize', this.resizeListener);
   }
 
   ngOnDestroy(): void {
-    Utils.doIfBrowser(this.platform, () => {
-      if (this.resizeListener) {
-        window.removeEventListener('resize', this.resizeListener);
-      }
-    });
+    if (this.resizeListener) {
+      window.removeEventListener('resize', this.resizeListener);
+    }
   }
 
   ngAfterViewInit() {
@@ -105,12 +82,18 @@ export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   startClock() {
-    Utils.doIfBrowser(this.platform, () => {
-      setInterval(() => {
-        this.setCurrentTime(!this.colon);
-        this.cdRef.detectChanges();
-      }, 1000);
-    })
+    setInterval(() => {
+      this.setCurrentTime(!this.colon);
+    }, 1000);
+  }
+
+  openClose() {
+    this.isOpen = !this.isOpen;
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.isOpen = window.innerWidth >= 768;
   }
 
   private setCurrentTime(colon: boolean) {
@@ -128,14 +111,5 @@ export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     this.time = formattedDate;
     this.colon = !this.colon;
-  }
-
-  openClose() {
-    this.isOpen = !this.isOpen;
-  }
-
-  @HostListener('window:resize')
-  onResize() {
-    this.isOpen = window.innerWidth >= 768;
   }
 }

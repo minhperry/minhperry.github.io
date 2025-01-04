@@ -1,21 +1,9 @@
-import {
-  AfterViewInit,
-  Directive,
-  ElementRef,
-  HostListener,
-  Inject,
-  OnDestroy,
-  OnInit,
-  PLATFORM_ID,
-  Renderer2
-} from '@angular/core';
-import {isPlatformBrowser} from '@angular/common';
-import {Utils} from "../../services/utils/utils.service";
+import {Directive, ElementRef, HostListener, OnDestroy, OnInit, Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[pAdaptiveHeight]'
 })
-export class AdaptiveHeightDirective implements OnInit, AfterViewInit, OnDestroy {
+export class AdaptiveHeightDirective implements OnInit, OnDestroy {
   private navbarHeight = 0;
   private observer!: MutationObserver;
   private transitionInProgress = false;
@@ -23,28 +11,17 @@ export class AdaptiveHeightDirective implements OnInit, AfterViewInit, OnDestroy
   constructor(
     private el: ElementRef,
     private renderer: Renderer2,
-    @Inject(PLATFORM_ID) private plat: object
-  ) {}
-
-  ngOnInit(): void {
-    Utils.doIfBrowser(this.plat, () => {
-      this.setHeight();
-      this.observeNavbarHeight();
-    })
+  ) {
   }
 
-  ngAfterViewInit(): void {
-    Utils.doIfBrowser(this.plat, () => {
-      this.setHeight();
-      this.observeNavbarHeight();
-    })
+  ngOnInit(): void {
+    this.setHeight();
+    this.observeNavbarHeight();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(): void {
-    if (isPlatformBrowser(this.plat)) {
-      this.setHeight();
-    }
+    this.setHeight();
   }
 
   ngOnDestroy(): void {

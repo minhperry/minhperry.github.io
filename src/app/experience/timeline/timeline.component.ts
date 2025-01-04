@@ -8,8 +8,8 @@ import {TimelineEvent} from "../../../interfaces/date-entry";
   styleUrl: './timeline.component.scss'
 })
 export class TimelineComponent {
-  @Input() timeline!: TimelineEvent[];
-  @Input() title = '';
+  @Input({required: true}) timeline!: TimelineEvent[];
+  @Input({required: true}) title = '';
 
   appendDate(event: TimelineEvent) {
     return `${event.start} ➜ ${event.end ?? 'present'}`;

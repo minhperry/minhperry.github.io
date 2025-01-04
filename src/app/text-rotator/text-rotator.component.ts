@@ -1,15 +1,5 @@
-import {
-  ApplicationRef,
-  booleanAttribute, ChangeDetectorRef,
-  Component,
-  Inject,
-  Input,
-  numberAttribute,
-  OnDestroy,
-  PLATFORM_ID
-} from '@angular/core';
+import {booleanAttribute, Component, Input, numberAttribute, OnDestroy} from '@angular/core';
 import {delay, Subscription, tap, timer} from "rxjs";
-import {Utils} from "../../services/utils/utils.service";
 import {NgClass} from "@angular/common";
 
 @Component({
@@ -22,37 +12,29 @@ import {NgClass} from "@angular/common";
 export class TextRotatorComponent implements OnDestroy {
   @Input({required: true}) textArray!: string[]
   @Input({required: true}) mode!: 'sequential' | 'random'
-  @Input({transform: numberAttribute}) interval = 2000
+  @Input({transform: numberAttribute}) duration = 2000
   @Input({transform: booleanAttribute}) neon = true
-  @Input({transform: numberAttribute}) duration = 200
+  @Input({transform: numberAttribute}) fade = 200
 
   currentIndex = 0;
   isVisible = true;
 
-  isStable = false;
-
   private timeout!: Subscription
 
-  constructor(@Inject(PLATFORM_ID) private plat: object, private appRef: ApplicationRef, private cd: ChangeDetectorRef) {
-    this.appRef.isStable.subscribe(stable => {
-      if (stable && !this.isStable) {
-        this.isStable = true;
-        this.startRotating();
-      }
-    })
+  constructor() {
+    this.startRotating();
   }
 
   ngOnDestroy(): void {
-    Utils.doIfBrowser(this.plat, () => this.timeout.unsubscribe());
+    this.timeout.unsubscribe();
   }
 
   private startRotating() {
-    this.timeout = timer(0, this.interval).pipe(
+    this.timeout = timer(0, this.duration).pipe(
       tap(() => {
         this.isVisible = false;
-        this.cd.detectChanges();
       }),
-      delay(this.duration),
+      delay(this.fade),
     ).subscribe(() => {
       if (this.mode === 'random') {
         this.currentIndex = this.getRandomIndex();
@@ -60,7 +42,6 @@ export class TextRotatorComponent implements OnDestroy {
         this.currentIndex = (this.currentIndex + 1) % this.textArray.length;
       }
       this.isVisible = true;
-      this.cd.detectChanges();
     });
   }
 
