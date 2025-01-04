@@ -2,6 +2,7 @@ import {Routes} from '@angular/router';
 import {AboutmeComponent} from './aboutme/aboutme.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LandingComponent} from './landing/landing.component';
+import {SkillsComponent} from "./experience/skills/skills.component";
 
 export const routes: Routes = [
   {
@@ -16,7 +17,7 @@ export const routes: Routes = [
   },
   {
     path: 'skills',
-    component: AboutmeComponent,
+    component: SkillsComponent,
     title: "Skills",
   },
   {

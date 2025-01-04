@@ -1,10 +1,12 @@
 import {booleanAttribute, Component, Input, numberAttribute} from '@angular/core';
 import {MatTooltip} from "@angular/material/tooltip";
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'p-level',
   imports: [
-    MatTooltip
+    MatTooltip,
+    NgClass
   ],
   templateUrl: './level.component.html',
   styleUrl: './level.component.scss'
