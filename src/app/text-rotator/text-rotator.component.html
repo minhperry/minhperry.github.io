@@ -1,7 +1,8 @@
-<span [ngClass]="{
-    'transition-opacity duration-200': true,
-    'opacity-100': isVisible,
-    'opacity-0': !isVisible,
-    'neon': neon
-  }"
->{{ textArray[currentIndex] }}</span>
+<div class="inline wordz">
+  @for (text of textArray; track $index) {
+    <span class="absolute opacity-0"
+          [ngClass]="{'neon': neon,}"
+          [style]="styleObj($index)"
+    >{{ text }}</span>
+  }
+</div>

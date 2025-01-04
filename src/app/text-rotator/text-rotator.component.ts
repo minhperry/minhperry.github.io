@@ -1,74 +1,39 @@
-import {
-  ApplicationRef,
-  booleanAttribute, ChangeDetectorRef,
-  Component,
-  Inject,
-  Input,
-  numberAttribute,
-  OnDestroy,
-  PLATFORM_ID
-} from '@angular/core';
-import {delay, Subscription, tap, timer} from "rxjs";
-import {Utils} from "../../services/utils/utils.service";
+import {booleanAttribute, Component, Input, numberAttribute, OnInit} from '@angular/core';
 import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'p-text-rotator',
-  imports: [NgClass],
   templateUrl: './text-rotator.component.html',
   styleUrl: './text-rotator.component.scss',
-  host: {ngSkipHydration: 'true'},
+  imports: [
+    NgClass
+  ]
 })
-export class TextRotatorComponent implements OnDestroy {
+export class TextRotatorComponent implements OnInit {
   @Input({required: true}) textArray!: string[]
-  @Input({required: true}) mode!: 'sequential' | 'random'
-  @Input({transform: numberAttribute}) interval = 2000
+  //@Input({required: true}) mode!: 'sequential' | 'random'
+  @Input({transform: numberAttribute}) duration = 2000
   @Input({transform: booleanAttribute}) neon = true
-  @Input({transform: numberAttribute}) duration = 200
+  // @Input({transform: numberAttribute}) duration = 200
 
-  currentIndex = 0;
-  isVisible = true;
-
-  isStable = false;
-
-  private timeout!: Subscription
-
-  constructor(@Inject(PLATFORM_ID) private plat: object, private appRef: ApplicationRef, private cd: ChangeDetectorRef) {
-    this.appRef.isStable.subscribe(stable => {
-      if (stable && !this.isStable) {
-        this.isStable = true;
-        this.startRotating();
-      }
-    })
+  length = 0;
+  ngOnInit() {
+    this.length = this.textArray.length
   }
 
-  ngOnDestroy(): void {
-    Utils.doIfBrowser(this.plat, () => this.timeout.unsubscribe());
+  getAnimationDelay(index: number): string {
+    return `${this.duration * index}ms`;
   }
 
-  private startRotating() {
-    this.timeout = timer(0, this.interval).pipe(
-      tap(() => {
-        this.isVisible = false;
-        this.cd.detectChanges();
-      }),
-      delay(this.duration),
-    ).subscribe(() => {
-      if (this.mode === 'random') {
-        this.currentIndex = this.getRandomIndex();
-      } else {
-        this.currentIndex = (this.currentIndex + 1) % this.textArray.length;
-      }
-      this.isVisible = true;
-      this.cd.detectChanges();
-    });
+  private getCycle() {
+    return this.length * this.duration
   }
 
-  private getRandomIndex(): number {
-    let newIndex;
-    do {
-      newIndex = Math.floor(Math.random() * this.textArray.length);
-    } while (newIndex === this.currentIndex && this.textArray.length > 1);
-    return newIndex;
+  styleObj(index: number) {
+    const a = {
+      'animation': `rotateWord ${this.getCycle()}ms linear infinite ${this.getAnimationDelay(index)}`
+    }
+    console.log(a, this.length, this.duration)
+    return a
   }
 }
