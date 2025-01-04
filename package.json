@@ -9,7 +9,8 @@
     "test": "ng test",
     "kill": "~/.killold.sh 4200",
     "serve:ssr:portfolio": "node dist/server/server.mjs",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "lint:json": "npx eslint src/ -f json -o reports/lint.json"
   },
   "private": true,
   "dependencies": {
