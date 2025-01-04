@@ -5,7 +5,6 @@ import {NgClass} from "@angular/common";
 @Component({
   selector: 'p-level',
   imports: [
-    MatTooltip,
     NgClass
   ],
   templateUrl: './level.component.html',
@@ -19,7 +18,8 @@ export class LevelComponent {
   isLang = false;
 
   // (Self-)Extended Dreyfus model: https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition
-  classifyLevel(l: number): string {
+  /*
+  _classifyLevel(l: number): string {
     if (0 <= l && l <= 10) {
       return 'Novice';
     } else if (10 < l && l <= 25) {
@@ -34,6 +34,7 @@ export class LevelComponent {
       return 'Expert';
     } else return '';
   }
+  */
 
   // 1 -> A1.1, 12 -> C2.2
   languageLevel(l: number): string {

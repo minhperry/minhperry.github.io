@@ -1,4 +1,4 @@
-<div class="container mx-auto flex flex-col items-start mb-2 group">
+<div class="container mx-auto px-3 flex flex-col items-start mb-2 group">
   <div class="flex w-full justify-between items-center transition-all duration-300 group-hover:text-[#f6c177] group-hover:font-bold">
     <p class="mb-0">
       @if (will) {
@@ -17,8 +17,7 @@
     </span>
   </div>
   @if (!isLang) {
-    <div class="h-4 rounded-[5px] flex items-center w-full"
-         matTooltip="{{ classifyLevel(level) }}" matTooltipPosition="below">
+    <div class="h-4 rounded-[5px] flex items-center w-full">
       @for (i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track $index) {
         <div class="h-full rounded-sm flex-1 mx-[1px] my-0" [ngClass]="level >= i * 10 ? 'bg-[#313f9b]' : 'bg-[#242234]'"></div>
       }
