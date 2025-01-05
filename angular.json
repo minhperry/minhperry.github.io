@@ -15,7 +15,7 @@
                 },
                 "@schematics/angular:service": {
                     "path": "src/services",
-                    "skipTests": true
+                    "flat": false
                 },
                 "@schematics/angular:guard": {
                     "path": "src/guards",
