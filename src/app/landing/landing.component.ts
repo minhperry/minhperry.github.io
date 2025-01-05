@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AdaptiveHeightDirective} from "../../directives/height/adaptive-height.directive";
 import {TextRotatorComponent} from "../text-rotator/text-rotator.component";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'p-landing',
@@ -9,6 +10,7 @@ import {TextRotatorComponent} from "../text-rotator/text-rotator.component";
   imports: [
     AdaptiveHeightDirective,
     TextRotatorComponent,
+    FormsModule,
   ]
 })
 export class LandingComponent {
@@ -18,6 +20,10 @@ export class LandingComponent {
     'Angular advocate', 'creative thinker', 'Tailwind enjoyer',
     'continuous learner', 'team player', 'solution finder'
   ]
+
+  textStayDuration = 2000;
+  textFadeDuration = 500;
+  textRotationMode: 'sequential' | 'random' = 'random';
 }
 
 // That's it im fucking disabling SSR, this shit cause more harm than good.

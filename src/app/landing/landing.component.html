@@ -1,17 +1,37 @@
 <div class="w-full bg-gradient-to-br from-slate-900 to-blue-900 flex items-center justify-center" pAdaptiveHeight>
-  <div class="w-4/5 items-center">
-    <div class="">
-      <div class="text-9xl max-md:text-4xl font-[550] leading-tight block text-left">
+  <div class="w-[90%] items-center flex flex-row max-lg:grid max-lg:grid-cols-1">
+    <div class="lg:w-8/12 min-w-fit max-lg:col-span-1">
+      <div class="text-8xl max-xl:text-7xl max-lg:text-6xl max-md:text-5xl max-sm:text-3xl font-[550] leading-tight block text-left">
         <div>I am Minh,</div>
         <div class="whitespace-nowrap">
-          <span>a </span>
-          <p-text-rotator [textArray]="textArray" duration="2500" fade="250" class="relative" mode="random"/>
+          <p-text-rotator class="relative" [textArray]="textArray" [duration]="textStayDuration"
+                          [fade]="textFadeDuration" [mode]="textRotationMode"/>
           <span>.</span>
         </div>
       </div>
-      <p class="text-xl max-md:text-base">
+      <p class="max-lg:text-xl max-md:text-base text-2xl">
         Find out how my skills and experiences can make a difference.
       </p>
+    </div>
+    <div class="lg:w-4/12 max-lg:col-span-1 max-md:mt-8">
+      <div class="flex gap-6 items-center lg:justify-center">
+        <!-- GitHub -->
+        <a href="#" class="icon">
+          <i class="ri-github-fill text-3xl hover:scale-110 transition-transform duration-200"></i>
+        </a>
+        <!-- LinkedIn -->
+        <a href="#" class="icon">
+          <i class="ri-linkedin-box-fill text-3xl hover:scale-110 transition-transform duration-200"></i>
+        </a>
+        <!-- Email -->
+        <a href="#" class="icon">
+          <i class="ri-mail-fill text-3xl hover:scale-110 transition-transform duration-200"></i>
+        </a>
+        <!-- Resume/CV -->
+        <a href="#" class="icon">
+          <i class="ri-file-text-fill text-3xl hover:scale-110 transition-transform duration-200"></i>
+        </a>
+      </div>
     </div>
   </div>
 </div>
