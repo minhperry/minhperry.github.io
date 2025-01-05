@@ -1,6 +1,6 @@
 import {booleanAttribute, Component, Input, numberAttribute} from '@angular/core';
-import {MatTooltip} from "@angular/material/tooltip";
 import {NgClass} from "@angular/common";
+import {SkillsComponent} from "../skills.component";
 
 @Component({
   selector: 'p-level',
@@ -14,8 +14,12 @@ export class LevelComponent {
   @Input() name!: string;
   @Input({transform: numberAttribute}) level!: number;
   @Input({transform: booleanAttribute}) will = false;
-
+  @Input({transform: booleanAttribute}) showScore: boolean;
   isLang = false;
+
+  constructor(host: SkillsComponent) {
+    this.showScore = host.showScore;
+  }
 
   // (Self-)Extended Dreyfus model: https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition
   /*
