@@ -1,8 +1,9 @@
 import {Routes} from '@angular/router';
-import {AboutmeComponent} from './aboutme/aboutme.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LandingComponent} from './landing/landing.component';
 import {SkillsComponent} from "./experience/skills/skills.component";
+import {ProjectsComponent} from "./projects/projects.component";
+import {ExperiencesComponent} from "./experience/experiences.component";
 
 export const routes: Routes = [
   {
@@ -12,7 +13,7 @@ export const routes: Routes = [
   },
   {
     path: 'projects',
-    component: AboutmeComponent,
+    component: ProjectsComponent,
     title: "Projects",
   },
   {
@@ -22,7 +23,7 @@ export const routes: Routes = [
   },
   {
     path: 'experiences',
-    component: AboutmeComponent,
+    component: ExperiencesComponent,
     title: "Experiences and Education",
   },
   {
