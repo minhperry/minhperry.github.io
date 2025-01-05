@@ -1,17 +1,17 @@
-<div class="container d-flex justify-content-center align-items-center" data-bs-theme="dark">
-  <div class="timeline px-[30px] py-[20px] min-w-full my-3">
-    <h3 class="font-bold title text-center">{{ title }}</h3>
+<div class="container flex justify-center items-center">
+  <div class="timeline px-[30px] py-[20px] my-3 min-w-full">
+    <h3 class="font-bold text-2xl text-center">{{ title }}</h3>
     <ul class="events list-unstyled">
       @for (event of timeline; track $index) {
-        <li class="event position-relative d-flex flex-column align-items-start cursor-pointer p-[20px]">
-          <span class="date d-inline-block text-center rounded-4">{{ appendDate(event) }}</span>
-          <div class="content d-flex flex-column align-items-start">
-            <h3 class="pt-[12px] pb-[8px]">{{ event.title }}</h3>
+        <li class="event relative flex flex-col items-start cursor-pointer p-[20px]">
+          <span class="p-[2px_5px] bg-[#0e3870] inline-block text-center rounded-[4rem]">{{ appendDate(event) }}</span>
+          <div class="flex flex-col items-start">
+            <h3 class="text-[#188fd2] font-bold pt-3 pb-2">{{ event.title }}</h3>
             @if (Array.isArray(event.description)) {
               <ul>
                 @for (desc of event.description; track $index) {
                   <li class="sub-li">
-                    <p>{{ desc }}</p>
+                    <p class="text-left">{{ desc }}</p>
                   </li>
                 }
               </ul>
