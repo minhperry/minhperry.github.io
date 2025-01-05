@@ -52,4 +52,8 @@ export class TextRotatorComponent implements OnDestroy {
     } while (newIndex === this.currentIndex && this.textArray.length > 1);
     return newIndex;
   }
+
+  startsWithVowel(text: string): boolean {
+    return ['a', 'e', 'i', 'o', 'u'].includes(text.charAt(0).toLowerCase());
+  }
 }
