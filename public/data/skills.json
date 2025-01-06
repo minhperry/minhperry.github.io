@@ -195,5 +195,18 @@
                 "isLanguage": true
             }
         ]
+    },
+    {
+        "id": "5-others",
+        "title": "Others",
+        "display": true,
+        "entries": [
+            {
+                "name": "UI Design",
+                "level": 15,
+                "will": true,
+                "desc": "From redesigning this website I somewhat learned about UI designing, despite being absolutely horrible in arts and crafts."
+            }
+        ]
     }
 ]
