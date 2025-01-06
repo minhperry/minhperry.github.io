@@ -13,6 +13,7 @@ export class TimelineComponent implements OnInit{
   @Input({required: true}) title = '';
 
   timeline: TimelineEvent[] = [];
+  isLoaded = false;
 
   constructor(private http: HttpClient) {}
 
@@ -20,10 +21,11 @@ export class TimelineComponent implements OnInit{
     this.http.get<TimelineEvent[]>(this.timelineDataFile).subscribe(data => {
       this.timeline = data;
     });
+    this.isLoaded = true;
   }
 
   appendDate(event: TimelineEvent) {
-    return `${event.start} ➜ ${event.end ?? 'present'}`;
+    return `FROM ${event.start} TO ${event.end ?? 'present'}`;
   }
 
   protected readonly Array = Array;

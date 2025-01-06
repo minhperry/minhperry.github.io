@@ -1,34 +1,30 @@
-<div class="container flex justify-center items-center">
-  <div class="timeline px-[30px] py-[20px] my-3 min-w-full">
-    <h3 class="font-bold text-2xl text-center">{{ title }}</h3>
-    <ul class="events list-unstyled">
-      @for (event of timeline; track $index) {
-        <li class="event relative flex flex-col items-start cursor-pointer p-[20px]">
-          <span class="p-[2px_5px] bg-[#0e3870] inline-block text-center rounded-[4rem]">{{ appendDate(event) }}</span>
-          <div class="flex flex-col items-start">
-            <h3 class="text-[#188fd2] font-bold pt-3 pb-2">{{ event.title }}</h3>
-            @if (Array.isArray(event.description)) {
-              <ul>
-                @for (desc of event.description; track $index) {
-                  <li class="sub-li">
-                    <p class="text-left">{{ desc }}</p>
-                  </li>
-                }
-              </ul>
-            } @else {
-              <p>{{ event.description }}</p>
-            }
-            @if (event.source) {
-              <span>
-                  <a [href]="event.source" class="github-link" target="_blank">Source</a>
-                @if (event.view) {
-                  / <a [href]="event.view" class="github-link" target="_blank">View</a>
-                }
-                </span>
+@if (isLoaded) {
+  <section class="text-inherit timeline">
+    <div class="container max-w-5xl px-4 py-12 mx-auto">
+      <div class="grid gap-4 mx-4 md:grid-cols-12">
+        <div class="col-span-12 md:col-span-3">
+          <div class="text-center md:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto md:before:mx-0 before:bg-slate-400">
+            <h3 class="text-3xl md:text-2xl font-semibold">{{ title }}</h3>
+          </div>
+        </div>
+        <div class="col-span-12 px-4 space-y-6 md:col-span-9">
+          <div class="col-span-12 space-y-12 relative px-4 md:col-span-8 md:space-y-8 md:before:absolute md:before:top-2 md:before:bottom-0 md:before:w-0.5 md:before:-left-3 before:bg-[#26233a]">
+            @for (event of timeline; track $index) {
+              <div class="flex flex-col md:relative md:before:absolute md:before:top-2 md:before:w-4 md:before:h-4 md:before:rounded-full md:before:left-[-35px] md:before:z-[1] before:bg-[#6e6a86] hover:before:bg-[#61daff] hover:before:shadow-[0_0_10px_2px_#0bf] before:transition-all before:duration-500">
+                <h3 class="text-xl font-semibold tracking-wide">{{ event.title }}</h3>
+                <time class="text-xs tracking-wide uppercase text-gray-600">{{ appendDate(event) }}</time>
+                <ul>
+                  @for (desc of event.description; track $index) {
+                    <li class="list-disc">
+                      <p class="mt-3">{{ desc }}</p>
+                    </li>
+                  }
+                </ul>
+              </div>
             }
           </div>
-        </li>
-      }
-    </ul>
-  </div>
-</div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
