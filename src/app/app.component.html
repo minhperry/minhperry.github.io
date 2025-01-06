@@ -5,4 +5,9 @@
   <div class="z-40">
     <router-outlet></router-outlet>
   </div>
+  @if (shouldRenderFooter()) {
+    <div class="z-50">
+      <p-footer></p-footer>
+    </div>
+  }
 </div>
