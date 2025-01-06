@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Existing symbols -->
+  <g fill="#ffffff15">
+    <text x="50" y="100" font-family="monospace" font-size="40">&#123;&#125;</text>
+    <text x="200" y="150" font-family="monospace" font-size="30">&amp;&amp;</text>
+    <text x="400" y="80" font-family="monospace" font-size="50">/></text>
+    <text x="600" y="200" font-family="monospace" font-size="35">||</text>
+    <text x="100" y="300" font-family="monospace" font-size="45">[]</text>
+    <text x="300" y="250" font-family="monospace" font-size="25">==</text>
+    <text x="500" y="350" font-family="monospace" font-size="40">!</text>
+  </g>
+
+  <!-- Additional symbols -->
+  <g fill="#ffffff15">
+    <text x="700" y="100" font-family="monospace" font-size="30">++</text>
+    <text x="20" y="560" font-family="monospace" font-size="40">&#64;Deprecated</text>
+    <text x="360" y="390" font-family="monospace" font-size="35">%</text>
+    <text x="550" y="80" font-family="monospace" font-size="45">?</text>
+    <text x="720" y="500" font-family="monospace" font-size="30">:</text>
+  </g>
+
+  <!-- Binary streams -->
+  <g fill="#ffffff10">
+    <text x="150" y="400" font-family="monospace" font-size="20">10110</text>
+    <text x="450" y="180" font-family="monospace" font-size="15">for (;;)</text>
+    <text x="250" y="500" font-family="monospace" font-size="25">rm rf /</text>
+    <text x="600" y="100" font-family="monospace" font-size="18">01101</text>
+    <text x="400" y="550" font-family="monospace" font-size="22">00110</text>
+  </g>
+
+  <!-- Function snippets -->
+  <g fill="#ffffff12">
+    <text x="550" y="440" font-family="monospace" font-size="18">function ()</text>
+    <text x="580" y="300" font-family="monospace" font-size="16">() => &#123;&#125;</text>
+    <text x="120" y="200" font-family="monospace" font-size="20">return;</text>
+    <text x="700" y="250" font-family="monospace" font-size="22">if ()</text>
+    <text x="170" y="80" font-family="monospace" font-size="20">:()&#123; :|:&amp; &#125;:</text>
+  </g>
+</svg>

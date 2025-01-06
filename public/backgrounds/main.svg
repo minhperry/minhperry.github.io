@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Code symbols scattered across -->
+  <g fill="#ffffff15">
+    <text x="50" y="100" font-family="monospace" font-size="40">&#123;&#125;</text>
+    <text x="200" y="150" font-family="monospace" font-size="30">&amp;&amp;</text>
+    <text x="400" y="80" font-family="monospace" font-size="50">/></text>
+    <text x="600" y="200" font-family="monospace" font-size="35">||</text>
+    <text x="100" y="300" font-family="monospace" font-size="45">[]</text>
+    <text x="300" y="250" font-family="monospace" font-size="25">==</text>
+    <text x="500" y="350" font-family="monospace" font-size="40">!</text>
+  </g>
+
+  <!-- Binary streams -->
+  <g fill="#ffffff10">
+    <text x="150" y="400" font-family="monospace" font-size="20">10110</text>
+    <text x="450" y="180" font-family="monospace" font-size="15">01001</text>
+    <text x="250" y="500" font-family="monospace" font-size="25">11000</text>
+  </g>
+
+  <!-- Function snippets -->
+  <g fill="#ffffff12">
+    <text x="350" y="420" font-family="monospace" font-size="18">function()</text>
+    <text x="580" y="300" font-family="monospace" font-size="16">const =></text>
+    <text x="120" y="200" font-family="monospace" font-size="20">return;</text>
+  </g>
+</svg>
