@@ -24,6 +24,16 @@ export class LandingComponent {
   textStayDuration = 2000;
   textFadeDuration = 500;
   textRotationMode: 'sequential' | 'random' = 'random';
+
+  socials: { url: string, riIcon: string }[] = [
+    {url: 'https://github.com/minhperry', riIcon: 'ri-github-fill'},
+    {url: 'https://gitlab.com/minhperry', riIcon: 'ri-gitlab-fill'},
+    {url: 'https://linkedin.com/in/ptm2002', riIcon: 'ri-linkedin-fill'},
+    {url: 'https://twitter.com/minhperryy', riIcon: 'ri-twitter-fill'},
+    {url: 'mailto:me@minhperry.de', riIcon: 'ri-mail-fill'},
+    {url: '/pdf/lebenslauf.pdf', riIcon: 'ri-file-text-fill'},
+    {url: 'https://www.youtube.com/@minhperry', riIcon: 'ri-youtube-fill'},
+  ]
 }
 
 // That's it im fucking disabling SSR, this shit cause more harm than good.
