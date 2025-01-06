@@ -1,8 +1,8 @@
-<div class="mx-auto px-0 max-w-full">
+<div class="mx-auto px-0 max-w-full flex flex-col min-h-screen">
   <div class="sticky top-0 left-0 right-0 z-50">
     <p-navbar/>
   </div>
-  <div class="z-40">
+  <div class="z-40 grow">
     <router-outlet></router-outlet>
   </div>
   @if (shouldRenderFooter()) {
