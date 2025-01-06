@@ -19,13 +19,15 @@
   }
 </div>
 <div class="mb-4">
-  <div class="flex justify-center cursor-pointer select-none">
-    <i class="bi bi-star-fill hover:text-[#f6c177] hover:font-bold"></i>
+  <div class="flex justify-center select-none group">
+    <i class="bi bi-star-fill group-hover:text-[#f6c177] group-hover:font-bold"></i>
     <span class="ms-2">I would like to continue developing this skill and become better in the future.</span>
   </div>
   <div class="flex justify-center pt-2">
-    <button class="bg-transparent hover:bg-blue-500 text-blue-400 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-            (click)="toggleScore()">Toggle score
-    </button>
+    <label class="inline-flex items-center cursor-pointer">
+      <input type="checkbox" value="" class="sr-only peer" [checked]="showScore" (click)="toggleScore()">
+      <div class="relative w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+      <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300 select-none">Toggle score to the right of the bar</span>
+    </label>
   </div>
 </div>
