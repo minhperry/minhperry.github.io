@@ -20,7 +20,6 @@ export class SkillsComponent implements OnInit{
 
   constructor(private http: HttpClient, private ls: LocalStorageService) {
     this.showScore = this.ls.getItem('showScore') ?? false;
-    console.log(this.showScore);
   }
 
   ngOnInit() {
