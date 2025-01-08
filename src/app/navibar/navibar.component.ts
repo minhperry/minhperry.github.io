@@ -1,4 +1,12 @@
-import {AfterViewInit, Component, HostListener, OnDestroy, OnInit,} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  HostListener,
+  NgZone,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {MatTooltip} from "@angular/material/tooltip";
@@ -23,6 +31,7 @@ interface ExternalLink {
     RouterLinkActive,
     MatTooltip
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('slideToggle', [
       state('true', style({
@@ -54,7 +63,7 @@ export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
   private colon = true;
   private resizeListener!: () => void;
 
-  constructor() {
+  constructor(private zone: NgZone) {
     this.setCurrentTime(!this.colon);
     this.startClock();
     if (window.innerWidth < 768) {
@@ -82,9 +91,11 @@ export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   startClock() {
-    setInterval(() => {
-      this.setCurrentTime(!this.colon);
-    }, 1000);
+    this.zone.runOutsideAngular(() =>
+      setInterval(() => {
+        this.zone.runTask(() => this.setCurrentTime(!this.colon))
+      }, 1000)
+    )
   }
 
   openClose() {

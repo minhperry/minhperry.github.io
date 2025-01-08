@@ -1,0 +1,26 @@
+<div class="max-h-50">
+  @for (project of projects; track $index) {
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative">
+      <div class="relative w-32 h-32 mx-auto">
+        <img [ngSrc]="project.image ?? '/backgrounds/projects/notfound.svg'"
+             class="w-full h-full object-cover" alt="ligma" height="200" width="200" priority>
+      </div>
+      <div class="p-5">
+        <h3 class="mb-2 text-2xl font-bold tracking-tight">{{ project.title }}</h3>
+        <p class="text-sm">{{ processInterval(project.interval) }}</p>
+        @if (typeof project.description === 'string') {
+          <p>{{ project.description }}</p>
+        } @else {
+          <ul>
+            @for (desc of project.description; track $index) {
+              <li>{{ desc }}</li>
+            }
+          </ul>
+        }
+      </div>
+    </div>
+  }
+
+
+  {{ i }}
+</div>
