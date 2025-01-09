@@ -21,12 +21,12 @@ export class OtherComponent {
     {
       icon: 'team-line',
       title: 'Scrum & Agile',
-      description: 'Workshop "Agile meets Minecraft" beim adesso SE Dortmund'
+      description: 'Workshop "Agile meets Minecraft" beim adesso SE Dortmund.'
     },
     {
       icon: 'shield-check-line',
       title: 'Security',
-      description: 'Einstiegserfahrung in Sicherheit (CTF-Event beim viadee Unternehmensberatung AG Dortmund)'
+      description: 'Einstiegserfahrung in Sicherheit (CTF-Event beim viadee Unternehmensberatung AG Dortmund).'
     }
   ];
 
@@ -35,18 +35,18 @@ export class OtherComponent {
       icon: 'flag-line',
       title: 'Freiwilliger Helfer',
       items: [
-        'Am DoKomi 2024 (Anime- und Japan-Kultur-Convention) in Düsseldorf',
-        'Workshop-Helfer: Begleitung der Gäste in den Workshopsräume'
+        'Am DoKomi 2024 (Anime- und Japan-Kultur-Convention) in Düsseldorf.',
+        'Workshop-Helfer: Begleitung der Gäste in den Workshopsräume.'
       ]
     },
     {
       icon: 'server-line',
       title: 'Systemmanagement',
       items: [
-        'Einstiegserfahrungen mit System- und Firewall-Konfiguration auf einem Linux VPS',
-        'Nginx als Reverse Proxy und SSL-Setup für sicheren Datenverkehr',
-        'Einrichtung und Verwaltung von Webapps auf einem VPS',
-        'DNS Einstellungen mit Cloudflare als Proxy'
+        'Einstiegserfahrungen mit System- und Firewall-Konfiguration auf einem Linux VPS.',
+        'Nginx als Reverse Proxy und SSL-Setup für sicheren Datenverkehr.',
+        'Einrichtung und Verwaltung von Webapps auf einem VPS.',
+        'DNS Einstellungen mit Cloudflare als Proxy.'
       ]
     }
   ];
