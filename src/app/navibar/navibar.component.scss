@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 * {
-  font-family: 'Roboto Mono', monospace;
+  // font-family: 'Roboto Mono', monospace;
 }
 
 .current {
@@ -21,6 +21,7 @@ hr {
 }
 
 .nav-item {
+  font-family: 'Roboto Mono', monospace;
   @apply mx-[0.5ch] underline-offset-[4px]
     max-md:flex-col max-md:flex max-md:text-center
     underline decoration-dashed decoration-[#6e6a86] hover:decoration-solid;

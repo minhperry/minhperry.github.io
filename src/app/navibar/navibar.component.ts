@@ -39,13 +39,15 @@ export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
   navLinks: NavLink[] = [
     {path: '/projects', label: 'Projects'},
     {path: '/skills', label: 'Skills'},
-    {path: '/experiences', label: 'Exp & Edu'}
+    {path: '/experiences', label: 'Exp & Edu'},
+    {path: '/other', label: 'Others'}
   ];
 
   extLinks: ExternalLink[] = [
     {link: 'https://blog.minhperry.de/', label: 'Blog'},
     {link: 'https://every-color.minhperry.de', label: 'Every Color'},
     {link: 'https://status.minhperry.de', label: 'Status'},
+    {link: '/pdf/lebenslauf.pdf', label: 'CV'}
   ]
 
   version = environment.version
