@@ -1,1 +1,45 @@
-<p>other works!</p>
+<div class="grid grid-cols-1 lg:grid-cols-2">
+  <!-- Special Skills Section -->
+  <div class="bg-inherit rounded-lg overflow-hidden">
+    <div class="p-6">
+      <h2 class="text-2xl font-semibold mb-4">Spezielle Kenntnisse</h2>
+      <div class="space-y-4">
+        @for (skill of specialSkills; track $index) {
+          <div class="flex items-start space-x-3">
+            <div class="mt-1 text-blue-600">
+              <span class="ri-{{ skill.icon }} text-xl"></span>
+            </div>
+            <div>
+              <h3 class="font-medium text-lg">{{ skill.title }}</h3>
+              <p>{{ skill.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Experience Section -->
+  <div class="bg-inherit rounded-lg overflow-hidden">
+    <div class="p-6">
+      <h2 class="text-2xl font-semibold mb-4">Zusätzliche Erfahrungen</h2>
+      <div class="space-y-4">
+        @for (exp of additionalExperience; track $index) {
+          <div class="flex items-center space-x-2">
+            @if (exp.icon) {
+              <div class="text-blue-600">
+                <span class="ri-{{ exp.icon }} text-xl"></span>
+              </div>
+            }
+            <h3 class="font-medium text-lg">{{ exp.title }}</h3>
+          </div>
+          <ul class="list-disc list-inside space-y-1 ml-6">
+            @for (item of exp.items; track $index) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        }
+      </div>
+    </div>
+  </div>
+</div>
