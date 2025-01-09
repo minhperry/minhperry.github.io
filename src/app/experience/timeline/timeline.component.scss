@@ -1,51 +1,10 @@
 @use '../../../styles' as main;
 
 .timeline {
-  .events {
-    border-left: 2px solid main.$color-overlay;
-    padding: 10px 5px;
-
-    .event {
-      &::before {
-        position: absolute;
-        content: '';
-        width: 10px;
-        height: 10px;
-        background-color: main.$color-muted;
-        border-radius: 50%;
-        left: -11px;
-        top: 28px;
-        transition: .5s;
-      }
-
-      &:hover {
-        &::before {
-          background-color: #61daff;
-          box-shadow: 0 0 10px 2px #0bf;
-        }
-      }
-    }
-  }
-}
-
-.timeline {
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   transition: .35s;
 
   &:hover {
     box-shadow: 0 0 10px rgba(59, 59, 59, 0.8);
   }
-}
-
-.sub-li {
-  list-style-type: "~";
-  padding-inline-start: 1ch;
-
-  ::marker {
-    font-size: 5rem;
-  }
-}
-
-.github-link {
-  @apply text-[#486cc4] duration-500 hover:text-[#4ba6ff];
 }
