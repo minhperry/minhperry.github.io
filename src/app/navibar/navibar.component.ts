@@ -1,12 +1,4 @@
-import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  HostListener,
-  NgZone,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import {AfterViewInit, Component, HostListener, NgZone, OnDestroy, OnInit,} from '@angular/core';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {MatTooltip} from "@angular/material/tooltip";
