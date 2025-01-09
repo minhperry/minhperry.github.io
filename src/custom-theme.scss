@@ -5,3 +5,5 @@ $portfolio-theme: mat.define-theme((color: (theme-type: dark, primary: mat.$blue
 :root {
   @include mat.all-component-themes($portfolio-theme);
 }
+
+@import url('https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css');
