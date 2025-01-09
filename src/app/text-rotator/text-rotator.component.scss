@@ -1,0 +1,11 @@
+$color-main: #00c4ff;
+$color-sub: #0059ff;
+$shadows: 5px 10px 20px 40px 80px 100px 150px 200px;
+
+.neon {
+  color: $color-main;
+  filter: drop-shadow(0 0 20px $color-main) drop-shadow(0 0 40px $color-sub);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

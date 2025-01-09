@@ -9,42 +9,96 @@
                 "level": 90,
                 "will": true,
                 "desc": "Mostly from Angular, but also with Node and ExpressJS but using TypeScript."
-            }, {
+            },
+            {
                 "name": "Bash",
                 "level": 45,
                 "will": true,
                 "desc": "Basic use with WSL and VPS system scripting."
-            }, {
+            },
+            {
                 "name": "Python",
                 "level": 50,
                 "will": false
-            }, {
+            },
+            {
                 "name": "Java",
                 "level": 78,
                 "will": true,
                 "desc": "From university modules & Minecraft modding."
-            }, {
-                "name": "Angular",
-                "level": 87,
-                "will": true
-            }, {
+            },
+            {
                 "name": "HTML",
                 "level": 75,
                 "will": true
-            }, {
+            },
+            {
                 "name": "CSS/SCSS/SASS",
                 "level": 70,
                 "will": true,
                 "desc": "Has experiences with Bootstrap 5.3 and its grid layout, as well as beginner experiences with Tailwind 3."
-            }, {
+            },
+            {
                 "name": "C/C++",
-                "level": 55,
-                "will": false
-            }, {
-                "name": "Kotlin",
                 "level": 60,
+                "will": false
+            },
+            {
+                "name": "Kotlin",
+                "level": 69,
                 "will": true,
                 "desc": "Solely from SkyHanni mod contribution."
+            }
+        ]
+    },
+    {
+        "id": "1.5-frameworks-n-libs",
+        "title": "Frameworks & Libraries",
+        "display": true,
+        "entries": [
+            {
+                "name": "Angular",
+                "level": 87,
+                "will": true,
+                "desc": "This website was built with Angular 19."
+            },
+            {
+                "name": "React",
+                "level": 20,
+                "will": true,
+                "desc": "Every Color link on the navbar is a fork of a React project."
+            },
+            {
+                "name": "Svelte",
+                "level": 20,
+                "will": false
+            },
+            {
+                "name": "ExpressJS",
+                "level": 43,
+                "will": false
+            },
+            {
+                "name": "Bootstrap",
+                "level": 70,
+                "will": true,
+                "desc": "The grid layout was used in this site."
+            },
+            {
+                "name": "Tailwind",
+                "level": 75,
+                "will": true,
+                "desc": "The site was styled with over 90% Tailwind."
+            },
+            {
+                "name": "Karma + Jasmine",
+                "level": 10,
+                "will": true
+            },
+            {
+                "name": "Spring Boot",
+                "level": 30,
+                "will": true
             }
         ]
     },
@@ -58,30 +112,40 @@
                 "level": 65,
                 "will": true,
                 "desc": "From managing my own Linux-based VPS."
-            }, {
+            },
+            {
                 "name": "Git",
                 "level": 57,
                 "will": true,
                 "desc": "Mostly from SkyHanni contribution: branch flow, PR, etc."
-            }, {
+            },
+            {
                 "name": "GitHub Actions",
-                "level": 15,
+                "level": 20,
                 "will": true,
                 "desc": "From setting up CI/CD for my own projects."
-            }, {
+            },
+            {
                 "name": "Docker",
                 "level": 20,
                 "will": true,
                 "desc": "Basic know-how with creating, using and managing containers."
-            }, {
+            },
+            {
                 "name": "MS Office",
                 "level": 22,
                 "will": false,
                 "desc": "Familiar with basic document, spreadsheet and presentation for school & general uses."
-            }, {
+            },
+            {
                 "name": "LaTeX",
                 "level": 17,
                 "will": false
+            },
+            {
+                "name": "MongoDB",
+                "level": 10,
+                "will": true
             }
         ]
     },
@@ -102,29 +166,46 @@
                 "will": false,
                 "desc": "Native language.",
                 "isLanguage": true
-            }, {
+            },
+            {
                 "name": "English",
                 "level": 10,
                 "will": true,
                 "desc": "Fluent.",
                 "isLanguage": true
-            }, {
+            },
+            {
                 "name": "German",
                 "level": 8,
                 "will": true,
                 "desc": "Fluent.",
                 "isLanguage": true
-            }, {
+            },
+            {
                 "name": "Spanish",
                 "level": 1,
                 "will": false,
                 "isLanguage": true
-            }, {
+            },
+            {
                 "name": "Dutch",
                 "level": 1,
                 "will": false,
                 "desc": "Learning on Duolingo for fun.",
                 "isLanguage": true
+            }
+        ]
+    },
+    {
+        "id": "5-others",
+        "title": "Others",
+        "display": true,
+        "entries": [
+            {
+                "name": "UI Design",
+                "level": 15,
+                "will": true,
+                "desc": "From redesigning this website I somewhat learned about UI designing, despite being absolutely horrible in arts and crafts."
             }
         ]
     }

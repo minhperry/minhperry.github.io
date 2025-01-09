@@ -15,7 +15,7 @@
                 },
                 "@schematics/angular:service": {
                     "path": "src/services",
-                    "skipTests": true
+                    "flat": false
                 },
                 "@schematics/angular:guard": {
                     "path": "src/guards",
@@ -30,7 +30,7 @@
             },
             "root": "",
             "sourceRoot": "src",
-            "prefix": "app",
+            "prefix": "p",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
@@ -54,10 +54,8 @@
                         ],
                         "scripts": [],
                         "server": "src/main.server.ts",
-                        "prerender": true,
-                        "ssr": {
-                            "entry": "src/server.ts"
-                        }
+                        "prerender": false,
+                        "ssr": false
                     },
                     "configurations": {
                         "production": {

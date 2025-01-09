@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Circuit paths -->
+  <g stroke="#ffffff12" stroke-width="2" fill="none">
+    <path d="M50,50 L200,50 L200,150 L350,150 L350,300"/>
+    <path d="M450,100 L600,100 L600,250 L750,250"/>
+    <path d="M100,200 L300,200 L300,400 L500,400"/>
+    <circle cx="200" cy="150" r="8" fill="#ffffff10"/>
+    <circle cx="350" cy="300" r="8" fill="#ffffff10"/>
+    <circle cx="600" cy="250" r="8" fill="#ffffff10"/>
+    <circle cx="300" cy="400" r="8" fill="#ffffff10"/>
+  </g>
+
+  <!-- Code elements -->
+  <g font-family="monospace" fill="#ffffff15">
+    <text x="180" y="130" font-size="24">class</text>
+    <text x="420" y="280" font-size="20">async</text>
+    <text x="280" y="380" font-size="22">await</text>
+    <text x="520" y="180" font-size="26">import</text>
+  </g>
+
+  <!-- Small circuit components -->
+  <g stroke="#ffffff08" stroke-width="1">
+    <rect x="150" y="140" width="20" height="20" fill="none"/>
+    <rect x="380" y="280" width="15" height="15" fill="none"/>
+    <rect x="580" y="230" width="25" height="25" fill="none"/>
+  </g>
+
+  <!-- Data flow indicators -->
+  <g fill="#ffffff10">
+    <circle cx="100" cy="100" r="3"/>
+    <circle cx="400" cy="200" r="3"/>
+    <circle cx="600" cy="300" r="3"/>
+    <circle cx="200" cy="400" r="3"/>
+  </g>
+</svg>

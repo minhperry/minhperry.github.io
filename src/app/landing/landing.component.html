@@ -1,14 +1,27 @@
-<div class="landing-container container-fluid d-flex justify-content-center align-items-center"
-    [ngStyle]="{'background-image': 'url(' + currentBgUrl + ')'}">
-    <div class="landing-content bg-dark bg-opacity-75 text-center p-4 rounded shadow l-content">
-        <h1 class="landing-title">Welcome to my website</h1>
-        <p class="landing-subtitle">I'm Minh, a student and an aspiring developer.</p>
-        <p class="landing-description">
-            Explore my projects, skills, and more by clicking the links in the navigation bar.
-        </p>
-        <p class="tw-text-lg tw-text-lime-500">The site is going through a redesign! Will drop within January 2025!</p>
-        <small>Background source:
-            <a [href]="pixivBase + currentPixivID" target="_blank" class="landing-link">pixiv/{{currentPixivID}}</a>
-        </small>
+<div class="w-full bg-gradient-to-br from-slate-900 to-blue-900 flex items-center justify-center" pAdaptiveHeight>
+  <div class="absolute inset-0 bg-[url('/backgrounds/main2.svg')] bg-repeat opacity-60 z-0"></div>
+  <div class="w-[90%] flex flex-col z-10">
+    <div class="lg:w-8/12 min-w-fit">
+      <div class="text-8xl max-xl:text-7xl max-lg:text-6xl max-md:text-5xl max-sm:text-3xl font-[550] leading-tight block text-left">
+        <div>I am Minh,</div>
+        <div class="whitespace-nowrap">
+          <p-text-rotator class="relative" [textArray]="textArray" [duration]="textStayDuration"
+                          [fade]="textFadeDuration" [mode]="textRotationMode"/>
+          <span>.</span>
+        </div>
+      </div>
+      <p class="max-lg:text-xl max-md:text-base text-2xl">
+        Find out how my skills and experiences can make a difference.
+      </p>
     </div>
+    <div class="lg:w-4/12 max-md:mt-2 z-10">
+      <div class="flex gap-6 justify-start">
+        @for (so of socials; track so.riIcon) {
+          <a [href]="so.url" class="icon" target="_blank">
+            <i [class]="so.riIcon" class="text-3xl hover:scale-110 transition-transform duration-200"></i>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
 </div>
