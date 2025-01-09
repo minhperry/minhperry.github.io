@@ -3,8 +3,8 @@ import {NgOptimizedImage} from "@angular/common";
 import {HttpClient} from "@angular/common/http";
 
 interface Interval {
-  start: Date,
-  end?: Date
+  start: string,
+  end?: string
   ignoreDay: boolean
 }
 
@@ -23,30 +23,49 @@ interface ProjectItem {
     NgOptimizedImage
   ],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrl: './projects.component.scss',
+  // changeDetection: ChangeDetectionStrategy.OnPush -> need cdRef.detectChanges()
 })
-export class ProjectsComponent implements OnInit{
+export class ProjectsComponent implements OnInit {
   projects: ProjectItem[] = []
-  i = 0;
+  precomputedIntervalString = new Map<ProjectItem, string>()
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit() {
     this.http.get<ProjectItem[]>('/data/projects.json').subscribe(projects => {
+      projects.forEach(project => {
+        this.precomputedIntervalString.set(project, this.processInterval(project.interval));
+      })
       this.projects = projects;
     });
   }
 
   processInterval(interval: Interval): string {
-    const { start, end, ignoreDay } = interval;
-    this.i++;
-    console.log(start, end, ignoreDay);
+    const {start, end, ignoreDay} = interval;
+    console.log(this.precomputedIntervalString)
 
-    const formatDate = (date: Date, ignoreDay: boolean): string => {
+    const parseDate = (dateString: string): Date => {
+      const [day, month, year] = dateString.split('.').map(Number);
+      return new Date(year, month - 1, day); // Month is 0-based in JavaScript
+    };
+
+    const monthNames = [
+      'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+      'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
+    ];
+
+    const formatDate = (date: string, ignoreDay: boolean): string => {
+      const parsedDate = parseDate(date); // Manually parse the date
+
       if (ignoreDay) {
-        return date.toLocaleString('de-DE', { month: 'short', year: 'numeric' });
+        const month = monthNames[parsedDate.getMonth()]; // Get the month abbreviation in uppercase
+        const year = parsedDate.getFullYear();
+        return `${month} ${year}`; // Return the month abbreviation and year
       }
-      return new Date(date).toLocaleDateString('de-DE');
+
+      return parsedDate.toLocaleDateString('de-DE');
     };
 
     const startFormatted = formatDate(start, ignoreDay);
