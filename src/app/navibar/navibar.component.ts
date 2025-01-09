@@ -31,7 +31,6 @@ interface ExternalLink {
     RouterLinkActive,
     MatTooltip
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('slideToggle', [
       state('true', style({
