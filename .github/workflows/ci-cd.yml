@@ -8,6 +8,7 @@ on:
       - 'README.md'
       - '.gitignore'
       - '.editorconfig'
+      - 'public/data/*.json'
 
 jobs:
   deps-build-deploy:
