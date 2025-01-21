@@ -1,18 +1,9 @@
-<div class="container-fluid" data-bs-theme="dark">
-  <div class="row p-3">
-    <div class="col-xl-7 d-flex justify-content-center flex-column">
-      <div class="col-12">
-        <p-timeline [timeline]="education" title="Education"/>
-      </div>
-      <div class="col-12">
-        <p-timeline [timeline]="jobExperience" title="Job experiences"/>
-      </div>
-      <div class="col-12">
-        <p-timeline [timeline]="projects" title="Projects"/>
-      </div>
-    </div>
-    <div class="col-xl-5">
-      <p-skills/>
-    </div>
+<div class="container mx-auto px-6 mt-5">
+  <div class="grid max-lg:grid-cols-1 lg:grid-cols-2 gap-6">
+    <p-timeline class="col-span-1" timelineDataFile="data/jobs.json" title="Jobs"/>
+    <p-timeline class="col-span-1" timelineDataFile="data/edu.json" title="Education"/>
+  </div>
+  <div>
+    <p-other></p-other>
   </div>
 </div>

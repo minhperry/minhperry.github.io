@@ -1,0 +1,9 @@
+@if (!startsWithVowel(textArray[currentIndex])) {<span>a </span>}
+@else {<span>an </span>}
+<span [ngClass]="{
+    'transition-opacity duration-200': true,
+    'opacity-100': isVisible,
+    'opacity-0': !isVisible,
+    'neon': neon
+  }"
+>{{ textArray[currentIndex] }}</span>

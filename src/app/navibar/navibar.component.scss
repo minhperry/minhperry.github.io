@@ -1,28 +1,28 @@
-@use '../../styles.scss';
+@use '../../styles.scss' as main;
 
-$bgColor: styles.$color-base;
-$hoverColor: styles.$color-iris;
-$text: rgba(58, 114, 255, 0.532);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+* {
+  // font-family: 'Roboto Mono', monospace;
+}
 
-.navbar {
-  background-color: rgba($bgColor, 1);
-  box-shadow: 0 0 5px 0 rgba(164, 164, 164, 0.233);
+.current {
+  @apply text-sky-100 !important;
+  text-decoration-style: solid !important;
+}
 
-  .navbar-brand {
-    a {
-      color: styles.$color-text;
-    }
-  }
+#time-display {
+  font-family: "Fira Code VF", monospace;
+  color: #5BCEFA;
+}
 
-  .navbar-collapse {
-    .menu-item {
-      color: $text;
-      transition: all 0.5s;
+hr {
+  border: none;
+  border-top: 1px solid main.$color-subtle;
+}
 
-      &:hover {
-        background-color: rgba(157, 211, 255, 0.8);
-        color: black;
-      }
-    }
-  }
+.nav-item {
+  font-family: 'Roboto Mono', monospace;
+  @apply mx-[0.5ch] underline-offset-[4px]
+    max-md:flex-col max-md:flex max-md:text-center
+    underline decoration-dashed decoration-[#6e6a86] hover:decoration-solid;
 }

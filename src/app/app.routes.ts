@@ -1,8 +1,9 @@
 import {Routes} from '@angular/router';
-import {AboutmeComponent} from './aboutme/aboutme.component';
-import {SocialComponent} from './social/social.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LandingComponent} from './landing/landing.component';
+import {SkillsComponent} from "./experience/skills/skills.component";
+import {ProjectsComponent} from "./projects/projects.component";
+import {ExperiencesComponent} from "./experience/experiences.component";
 
 export const routes: Routes = [
   {
@@ -11,15 +12,19 @@ export const routes: Routes = [
     title: "Welcome to my page"
   },
   {
-    path: 'me',
-    component: AboutmeComponent,
-    title: "About me",
-    // canActivate: [hasRoleGuard], // TODO: Change this in CV
+    path: 'projects',
+    component: ProjectsComponent,
+    title: "Projects",
   },
   {
-    path: 'socials',
-    component: SocialComponent,
-    title: "My social medias",
+    path: 'skills',
+    component: SkillsComponent,
+    title: "Skills",
+  },
+  {
+    path: 'experiences',
+    component: ExperiencesComponent,
+    title: "Experiences and Education",
   },
   {
     path: '404',

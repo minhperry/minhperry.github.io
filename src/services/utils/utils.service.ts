@@ -1,11 +1,17 @@
 import {isPlatformBrowser, isPlatformServer} from "@angular/common";
+import {Inject, Injectable, PLATFORM_ID} from "@angular/core";
 
+@Injectable({
+  providedIn: 'root'
+})
 export class Utils {
-  public static doIfBrowser(platformId: object, callbackFn: () => void): void {
-    if (isPlatformBrowser(platformId)) callbackFn();
+  constructor(@Inject(PLATFORM_ID) private plat: object) {}
+
+  public doIfBrowser(callbackFn: () => void): void {
+    if (isPlatformBrowser(this.plat)) callbackFn();
   }
 
-  public static doIfServer(platformId: object, callbackFn: () => void): void {
-    if (isPlatformServer(platformId)) callbackFn();
+  public doIfServer(callbackFn: () => void): void {
+    if (isPlatformServer(this.plat)) callbackFn();
   }
 }
