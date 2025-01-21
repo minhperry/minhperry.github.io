@@ -48,6 +48,10 @@
                 "level": 69,
                 "will": true,
                 "desc": "Solely from SkyHanni mod contribution."
+            }, {
+                "name": "Basic SQL",
+                "level": 45,
+                "will": true
             }
         ]
     },
