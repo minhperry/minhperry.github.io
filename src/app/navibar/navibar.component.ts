@@ -47,7 +47,7 @@ export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
     {link: 'https://blog.minhperry.de/', label: 'Blog'},
     {link: 'https://every-color.minhperry.de', label: 'Every Color'},
     {link: 'https://status.minhperry.de', label: 'Status'},
-    {link: '/pdf/lebenslauf.pdf', label: 'CV'}
+    {link: 'https://cdn.minhperry.de/pdf/lebenslauf.pdf', label: 'CV'}
   ]
 
   version = environment.version
