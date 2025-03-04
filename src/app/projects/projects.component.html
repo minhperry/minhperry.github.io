@@ -7,7 +7,18 @@
       </div>
       <div class="p-3 flex-grow">
         <h3 class="text-2xl font-bold">{{ project.title }}</h3>
-        <p class="text-[0.9rem] text-gray-500">{{ precomputedIntervalString.get(project) }}</p>
+        <div class="flex flex-row justify-between text-[0.9rem]">
+          <p class="text-gray-500">{{ precomputedIntervalString.get(project) }}</p>
+          <div class="text-gray-600">
+            @if (project.source) {
+              <a [href]="project.source" target="_blank" class="hover:underline hover:text-gray-400">SOURCE</a>
+              @if (project.view) {
+                /
+                <a [href]="project.view" target="_blank" class="hover:underline hover:text-gray-400">LIVE</a>
+              }
+            }
+          </div>
+        </div>
         <div class="text-[1.1rem]">
           @if (typeof project.description === 'string') {
             <p>{{ project.description }}</p>
