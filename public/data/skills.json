@@ -156,8 +156,39 @@
     {
         "id": "3-soft-skills",
         "title": "Soft Skills",
-        "display": false,
-        "entries": []
+        "display": true,
+        "entries": [
+            {
+                "name": "Problem Solving",
+                "level": 82,
+                "will": true
+            },
+            {
+                "name": "Teamwork",
+                "level": 70,
+                "will": true
+            },
+            {
+                "name": "Communication",
+                "level": 70,
+                "will": true
+            },
+            {
+                "name": "Adaptability & Willingness to Learn",
+                "level": 90,
+                "will": true
+            },
+            {
+                "name": "Time Management",
+                "level": 80,
+                "will": true
+            },
+            {
+                "name": "Leadership",
+                "level": 40,
+                "will": true
+            }
+        ]
     },
     {
         "id": "4-languages",
