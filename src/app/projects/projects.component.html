@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 container mx-auto place-items-center mt-5">
   @for (project of projects; track $index) {
     <div class="lg:w-[80%] h-full w-full border rounded-lg shadow bg-gray-800 border-gray-700 relative flex flex-col">
-      <div class="relative w-32 h-32 mx-auto mt-2">
+      <div class="relative w-auto h-48 mx-auto mt-2">
         <img [ngSrc]="project.image ?? '/backgrounds/projects/notfound.svg'"
              class="w-full h-full object-cover" alt="ligma" height="200" width="200" priority>
       </div>
