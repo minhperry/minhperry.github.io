@@ -24,7 +24,8 @@
             "Small backend in Node 22 with Express."
         ],
         "source": "https://github.com/minhperry/skyblock-simulator",
-        "view": "https://skyblock.minhperry.de"
+        "view": "https://skyblock.minhperry.de",
+        "image": "https://cdn.minhperry.de/images/skyblock.png"
     },
     {
         "title": "Contribution to a Minecraft Mod",
@@ -36,7 +37,8 @@
             "Contributor for the quality-of-life mod \"SkyHanni\" of hannibal02.",
             "Implementation of features and bug fixes."
         ],
-        "source": "https://github.com/hannibal002/SkyHanni"
+        "source": "https://github.com/hannibal002/SkyHanni",
+        "image": "https://cdn.minhperry.de/images/skyhanni-logo.png"
     },
     {
         "title": "Spark: A Twitter-like social media platform",
@@ -50,6 +52,7 @@
             "Simple CRUD operations for posts, comments and likes.",
             "Authentication and authorization with JWT."
         ],
-        "source": "https://github.com/minhperry/wt2-ss23-tudo"
+        "source": "https://github.com/minhperry/wt2-ss23-tudo",
+        "image": "https://raw.githubusercontent.com/minhperry/wt2-ss23-tudo/refs/heads/main/frontend/src/assets/images/luminary_icon.png"
     }
 ]
