@@ -3,6 +3,7 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {MatTooltip} from "@angular/material/tooltip";
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {TranslatePipe} from '@ngx-translate/core';
 
 interface NavLink {
   path: string,
@@ -21,7 +22,8 @@ interface ExternalLink {
   imports: [
     RouterLink,
     RouterLinkActive,
-    MatTooltip
+    MatTooltip,
+    TranslatePipe
   ],
   animations: [
     trigger('slideToggle', [
