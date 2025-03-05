@@ -29,7 +29,7 @@ export class LandingComponent {
     {url: 'https://github.com/minhperry', riIcon: 'ri-github-fill'},
     {url: 'https://gitlab.com/minhperry', riIcon: 'ri-gitlab-fill'},
     {url: 'https://linkedin.com/in/ptm2002', riIcon: 'ri-linkedin-fill'},
-    {url: 'https://twitter.com/minhperryy', riIcon: 'ri-twitter-fill'},
+    {url: 'https://twitter.com/___727__', riIcon: 'ri-twitter-fill'},
     {url: 'mailto:me@minhperry.de', riIcon: 'ri-mail-fill'},
     {url: '/pdf/lebenslauf.pdf', riIcon: 'ri-file-text-fill'},
     {url: 'https://www.youtube.com/@minhperry', riIcon: 'ri-youtube-fill'},
