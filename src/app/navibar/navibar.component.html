@@ -34,14 +34,14 @@
              [routerLink]="link.path"
              routerLinkActive="!text-sky-100 !decoration-solid"
              [routerLinkActiveOptions]="{ exact: true }"
-          >{{ link.label }}</a>
+          >{{ link.label | translate }}</a>
         }
       </div>
       <span class="max-md:hidden">/</span>
       <div id="ext">
         @for (link of extLinks; track $index) {
           <a class="nav-item text-cyan-500 hover:text-cyan-200" [href]="link.link"
-             target="_blank">{{ link.label }}</a>
+             target="_blank">{{ link.label | translate }}</a>
         }
       </div>
     </div>

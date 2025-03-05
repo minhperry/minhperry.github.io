@@ -1,3 +1,7 @@
 {
-    "navbar.title": "Resume"
+	"navbar.link.experiences": "Experience",
+	"navbar.link.external.cv": "CV",
+	"navbar.link.projects": "Projects",
+	"navbar.link.skills": "Skills",
+	"navbar.title": "Resume"
 }

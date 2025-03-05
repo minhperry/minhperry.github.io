@@ -1,3 +1,7 @@
 {
-    "navbar.title": "Lebenslauf"
+	"navbar.link.experiences": "Erfahrung",
+	"navbar.link.external.cv": "CV",
+	"navbar.link.projects": "Projekte",
+	"navbar.link.skills": "Skills",
+	"navbar.title": "Lebenslauf"
 }
