@@ -8,6 +8,9 @@ import {provideAnimations} from "@angular/platform-browser/animations";
 import {provideTranslateService} from '@ngx-translate/core';
 import {TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import {providePrimeNG} from 'primeng/config';
+import Aura from '@primeng/themes/aura'
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (http: HttpClient) =>
   new TranslateHttpLoader(http, './i18n/', '.json');
@@ -30,6 +33,12 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient]
         }
       }
-    )
+    ),
+    provideAnimationsAsync(),
+    providePrimeNG({
+      theme: {
+        preset: Aura
+      }
+    })
   ]
 }
