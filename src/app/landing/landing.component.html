@@ -3,7 +3,7 @@
   <div class="w-[90%] flex flex-col z-10">
     <div class="lg:w-8/12 min-w-fit">
       <div class="text-8xl max-xl:text-7xl max-lg:text-6xl max-md:text-5xl max-sm:text-3xl font-[550] leading-tight block text-left">
-        <div>I am Minh,</div>
+        <div>{{ 'landing.i-am' | translate }},</div>
         <div class="whitespace-nowrap">
           <p-text-rotator class="relative" [textArray]="textArray" [duration]="textStayDuration"
                           [fade]="textFadeDuration" [mode]="textRotationMode"/>
@@ -11,7 +11,7 @@
         </div>
       </div>
       <p class="max-lg:text-xl max-md:text-base text-2xl">
-        Find out how my skills and experiences can make a difference.
+        {{ 'landing.cta' | translate }}
       </p>
     </div>
     <div class="lg:w-4/12 max-md:mt-2 z-10">
@@ -22,6 +22,7 @@
           </a>
         }
       </div>
+      <p-language-picker panelSize="large" />
     </div>
   </div>
 </div>
