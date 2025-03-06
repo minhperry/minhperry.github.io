@@ -1,7 +1,13 @@
 {
-	"navbar.link.experiences": "Kinh nghiệm",
-	"navbar.link.external.cv": "CV",
-	"navbar.link.projects": "Dự án",
-	"navbar.link.skills": "Kỹ năng",
-	"navbar.title": "Sơ yếu lý lịch"
+  "navbar": {
+    "link": {
+      "experiences": "Kinh nghiệm",
+      "external": {
+        "cv": "CV"
+      },
+      "projects": "Dự án",
+      "skills": "Kỹ năng"
+    },
+    "title": "Sơ yếu lý lịch"
+  }
 }
