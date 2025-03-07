@@ -76,13 +76,13 @@ export class ProjectsComponent implements OnInit {
     return `${this.translate('from')} ${startFormatted} ${this.translate('to')} ${endFormatted}`;
   }
 
-  translations: Record<string, Record<string, string>> = {
+  private translations: Record<string, Record<string, string>> = {
     from: { de: 'VON', en: 'FROM', vi: 'TỪ' },
     to: { de: 'BIS', en: 'TO', vi: 'ĐẾN' },
     present: { de: 'GEGENWÄRTIG', en: 'PRESENT', vi: 'HIỆN TẠI' }
   };
 
-  translate = (key: 'from' | 'to' | 'present') => {
+  private translate= (key: 'from' | 'to' | 'present') => {
     return this.translations[key][this.trans.currentLang] || this.translations[key]['en'];
   };
 }
