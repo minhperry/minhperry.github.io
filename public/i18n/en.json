@@ -1,13 +1,57 @@
 {
-  "navbar": {
-    "link": {
-      "experiences": "Experience",
-      "external": {
-        "cv": "CV"
-      },
-      "projects": "Projects",
-      "skills": "Skills"
+    "footer": {
+        "contact": "Contact",
+        "license": "License"
     },
-    "title": "Resume"
-  }
+    "landing": {
+        "cta": "Find out how my skills and experiences can make a difference."
+    },
+    "navbar": {
+        "link": {
+            "experiences": "Experience",
+            "external": {
+                "cv": "CV"
+            },
+            "projects": "Projects",
+            "skills": "Skills"
+        },
+        "title": "Resume"
+    },
+    "projects": {
+        "skyblock": {
+            "description": {
+                "0": "Simulation of mechanism and tools for the gamemode \"Hypixel Skyblock\".",
+                "1": "Frontend in Angular 19 with Server Side Rendering",
+                "2": "Small backend in Node 22 with Express."
+            },
+            "title": "Self-project \"Skyblock Simulator\""
+        },
+        "skyhanni": {
+            "description": {
+                "0": "Contributor for the quality-of-life mod \"SkyHanni\" by hannibal2 ",
+                "1": "Implementation of features and bug fixes."
+            },
+            "title": "Contribution to a Minecraft Mod"
+        },
+        "sopra": {
+            "description": {
+                "0": "Project 1: Development of simple card-based board game individually.",
+                "1": "Project 2: Group-based development of board game \"Bonsai\".",
+                "2": "Both with Kotlin and BoardGameWork, using MVC-like model."
+            },
+            "title": "Module \"Software-Praktikum\""
+        },
+        "tile": {
+            "live": "LIVE",
+            "source": "SOURCE CODE"
+        },
+        "tudo": {
+            "description": {
+                "0": "Frontend with Angular 16, Backend with Spring Boot 3.",
+                "1": "Simple CRUD operations for posts, comments and likes.",
+                "2": "JWT-based authentication and authorization."
+            },
+            "title": "Spark: A Twitter-like social media platform (Module Project)"
+        }
+    }
 }

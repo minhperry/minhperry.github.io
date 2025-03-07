@@ -1,13 +1,57 @@
 {
-  "navbar": {
-    "link": {
-      "experiences": "Erfahrungen",
-      "external": {
-        "cv": "CV"
-      },
-      "projects": "Projekte",
-      "skills": "Fähigkeiten"
+    "footer": {
+        "contact": "Kontakt",
+        "license": "Lizenz"
     },
-    "title": "Lebenslauf"
-  }
+    "landing": {
+        "cta": "Erfahren Sie, wie meine Fähigkeiten und Erfahrungen einen Unterschied machen können."
+    },
+    "navbar": {
+        "link": {
+            "experiences": "Erfahrungen",
+            "external": {
+                "cv": "CV"
+            },
+            "projects": "Projekte",
+            "skills": "Fähigkeiten"
+        },
+        "title": "Lebenslauf"
+    },
+    "projects": {
+        "skyblock": {
+            "description": {
+                "0": "Simulation von Mechanismen und Tools fürs Spielmodus \"Hypixel Skyblock\".",
+                "1": "Frontend mit Angular 19 und Server-Side-Rendering.",
+                "2": "Kleines Backend mit Node 22 und Express."
+            },
+            "title": "Eigenprojekt \"Skyblock Simulator\""
+        },
+        "skyhanni": {
+            "description": {
+                "0": "Mitwirkender an der Quality-of-Life-Mod \"SkyHanni\" von hannibal2",
+                "1": "Implementierung von Features und Bug-Fixes."
+            },
+            "title": "Beitrag zu einer Minecraft-Mod"
+        },
+        "sopra": {
+            "description": {
+                "0": "Projekt 1: Entwicklung eines einfachen kartenbasierten Brettspiels als Einzelarbeit.",
+                "1": "Projekt 2: Gruppenbasierte Entwicklung des Brettspiels \"Bonsai\".",
+                "2": "Beide mit Kotlin und BoardGameWork, unter Verwendung eines MVC-ähnlichen Modells."
+            },
+            "title": "Modul \"Software-Praktikum\""
+        },
+        "tile": {
+            "live": "LIVE",
+            "source": "QUELLECODE"
+        },
+        "tudo": {
+            "description": {
+                "0": "Frontend mit Angular 16 & Backend mit Spring Boot 3.",
+                "1": "Einfache CRUD-Operationen für Posts, Kommentare und Likes.",
+                "2": "JWT-basierte Authentifizierung und Autorisierung."
+            },
+            "title": "Spark: Eine Twitter-ähnliche Social-Media-Plattform (Modulprojekt)."
+        }
+    }
 }

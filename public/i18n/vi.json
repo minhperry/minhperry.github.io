@@ -1,13 +1,57 @@
 {
-  "navbar": {
-    "link": {
-      "experiences": "Kinh nghiệm",
-      "external": {
-        "cv": "CV"
-      },
-      "projects": "Dự án",
-      "skills": "Kỹ năng"
+    "footer": {
+        "contact": "Liên hệ",
+        "license": "Giấy phép"
     },
-    "title": "Sơ yếu lý lịch"
-  }
+    "landing": {
+        "cta": "Những kỹ năng của tôi có thể làm nên những điều khác biệt."
+    },
+    "navbar": {
+        "link": {
+            "experiences": "Kinh nghiệm",
+            "external": {
+                "cv": "CV"
+            },
+            "projects": "Dự án",
+            "skills": "Kỹ năng"
+        },
+        "title": "Sơ yếu lý lịch"
+    },
+    "projects": {
+        "skyblock": {
+            "description": {
+                "0": "Mô phỏng các cơ chế và các công cụ cho game \"Hypixel Skyblock\".",
+                "1": "Frontend với Angular 19 và Server-Side-Rendering.",
+                "2": "Backend đơn giản với Node 22 và Express."
+            },
+            "title": "Dự án cá nhân \"Skyblock Simulator\""
+        },
+        "skyhanni": {
+            "description": {
+                "0": "Người đóng góp cho mod QoL \"SkyHanni\" của hannibal2",
+                "1": "Viết các tính năng mới và sửa lỗi."
+            },
+            "title": "Đóng góp cho một mod Minecraft"
+        },
+        "sopra": {
+            "description": {
+                "0": "Dự án 1: Trò chơi đơn giản với các lá bài.",
+                "1": "Dự án 2: Phát triển trò chơi \"Bonsai\" theo nhóm.",
+                "2": "Cả hai dùng Kotlin và BoardGameWork, theo mô hình tương tự như MVC."
+            },
+            "title": "Module \"Thực hành phần mềm\""
+        },
+        "tile": {
+            "live": "TRANG WEB",
+            "source": "MÃ NGUỒN"
+        },
+        "tudo": {
+            "description": {
+                "0": "Frontend với Angular 16 & Backend với Spring Boot 3.",
+                "1": "Bốn chức năng CRUD cơ bản cho các bài viết, bình luận và lượt thích.",
+                "2": "Định danh và phân quyền dựa trên JWT."
+            },
+            "title": "Spark: 1 nền tảng mạng xã hội giống Twitter (Dự án trong module)"
+        }
+    }
 }
