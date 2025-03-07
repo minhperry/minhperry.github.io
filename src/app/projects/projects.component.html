@@ -11,10 +11,10 @@
           <p class="text-gray-500">{{ precomputedIntervalString.get(project) }}</p>
           <div class="text-gray-600">
             @if (project.source) {
-              <a [href]="project.source" target="_blank" class="hover:underline hover:text-gray-400">SOURCE</a>
+              <a [href]="project.source" target="_blank" class="hover:underline hover:text-gray-400">{{ 'projects.tile.source' | translate }}</a>
               @if (project.view) {
                 /
-                <a [href]="project.view" target="_blank" class="hover:underline hover:text-gray-400">LIVE</a>
+                <a [href]="project.view" target="_blank" class="hover:underline hover:text-gray-400">{{ 'projects.tile.live' | translate }}</a>
               }
             }
           </div>
