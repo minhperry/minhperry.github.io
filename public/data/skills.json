@@ -35,8 +35,7 @@
             {
                 "name": "CSS/SCSS/SASS",
                 "level": 70,
-                "will": true,
-                "desc": "skills.plang.css"
+                "will": true
             },
             {
                 "name": "C/C++",

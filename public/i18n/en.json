@@ -53,5 +53,49 @@
             },
             "title": "Spark: A Twitter-like social media platform (Module Project)"
         }
+    },
+    "skills": {
+        "fwlibs": {
+            "angular": "This website was built with Angular 19.",
+            "tailwind": "This site was styled with over 95% Tailwind.",
+            "title": "Frameworks & Libraries"
+        },
+        "lang": {
+            "de": "German",
+            "en": "English",
+            "es": "Spanish",
+            "nl": "Dutch",
+            "nl-desc": "Learning on Duolingo for fun.",
+            "title": "Languages",
+            "vi": "Vietnamese",
+            "vi-desc": "Native"
+        },
+        "others": {
+            "design": "UI Design",
+            "design-desc": "From redesigning this website I somewhat learned about UI designing, despite being absolutely horrible in arts and crafts.",
+            "title": "Others"
+        },
+        "plang": {
+            "bash": "Basic use with WSL and VPS system scripting.",
+            "java": "From university module, self-learning & Minecraft modding.",
+            "javascript": "Mostly from Angular, but also with React and ExpressJS.",
+            "kotlin": "Solely from SkyHanni mod contribution. Additionally also from Software-Praktikum module.",
+            "title": "Programming Languages"
+        },
+        "soft": {
+            "adaptability": "Adaptability & Willingness to Learn",
+            "communication": "Communication",
+            "leadership": "Leadership",
+            "problem-solving": "Problem Solving",
+            "teamwork": "Teamwork",
+            "time-mngm": "Time Management",
+            "title": "Soft Skills"
+        },
+        "tools": {
+            "docker": "Basic know-how with creating, using and managing containers.",
+            "ghactions": "From setting up CI/CD for my own projects.",
+            "linux": "From managing my own Linux-based cloud.",
+            "title": "Tools"
+        }
     }
 }

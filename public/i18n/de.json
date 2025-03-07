@@ -53,5 +53,49 @@
             },
             "title": "Spark: Eine Twitter-ähnliche Social-Media-Plattform (Modulprojekt)."
         }
+    },
+    "skills": {
+        "fwlibs": {
+            "angular": "Diese Webseite wurde mit Angular 19 erstellt. ",
+            "tailwind": "Diese Seite wurde zu über 95 % mit Tailwind gestylt.",
+            "title": "Frameworks & Bibliotheken"
+        },
+        "lang": {
+            "de": "Deutsch",
+            "en": "Englisch",
+            "es": "Spanisch",
+            "nl": "Niederländisch",
+            "nl-desc": "Selbstlernen auf Duolingo zum Spaß.",
+            "title": "Sprachen",
+            "vi": "Vietnamesisch",
+            "vi-desc": "Muttersprache"
+        },
+        "others": {
+            "design": "UI-Design",
+            "design-desc": "Durch das Redesign dieser Webseite habe ich ein wenig über UI-Design gelernt, obwohl ich absolut schlecht in Kunst und Handwerk bin.",
+            "title": "Andere"
+        },
+        "plang": {
+            "bash": "Grundlegende Nutzung mit WSL und VPS-Systemskripting.",
+            "java": "Aus dem Universitätsmodul, Selbstlernen und Minecraft-Modding.",
+            "javascript": "Hauptsächlich aus Angular, aber auch mit React und ExpressJS.",
+            "kotlin": "Allein aus der SkyHanni-Mod-Beitrag. Zusätzlich auch aus dem Software-Praktikum-Modul.",
+            "title": "Programmiersprachen"
+        },
+        "soft": {
+            "adaptability": "Anpassungsfähigkeit & Lernbereitschaft",
+            "communication": "Kommunikation",
+            "leadership": "Führung",
+            "problem-solving": "Problemlösung",
+            "teamwork": "Teamarbeit",
+            "time-mngm": "Zeitmanagement",
+            "title": "Soft-Skills"
+        },
+        "tools": {
+            "docker": "Grundkenntnisse im Erstellen, Verwenden und Verwalten von Containern.",
+            "ghactions": "Aus dem Einrichten von CI/CD für meine eigenen Projekte.",
+            "linux": "Aus der Verwaltung meiner eigenen Linux-basierten Cloud",
+            "title": "Tools"
+        }
     }
 }

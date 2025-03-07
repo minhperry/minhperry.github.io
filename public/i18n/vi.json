@@ -53,5 +53,49 @@
             },
             "title": "Spark: 1 nền tảng mạng xã hội giống Twitter (Dự án trong module)"
         }
+    },
+    "skills": {
+        "fwlibs": {
+            "angular": "Trang web này được viết bằng Angular 19.",
+            "tailwind": "Trang này được style với hơn 95% Tailwind.",
+            "title": "Frameworks & Thư viện"
+        },
+        "lang": {
+            "de": "Tiếng Đức",
+            "en": "Tiếng Anh",
+            "es": "Tiếng Tây Ban Nha",
+            "nl": "Tiếng Hà Lan",
+            "nl-desc": "Tự học trên Duolingo cho vui.",
+            "title": "Ngôn ngữ",
+            "vi": "Tiếng Việt",
+            "vi-desc": "Tiếng mẹ đẻ"
+        },
+        "others": {
+            "design": "Thiết kế giao diện người dùng",
+            "design-desc": "Từ việc thiết kế lại trang web này, tôi đã học được một chút về thiết kế giao diện người dùng, mặc dù tôi khá tệ trong nghệ thuật.",
+            "title": "Các phần khác"
+        },
+        "plang": {
+            "bash": "Biết sử dụng cơ bản với WSL và quản lý hệ thống cloud.",
+            "java": "Từ module đại học cũng như tự học và mod Minecraft.",
+            "javascript": "Chủ yếu từ Angular nhưng cũng một phần từ ExpressJS và React.",
+            "kotlin": "Hầu hết từ việc đóng góp cho mod SkyHanni, cũng như là từ module Thực hành phần mềm",
+            "title": "Ngôn ngữ lập trình "
+        },
+        "soft": {
+            "adaptability": "Khả năng thích ứng & Sẵn sàng học hỏi",
+            "communication": "Giao tiếp",
+            "leadership": "Lãnh đạo",
+            "problem-solving": "Giải quyết vẫn đề",
+            "teamwork": "Làm việc nhóm",
+            "time-mngm": "Quản lý thời gian",
+            "title": "Kỹ năng mềm"
+        },
+        "tools": {
+            "docker": "Kiến thức cơ bản từ việc tạo, sử dụng và quản lý các container.",
+            "ghactions": "Từ việc thiết lập CI/CD cho các dự án riêng.",
+            "linux": "Từ việc quản lý máy chủ đám mây.",
+            "title": "Công cụ"
+        }
     }
 }
