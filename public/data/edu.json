@@ -1,20 +1,20 @@
 [
     {
-        "title": "Technical University Dortmund",
+        "title": "exp.tudo.title",
         "start": "OCT 2021",
         "description": [
-            "Bachelor of Science in Computer Science.",
-            "Specialization in Software Engineering.",
-            "Minor in Electrical Engineering."
+            "exp.tudo.desc.0",
+            "exp.tudo.desc.1",
+            "exp.tudo.desc.2"
         ]
     },
     {
-        "title": "Europäisches Gymnasium Waldenburg",
+        "title": "exp.egw.title",
         "start": "AUG 2019",
         "end": "JUN 2021",
         "description": [
-            "Finished with the German Abitur at 2,4.",
-            "Focus on Mathematics and Physics."
+            "exp.egw.desc.0",
+            "exp.egw.desc.1"
         ]
     }
 ]

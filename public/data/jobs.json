@@ -1,12 +1,12 @@
 [
     {
-        "title": "Student Assistant at TU Dortmund",
+        "title": "exp.shk.title",
         "start": "APR 2024",
         "end": "SEP 2024",
         "description": [
-            "Module: \"Datenstruktur und Algorithmus 2\" (Data Structures and Algorithms 2).",
-            "Support for students with programming tasks.",
-            "Grading, correction and feedback of the solutions."
+            "exp.shk.desc.0",
+            "exp.shk.desc.1",
+            "exp.shk.desc.2"
         ]
     }
 ]
