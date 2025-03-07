@@ -21,7 +21,7 @@
         </div>
         <div class="text-[1.1rem]">
           @if (typeof project.description === 'string') {
-            <p>{{ project.description | translate }}</p>
+            <p>{{ project.description }}</p>
           } @else {
             <ul class="list-inside">
               @for (desc of project.description; track $index) {
