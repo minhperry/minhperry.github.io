@@ -17,6 +17,10 @@
         },
         "title": "Sơ yếu lý lịch"
     },
+    "pnf": {
+        "go-back": "Quay lại trang chính",
+        "title": "Ôi không, bay màu rồi!"
+    },
     "projects": {
         "skyblock": {
             "description": {

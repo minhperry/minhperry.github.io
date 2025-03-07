@@ -17,6 +17,10 @@
         },
         "title": "Resume"
     },
+    "pnf": {
+        "go-back": "Go back Home",
+        "title": "Whoopsie daisy, you’re not meant to be here!"
+    },
     "projects": {
         "skyblock": {
             "description": {

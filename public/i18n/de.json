@@ -17,6 +17,10 @@
         },
         "title": "Lebenslauf"
     },
+    "pnf": {
+        "go-back": "Zurück zum Home",
+        "title": "Hoppla, du solltest hier nicht sein!"
+    },
     "projects": {
         "skyblock": {
             "description": {
