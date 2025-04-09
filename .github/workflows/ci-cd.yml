@@ -9,15 +9,27 @@ on:
       - '.gitignore'
 
 jobs:
-  setup-and-build:
-    uses: ./.github/workflows/pnpm.yml  # Calls reusable workflow
-
   deploy:
-    needs: setup-and-build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Install Angular CLI
         run: pnpm add -g @angular/cli
