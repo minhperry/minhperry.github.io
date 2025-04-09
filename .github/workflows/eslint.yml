@@ -8,6 +8,9 @@ on:
     types: [opened, synchronize, reopened, closed]
 
 jobs:
+  install-pnpm:
+    uses: ./.github/workflows/pnpm.yml
+
   eslint:
     runs-on: ubuntu-latest
     permissions:
@@ -19,11 +22,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22.11.0'
 
       - name: Install dependencies
         run: pnpm ci
