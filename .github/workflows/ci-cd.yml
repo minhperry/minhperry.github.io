@@ -10,13 +10,14 @@ on:
       - '.editorconfig'
 
 jobs:
+  install-pnpm:
+    uses: ./.github/workflows/pnpm.yml
+
   deps-build-deploy:
+    needs: install-pnpm
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install pnpm explicitly
-        uses: ./.github/workflows/pnpm.yml
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
