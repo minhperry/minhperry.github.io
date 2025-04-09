@@ -14,6 +14,7 @@ jobs:
     uses: ./.github/workflows/pnpm.yml
 
   deps-build-deploy:
+    needs: install-pnpm
     runs-on: ubuntu-latest
 
     steps:

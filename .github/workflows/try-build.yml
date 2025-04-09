@@ -12,6 +12,7 @@ jobs:
     uses: ./.github/workflows/pnpm.yml
 
   try-build:
+    needs: install-pnpm
     runs-on: ubuntu-latest
 
     steps:
