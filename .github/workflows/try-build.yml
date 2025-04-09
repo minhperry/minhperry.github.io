@@ -1,11 +1,11 @@
 name: Try to build Angular app
 
 on:
-  pull_request:
+  push:
     paths:
       - 'src/**'
       - '*.js'
-    types: [opened, synchronize, reopened, closed]
+    # types: [opened, synchronize, reopened, closed]
 
 jobs:
   install-pnpm:
