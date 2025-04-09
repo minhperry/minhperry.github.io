@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {AdaptiveHeightDirective} from "../../directives/height/adaptive-height.directive";
-import {TextRotatorComponent} from "../text-rotator/text-rotator.component";
+import {AdaptiveHeightDirective} from "../../../directives/height/adaptive-height.directive";
+import {TextRotatorComponent} from "../../misc/text-rotator/text-rotator.component";
 import {FormsModule} from "@angular/forms";
 
 @Component({

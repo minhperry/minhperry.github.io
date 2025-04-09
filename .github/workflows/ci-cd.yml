@@ -10,23 +10,22 @@ on:
       - '.editorconfig'
 
 jobs:
+  install-pnpm:
+    uses: ./.github/workflows/pnpm.yml
+
   deps-build-deploy:
+    needs: install-pnpm
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22.11.0'
-
       - name: Install dependencies
-        run: npm ci
+        run: pnpm ci
 
       - name: Install Angular CLI
-        run: npm install -g @angular/cli
+        run: pnpm install -g @angular/cli
 
       - name: Build Angular app
         run: ng build --configuration=production
