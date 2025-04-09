@@ -1,4 +1,35 @@
 {
+    "exp": {
+        "edu": {
+            "title": "Education"
+        },
+        "egw": {
+            "desc": {
+                "0": "Finished with the German Abitur at 2,4.",
+                "1": "Focus on Math and Physic."
+            },
+            "title": "Europäisches Gymnasium Waldenburg"
+        },
+        "jobs": {
+            "title": "Jobs"
+        },
+        "shk": {
+            "desc": {
+                "0": "Module: \"Data Structures and Algorithm 2\".",
+                "1": "Support for students with programming tasks.",
+                "2": "Grading, correction and feedback on the solutions."
+            },
+            "title": "Student Assistant at TU Dortmund"
+        },
+        "tudo": {
+            "desc": {
+                "0": "Bachelor of Science in Computer Science.",
+                "1": "Specialization in Software Engineering.",
+                "2": "Minor in Electrical Engineering."
+            },
+            "title": "Technical University Dortmund"
+        }
+    },
     "footer": {
         "contact": "Contact",
         "license": "License"
@@ -16,6 +47,33 @@
             "skills": "Skills"
         },
         "title": "Resume"
+    },
+    "other": {
+        "dokomi": {
+            "desc": {
+                "0": "At DoKomi 2024 (Anime and Japan Culture Convention) in Düsseldorf. (and possibly Dokomi 2025 too!)",
+                "1": "Workshop Helper: Guide for guest into specific workshop rooms and managing workshop visitors."
+            },
+            "title": "Voluntary Helper"
+        },
+        "extra-exp": "Extra Experiences",
+        "scrum": {
+            "desc": ""
+        },
+        "security": {
+            "desc": "",
+            "title": ""
+        },
+        "special": "Special Knowledge",
+        "sysadmin": {
+            "desc": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": ""
+            },
+            "title": ""
+        }
     },
     "pnf": {
         "go-back": "Go back Home",

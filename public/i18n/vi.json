@@ -1,4 +1,35 @@
 {
+    "exp": {
+        "edu": {
+            "title": ""
+        },
+        "egw": {
+            "desc": {
+                "0": "",
+                "1": ""
+            },
+            "title": ""
+        },
+        "jobs": {
+            "title": ""
+        },
+        "shk": {
+            "desc": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "title": ""
+        },
+        "tudo": {
+            "desc": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "title": ""
+        }
+    },
     "footer": {
         "contact": "Liên hệ",
         "license": "Giấy phép"
@@ -16,6 +47,33 @@
             "skills": "Kỹ năng"
         },
         "title": "Sơ yếu lý lịch"
+    },
+    "other": {
+        "dokomi": {
+            "desc": {
+                "0": "",
+                "1": ""
+            },
+            "title": ""
+        },
+        "extra-exp": "",
+        "scrum": {
+            "desc": ""
+        },
+        "security": {
+            "desc": "",
+            "title": ""
+        },
+        "special": "",
+        "sysadmin": {
+            "desc": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": ""
+            },
+            "title": ""
+        }
     },
     "pnf": {
         "go-back": "Quay lại trang chính",
