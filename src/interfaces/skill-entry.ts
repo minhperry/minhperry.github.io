@@ -2,7 +2,7 @@ export interface SkillEntry {
   name: string,
   level: number,
   will: boolean,
-  desc?: string
+  desc: string
   isLanguage?: boolean,
 }
 

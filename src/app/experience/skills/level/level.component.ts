@@ -1,11 +1,13 @@
 import {booleanAttribute, Component, Input, numberAttribute} from '@angular/core';
 import {NgClass} from "@angular/common";
 import {SkillsComponent} from "../skills.component";
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'p-level',
   imports: [
-    NgClass
+    NgClass,
+    TranslatePipe
   ],
   templateUrl: './level.component.html',
   styleUrl: './level.component.scss'

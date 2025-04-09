@@ -1,0 +1,5 @@
+@if (panelSize === 'medium') {
+  <p-select-button [options]="availableLangs" [(ngModel)]="currentLang" optionLabel="text" optionValue="code" class="mt-4" (onOptionClick)="onLanguageChange($event)" />
+} @else {
+  <p-select-button [options]="availableLangs" [(ngModel)]="currentLang" optionLabel="text" optionValue="code" class="mt-4" (onOptionClick)="onLanguageChange($event)" [size]="panelSize" />
+}

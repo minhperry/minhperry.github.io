@@ -1,0 +1,163 @@
+{
+    "exp": {
+        "edu": {
+            "title": "Education"
+        },
+        "egw": {
+            "desc": {
+                "0": "Finished with the German Abitur at 2,4.",
+                "1": "Focus on Math and Physic."
+            },
+            "title": "Europäisches Gymnasium Waldenburg"
+        },
+        "jobs": {
+            "title": "Jobs"
+        },
+        "shk": {
+            "desc": {
+                "0": "Module: \"Data Structures and Algorithm 2\".",
+                "1": "Support for students with programming tasks.",
+                "2": "Grading, correction and feedback on the solutions."
+            },
+            "title": "Student Assistant at TU Dortmund"
+        },
+        "tudo": {
+            "desc": {
+                "0": "Bachelor of Science in Computer Science.",
+                "1": "Specialization in Software Engineering.",
+                "2": "Minor in Electrical Engineering."
+            },
+            "title": "Technical University Dortmund"
+        }
+    },
+    "footer": {
+        "contact": "Contact",
+        "license": "License"
+    },
+    "landing": {
+        "cta": "Find out how my skills and experiences can make a difference."
+    },
+    "navbar": {
+        "link": {
+            "experiences": "Experience",
+            "external": {
+                "cv": "CV"
+            },
+            "projects": "Projects",
+            "skills": "Skills"
+        },
+        "title": "Resume"
+    },
+    "other": {
+        "dokomi": {
+            "desc": {
+                "0": "At DoKomi 2024 (Anime and Japan Culture Convention) in Düsseldorf. (and possibly Dokomi 2025 too!)",
+                "1": "Workshop Helper: Guide for guest into specific workshop rooms and managing workshop visitors."
+            },
+            "title": "Voluntary Helper"
+        },
+        "extra-exp": "Extra Experiences",
+        "scrum": {
+            "desc": ""
+        },
+        "security": {
+            "desc": "",
+            "title": ""
+        },
+        "special": "Special Knowledge",
+        "sysadmin": {
+            "desc": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": ""
+            },
+            "title": ""
+        }
+    },
+    "pnf": {
+        "go-back": "Go back Home",
+        "title": "Whoopsie daisy, you’re not meant to be here!"
+    },
+    "projects": {
+        "skyblock": {
+            "description": {
+                "0": "Simulation of mechanism and tools for the gamemode \"Hypixel Skyblock\".",
+                "1": "Frontend in Angular 19 with Server Side Rendering",
+                "2": "Small backend in Node 22 with Express."
+            },
+            "title": "Self-project \"Skyblock Simulator\""
+        },
+        "skyhanni": {
+            "description": {
+                "0": "Contributor for the quality-of-life mod \"SkyHanni\" by hannibal2 ",
+                "1": "Implementation of features and bug fixes."
+            },
+            "title": "Contribution to a Minecraft Mod"
+        },
+        "sopra": {
+            "description": {
+                "0": "Project 1: Development of simple card-based board game individually.",
+                "1": "Project 2: Group-based development of board game \"Bonsai\".",
+                "2": "Both with Kotlin and BoardGameWork, using MVC-like model."
+            },
+            "title": "Module \"Software-Praktikum\""
+        },
+        "tile": {
+            "live": "LIVE",
+            "source": "SOURCE CODE"
+        },
+        "tudo": {
+            "description": {
+                "0": "Frontend with Angular 16, Backend with Spring Boot 3.",
+                "1": "Simple CRUD operations for posts, comments and likes.",
+                "2": "JWT-based authentication and authorization."
+            },
+            "title": "Spark: A Twitter-like social media platform (Module Project)"
+        }
+    },
+    "skills": {
+        "fwlibs": {
+            "angular": "This website was built with Angular 19.",
+            "tailwind": "This site was styled with over 95% Tailwind.",
+            "title": "Frameworks & Libraries"
+        },
+        "lang": {
+            "de": "German",
+            "en": "English",
+            "es": "Spanish",
+            "nl": "Dutch",
+            "nl-desc": "Learning on Duolingo for fun.",
+            "title": "Languages",
+            "vi": "Vietnamese",
+            "vi-desc": "Native"
+        },
+        "others": {
+            "design": "UI Design",
+            "design-desc": "From redesigning this website I somewhat learned about UI designing, despite being absolutely horrible in arts and crafts.",
+            "title": "Others"
+        },
+        "plang": {
+            "bash": "Basic use with WSL and VPS system scripting.",
+            "java": "From university module, self-learning & Minecraft modding.",
+            "javascript": "Mostly from Angular, but also with React and ExpressJS.",
+            "kotlin": "Solely from SkyHanni mod contribution. Additionally also from Software-Praktikum module.",
+            "title": "Programming Languages"
+        },
+        "soft": {
+            "adaptability": "Adaptability & Willingness to Learn",
+            "communication": "Communication",
+            "leadership": "Leadership",
+            "problem-solving": "Problem Solving",
+            "teamwork": "Teamwork",
+            "time-mngm": "Time Management",
+            "title": "Soft Skills"
+        },
+        "tools": {
+            "docker": "Basic know-how with creating, using and managing containers.",
+            "ghactions": "From setting up CI/CD for my own projects.",
+            "linux": "From managing my own Linux-based cloud.",
+            "title": "Tools"
+        }
+    }
+}

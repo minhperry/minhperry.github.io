@@ -1,20 +1,20 @@
 [
     {
         "id": "1-programming-languages",
-        "title": "Programming Languages",
+        "title": "skills.plang.title",
         "display": true,
         "entries": [
             {
                 "name": "JavaScript/TypeScript",
                 "level": 90,
                 "will": true,
-                "desc": "Mostly from Angular, but also with Node and ExpressJS but using TypeScript."
+                "desc": "skills.plang.javascript"
             },
             {
                 "name": "Bash",
                 "level": 45,
                 "will": true,
-                "desc": "Basic use with WSL and VPS system scripting."
+                "desc": "skills.plang.bash"
             },
             {
                 "name": "Python",
@@ -25,7 +25,7 @@
                 "name": "Java",
                 "level": 78,
                 "will": true,
-                "desc": "From university modules & Minecraft modding."
+                "desc": "skills.plang.java"
             },
             {
                 "name": "HTML",
@@ -35,8 +35,7 @@
             {
                 "name": "CSS/SCSS/SASS",
                 "level": 70,
-                "will": true,
-                "desc": "Has experiences with Bootstrap 5.3 and its grid layout, as well as beginner experiences with Tailwind 3."
+                "will": true
             },
             {
                 "name": "C/C++",
@@ -47,9 +46,9 @@
                 "name": "Kotlin",
                 "level": 69,
                 "will": true,
-                "desc": "Solely from SkyHanni mod contribution."
+                "desc": "skills.plang.kotlin"
             }, {
-                "name": "Basic SQL",
+                "name": "SQL",
                 "level": 45,
                 "will": true
             }
@@ -57,20 +56,19 @@
     },
     {
         "id": "1.5-frameworks-n-libs",
-        "title": "Frameworks & Libraries",
+        "title": "skills.fwlibs.title",
         "display": true,
         "entries": [
             {
                 "name": "Angular",
                 "level": 87,
                 "will": true,
-                "desc": "This website was built with Angular 19."
+                "desc": "skills.fwlibs.angular"
             },
             {
                 "name": "React",
                 "level": 20,
-                "will": true,
-                "desc": "Every Color link on the navbar is a fork of a React project."
+                "will": true
             },
             {
                 "name": "Svelte",
@@ -85,14 +83,13 @@
             {
                 "name": "Bootstrap",
                 "level": 70,
-                "will": true,
-                "desc": "The grid layout was used in this site."
+                "will": true
             },
             {
                 "name": "Tailwind",
                 "level": 75,
                 "will": true,
-                "desc": "The site was styled with over 90% Tailwind."
+                "desc": "skills.fwlibs.tailwind"
             },
             {
                 "name": "Karma + Jasmine",
@@ -108,38 +105,36 @@
     },
     {
         "id": "2-tools",
-        "title": "Tools",
+        "title": "skills.tools.title",
         "display": true,
         "entries": [
             {
                 "name": "Linux",
                 "level": 65,
                 "will": true,
-                "desc": "From managing my own Linux-based VPS."
+                "desc": "skills.tools.linux"
             },
             {
                 "name": "Git",
                 "level": 57,
-                "will": true,
-                "desc": "Mostly from SkyHanni contribution: branch flow, PR, etc."
+                "will": true
             },
             {
                 "name": "GitHub Actions",
                 "level": 20,
                 "will": true,
-                "desc": "From setting up CI/CD for my own projects."
+                "desc": "skills.tools.ghactions"
             },
             {
                 "name": "Docker",
                 "level": 20,
                 "will": true,
-                "desc": "Basic know-how with creating, using and managing containers."
+                "desc": "skills.tools.docker"
             },
             {
                 "name": "MS Office",
                 "level": 22,
-                "will": false,
-                "desc": "Familiar with basic document, spreadsheet and presentation for school & general uses."
+                "will": false
             },
             {
                 "name": "LaTeX",
@@ -155,92 +150,90 @@
     },
     {
         "id": "3-soft-skills",
-        "title": "Soft Skills",
+        "title": "skills.soft.title",
         "display": true,
         "entries": [
             {
-                "name": "Problem Solving",
+                "name": "skills.soft.problem-solving",
                 "level": 82,
                 "will": true
             },
             {
-                "name": "Teamwork",
-                "level": 70,
-                "will": true
-            },
-            {
-                "name": "Communication",
-                "level": 65,
-                "will": true
-            },
-            {
-                "name": "Adaptability & Willingness to Learn",
-                "level": 90,
-                "will": true
-            },
-            {
-                "name": "Time Management",
+                "name": "skills.soft.teamwork",
                 "level": 60,
                 "will": true
             },
             {
-                "name": "Leadership",
-                "level": 40,
+                "name": "skills.soft.communication",
+                "level": 55,
+                "will": true
+            },
+            {
+                "name": "skills.soft.adaptability",
+                "level": 90,
+                "will": true
+            },
+            {
+                "name": "skills.soft.time-mngm",
+                "level": 60,
+                "will": true
+            },
+            {
+                "name": "skills.soft.leadership",
+                "level": 30,
                 "will": true
             }
         ]
     },
     {
         "id": "4-languages",
-        "title": "Languages",
+        "title": "skills.lang.title",
         "display": true,
         "entries": [
             {
-                "name": "Vietnamese",
+                "name": "skills.lang.vi",
                 "level": 12,
                 "will": false,
-                "desc": "Native language.",
+                "desc": "skills.lang.vi-desc",
                 "isLanguage": true
             },
             {
-                "name": "English",
+                "name": "skills.lang.en",
                 "level": 10,
                 "will": true,
-                "desc": "Fluent.",
                 "isLanguage": true
             },
             {
-                "name": "German",
+                "name": "skills.lang.de",
                 "level": 8,
                 "will": true,
-                "desc": "Fluent.",
                 "isLanguage": true
             },
             {
-                "name": "Spanish",
+                "name": "skills.lang.es",
                 "level": 1,
                 "will": false,
                 "isLanguage": true
             },
             {
-                "name": "Dutch",
+                "name": "skills.lang.nl",
                 "level": 1,
                 "will": false,
-                "desc": "Learning on Duolingo for fun.",
+                "desc": "skills.lang.nl-desc",
                 "isLanguage": true
             }
         ]
     },
     {
         "id": "5-others",
-        "title": "Others",
+        "title": "skills.others.title",
         "display": true,
         "entries": [
             {
-                "name": "UI Design",
+                "name": "skills.others.design",
                 "level": 15,
                 "will": true,
-                "desc": "From redesigning this website I somewhat learned about UI designing, despite being absolutely horrible in arts and crafts."
+                "desc": "skills.others.design-desc"
             }
         ]
     }

@@ -3,6 +3,7 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
 import {environment} from "../../environments/environment";
 import {MatTooltip} from "@angular/material/tooltip";
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {TranslatePipe} from '@ngx-translate/core';
 
 interface NavLink {
   path: string,
@@ -21,7 +22,8 @@ interface ExternalLink {
   imports: [
     RouterLink,
     RouterLinkActive,
-    MatTooltip
+    MatTooltip,
+    TranslatePipe
   ],
   animations: [
     trigger('slideToggle', [
@@ -37,9 +39,9 @@ interface ExternalLink {
 })
 export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
   navLinks: NavLink[] = [
-    {path: '/projects', label: 'Projects'},
-    {path: '/skills', label: 'Skills'},
-    {path: '/experiences', label: 'Experience'},
+    {path: '/projects', label: 'navbar.link.projects'},
+    {path: '/skills', label: 'navbar.link.skills'},
+    {path: '/experiences', label: 'navbar.link.experiences'},
     // {path: '/other', label: 'Others'}
   ];
 
@@ -47,7 +49,7 @@ export class NavibarComponent implements OnInit, OnDestroy, AfterViewInit {
     {link: 'https://blog.minhperry.de/', label: 'Blog'},
     {link: 'https://every-color.minhperry.de', label: 'Every Color'},
     {link: 'https://status.minhperry.de', label: 'Status'},
-    {link: 'https://cdn.minhperry.de/pdf/lebenslauf.pdf', label: 'CV'}
+    {link: 'https://cdn.minhperry.de/pdf/lebenslauf.pdf', label: 'navbar.link.external.cv'}
   ]
 
   version = environment.version

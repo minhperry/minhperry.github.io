@@ -1,14 +1,16 @@
 <footer class="bg-inherit rounded-lg shadow">
-  <div class="w-full mx-auto max-w-screen-2xl p-4 md:flex md:items-center md:justify-between">
-    <span class="text-sm text-gray-500 sm:text-center">© 2025
+  <div class="w-full mx-auto max-w-screen-2xl p-4 flex md:items-center justify-between pb-3">
+    <span class="text-sm text-gray-500 items-center">
+      <span>© 2025 </span>
       <a href="https://github.com/minhperry" class="hover:underline">minhperry</a>
     </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0">
+    <!--p-language-picker panelSize="small" class="items-center"/-->
+    <ul class="flex flex-wrap items-center text-sm font-medium text-gray-500">
       <li>
-        <a href="https://github.com/minhperry/minhperry.github.io/blob/main/LICENSE.md" class="hover:underline me-4 md:me-6">Licensing</a>
+        <a href="https://github.com/minhperry/minhperry.github.io/blob/main/LICENSE.md" class="hover:underline me-4 md:me-6">{{ 'footer.license' | translate }}</a>
       </li>
       <li>
-        <a href="mailto:me@minhperry.de" class="hover:underline">Contact</a>
+        <a href="mailto:me@minhperry.de" class="hover:underline">{{ 'footer.contact' | translate }}</a>
       </li>
     </ul>
   </div>

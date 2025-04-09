@@ -1,56 +1,56 @@
 [
     {
-        "title": "Module \"Software-Praktikum\"",
+        "title": "projects.sopra.title",
         "interval": {
             "start": "10.02.2025",
             "end": "21.03.2025",
             "ignoreDay": false
         },
         "description": [
-            "Project 1: Develop a simple card-based board game individually.",
-            "Project 2: Group-based development of board game 'Bonsai'.",
-            "Both projects with Kotlin and BoardGameWork, with model, logic, view and tests step-by-step."
+            "projects.sopra.description.0",
+            "projects.sopra.description.1",
+            "projects.sopra.description.2"
         ]
     },
     {
-        "title": "Self-project \"Skyblock Simulator\"",
+        "title": "projects.skyblock.title",
         "interval": {
             "start": "01.08.2024",
             "ignoreDay": true
         },
         "description": [
-            "Simulation of mechanisms and tools for the gamemode \"Hypixel Skyblock\".",
-            "Frontend in Angular 19 with Server Side Rendering.",
-            "Small backend in Node 22 with Express."
+            "projects.skyblock.description.0",
+            "projects.skyblock.description.1",
+            "projects.skyblock.description.2"
         ],
         "source": "https://github.com/minhperry/skyblock-simulator",
         "view": "https://skyblock.minhperry.de",
         "image": "https://cdn.minhperry.de/images/skyblock.png"
     },
     {
-        "title": "Contribution to a Minecraft Mod",
+        "title": "projects.skyhanni.title",
         "interval": {
             "start": "01.06.2024",
             "ignoreDay": true
         },
         "description": [
-            "Contributor for the quality-of-life mod \"SkyHanni\" of hannibal02.",
-            "Implementation of features and bug fixes."
+            "projects.skyhanni.description.0",
+            "projects.skyhanni.description.1"
         ],
         "source": "https://github.com/hannibal002/SkyHanni",
         "image": "https://cdn.minhperry.de/images/skyhanni-logo.png"
     },
     {
-        "title": "Spark: A Twitter-like social media platform",
+        "title": "projects.tudo.title",
         "interval": {
             "start": "01.04.2023",
             "end": "31.07.2023",
             "ignoreDay": true
         },
         "description": [
-            "Frontend with Angular 16, Backend with Spring Boot 3.",
-            "Simple CRUD operations for posts, comments and likes.",
-            "Authentication and authorization with JWT."
+            "projects.tudo.description.0",
+            "projects.tudo.description.1",
+            "projects.tudo.description.2"
         ],
         "source": "https://github.com/minhperry/wt2-ss23-tudo",
         "image": "https://raw.githubusercontent.com/minhperry/wt2-ss23-tudo/refs/heads/main/frontend/src/assets/images/luminary_icon.png"

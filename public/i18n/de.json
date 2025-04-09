@@ -1,0 +1,163 @@
+{
+    "exp": {
+        "edu": {
+            "title": ""
+        },
+        "egw": {
+            "desc": {
+                "0": "",
+                "1": ""
+            },
+            "title": ""
+        },
+        "jobs": {
+            "title": ""
+        },
+        "shk": {
+            "desc": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "title": ""
+        },
+        "tudo": {
+            "desc": {
+                "0": "",
+                "1": "",
+                "2": ""
+            },
+            "title": ""
+        }
+    },
+    "footer": {
+        "contact": "Kontakt",
+        "license": "Lizenz"
+    },
+    "landing": {
+        "cta": "Erfahren Sie, wie meine Fähigkeiten und Erfahrungen einen Unterschied machen können."
+    },
+    "navbar": {
+        "link": {
+            "experiences": "Erfahrungen",
+            "external": {
+                "cv": "CV"
+            },
+            "projects": "Projekte",
+            "skills": "Fähigkeiten"
+        },
+        "title": "Lebenslauf"
+    },
+    "other": {
+        "dokomi": {
+            "desc": {
+                "0": "",
+                "1": ""
+            },
+            "title": ""
+        },
+        "extra-exp": "",
+        "scrum": {
+            "desc": ""
+        },
+        "security": {
+            "desc": "",
+            "title": ""
+        },
+        "special": "",
+        "sysadmin": {
+            "desc": {
+                "0": "",
+                "1": "",
+                "2": "",
+                "3": ""
+            },
+            "title": ""
+        }
+    },
+    "pnf": {
+        "go-back": "Zurück zum Home",
+        "title": "Hoppla, du solltest hier nicht sein!"
+    },
+    "projects": {
+        "skyblock": {
+            "description": {
+                "0": "Simulation von Mechanismen und Tools fürs Spielmodus \"Hypixel Skyblock\".",
+                "1": "Frontend mit Angular 19 und Server-Side-Rendering.",
+                "2": "Kleines Backend mit Node 22 und Express."
+            },
+            "title": "Eigenprojekt \"Skyblock Simulator\""
+        },
+        "skyhanni": {
+            "description": {
+                "0": "Mitwirkender an der Quality-of-Life-Mod \"SkyHanni\" von hannibal2",
+                "1": "Implementierung von Features und Bug-Fixes."
+            },
+            "title": "Beitrag zu einer Minecraft-Mod"
+        },
+        "sopra": {
+            "description": {
+                "0": "Projekt 1: Entwicklung eines einfachen kartenbasierten Brettspiels als Einzelarbeit.",
+                "1": "Projekt 2: Gruppenbasierte Entwicklung des Brettspiels \"Bonsai\".",
+                "2": "Beide mit Kotlin und BoardGameWork, unter Verwendung eines MVC-ähnlichen Modells."
+            },
+            "title": "Modul \"Software-Praktikum\""
+        },
+        "tile": {
+            "live": "LIVE",
+            "source": "QUELLECODE"
+        },
+        "tudo": {
+            "description": {
+                "0": "Frontend mit Angular 16 & Backend mit Spring Boot 3.",
+                "1": "Einfache CRUD-Operationen für Posts, Kommentare und Likes.",
+                "2": "JWT-basierte Authentifizierung und Autorisierung."
+            },
+            "title": "Spark: Eine Twitter-ähnliche Social-Media-Plattform (Modulprojekt)."
+        }
+    },
+    "skills": {
+        "fwlibs": {
+            "angular": "Diese Webseite wurde mit Angular 19 erstellt. ",
+            "tailwind": "Diese Seite wurde zu über 95 % mit Tailwind gestylt.",
+            "title": "Frameworks & Bibliotheken"
+        },
+        "lang": {
+            "de": "Deutsch",
+            "en": "Englisch",
+            "es": "Spanisch",
+            "nl": "Niederländisch",
+            "nl-desc": "Selbstlernen auf Duolingo zum Spaß.",
+            "title": "Sprachen",
+            "vi": "Vietnamesisch",
+            "vi-desc": "Muttersprache"
+        },
+        "others": {
+            "design": "UI-Design",
+            "design-desc": "Durch das Redesign dieser Webseite habe ich ein wenig über UI-Design gelernt, obwohl ich absolut schlecht in Kunst und Handwerk bin.",
+            "title": "Andere"
+        },
+        "plang": {
+            "bash": "Grundlegende Nutzung mit WSL und VPS-Systemskripting.",
+            "java": "Aus dem Universitätsmodul, Selbstlernen und Minecraft-Modding.",
+            "javascript": "Hauptsächlich aus Angular, aber auch mit React und ExpressJS.",
+            "kotlin": "Allein aus der SkyHanni-Mod-Beitrag. Zusätzlich auch aus dem Software-Praktikum-Modul.",
+            "title": "Programmiersprachen"
+        },
+        "soft": {
+            "adaptability": "Anpassungsfähigkeit & Lernbereitschaft",
+            "communication": "Kommunikation",
+            "leadership": "Führung",
+            "problem-solving": "Problemlösung",
+            "teamwork": "Teamarbeit",
+            "time-mngm": "Zeitmanagement",
+            "title": "Soft-Skills"
+        },
+        "tools": {
+            "docker": "Grundkenntnisse im Erstellen, Verwenden und Verwalten von Containern.",
+            "ghactions": "Aus dem Einrichten von CI/CD für meine eigenen Projekte.",
+            "linux": "Aus der Verwaltung meiner eigenen Linux-basierten Cloud",
+            "title": "Tools"
+        }
+    }
+}

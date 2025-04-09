@@ -6,11 +6,11 @@
         @for (skill of entry.entries; track $index) {
           @if (!skill.isLanguage) {
             <p-level [name]="skill.name" [level]="skill.level" [will]="skill.will"
-                     [showScore]="showScore">{{ skill.desc }}
+                     [showScore]="showScore">{{ skill.desc | translate }}
             </p-level>
           } @else {
             <p-level [name]="skill.name" [level]="skill.level" [will]="skill.will" [showScore]="showScore"
-                     pLanguage>{{ skill.desc }}
+                     pLanguage>{{ skill.desc | translate}}
             </p-level>
           }
         }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslatePipe} from '@ngx-translate/core';
 
 interface SpecialSkill {
   icon: string;
@@ -15,38 +16,41 @@ interface AdditionalExperience {
 @Component({
   selector: 'p-other',
   templateUrl: './other.component.html',
+  imports: [
+    TranslatePipe
+  ]
 })
 export class OtherComponent {
   specialSkills: SpecialSkill[] = [
     {
       icon: 'team-line',
       title: 'Scrum & Agile',
-      description: 'Workshop "Agile meets Minecraft" at adesso SE Dortmund.'
+      description: 'other.scrum.desc'
     },
     {
       icon: 'shield-check-line',
-      title: 'Security',
-      description: 'Beginner experience in Security (CTF-Event at viadee Unternehmensberatung AG Dortmund) as well as university module "Sicherheit: Fragen und Lösungen".'
+      title: 'other.security.title',
+      description: 'other.security.desc'
     }
   ];
 
   additionalExperience: AdditionalExperience[] = [
     {
       icon: 'flag-line',
-      title: 'Freiwilliger Helfer',
+      title: 'other.dokomi.title',
       items: [
-        'At DoKomi 2024 (Anime and Japan Culture Convention) in Düsseldorf. (and possibly Dokomi 2025 too!)',
-        'Workshop Helper: Guide for guest into specific workshop room.'
+        'other.dokomi.desc.0',
+        'other.dokomi.desc.1',
       ]
     },
     {
       icon: 'server-line',
-      title: 'Systemmanagement',
+      title: 'other.sysadmin.title',
       items: [
-        'Few experience with system and firewall configuration on my own Linux-based VPS.',
-        'Nginx as reverse proxy and SSL setup for save data traffic.',
-        'Setting up and managing web apps on that VPS.',
-        'DNS setup with Cloudflare as a proxy.'
+        'other.sysadmin.desc.0',
+        'other.sysadmin.desc.1',
+        'other.sysadmin.desc.2',
+        'other.sysadmin.desc.3',
       ]
     }
   ];

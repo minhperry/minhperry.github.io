@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {AdaptiveHeightDirective} from "../../directives/height/adaptive-height.directive";
 import {TextRotatorComponent} from "../text-rotator/text-rotator.component";
 import {FormsModule} from "@angular/forms";
+import {TranslatePipe} from '@ngx-translate/core';
+import {LanguagePickerComponent} from '../language-picker/language-picker.component';
 
 @Component({
   selector: 'p-landing',
@@ -11,6 +13,8 @@ import {FormsModule} from "@angular/forms";
     AdaptiveHeightDirective,
     TextRotatorComponent,
     FormsModule,
+    TranslatePipe,
+    LanguagePickerComponent,
   ]
 })
 export class LandingComponent {

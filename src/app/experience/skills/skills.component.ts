@@ -4,12 +4,14 @@ import {LanguageDirective} from "../../../directives/lang/language.directive";
 import {SkillSection} from "../../../interfaces/skill-entry";
 import {HttpClient} from "@angular/common/http";
 import {LocalStorageService} from "../../../services/local-storage/local-storage.service";
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'p-skills',
   imports: [
     LevelComponent,
-    LanguageDirective
+    LanguageDirective,
+    TranslatePipe
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'

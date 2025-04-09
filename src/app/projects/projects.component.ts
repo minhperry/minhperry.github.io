@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
-import {HttpClient} from "@angular/common/http";
+import {NgOptimizedImage} from '@angular/common';
+import {HttpClient} from '@angular/common/http';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 interface Interval {
   start: string,
@@ -20,7 +21,8 @@ interface ProjectItem {
 @Component({
   selector: 'p-projects',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    TranslatePipe
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
@@ -30,7 +32,7 @@ export class ProjectsComponent implements OnInit {
   projects: ProjectItem[] = []
   precomputedIntervalString = new Map<ProjectItem, string>()
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private trans: TranslateService) {
   }
 
   ngOnInit() {
@@ -69,8 +71,18 @@ export class ProjectsComponent implements OnInit {
     };
 
     const startFormatted = formatDate(start, ignoreDay);
-    const endFormatted = end ? formatDate(end, ignoreDay) : 'PRESENT';
+    const endFormatted = end ? formatDate(end, ignoreDay) : this.translate('present');
 
-    return `FROM ${startFormatted} TO ${endFormatted}`;
+    return `${this.translate('from')} ${startFormatted} ${this.translate('to')} ${endFormatted}`;
   }
+
+  private translations: Record<string, Record<string, string>> = {
+    from: { de: 'VON', en: 'FROM', vi: 'TỪ' },
+    to: { de: 'BIS', en: 'TO', vi: 'ĐẾN' },
+    present: { de: 'GEGENWÄRTIG', en: 'PRESENT', vi: 'HIỆN TẠI' }
+  };
+
+  private translate= (key: 'from' | 'to' | 'present') => {
+    return this.translations[key][this.trans.currentLang] || this.translations[key]['en'];
+  };
 }

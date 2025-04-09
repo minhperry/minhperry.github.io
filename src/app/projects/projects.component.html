@@ -6,15 +6,15 @@
              class="w-full h-full object-cover" alt="ligma" height="200" width="200" priority>
       </div>
       <div class="p-3 flex-grow">
-        <h3 class="text-2xl font-bold">{{ project.title }}</h3>
+        <h3 class="text-2xl font-bold">{{ project.title | translate }}</h3>
         <div class="flex flex-row justify-between text-[0.9rem]">
           <p class="text-gray-500">{{ precomputedIntervalString.get(project) }}</p>
           <div class="text-gray-600">
             @if (project.source) {
-              <a [href]="project.source" target="_blank" class="hover:underline hover:text-gray-400">SOURCE</a>
+              <a [href]="project.source" target="_blank" class="hover:underline hover:text-gray-400">{{ 'projects.tile.source' | translate }}</a>
               @if (project.view) {
                 /
-                <a [href]="project.view" target="_blank" class="hover:underline hover:text-gray-400">LIVE</a>
+                <a [href]="project.view" target="_blank" class="hover:underline hover:text-gray-400">{{ 'projects.tile.live' | translate }}</a>
               }
             }
           </div>
@@ -25,7 +25,7 @@
           } @else {
             <ul class="list-inside">
               @for (desc of project.description; track $index) {
-                <li class="list-['🠆_']">{{ desc }}</li>
+                <li class="list-['~_']">{{ desc | translate }}</li>
               }
             </ul>
           }
