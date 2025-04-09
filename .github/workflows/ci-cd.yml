@@ -21,12 +21,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: pnpm ci
-
-      - name: Install Angular CLI
-        run: pnpm install -g @angular/cli
-
       - name: Build Angular app
         run: ng build --configuration=production
 
