@@ -1,11 +1,11 @@
 name: ESLint Check
 
 on:
-  pull_request:
+  push:
     paths:
       - 'src/**'
       - '*.js'
-    types: [opened, synchronize, reopened, closed]
+    # types: [opened, synchronize, reopened, closed] -> only with pull_request
 
 jobs:
   install-pnpm:
