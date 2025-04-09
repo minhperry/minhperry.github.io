@@ -68,6 +68,9 @@ importers:
       ngx-cookie-service-ssr:
         specifier: ^19.0.0
         version: 19.1.2(@angular/common@19.2.5(@angular/core@19.2.5(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.5(rxjs@7.8.2)(zone.js@0.15.0))(@angular/ssr@19.2.6(b63f73fb574467a09361b2db3260d156))
+      primeicons:
+        specifier: ^7.0.0
+        version: 7.0.0
       primeng:
         specifier: ^19.0.10
         version: 19.0.10(8dd2fc43b636117f46f75bde84326d88)
@@ -3933,6 +3936,9 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  primeicons@7.0.0:
+    resolution: {integrity: sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==}
 
   primeng@19.0.10:
     resolution: {integrity: sha512-pVvywU6WoDtS6cwyGm5wyHp/RPqsqtTL3Z6eNgwsP7wMRpNYxVQB2W5ewF64byP8bqFqRQMWY2ZPj0lDeTQ/sA==}
@@ -8965,6 +8971,8 @@ snapshots:
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
+
+  primeicons@7.0.0: {}
 
   primeng@19.0.10(8dd2fc43b636117f46f75bde84326d88):
     dependencies:
