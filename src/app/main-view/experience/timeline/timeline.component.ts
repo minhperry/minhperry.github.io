@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TimelineEvent} from "../../../interfaces/date-entry";
+import {TimelineEvent} from "../../../../interfaces/date-entry";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
