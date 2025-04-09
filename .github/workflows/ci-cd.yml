@@ -3,28 +3,29 @@ name: Deploy Angular App to VPS
 on:
   push:
     branches:
-      - main   # Only trigger on push to the main branch
+      - main
     paths-ignore:
       - 'README.md'
       - '.gitignore'
-      - '.editorconfig'
 
 jobs:
-  install-pnpm:
-    uses: ./.github/workflows/pnpm.yml
+  setup-and-build:
+    uses: ./.github/workflows/pnpm.yml  # Calls reusable workflow
 
-  deps-build-deploy:
-    needs: install-pnpm
+  deploy:
+    needs: setup-and-build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build Angular app
-        run: ng build --configuration=production
+      - name: Install Angular CLI
+        run: pnpm add -g @angular/cli
 
-      - name: rsync deployments
+      - name: Build Angular app
+        run: pnpm exec ng build --configuration=production
+
+      - name: Deploy via rsync
         uses: burnett01/rsync-deployments@7.0.1
         with:
           switches: -avzr --delete-before
