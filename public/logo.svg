@@ -1,0 +1,11 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Background -->
+  <rect width="120" height="120" rx="20" fill="#0f172a"/>
+
+  <!-- Stacked blocks -->
+  <rect x="30" y="30" width="60" height="12" rx="2" fill="#38bdf8" transform="rotate(-5 30 30)"/>
+  <rect x="30" y="55" width="60" height="12" rx="2" fill="#0ea5e9" transform="rotate(-5 30 55)"/>
+  <rect x="30" y="80" width="60" height="12" rx="2" fill="#0369a1" transform="rotate(-5 30 80)"/>
+
+  <!-- MP Text -->
+</svg>
