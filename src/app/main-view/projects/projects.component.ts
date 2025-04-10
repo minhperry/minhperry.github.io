@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {injectQuery} from '@tanstack/angular-query-experimental';
 import {lastValueFrom} from 'rxjs';
@@ -31,7 +31,7 @@ interface ProjectItem {
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush -> need cdRef.detectChanges()
+  changeDetection: ChangeDetectionStrategy.OnPush //-> need cdRef.detectChanges()
 })
 export class ProjectsComponent {
   constructor(private http: HttpClient) {
