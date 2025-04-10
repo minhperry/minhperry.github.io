@@ -1,36 +1,63 @@
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 container mx-auto place-items-center mt-5">
-  @for (project of projects; track $index) {
-    <div class="lg:w-[80%] h-full w-full border rounded-lg shadow bg-gray-800 border-gray-700 relative flex flex-col">
-      <div class="relative w-auto h-48 mx-auto mt-2">
-        <img [ngSrc]="project.image ?? '/backgrounds/projects/notfound.svg'"
-             class="w-full h-full object-cover" alt="ligma" height="200" width="200" priority>
+<div class="m-10">
+  @if (projects.isPending()) {
+    <div class="simple-box">
+      <div>
+        <p-progress-spinner aria-label="Loading" strokeWidth="4"
+                            animationDuration="3s" [style]="{ 'width': '50px', 'height': '50px' }"
+        />
       </div>
-      <div class="p-3 flex-grow">
-        <h3 class="text-2xl font-bold">{{ project.title }}</h3>
-        <div class="flex flex-row justify-between text-[0.9rem]">
-          <p class="text-gray-500">{{ precomputedIntervalString.get(project) }}</p>
-          <div class="text-gray-600">
-            @if (project.source) {
-              <a [href]="project.source" target="_blank" class="hover:underline hover:text-gray-400">SOURCE</a>
-              @if (project.view) {
-                /
-                <a [href]="project.view" target="_blank" class="hover:underline hover:text-gray-400">LIVE</a>
-              }
-            }
-          </div>
-        </div>
-        <div class="text-[1.1rem]">
-          @if (typeof project.description === 'string') {
-            <p>{{ project.description }}</p>
-          } @else {
-            <ul class="list-inside">
-              @for (desc of project.description; track $index) {
-                <li class="list-['🠆_']">{{ desc }}</li>
-              }
-            </ul>
-          }
+      <p>Loading...</p>
+    </div>
+  } @else if (projects.isError()) {
+    <div class="simple-box !border-red-500 bg-red-200 bg-opacity-15">
+      <div>
+        <div class="text-center">
+          <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+            Failed to Fetch Data
+          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+            Please check your internet connection or try again later.
+          </p>
         </div>
       </div>
     </div>
+  } @else {
+    <p-data-view [value]="projects.data()">
+      @let datas = projects.data();
+      <ng-template #list>
+        <div class="grid grid-cols-12 border rounded-lg border-gray-700">
+          @for (pj of datas; track $index; let fst = $first; let lst = $last) {
+            <div class="col-span-12 border-gray-700"
+                 [ngClass]="{ 'border-t': !fst }"> <!-- only top border when not first (divide line) -->
+              <div class="flex flex-col lg:grid lg:grid-cols-12 p-4"
+                   [ngClass]="{ 'rounded-t-lg': fst, 'rounded-b-lg': lst }">
+                <!-- only rounded top when first and bottom when last -->
+                <div class="col-span-4 relative w-auto h-48 mx-auto mt-2">
+                  <img [ngSrc]="pj.image ?? '/backgrounds/projects/notfound.svg'"
+                       class="w-full h-full object-contain"
+                       width="200" height="150" alt="" priority/>
+                </div>
+                <div class="col-span-8 max-lg:pt-4 px-4">
+                  <div class="text-2xl font-bold"> {{ pj.title }}</div>
+                  <div class="flex flex-row justify-between text-[0.9rem] text-">
+
+                  </div>
+                  @if (typeof pj.description === 'string') {
+                    <p>{{ pj.description }}</p>
+                  } @else {
+                    <ul class="list-inside">
+                      @for (desc of pj.description; track $index) {
+                        <li class="list-['🠆_']">{{ desc }}</li>
+                      }
+                    </ul>
+                  }
+                  <div> {{ processInterval(pj.interval) }}</div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </ng-template>
+    </p-data-view>
   }
 </div>
