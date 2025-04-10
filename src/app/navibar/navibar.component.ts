@@ -22,21 +22,29 @@ export class NavibarComponent {
 
   logoSize = 30
 
+  private activeOpt = {
+    exact: true,
+    styleClass: '!text-sky-100'
+  }
+
   menuItems: MenuItem[] = [
     {
       label: 'Projects',
       icon: 'pi pi-fw pi-briefcase',
-      routerLink: '/projects'
+      routerLink: '/projects',
+      routerLinkActiveOptions: this.activeOpt,
     },
     {
       label: 'Skills',
       icon: 'pi pi-fw pi-star',
-      routerLink: '/skills'
+      routerLink: '/skills',
+      routerLinkActiveOptions: this.activeOpt,
     },
     {
       label: 'Experience',
       icon: 'pi pi-fw pi-calendar',
-      routerLink: '/experiences'
+      routerLink: '/experiences',
+      routerLinkActiveOptions: this.activeOpt,
     },
     {
       label: 'External',
