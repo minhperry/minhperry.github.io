@@ -1,4 +1,4 @@
-<div class="m-10">
+<div class="m-6">
   @if (projects.isPending()) {
     <div class="simple-box">
       <div>
@@ -27,32 +27,56 @@
       <ng-template #list>
         <div class="grid grid-cols-12 border rounded-lg border-gray-700">
           @for (pj of datas; track $index; let fst = $first; let lst = $last) {
+            <!-- only top border when not first (divide line) -->
             <div class="col-span-12 border-gray-700"
-                 [ngClass]="{ 'border-t': !fst }"> <!-- only top border when not first (divide line) -->
+                 [ngClass]="{ 'border-t': !fst }">
+
+              <!-- only rounded top when first and bottom when last -->
               <div class="flex flex-col lg:grid lg:grid-cols-12 p-4"
                    [ngClass]="{ 'rounded-t-lg': fst, 'rounded-b-lg': lst }">
-                <!-- only rounded top when first and bottom when last -->
+
                 <div class="col-span-4 relative w-auto h-48 mx-auto mt-2">
                   <img [ngSrc]="pj.image ?? '/backgrounds/projects/notfound.svg'"
                        class="w-full h-full object-contain"
                        width="200" height="150" alt="" priority/>
                 </div>
-                <div class="col-span-8 max-lg:pt-4 px-4">
-                  <div class="text-2xl font-bold"> {{ pj.title }}</div>
-                  <div class="flex flex-row justify-between text-[0.9rem] text-">
 
+                <div class="col-span-8 max-lg:pt-4 px-4">
+                  <!-- Right text card -->
+                  <div class="text-2xl font-bold"> {{ pj.title }}</div>
+                  <div class="flex flex-row justify-between text-[0.9rem] text-gray-500">
+                    <!-- Method returns different string for different layout-->
+                    <div class="max-md:hidden"> {{ processInterval(pj.interval) }} </div>
+                    <div class="md:hidden">{{ processInterval(pj.interval, true)}}</div>
+
+                    <div>
+                      @if (pj.source) {
+                        <a [href]="pj.source" target="_blank" class="link max-md:hidden">
+                          View Source</a>
+                        <a [href]="pj.source" target="_blank" class="link md:hidden">
+                          Source</a>
+                        @if (pj.view) {
+                          /
+                          <a [href]="pj.view" target="_blank" class="link max-md:hidden">
+                            View Live</a>
+                          <a [href]="pj.view" target="_blank" class="link md:hidden">
+                            Live</a>
+                        }
+                      }
+                    </div>
                   </div>
                   @if (typeof pj.description === 'string') {
                     <p>{{ pj.description }}</p>
                   } @else {
                     <ul class="list-inside">
                       @for (desc of pj.description; track $index) {
-                        <li class="list-['🠆_']">{{ desc }}</li>
+                        <li class="list-disc">{{ desc }}</li>
                       }
                     </ul>
                   }
-                  <div> {{ processInterval(pj.interval) }}</div>
+
                 </div>
+
               </div>
             </div>
           }

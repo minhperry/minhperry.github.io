@@ -45,7 +45,7 @@ export class ProjectsComponent {
     }),
   )
 
-  processInterval(interval: Interval): string {
+  processInterval(interval: Interval, mobileLayout = false): string {
     const {start, end, ignoreDay} = interval;
 
     const parseDate = (dateString: string): Date => {
@@ -73,6 +73,7 @@ export class ProjectsComponent {
     const startFormatted = formatDate(start, ignoreDay);
     const endFormatted = end ? formatDate(end, ignoreDay) : 'PRESENT';
 
-    return `FROM ${startFormatted} TO ${endFormatted}`;
+    if (!mobileLayout) return `FROM ${startFormatted} TO ${endFormatted}`;
+    else return `${startFormatted} - ${endFormatted}`;
   }
 }
