@@ -10,7 +10,8 @@
             "Project 1: Develop a simple card-based board game individually.",
             "Project 2: Group-based development of board game 'Bonsai'.",
             "Both projects with Kotlin and BoardGameWork, with model, logic, view and tests step-by-step."
-        ]
+        ],
+        "image": "https://chibi.minhperry.de/eto2fw2PAnMf.png"
     },
     {
         "title": "Self-project \"Skyblock Simulator\"",
