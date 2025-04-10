@@ -1,7 +1,8 @@
 <div>
   <p-menubar [model]="menuItems" [autoDisplay]="true">
     <ng-template #start>
-      <a routerLink="/" class="text-xl font-bold">Resume</a>
+      <img ngSrc="logo.svg" alt="logo with 3 lines" [height]="logoSize" [width]="logoSize"/>
+      <a routerLink="/" class="text-xl font-bold ml-2">Resume</a>
     </ng-template>
     <ng-template #end>
       <a href="https://github.com/minhperry/minhperry.github.io" target="_blank"

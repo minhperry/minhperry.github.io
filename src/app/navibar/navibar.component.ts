@@ -4,6 +4,7 @@ import {MatTooltip} from "@angular/material/tooltip";
 import {MenubarModule} from 'primeng/menubar';
 import {MenuItem} from 'primeng/api';
 import {RouterLink} from '@angular/router';
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'pp-navbar',
@@ -12,36 +13,33 @@ import {RouterLink} from '@angular/router';
   imports: [
     MatTooltip,
     MenubarModule,
-    RouterLink
+    RouterLink,
+    NgOptimizedImage
   ],
 })
 export class NavibarComponent {
   version = environment.version
 
+  logoSize = 30
+
   menuItems: MenuItem[] = [
     {
-      label: 'About',
-      icon: 'pi pi-user',
-      items: [
-        {
-          label: 'Projects',
-          icon: 'pi pi-fw pi-briefcase',
-          routerLink: '/projects'
-        },
-        {
-          label: 'Skills',
-          icon: 'pi pi-fw pi-star',
-          routerLink: '/skills'
-        },
-        {
-          label: 'Experience',
-          icon: 'pi pi-fw pi-calendar',
-          routerLink: '/experiences'
-        }
-      ]
+      label: 'Projects',
+      icon: 'pi pi-fw pi-briefcase',
+      routerLink: '/projects'
     },
     {
-      label: 'Others',
+      label: 'Skills',
+      icon: 'pi pi-fw pi-star',
+      routerLink: '/skills'
+    },
+    {
+      label: 'Experience',
+      icon: 'pi pi-fw pi-calendar',
+      routerLink: '/experiences'
+    },
+    {
+      label: 'External',
       icon: 'pi pi-ellipsis-h',
       items: [
         {
