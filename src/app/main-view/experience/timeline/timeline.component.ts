@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {TimelineEvent} from "../../../../interfaces/date-entry";
 import {HttpClient} from "@angular/common/http";
 import {injectQuery} from '@tanstack/angular-query-experimental';
@@ -7,6 +7,7 @@ import {Timeline} from 'primeng/timeline';
 import {NgStyle} from '@angular/common';
 import {FailedComponent} from '../../../misc/failed/failed.component';
 import {LoadingComponent} from '../../../misc/loading/loading.component';
+import {FakeDelayServiceService} from '../../../../services/fake-delay-service/fake-delay-service.service';
 
 @Component({
   selector: 'pp-timeline',
@@ -23,14 +24,20 @@ export class TimelineComponent {
   @Input({required: true}) timelineDataFile!: string;
   @Input({required: true}) title = '';
 
-  constructor(private http: HttpClient) {}
+  private static firstLoad = true;
+  private delay = (ms: number) =>
+    new Promise(resolve => setTimeout(resolve, ms));
+
+  $http = inject(HttpClient);
+  // $fds = inject(FakeDelayServiceService);
 
   readonly timeline = injectQuery(() => ({
       enabled: this.timelineDataFile !== '',
       queryKey: ['timeline', this.timelineDataFile],
-      queryFn: () =>lastValueFrom(
-        this.http.get<TimelineEvent[]>(this.timelineDataFile)
-      )
+      queryFn: () => {
+        // await this.$fds.delayOnceRandom(`timeline-${this.timelineDataFile}`, 100, 750);
+        return lastValueFrom(this.$http.get<TimelineEvent[]>(this.timelineDataFile));
+      }
     })
   )
 
