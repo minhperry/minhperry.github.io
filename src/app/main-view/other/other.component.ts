@@ -13,7 +13,7 @@ interface AdditionalExperience {
 }
 
 @Component({
-  selector: 'p-other',
+  selector: 'pp-other',
   templateUrl: './other.component.html',
 })
 export class OtherComponent {
@@ -26,27 +26,28 @@ export class OtherComponent {
     {
       icon: 'shield-check-line',
       title: 'Security',
-      description: 'Beginner experience in Security (CTF-Event at viadee Unternehmensberatung AG Dortmund) as well as university module "Sicherheit: Fragen und Lösungen".'
+      description: 'Attended CTF event at viadee Unternehmensberatung AG Dortmund ' +
+        'as well as university module "Sicherheit: Fragen und Lösungen".'
     }
   ];
 
   additionalExperience: AdditionalExperience[] = [
     {
-      icon: 'flag-line',
-      title: 'Freiwilliger Helfer',
-      items: [
-        'At DoKomi 2024 (Anime and Japan Culture Convention) in Düsseldorf. (and possibly Dokomi 2025 too!)',
-        'Workshop Helper: Guide for guest into specific workshop room.'
-      ]
-    },
-    {
       icon: 'server-line',
-      title: 'Systemmanagement',
+      title: 'System management',
       items: [
-        'Few experience with system and firewall configuration on my own Linux-based VPS.',
+        'Experience with system and firewall configuration on my own Linux-based VPS.',
         'Nginx as reverse proxy and SSL setup for save data traffic.',
         'Setting up and managing web apps on that VPS.',
         'DNS setup with Cloudflare as a proxy.'
+      ]
+    },
+    {
+      icon: 'flag-line',
+      title: 'Freiwilliger Helfer',
+      items: [
+        'At DoKomi 2024 and 2025 (Anime and Japan Culture Convention) in Düsseldorf.',
+        'Workshop Helper: Guide for guest into specific workshop room.'
       ]
     }
   ];
