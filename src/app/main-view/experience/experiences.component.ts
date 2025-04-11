@@ -3,7 +3,7 @@ import {TimelineComponent} from "./timeline/timeline.component";
 import {OtherComponent} from "../other/other.component";
 
 @Component({
-  selector: 'p-experiences',
+  selector: 'pp-experiences',
   templateUrl: './experiences.component.html',
   imports: [
     TimelineComponent,
@@ -11,7 +11,4 @@ import {OtherComponent} from "../other/other.component";
   ],
   styleUrl: './experiences.component.scss'
 })
-export class ExperiencesComponent {
-
-
-}
+export class ExperiencesComponent {}

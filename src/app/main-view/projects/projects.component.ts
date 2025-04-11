@@ -1,6 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {injectQuery} from '@tanstack/angular-query-experimental';
+import {lastValueFrom} from 'rxjs';
+import {DataView} from 'primeng/dataview';
+import {NgClass, NgOptimizedImage} from '@angular/common';
+import {FailedComponent} from '../../misc/failed/failed.component';
+import {LoadingComponent} from '../../misc/loading/loading.component';
 
 interface Interval {
   start: string,
@@ -18,33 +23,32 @@ interface ProjectItem {
 }
 
 @Component({
-  selector: 'p-projects',
+  selector: 'pp-projects',
   imports: [
-    NgOptimizedImage
+    DataView,
+    NgClass,
+    NgOptimizedImage,
+    FailedComponent,
+    LoadingComponent
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush -> need cdRef.detectChanges()
+  changeDetection: ChangeDetectionStrategy.OnPush //-> need cdRef.detectChanges()
 })
-export class ProjectsComponent implements OnInit {
-  projects: ProjectItem[] = []
-  precomputedIntervalString = new Map<ProjectItem, string>()
-
+export class ProjectsComponent {
   constructor(private http: HttpClient) {
   }
 
-  ngOnInit() {
-    this.http.get<ProjectItem[]>('/data/projects.json').subscribe(projects => {
-      projects.forEach(project => {
-        this.precomputedIntervalString.set(project, this.processInterval(project.interval));
-      })
-      this.projects = projects;
-    });
-  }
+  readonly projects = injectQuery( () => ({
+      queryKey: ['projects'],
+      queryFn: () => lastValueFrom(
+        this.http.get<ProjectItem[]>('/data/projects.json')
+      ),
+    }),
+  )
 
-  processInterval(interval: Interval): string {
+  processInterval(interval: Interval, mobileLayout = false): string {
     const {start, end, ignoreDay} = interval;
-    console.log(this.precomputedIntervalString)
 
     const parseDate = (dateString: string): Date => {
       const [day, month, year] = dateString.split('.').map(Number);
@@ -71,6 +75,7 @@ export class ProjectsComponent implements OnInit {
     const startFormatted = formatDate(start, ignoreDay);
     const endFormatted = end ? formatDate(end, ignoreDay) : 'PRESENT';
 
-    return `FROM ${startFormatted} TO ${endFormatted}`;
+    if (!mobileLayout) return `FROM ${startFormatted} TO ${endFormatted}`;
+    else return `${startFormatted} - ${endFormatted}`;
   }
 }

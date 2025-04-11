@@ -3,7 +3,7 @@ import {delay, Subscription, tap, timer} from "rxjs";
 import {NgClass} from "@angular/common";
 
 @Component({
-  selector: 'p-text-rotator',
+  selector: 'pp-text-rotator',
   imports: [NgClass],
   templateUrl: './text-rotator.component.html',
   styleUrl: './text-rotator.component.scss',

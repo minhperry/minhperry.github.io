@@ -3,18 +3,22 @@
         "title": "Technical University Dortmund",
         "start": "OCT 2021",
         "description": [
-            "Bachelor of Science in Computer Science.",
+            "Currently taking a Bachelor of Science with Major in Computer Science.",
             "Specialization in Software Engineering.",
             "Minor in Electrical Engineering."
-        ]
+        ],
+        "icon": "graduation-cap",
+        "color": "#639A00"
     },
     {
         "title": "Europäisches Gymnasium Waldenburg",
         "start": "AUG 2019",
         "end": "JUN 2021",
         "description": [
-            "Finished with the German Abitur at 2,4.",
-            "Focus on Mathematics and Physics."
-        ]
+            "Finished the German Abitur with final grade of 2,4.",
+            "Focus (Leistungskurs) on Mathematics and Physics."
+        ],
+        "icon": "calculator",
+        "color": "#336699"
     }
 ]

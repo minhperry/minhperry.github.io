@@ -1,56 +1,14 @@
-<div class="bg-[#191724d1]">
-  <header class="mx-3 pt-2 max-md:grid max-md:grid-cols-20 max-sm:grid-cols-12 gap-0">
-    <div class="flex max-md:flex-col md:flex-row justify-between items-center max-sm:col-span-11 max-md:col-span-19">
-      <div id="site-name" class="font-bold text-2xl text-center">
-        <a href="/">Résumé</a>
-      </div>
-      <div id="time-display" class="text-center">
-        {{ time }}
-      </div>
-    </div>
-    <button class="flex justify-center h-full md:hidden max-sm:max-md:col-span-1 items-center hover:outline hover:outline-1 focus:outline focus:outline-1"
-         (click)="openClose()" aria-hidden="true"> <!--Accessibility my ass-->
-      <div class="flex justify-center h-1/2 w-1/2 rounded-sm">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"
-             class="bi bi-chevron-down h-full transition-transform duration-250 ease-in-out"
-             [class.rotate-180]="isOpen">
-          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-        </svg>
-      </div>
-    </button>
-  </header>
-  <nav class="md:flex justify-between mx-3 mb-2 rounded-lg overflow-hidden" [@slideToggle]="isOpen">
-    <div id="nav" class="flex justify-start mx-2 max-md:justify-around">
-      <div id="home" class="max-md:hidden">
-        <a class="nav-item text-blue-500 hover:text-blue-200"
-           [routerLink]="'/'"
-           routerLinkActive="!text-teal-100 !decoration-solid"
-           [routerLinkActiveOptions]="{ exact: true }">Home</a>
-      </div>
-      <span class="max-md:hidden">/</span>
-      <div id="routes">
-        @for (link of navLinks; track $index) {
-          <a class="nav-item text-sky-500 hover:text-sky-200"
-             [routerLink]="link.path"
-             routerLinkActive="!text-sky-100 !decoration-solid"
-             [routerLinkActiveOptions]="{ exact: true }"
-          >{{ link.label }}</a>
-        }
-      </div>
-      <span class="max-md:hidden">/</span>
-      <div id="ext">
-        @for (link of extLinks; track $index) {
-          <a class="nav-item text-cyan-500 hover:text-cyan-200" [href]="link.link"
-             target="_blank">{{ link.label }}</a>
-        }
-      </div>
-    </div>
-    <div class="max-md:flex max-md:justify-center font-['Roboto_Mono']">
+<div>
+  <p-menubar [model]="menuItems" ariaLabel="Menu Bar">
+    <ng-template #start>
+      <img ngSrc="logo.svg" alt="logo with 3 lines" [height]="logoSize" [width]="logoSize"/>
+      <a routerLink="/" class="text-xl font-bold ml-2">Resume</a>
+    </ng-template>
+    <ng-template #end>
       <a href="https://github.com/minhperry/minhperry.github.io" target="_blank"
-         matTooltip="Go to source" matTooltipPosition="below"
-         class="text-sm">
+         pTooltip="Go to source" tooltipPosition="left"
+         class="text-lg">
         v{{ version }}</a>
-    </div>
-  </nav>
-  <hr/>
+    </ng-template>
+  </p-menubar>
 </div>

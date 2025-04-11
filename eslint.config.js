@@ -3,7 +3,7 @@ const eslint = require("@eslint/js");
 const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
 
-const prefix = 'p';
+const prefix = 'pp';
 
 module.exports = tseslint.config(
   {
