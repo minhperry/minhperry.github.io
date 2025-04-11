@@ -6,7 +6,9 @@
             "Bachelor of Science in Computer Science.",
             "Specialization in Software Engineering.",
             "Minor in Electrical Engineering."
-        ]
+        ],
+        "icon": "graduation-cap",
+        "color": "#639A00"
     },
     {
         "title": "Europäisches Gymnasium Waldenburg",
@@ -15,6 +17,8 @@
         "description": [
             "Finished with the German Abitur at 2,4.",
             "Focus on Mathematics and Physics."
-        ]
+        ],
+        "icon": "calculator",
+        "color": "#336699"
     }
 ]

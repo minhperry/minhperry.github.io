@@ -7,6 +7,8 @@
             "Module: \"Datenstruktur und Algorithmus 2\" (Data Structures and Algorithms 2).",
             "Support for students with programming tasks.",
             "Grading, correction and feedback of the solutions."
-        ]
+        ],
+        "icon": "pencil",
+        "color": "#639A00"
     }
 ]
