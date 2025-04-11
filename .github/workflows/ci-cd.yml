@@ -7,6 +7,8 @@ on:
     paths-ignore:
       - 'README.md'
       - '.gitignore'
+      - '.github/workflows/eslint.yml'
+      - '.github/workflows/try-build.yml'
 
 jobs:
   deploy:
