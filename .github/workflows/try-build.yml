@@ -1,7 +1,7 @@
 name: Try to build Angular app
 
 on:
-  pull_request_target:
+  pull_request:
     paths:
       - 'src/**'
       - '*.js'
