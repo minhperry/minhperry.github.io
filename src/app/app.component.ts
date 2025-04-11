@@ -4,7 +4,7 @@ import {NavibarComponent} from "./navibar/navibar.component";
 import {FooterComponent} from "./footer/footer.component";
 
 @Component({
-  selector: 'p-root',
+  selector: 'pp-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [NavibarComponent, RouterOutlet, FooterComponent]
