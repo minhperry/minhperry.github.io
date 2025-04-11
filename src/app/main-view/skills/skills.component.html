@@ -12,13 +12,13 @@
             <h1 class="text-center text-xl font-bold my-0 mt-3">{{ entry.title }}</h1>
             @for (skill of entry.entries; track $index) {
               @if (!skill.isLanguage) {
-                <p-level [name]="skill.name" [level]="skill.level" [will]="skill.will"
+                <pp-level [name]="skill.name" [level]="skill.level" [will]="skill.will"
                          [showScore]="showScore">{{ skill.desc }}
-                </p-level>
+                </pp-level>
               } @else {
-                <p-level [name]="skill.name" [level]="skill.level" [will]="skill.will" [showScore]="showScore"
+                <pp-level [name]="skill.name" [level]="skill.level" [will]="skill.will" [showScore]="showScore"
                          ppLang>{{ skill.desc }}
-                </p-level>
+                </pp-level>
               }
             }
           </div>

@@ -4,7 +4,6 @@ import {injectQuery} from '@tanstack/angular-query-experimental';
 import {lastValueFrom} from 'rxjs';
 import {DataView} from 'primeng/dataview';
 import {NgClass, NgOptimizedImage} from '@angular/common';
-import {ProgressSpinner} from 'primeng/progressspinner';
 import {FailedComponent} from '../../misc/failed/failed.component';
 import {LoadingComponent} from '../../misc/loading/loading.component';
 

@@ -7,7 +7,6 @@ import {Timeline} from 'primeng/timeline';
 import {NgStyle} from '@angular/common';
 import {FailedComponent} from '../../../misc/failed/failed.component';
 import {LoadingComponent} from '../../../misc/loading/loading.component';
-import {FakeDelayServiceService} from '../../../../services/fake-delay-service/fake-delay-service.service';
 
 @Component({
   selector: 'pp-timeline',

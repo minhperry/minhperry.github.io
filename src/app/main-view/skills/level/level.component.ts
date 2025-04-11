@@ -3,7 +3,7 @@ import {NgClass} from "@angular/common";
 import {SkillsComponent} from "../skills.component";
 
 @Component({
-  selector: 'p-level',
+  selector: 'pp-level',
   imports: [
     NgClass
   ],
