@@ -14,7 +14,7 @@
                 "name": "Bash",
                 "level": 45,
                 "will": true,
-                "desc": "Basic use with WSL and VPS system scripting."
+                "desc": "Use with WSL and VPS system scripting."
             },
             {
                 "name": "Python",
@@ -36,7 +36,7 @@
                 "name": "CSS/SCSS/SASS",
                 "level": 70,
                 "will": true,
-                "desc": "Has experiences with Bootstrap 5.3 and its grid layout, as well as beginner experiences with Tailwind 3."
+                "desc": "See section below."
             },
             {
                 "name": "C/C++",
@@ -46,8 +46,7 @@
             {
                 "name": "Kotlin",
                 "level": 69,
-                "will": true,
-                "desc": "Solely from SkyHanni mod contribution."
+                "will": true
             }, {
                 "name": "Basic SQL",
                 "level": 45,
@@ -62,13 +61,13 @@
         "entries": [
             {
                 "name": "Angular",
-                "level": 87,
+                "level": 89,
                 "will": true,
                 "desc": "This website was built with Angular 19."
             },
             {
                 "name": "React",
-                "level": 20,
+                "level": 30,
                 "will": true,
                 "desc": "Every Color link on the navbar is a fork of a React project."
             },
@@ -85,24 +84,26 @@
             {
                 "name": "Bootstrap",
                 "level": 70,
-                "will": true,
-                "desc": "The grid layout was used in this site."
+                "will": true
             },
             {
                 "name": "Tailwind",
                 "level": 75,
                 "will": true,
-                "desc": "The site was styled with over 90% Tailwind."
-            },
-            {
-                "name": "Karma + Jasmine",
-                "level": 10,
-                "will": true
+                "desc": "The site was styled with over 95% Tailwind."
             },
             {
                 "name": "Spring Boot",
-                "level": 30,
+                "level": 40,
                 "will": true
+            },
+            {
+                "name": "jQuery",
+                "level": 40
+            },
+            {
+                "name": "MockK / Mockito",
+                "level": 20
             }
         ]
     },
@@ -121,11 +122,11 @@
                 "name": "Git",
                 "level": 57,
                 "will": true,
-                "desc": "Mostly from SkyHanni contribution: branch flow, PR, etc."
+                "desc": "From managing all the projects."
             },
             {
                 "name": "GitHub Actions",
-                "level": 20,
+                "level": 35,
                 "will": true,
                 "desc": "From setting up CI/CD for my own projects."
             },
@@ -133,13 +134,13 @@
                 "name": "Docker",
                 "level": 20,
                 "will": true,
-                "desc": "Basic know-how with creating, using and managing containers."
+                "desc": "Know-how with creating, using and managing containers."
             },
             {
                 "name": "MS Office",
                 "level": 22,
                 "will": false,
-                "desc": "Familiar with basic document, spreadsheet and presentation for school & general uses."
+                "desc": "Familiar with document, spreadsheet and presentation for school & general uses."
             },
             {
                 "name": "LaTeX",
@@ -185,7 +186,7 @@
             },
             {
                 "name": "Leadership",
-                "level": 40,
+                "level": 25,
                 "will": true
             }
         ]
@@ -206,14 +207,12 @@
                 "name": "English",
                 "level": 10,
                 "will": true,
-                "desc": "Fluent.",
                 "isLanguage": true
             },
             {
                 "name": "German",
                 "level": 8,
                 "will": true,
-                "desc": "Fluent.",
                 "isLanguage": true
             },
             {
