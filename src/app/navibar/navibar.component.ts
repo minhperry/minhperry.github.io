@@ -1,20 +1,20 @@
 import {Component} from '@angular/core';
 import {environment} from "../../environments/environment";
-import {MatTooltip} from "@angular/material/tooltip";
 import {MenubarModule} from 'primeng/menubar';
 import {MenuItem} from 'primeng/api';
 import {RouterLink} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
+import {Tooltip} from 'primeng/tooltip';
 
 @Component({
   selector: 'pp-navbar',
   templateUrl: './navibar.component.html',
   styleUrl: './navibar.component.scss',
   imports: [
-    MatTooltip,
     MenubarModule,
     RouterLink,
-    NgOptimizedImage
+    NgOptimizedImage,
+    Tooltip
   ],
 })
 export class NavibarComponent {
