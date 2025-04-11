@@ -1,23 +1,20 @@
 <div class="flex flex-col items-center justify-center text-center max-w-[85%] mx-auto my-5 space-y-6">
-  <p-message severity="error" class="w-full">
-    <div class="text-3xl lg:text-4xl font-bold text-red-400">
-      Oopsie woopsie, you are not supposed to be here!
+  <p-message severity="error" class="flex items-center">
+    <div class="text-3xl lg:text-4xl font-bold text-red-400 w-full">
+      <span>You are lost!</span><br />
+      <span>I II</span><br/>
+      <span>II I_</span>
     </div>
   </p-message>
 
-  <img
-          ngSrc="https://http.cat/404"
-          priority
-          alt="404"
-          width="600"
-          height="480"
-          class="rounded-xl shadow-lg w-full max-w-[600px] h-auto"
+  <img ngSrc="https://http.cat/404"
+       priority alt="404" width="600" height="480"
+       class="rounded-xl shadow-lg w-full max-w-[600px] h-auto"
   />
 
-  <p-button
-          label="Go back Home"
-          icon="pi pi-home"
-          styleClass="p-button-primary"
-          [routerLink]="'/'"
+  <p-button label="Go back Home"
+            icon="pi pi-home"
+            styleClass="p-button-primary"
+            [routerLink]="'/'"
   />
 </div>

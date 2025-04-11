@@ -29,11 +29,10 @@ export const routes: Routes = [
   {
     path: '404',
     component: PageNotFoundComponent,
-    title: "404 Not Found",
+    title: "I II II I_"
   },
   {
     path: '**',
     redirectTo: '/404',
-    title: "Ooopsie woospie you made a fucky wucky"
   }
 ]
