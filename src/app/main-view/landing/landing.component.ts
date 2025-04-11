@@ -4,7 +4,7 @@ import {TextRotatorComponent} from "../../misc/text-rotator/text-rotator.compone
 import {FormsModule} from "@angular/forms";
 
 @Component({
-  selector: 'p-landing',
+  selector: 'pp-landing',
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
   imports: [
