@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {ProgressSpinner} from 'primeng/progressspinner';
 
 @Component({
-  selector: 'p-loading',
-  imports: [],
+  selector: 'pp-loading',
+  imports: [
+    ProgressSpinner
+  ],
   templateUrl: './loading.component.html',
   styleUrl: './loading.component.scss'
 })
 export class LoadingComponent {
-
+  @Input() loadingText = 'Loading...';
 }
