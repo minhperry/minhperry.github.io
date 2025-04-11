@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {AdaptiveHeightDirective} from "../../../directives/height/adaptive-height.directive";
 import {TextRotatorComponent} from "../../misc/text-rotator/text-rotator.component";
 import {FormsModule} from "@angular/forms";
 
@@ -8,7 +7,6 @@ import {FormsModule} from "@angular/forms";
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
   imports: [
-    AdaptiveHeightDirective,
     TextRotatorComponent,
     FormsModule,
   ]
