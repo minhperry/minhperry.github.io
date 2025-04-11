@@ -3,7 +3,7 @@ import {TimelineEvent} from "../../../../interfaces/date-entry";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
-  selector: 'p-timeline',
+  selector: 'pp-timeline',
   imports: [],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss'
