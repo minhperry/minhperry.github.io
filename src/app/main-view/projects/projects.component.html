@@ -1,26 +1,8 @@
 <div class="m-6">
   @if (projects.isPending()) {
-    <div class="simple-box">
-      <div>
-        <p-progress-spinner aria-label="Loading" strokeWidth="4"
-                            animationDuration="3s" [style]="{ 'width': '50px', 'height': '50px' }"
-        />
-      </div>
-      <p>Loading...</p>
-    </div>
+    <pp-loading />
   } @else if (projects.isError()) {
-    <div class="simple-box !border-red-500 bg-red-200 bg-opacity-15">
-      <div>
-        <div class="text-center">
-          <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-            Failed to Fetch Data
-          </p>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            Please check your internet connection or try again later.
-          </p>
-        </div>
-      </div>
-    </div>
+    <pp-failed />
   } @else {
     <p-data-view [value]="projects.data()">
       @let datas = projects.data();

@@ -5,6 +5,8 @@ import {lastValueFrom} from 'rxjs';
 import {DataView} from 'primeng/dataview';
 import {NgClass, NgOptimizedImage} from '@angular/common';
 import {ProgressSpinner} from 'primeng/progressspinner';
+import {FailedComponent} from '../../misc/failed/failed.component';
+import {LoadingComponent} from '../../misc/loading/loading.component';
 
 interface Interval {
   start: string,
@@ -27,7 +29,8 @@ interface ProjectItem {
     DataView,
     NgClass,
     NgOptimizedImage,
-    ProgressSpinner
+    FailedComponent,
+    LoadingComponent
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
