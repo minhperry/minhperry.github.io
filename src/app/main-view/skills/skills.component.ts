@@ -4,27 +4,42 @@ import {LanguageDirective} from "../../../directives/lang/language.directive";
 import {SkillSection} from "../../../interfaces/skill-entry";
 import {HttpClient} from "@angular/common/http";
 import {LocalStorageService} from "../../../services/local-storage/local-storage.service";
+import {ToggleSwitch} from 'primeng/toggleswitch';
+import {FormsModule} from '@angular/forms';
+import {injectQuery} from '@tanstack/angular-query-experimental';
+import {lastValueFrom} from 'rxjs';
+import {LoadingComponent} from '../../misc/loading/loading.component';
+import {FailedComponent} from '../../misc/failed/failed.component';
 
 @Component({
-  selector: 'p-skills',
+  selector: 'pp-skills',
   imports: [
     LevelComponent,
-    LanguageDirective
+    LanguageDirective,
+    ToggleSwitch,
+    FormsModule,
+    LoadingComponent,
+    FailedComponent
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent implements OnInit{
-  protected skills: SkillSection[] = [];
+  protected skills__: SkillSection[] = [];
   showScore: boolean;
 
   constructor(private http: HttpClient, private ls: LocalStorageService) {
     this.showScore = this.ls.getItem('showScore') ?? false;
   }
 
+  readonly $skills = injectQuery(() => ({
+    queryKey: ['skills'],
+    queryFn: () => lastValueFrom(this.http.get<SkillSection[]>('/data/skills.json')),
+  }))
+
   ngOnInit() {
     this.http.get<SkillSection[]>('/data/skills.json').subscribe(data => {
-      this.skills = data.map(section => ({
+      this.skills__ = data.map(section => ({
         ...section,
         entries: section.entries.sort((a, b) => b.level - a.level)
       }))
