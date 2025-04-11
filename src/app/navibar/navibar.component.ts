@@ -66,10 +66,15 @@ export class NavibarComponent {
           url: 'https://status.minhperry.de'
         },
         {
-          label: 'CV',
+          label: 'CV (latest)',
           icon: 'pi pi-fw pi-file-pdf',
           url: 'https://cdn.minhperry.de/pdf/lebenslauf-v2.pdf?access=thisisonlyavailableforrecruiters'
           // todo: fix this on server side that enforces the acccess parameter
+        },
+        {
+          label: 'CV (old)',
+          icon: 'pi pi-fw pi-file-pdf',
+          url: 'https://cdn.minhperry.de/pdf/lebenslauf.pdf'
         }
       ]
     }
