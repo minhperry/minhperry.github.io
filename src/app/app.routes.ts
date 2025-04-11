@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LandingComponent} from './main-view/landing/landing.component';
-import {SkillsComponent} from "./main-view/experience/skills/skills.component";
+import {SkillsComponent} from "./main-view/skills/skills.component";
 import {ProjectsComponent} from "./main-view/projects/projects.component";
 import {ExperiencesComponent} from "./main-view/experience/experiences.component";
 

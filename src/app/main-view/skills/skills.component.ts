@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {LevelComponent} from "./level/level.component";
-import {LanguageDirective} from "../../../../directives/lang/language.directive";
-import {SkillSection} from "../../../../interfaces/skill-entry";
+import {LanguageDirective} from "../../../directives/lang/language.directive";
+import {SkillSection} from "../../../interfaces/skill-entry";
 import {HttpClient} from "@angular/common/http";
-import {LocalStorageService} from "../../../../services/local-storage/local-storage.service";
+import {LocalStorageService} from "../../../services/local-storage/local-storage.service";
 
 @Component({
   selector: 'p-skills',
