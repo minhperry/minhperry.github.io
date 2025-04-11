@@ -45,3 +45,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           report-json: "./reports/lint.json"
+          only-pr-files: 'false'
