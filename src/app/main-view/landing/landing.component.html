@@ -1,4 +1,4 @@
-<div class="w-full bg-gradient-to-br from-slate-900 to-blue-900 flex items-center justify-center" pAdaptiveHeight>
+<div class="w-full h-screen bg-gradient-to-br from-slate-900 to-blue-900 flex items-center justify-center relative p-8">
   <div class="absolute inset-0 bg-[url('/backgrounds/main2.svg')] bg-repeat opacity-60 z-0"></div>
   <div class="w-[90%] flex flex-col z-10">
     <div class="lg:w-8/12 min-w-fit">
@@ -14,11 +14,11 @@
         Find out how my skills and experiences can make a difference.
       </p>
     </div>
-    <div class="lg:w-4/12 max-md:mt-2 z-10">
-      <div class="flex gap-6 justify-start">
+    <div class="lg:w-4/12 mt-2 md:mt-4 z-10">
+      <div class="flex gap-2 md:gap-6 justify-start flex-wrap">
         @for (so of socials; track so.riIcon) {
           <a [href]="so.url" class="icon" target="_blank">
-            <i [class]="so.riIcon" class="text-3xl hover:scale-110 transition-transform duration-200"></i>
+            <i [class]="so.riIcon" class="text-3xl hover:translate-y-10 transition-transform duration-200"></i>
           </a>
         }
       </div>
