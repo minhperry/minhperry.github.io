@@ -1,37 +1,39 @@
-@if (timeline.isPending()) {
-  Loading...
-} @else if (timeline.isError()) {
-  Failed to load timeline data.
-} @else {
-  @let tData = timeline.data();
-  <section class="text-inherit h-full p-2">
-    <div class="pl-4 pb-4 text-2xl font-bold">{{ title }}</div>
-    <p-timeline [value]="tData">
-      <!-- Marker (Icon Circle) -->
-      <ng-template #marker let-event>
+<div>
+  @if (timeline.isPending()) {
+    <pp-loading />
+  } @else if (timeline.isError()) {
+    <pp-failed title="Failed to load timeline data"/>
+  } @else {
+    @let tData = timeline.data();
+    <section class="text-inherit h-full p-2">
+      <div class="pl-4 pb-4 text-2xl font-bold">{{ title }}</div>
+      <p-timeline [value]="tData">
+        <!-- Marker (Icon Circle) -->
+        <ng-template #marker let-event>
         <span
-            class="flex w-10 h-10 items-center justify-center rounded-full shadow-md border-4 border-gray-900"
-            [ngStyle]="{ 'background-color': event.color }"
+                class="flex w-10 h-10 items-center justify-center rounded-full shadow-md border-4 border-gray-900"
+                [ngStyle]="{ 'background-color': event.color }"
         >
           <i [class]="'pi pi-' + event.icon" class="text-lg"></i>
         </span>
-      </ng-template>
+        </ng-template>
 
-      <!-- Content (Card) -->
-      <ng-template #content let-$entry>
-        @let entry = castToTimelineEvent($entry);
-        <div class="rounded-xl shadow-lg p-4 border border-gray-700 mb-2 hover:bg-[#ffffff0f]">
-          <div class="mb-2">
-            <h3 class="text-xl font-semibold">{{ entry.title }}</h3>
-            <p class="text-sm text-gray-400">{{ appendDate(entry) }}</p>
+        <!-- Content (Card) -->
+        <ng-template #content let-$entry>
+          @let entry = castToTimelineEvent($entry);
+          <div class="rounded-xl shadow-lg p-4 border border-gray-700 mb-2 hover:bg-[#ffffff0f]">
+            <div class="mb-2">
+              <h3 class="text-xl font-semibold">{{ entry.title }}</h3>
+              <p class="text-sm text-gray-400">{{ appendDate(entry) }}</p>
+            </div>
+            <ul class="list-disc list-inside text-gray-300 space-y-1">
+              @for (desc of entry.description; track $index) {
+                <li>{{ desc }}</li>
+              }
+            </ul>
           </div>
-          <ul class="list-disc list-inside text-gray-300 space-y-1">
-            @for (desc of entry.description; track $index) {
-              <li>{{ desc }}</li>
-            }
-          </ul>
-        </div>
-      </ng-template>
-    </p-timeline>
-  </section>
-}
+        </ng-template>
+      </p-timeline>
+    </section>
+  }
+</div>
