@@ -16,7 +16,11 @@ export class LandingComponent {
     'developer', 'student', 'semi-designer', 'rhythm gamer',
     'tech enthusiast', 'OSS contributor', 'frontend engineer',
     'Angular advocate', 'creative thinker', 'Tailwind enjoyer',
-    'continuous learner', 'team player', 'solution finder'
+    'continuous learner', 'team player', 'solution finder',
+    'code perfectionist', 'Kotlin fan', 'Spring Boot navigator',
+    'signal() enjoyer', 'dark mode believer', 'Vtuber fan',
+    'problem solver', 'open terminal enthusiast', 'clean code advocate',
+    'build pipeline nerd'
   ]
 
   textStayDuration = 2000;
