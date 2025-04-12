@@ -11,7 +11,22 @@
             "Project 2: Group-based development of board game 'Bonsai'.",
             "Development pipeline: Design (Entities, Services and Views with UML), Implementation (daily commits), Testing, Deployment."
         ],
-        "image": "https://chibi.minhperry.de/eto2fw2PAnMf.png"
+        "image": "https://chibi.minhperry.de/eto2fw2PAnMf.png",
+        "icons": [
+            {
+                "name": "Kotlin",
+                "devicon": "devicon-kotlin-plain colored"
+            },
+            {
+                "name": "BGW",
+                "localPath": "/icons/bgw.svg",
+                "link": "https://github.com/tudo-aqua/bgw"
+            },
+            {
+                "name": "JUnit",
+                "devicon": "devicon-junit-plain-wordmark colored"
+            }
+        ]
     },
     {
         "title": "Self-project \"Skyblock Simulator\"",
@@ -26,7 +41,21 @@
         ],
         "source": "https://github.com/minhperry/skyblock-simulator",
         "view": "https://skyblock.minhperry.de",
-        "image": "https://cdn.minhperry.de/images/skyblock.png"
+        "image": "https://cdn.minhperry.de/images/skyblock.png",
+        "icons": [
+            {
+                "name": "Angular",
+                "devicon": "devicon-angularjs-plain colored"
+            },
+            {
+                "name": "NodeJS",
+                "devicon": "devicon-nodejs-plain-wordmark colored"
+            },
+            {
+                "name": "ExpressJS",
+                "devicon": "devicon-express-original"
+            }
+        ]
     },
     {
         "title": "Contribution to a Minecraft Mod",
@@ -39,7 +68,21 @@
             "Have implemented a few features and bug fixes."
         ],
         "source": "https://github.com/hannibal002/SkyHanni",
-        "image": "https://cdn.minhperry.de/images/skyhanni-logo.png"
+        "image": "https://cdn.minhperry.de/images/skyhanni-logo.png",
+        "icons": [
+            {
+                "name": "Java",
+                "devicon": "devicon-java-plain-wordmark colored"
+            },
+            {
+                "name": "Kotlin",
+                "devicon": "devicon-kotlin-plain colored"
+            },
+            {
+                "name": "Forge API",
+                "localPath": "/icons/curseforge.svg"
+            }
+        ]
     },
     {
         "title": "Spark: A Twitter-like social media platform",
@@ -55,6 +98,24 @@
             "Authentication and authorization with JWT."
         ],
         "source": "https://github.com/minhperry/wt2-ss23-tudo",
-        "image": "https://raw.githubusercontent.com/minhperry/wt2-ss23-tudo/refs/heads/main/frontend/src/assets/images/luminary_icon.png"
+        "image": "https://raw.githubusercontent.com/minhperry/wt2-ss23-tudo/refs/heads/main/frontend/src/assets/images/luminary_icon.png",
+        "icons": [
+            {
+                "name": "H2 Database",
+                "localPath": "/icons/H2.png"
+            },
+            {
+                "name": "Angular",
+                "devicon": "devicon-angularjs-plain colored"
+            },
+            {
+                "name": "Spring",
+                "devicon": "devicon-spring-plain"
+            },
+            {
+                "name": "Java",
+                "devicon": "devicon-java-plain-wordmark colored"
+            }
+        ]
     }
 ]

@@ -19,7 +19,15 @@ interface ProjectItem {
   interval: Interval,
   image?: string,
   source?: string,
-  view?: string
+  view?: string,
+  icons: Icon[] // In format: "Name|devicon-class-icon" or "Name|local-/path/to/icon"
+}
+
+interface Icon {
+  name: string,
+  devicon?: string,
+  localPath?: string
+  link?: string
 }
 
 @Component({

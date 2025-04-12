@@ -1,8 +1,8 @@
 <div class="m-6">
   @if (projects.isPending()) {
-    <pp-loading />
+    <pp-loading/>
   } @else if (projects.isError()) {
-    <pp-failed />
+    <pp-failed/>
   } @else {
     <p-data-view [value]="projects.data()">
       @let datas = projects.data();
@@ -28,20 +28,18 @@
                   <div class="text-2xl font-bold"> {{ pj.title }}</div>
                   <div class="flex flex-row justify-between text-[0.9rem] text-gray-500">
                     <!-- Method returns different string for different layout-->
-                    <div class="max-md:hidden"> {{ processInterval(pj.interval) }} </div>
-                    <div class="md:hidden">{{ processInterval(pj.interval, true)}}</div>
+                    <div class="max-md:hidden"> {{ processInterval(pj.interval) }}</div>
+                    <div class="md:hidden">{{ processInterval(pj.interval, true) }}</div>
 
                     <div>
                       @if (pj.source) {
-                        <a [href]="pj.source" target="_blank" class="link max-md:hidden">
-                          View Source</a>
-                        <a [href]="pj.source" target="_blank" class="link md:hidden">
+                        <a [href]="pj.source" target="_blank" class="link">
+                          <span class="max-md:hidden">View</span>
                           Source</a>
                         @if (pj.view) {
                           /
-                          <a [href]="pj.view" target="_blank" class="link max-md:hidden">
-                            View Live</a>
-                          <a [href]="pj.view" target="_blank" class="link md:hidden">
+                          <a [href]="pj.view" target="_blank" class="link">
+                            <span class="max-md:hidden">View</span>
                             Live</a>
                         }
                       }
@@ -56,13 +54,37 @@
                       }
                     </ul>
                   }
-
                 </div>
-
               </div>
+            <!-- tech stack -->
+            <div class="p-4 rounded-2xl shadow-md">
+              <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-4">
+                <!-- Replace the image src with your actual SVG logo paths -->
+                @for (item of pj.icons; track $index) {
+                  <div class="flex items-center justify-center p-3 bg-gray-800 rounded-xl hover:scale-[1.05] transition-transform">
+                    @if (item.devicon) {
+                      <i [class]="item.devicon" class="text-4xl"></i>
+                    } @else {
+                      <img [src]="item.localPath" [alt]="item.name" class="w-8 h-8"/>
+                    }
+
+                    <div class="pl-4 text-gray-300 select-none">
+                      @if (item.link) {
+                        <a [href]="item.link" target="_blank" class="underline">
+                          {{ item.name }}
+                        </a>
+                      } @else {
+                        <span>{{ item.name }}</span>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
             </div>
           }
         </div>
+
       </ng-template>
     </p-data-view>
   }
