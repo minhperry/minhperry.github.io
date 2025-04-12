@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {LandingComponent} from './main-view/landing/landing.component';
-import {SkillsComponent} from "./main-view/experience/skills/skills.component";
+import {SkillsComponent} from "./main-view/skills/skills.component";
 import {ProjectsComponent} from "./main-view/projects/projects.component";
 import {ExperiencesComponent} from "./main-view/experience/experiences.component";
 
@@ -29,11 +29,10 @@ export const routes: Routes = [
   {
     path: '404',
     component: PageNotFoundComponent,
-    title: "404 Not Found",
+    title: "I II II I_"
   },
   {
     path: '**',
     redirectTo: '/404',
-    title: "Ooopsie woospie you made a fucky wucky"
   }
 ]

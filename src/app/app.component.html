@@ -1,13 +1,14 @@
 <div class="mx-auto px-0 max-w-full flex flex-col min-h-screen">
-  <div class="sticky top-0 left-0 right-0 z-50">
-    <p-navbar/>
+  <div class="top-0 left-0 right-0 z-50 p-4"
+       [ngClass]="{'sticky': isNotOnRoot(), 'fixed': !isNotOnRoot() }">
+    <pp-navbar/>
   </div>
-  <div class="z-40 grow">
-    <router-outlet></router-outlet>
+  <div class="z-40 grow" [@swipe]="getRouterOutletState(o)">
+    <router-outlet #o="outlet"></router-outlet>
   </div>
-  @if (shouldRenderFooter()) {
+  @if (isNotOnRoot()) {
     <div class="z-50">
-      <p-footer></p-footer>
+      <pp-footer></pp-footer>
     </div>
   }
 </div>

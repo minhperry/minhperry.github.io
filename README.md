@@ -35,10 +35,12 @@ By default, this is an SSR app, however, you can pre-render the site to be used 
 
 For true SSR apps, it is recommended to use `pm2` for easier process management.
 
-# Technology used
+# Tech stack:
 
 * [Angular 19](https://angular.dev/) as the main skeleton.
-* [Bootstrap 5.3](https://getbootstrap.com/) for styling and pre-styled components.
-* [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS.
+* ~~[Bootstrap 5.3](https://getbootstrap.com/) for styling and pre-styled components.~~
+* [TailwindCSS 3](https://tailwindcss.com/) for utility-first CSS.
 * ~~[Cloudflare Pages](https://pages.cloudflare.com/) for deploying, however this will soon be moved to my personal VPS on [Hetzner Cloud](https://www.hetzner.com/cloud/) for SSR and improvements.~~
 * [Hetzner Cloud](https://www.hetzner.com/cloud/) for hosting and SSR.
+* [PrimeNG 19](https://www.primeng.org/) for many UI components.
+* [TanStack Query v5](https://tanstack.com/query/v5) for flexible data fetching and caching.

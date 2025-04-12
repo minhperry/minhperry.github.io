@@ -1,14 +1,12 @@
 import {Component} from '@angular/core';
-import {AdaptiveHeightDirective} from "../../../directives/height/adaptive-height.directive";
 import {TextRotatorComponent} from "../../misc/text-rotator/text-rotator.component";
 import {FormsModule} from "@angular/forms";
 
 @Component({
-  selector: 'p-landing',
+  selector: 'pp-landing',
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
   imports: [
-    AdaptiveHeightDirective,
     TextRotatorComponent,
     FormsModule,
   ]
@@ -18,7 +16,11 @@ export class LandingComponent {
     'developer', 'student', 'semi-designer', 'rhythm gamer',
     'tech enthusiast', 'OSS contributor', 'frontend engineer',
     'Angular advocate', 'creative thinker', 'Tailwind enjoyer',
-    'continuous learner', 'team player', 'solution finder'
+    'continuous learner', 'team player', 'solution finder',
+    'code perfectionist', 'Kotlin fan', 'Spring Boot navigator',
+    'signal() enjoyer', 'dark mode believer', 'Vtuber fan',
+    'problem solver', 'open terminal enthusiast', 'clean code advocate',
+    'build pipeline nerd'
   ]
 
   textStayDuration = 2000;
@@ -31,7 +33,7 @@ export class LandingComponent {
     {url: 'https://linkedin.com/in/ptm2002', riIcon: 'ri-linkedin-fill'},
     {url: 'https://twitter.com/___727__', riIcon: 'ri-twitter-fill'},
     {url: 'mailto:me@minhperry.de', riIcon: 'ri-mail-fill'},
-    {url: '/pdf/lebenslauf.pdf', riIcon: 'ri-file-text-fill'},
+    {url: 'https://cdn.minhperry.de/pdf/lebenslauf-v2.pdf?access=thisisonlyavailableforrecruiters', riIcon: 'ri-file-text-fill'},
     {url: 'https://www.youtube.com/@minhperry', riIcon: 'ri-youtube-fill'},
   ]
 }

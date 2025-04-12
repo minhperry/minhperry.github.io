@@ -4,9 +4,11 @@
         "start": "APR 2024",
         "end": "SEP 2024",
         "description": [
-            "Module: \"Datenstruktur und Algorithmus 2\" (Data Structures and Algorithms 2).",
-            "Support for students with programming tasks.",
-            "Grading, correction and feedback of the solutions."
-        ]
+            "For Module: \"Datenstruktur und Algorithmus 2\" (Data Structures and Algorithms 2).",
+            "Support for students with weekly programming tasks.",
+            "Provides grading, correction and feedback of the solutions."
+        ],
+        "icon": "pencil",
+        "color": "#639A00"
     }
 ]
