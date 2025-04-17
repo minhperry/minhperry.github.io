@@ -48,7 +48,7 @@
                 "level": 69,
                 "will": true
             }, {
-                "name": "Basic SQL",
+                "name": "SQL",
                 "level": 45,
                 "will": true
             }
@@ -104,6 +104,10 @@
             {
                 "name": "MockK / Mockito",
                 "level": 20
+            },
+            {
+                "name": "Zod",
+                "level": 40
             }
         ]
     },
@@ -151,6 +155,14 @@
                 "name": "MongoDB",
                 "level": 10,
                 "will": true
+            },
+            {
+                "name": "detekt",
+                "level": 45
+            },
+            {
+                "name": "Kover",
+                "level": 45
             }
         ]
     },
@@ -188,6 +200,31 @@
                 "name": "Leadership",
                 "level": 25,
                 "will": true
+            }
+        ]
+    },
+    {
+        "id": "6-api-development",
+        "title": "API Development & Integration",
+        "display": true,
+        "entries": [
+            {
+                "name": "RESTful API Design",
+                "level": 65,
+                "will": true,
+                "desc": "Designed and consumed APIs in fullstack projects using Node (Express), Spring Boot, and Angular’s HttpClient."
+            },
+            {
+                "name": "Authentication & Authorization",
+                "level": 55,
+                "will": true,
+                "desc": "JWT, session-based auth, and token validation in API workflows in combination with SaaS tools like Appwrite."
+            },
+            {
+                "name": "API Documentation",
+                "level": 60,
+                "will": true,
+                "desc": "Familiar with Swagger/OpenAPI and documenting endpoints for clarity and reuse."
             }
         ]
     },
